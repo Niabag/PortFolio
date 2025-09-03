@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteOnWeb - Développeur Web Professionnel</title>
+    <meta name="description" content="Portfolio professionnel de développement web - WordPress, React, Node.js, CMS. Plus de 10 réalisations avec respect des deadlines.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#dc2626',
+                        'dark-bg': '#0a0a0a',
+                        'card-bg': '#1a1a1a'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(220,38,38,0.3), rgba(220,38,38,0.1));
+            animation: bubble-rise 15s infinite linear;
+        }
+        @keyframes bubble-rise {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+        .tech-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 1px solid #dc2626;
+            transition: all 0.3s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(220,38,38,0.3);
+            border-color: #ef4444;
+        }
+        .project-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(220,38,38,0.4);
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #dc2626;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .hero-text {
+            background: linear-gradient(45deg, #ffffff, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #25d366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .bubble {
+                display: none;
+            }
+            .tech-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .project-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-sans overflow-x-hidden">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/33648456937" target="_blank" class="whatsapp-float" title="Contactez-moi sur WhatsApp">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 z-0 pointer-events-none hidden md:block">
+        <div class="bubble w-16 h-16" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="bubble w-24 h-24" style="left: 20%; animation-delay: 3s;"></div>
+        <div class="bubble w-12 h-12" style="left: 30%; animation-delay: 6s;"></div>
+        <div class="bubble w-20 h-20" style="left: 40%; animation-delay: 9s;"></div>
+        <div class="bubble w-16 h-16" style="left: 60%; animation-delay: 12s;"></div>
+        <div class="bubble w-28 h-28" style="left: 70%; animation-delay: 15s;"></div>
+        <div class="bubble w-14 h-14" style="left: 80%; animation-delay: 18s;"></div>
+        <div class="bubble w-18 h-18" style="left: 90%; animation-delay: 21s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-code text-white text-sm sm:text-lg"></i>
+                    </div>
+                    <span class="text-xl sm:text-2xl font-bold text-white">SiteOnWeb</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#accueil" class="nav-link text-white hover:text-primary-red">Accueil</a></li>
+                    <li><a href="#competences" class="nav-link text-white hover:text-primary-red">Compétences</a></li>
+                    <li><a href="#realisations" class="nav-link text-white hover:text-primary-red">Réalisations</a></li>
+                    <li><a href="#contact" class="nav-link text-white hover:text-primary-red">Contact</a></li>
+                    <li><a href="#devis" class="bg-primary-red px-4 py-2 rounded-lg hover:bg-red-700 transition">Devis</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white z-50 relative" onclick="toggleMobileMenu()">
+                    <i id="menuIcon" class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-black/95 backdrop-blur-md md:hidden">
+            <div class="pt-20 px-6">
+                <ul class="space-y-6">
+                    <li><a href="#accueil" class="block text-white hover:text-primary-red text-lg" onclick="closeMobileMenu()">Accueil</a></li>
+                    <li><a href="#competences" class="block text-white hover:text-primary-red text-lg" onclick="closeMobileMenu()">Compétences</a></li>
+                    <li><a href="#realisations" class="block text-white hover:text-primary-red text-lg" onclick="closeMobileMenu()">Réalisations</a></li>
+                    <li><a href="#contact" class="block text-white hover:text-primary-red text-lg" onclick="closeMobileMenu()">Contact</a></li>
+                    <li><a href="#devis" class="block bg-primary-red px-4 py-3 rounded-lg hover:bg-red-700 transition text-center" onclick="closeMobileMenu()">Devis</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center relative z-10 px-4">
+        <div class="container mx-auto text-center">
+            <div class="animate-slide-up">
+                <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 hero-text leading-tight">
+                    Développeur Web
+                </h1>
+                <h2 class="text-xl sm:text-3xl md:text-4xl font-light mb-6 sm:mb-8 text-gray-300">
+                    Fullstack Professionnel
+                </h2>
+                <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
+                    Spécialisé dans la création de sites web performants et modernes. 
+                    WordPress, React, Node.js, CMS personnalisés. Plus de 10 réalisations 
+                    avec respect strict des deadlines.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center px-4">
+                    <a href="#realisations" class="bg-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-red-700 transition transform hover:scale-105">
+                        Voir mes réalisations
+                    </a>
+                    <a href="#contact" class="border-2 border-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-primary-red transition">
+                        Me contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="py-12 sm:py-20 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
+                Mes <span class="text-primary-red">Compétences</span>
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+                <div class="tech-card p-4 sm:p-6 rounded-xl text-center animate-float">
+                    <i class="fab fa-wordpress text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-sm sm:text-lg">WordPress</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">CMS Expert</p>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-xl text-center animate-float" style="animation-delay: 0.2s;">
+                    <i class="fab fa-react text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-sm sm:text-lg">React.js</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">Frontend</p>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-xl text-center animate-float" style="animation-delay: 0.4s;">
+                    <i class="fab fa-node-js text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-sm sm:text-lg">Node.js</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">Backend</p>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-xl text-center animate-float" style="animation-delay: 0.6s;">
+                    <i class="fab fa-html5 text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-sm sm:text-lg">HTML5</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">Structure</p>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-xl text-center animate-float" style="animation-delay: 0.8s;">
+                    <i class="fab fa-css3-alt text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-sm sm:text-lg">CSS3</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">Style</p>
+                </div>
+                <div class="tech-card p-4 sm:p-6 rounded-xl text-center animate-float" style="animation-delay: 1s;">
+                    <i class="fab fa-js-square text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4"></i>
+                    <h3 class="font-bold text-sm sm:text-lg">JavaScript</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">Interactivité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réalisations Section -->
+    <section id="realisations" class="py-12 sm:py-20 bg-gradient-to-b from-transparent to-black/50 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
+                Mes <span class="text-primary-red">Réalisations</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                <!-- Gold Assurance -->
+                <div class="project-card rounded-xl overflow-hidden cursor-pointer" onclick="openProjectModal('gold')">
+                    <div class="relative">
+                        <img src="https://picsum.photos/400/250?random=101" alt="Gold Assurance - Application React Node.js" class="w-full h-48 sm:h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Gold Assurance</h3>
+                            <p class="text-gray-300 mb-3 text-sm sm:text-base">Application web React + Node.js avec dashboard client et gestion des assurances</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">React</span>
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Node.js</span>
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nathalie Allemand -->
+                <div class="project-card rounded-xl overflow-hidden cursor-pointer" onclick="openProjectModal('nathalie')">
+                    <div class="relative">
+                        <img src="https://picsum.photos/400/250?random=102" alt="Nathalie Allemand - Site WordPress Naturopathe" class="w-full h-48 sm:h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">Nathalie Allemand</h3>
+                            <p class="text-gray-300 mb-3 text-sm sm:text-base">Site vitrine WordPress pour naturopathe avec blog santé et prise de rendez-vous</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">WordPress</span>
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Blog</span>
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Santé</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JF Donny -->
+                <div class="project-card rounded-xl overflow-hidden cursor-pointer" onclick="openProjectModal('donny')">
+                    <div class="relative">
+                        <img src="https://picsum.photos/400/250?random=103" alt="JF Donny - Site CMS Ionos E-commerce" class="w-full h-48 sm:h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-lg sm:text-2xl font-bold text-white mb-2">JF Donny Écrivain</h3>
+                            <p class="text-gray-300 mb-3 text-sm sm:text-base">Site e-commerce CMS Ionos pour écrivain avec boutique de livres intégrée</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">CMS Ionos</span>
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">E-commerce</span>
+                                <span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">Littérature</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
+                <div class="bg-card-bg p-4 sm:p-6 rounded-xl border border-primary-red/30">
+                    <div class="text-2xl sm:text-3xl font-bold text-primary-red mb-2">10+</div>
+                    <div class="text-gray-400 text-sm sm:text-base">Projets réalisés</div>
+                </div>
+                <div class="bg-card-bg p-4 sm:p-6 rounded-xl border border-primary-red/30">
+                    <div class="text-2xl sm:text-3xl font-bold text-primary-red mb-2">100%</div>
+                    <div class="text-gray-400 text-sm sm:text-base">Respect deadlines</div>
+                </div>
+                <div class="bg-card-bg p-4 sm:p-6 rounded-xl border border-primary-red/30">
+                    <div class="text-2xl sm:text-3xl font-bold text-primary-red mb-2">3</div>
+                    <div class="text-gray-400 text-sm sm:text-base">Technologies maîtrisées</div>
+                </div>
+                <div class="bg-card-bg p-4 sm:p-6 rounded-xl border border-primary-red/30">
+                    <div class="text-2xl sm:text-3xl font-bold text-primary-red mb-2">24h</div>
+                    <div class="text-gray-400 text-sm sm:text-base">Support client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 sm:py-20 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
+                Me <span class="text-primary-red">Contacter</span>
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Informations de contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-primary-red text-lg sm:text-xl"></i>
+                            <span class="text-sm sm:text-base break-all">gabain.potelet-berry@protonmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-phone text-primary-red text-lg sm:text-xl"></i>
+                            <span class="text-sm sm:text-base">06 48 45 69 37</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fab fa-whatsapp text-primary-red text-lg sm:text-xl"></i>
+                            <a href="https://wa.me/33648456937" target="_blank" class="text-sm sm:text-base hover:text-primary-red transition">
+                                WhatsApp: 06 48 45 69 37
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-map-marker-alt text-primary-red text-lg sm:text-xl"></i>
+                            <span class="text-sm sm:text-base">France</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="space-y-4 sm:space-y-6" onsubmit="sendContact(event)">
+                    <div>
+                        <input type="text" name="nom" placeholder="Votre nom" required class="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Votre email" required class="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base">
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Votre message" rows="5" required class="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none resize-none text-sm sm:text-base"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary-red py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-700 transition text-sm sm:text-base">
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Devis Section -->
+    <section id="devis" class="py-12 sm:py-20 bg-gradient-to-b from-black/50 to-transparent relative z-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
+                Demander un <span class="text-primary-red">Devis</span>
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-4 sm:space-y-6" onsubmit="sendQuote(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                        <input type="text" name="nom" placeholder="Nom" required class="p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base">
+                        <input type="email" name="email" placeholder="Email" required class="p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                        <input type="tel" name="telephone" placeholder="Téléphone" class="p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base">
+                        <select name="type" required class="p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base">
+                            <option value="">Type de projet</option>
+                            <option value="wordpress">Site WordPress</option>
+                            <option value="react">Application React</option>
+                            <option value="ecommerce">Site E-commerce</option>
+                            <option value="cms">CMS personnalisé</option>
+                        </select>
+                    </div>
+                    <textarea name="description" placeholder="Description détaillée de votre projet" rows="6" required class="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none resize-none text-sm sm:text-base"></textarea>
+                    <button type="submit" class="w-full bg-primary-red py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-700 transition text-sm sm:text-base">
+                        Demander un devis gratuit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-primary-red/30 py-8 sm:py-12 relative z-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-code text-white text-sm sm:text-lg"></i>
+                        </div>
+                        <span class="text-xl sm:text-2xl font-bold">SiteOnWeb</span>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base">Développeur web professionnel spécialisé dans les solutions modernes et performantes.</p>
+                </div>
+                <div>
+                    <h4 class="text-base sm:text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm sm:text-base">
+                        <li>Développement WordPress</li>
+                        <li>Applications React</li>
+                        <li>Backend Node.js</li>
+                        <li>Sites E-commerce</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-base sm:text-lg font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400 mb-2 text-sm sm:text-base break-all">gabain.potelet-berry@protonmail.com</p>
+                    <p class="text-gray-400 mb-4 text-sm sm:text-base">06 48 45 69 37</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/gabain-potelet-berry-162aa7257/" target="_blank" class="text-gray-400 hover:text-primary-red transition" title="LinkedIn">
+                            <i class="fab fa-linkedin text-lg sm:text-xl"></i>
+                        </a>
+                        <a href="https://github.com/Niabag" target="_blank" class="text-gray-400 hover:text-primary-red transition" title="GitHub">
+                            <i class="fab fa-github text-lg sm:text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/33648456937" target="_blank" class="text-gray-400 hover:text-primary-red transition" title="WhatsApp">
+                            <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
+                <p>&copy; 2024 SiteOnWeb. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal pour les projets -->
+    <div id="projectModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-4 sm:p-8">
+                    <div class="flex justify-between items-center mb-4 sm:mb-6">
+                        <h3 id="modalTitle" class="text-xl sm:text-3xl font-bold text-white"></h3>
+                        <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white text-xl sm:text-2xl">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Données des projets
+        const projects = {
+            gold: {
+                title: "Gold Assurance",
+                url: "https://www.goldassurance.fr/home",
+                image: "https://picsum.photos/800/400?random=201",
+                technologies: ["React.js", "Node.js", "Express", "MongoDB", "JWT"],
+                description: "Application web complète pour une compagnie d'assurance avec dashboard client personnalisé.",
+                features: [
+                    "Dashboard client sécurisé avec authentification JWT",
+                    "Gestion complète des polices d'assurance",
+                    "Système de notifications en temps réel",
+                    "Interface responsive et moderne",
+                    "API REST robuste avec Node.js",
+                    "Base de données optimisée",
+                    "Formulaires de contact sécurisés",
+                    "Espace administrateur pour la gestion"
+                ],
+                challenges: "Développement d'une architecture scalable avec gestion des sessions utilisateurs et sécurisation des données sensibles.",
+                duration: "3 mois",
+                client: "Gold Assurance"
+            },
+            nathalie: {
+                title: "Nathalie Allemand - Naturopathe",
+                url: "https://www.nathalieallemand-naturopathe.fr/",
+                image: "https://picsum.photos/800/400?random=202",
+                technologies: ["WordPress", "PHP", "MySQL", "CSS3", "JavaScript"],
+                description: "Site vitrine professionnel pour une naturopathe avec système de prise de rendez-vous.",
+                features: [
+                    "Design épuré et professionnel",
+                    "Blog santé et bien-être intégré",
+                    "Système de prise de rendez-vous",
+                    "Présentation des services et tarifs",
+                    "Galerie de témoignages clients",
+                    "Optimisation SEO avancée",
+                    "Responsive design mobile-first",
+                    "Formulaires de contact sécurisés"
+                ],
+                challenges: "Création d'une identité visuelle apaisante tout en optimisant le référencement naturel pour les mots-clés du secteur.",
+                duration: "1 mois",
+                client: "Nathalie Allemand"
+            },
+            donny: {
+                title: "JF Donny - Écrivain",
+                url: "https://jfdonny-ecrivain.fr/",
+                image: "https://picsum.photos/800/400?random=203",
+                technologies: ["CMS Ionos", "E-commerce", "PayPal", "CSS3", "JavaScript"],
+                description: "Site e-commerce pour écrivain avec boutique intégrée et présentation des œuvres.",
+                features: [
+                    "Boutique e-commerce intégrée",
+                    "Présentation détaillée des livres",
+                    "Système de paiement sécurisé",
+                    "Blog littéraire et actualités",
+                    "Espace auteur avec biographie",
+                    "Gestion des commandes automatisée",
+                    "Newsletter pour les lecteurs",
+                    "Optimisation pour les moteurs de recherche"
+                ],
+                challenges: "Intégration d'une solution e-commerce complète sur CMS Ionos avec personnalisation avancée de l'interface.",
+                duration: "2 mois",
+                client: "JF Donny"
+            }
+        };
+
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            
+            menu.classList.toggle('active');
+            
+            if (menu.classList.contains('active')) {
+                icon.className = 'fas fa-times text-xl';
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.className = 'fas fa-bars text-xl';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            
+            menu.classList.remove('active');
+            icon.className = 'fas fa-bars text-xl';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fonctions pour les modals
+        function openProjectModal(projectKey) {
+            const project = projects[projectKey];
+            const modal = document.getElementById('projectModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+
+            title.textContent = project.title;
+            content.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                    <div>
+                        <img src="${project.image}" alt="${project.title}" class="w-full rounded-lg mb-4 sm:mb-6">
+                        <div class="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                            ${project.technologies.map(tech => `<span class="bg-primary-red px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">Description</h4>
+                        <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">${project.description}</p>
+                        
+                        <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">Fonctionnalités</h4>
+                        <ul class="space-y-2 mb-4 sm:mb-6">
+                            ${project.features.map(feature => `<li class="text-gray-300 text-sm sm:text-base"><i class="fas fa-check text-primary-red mr-2"></i>${feature}</li>`).join('')}
+                        </ul>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-4 sm:mb-6">
+                            <div>
+                                <h5 class="font-bold text-primary-red text-sm sm:text-base">Durée</h5>
+                                <p class="text-gray-300 text-sm sm:text-base">${project.duration}</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-primary-red text-sm sm:text-base">Client</h5>
+                                <p class="text-gray-300 text-sm sm:text-base">${project.client}</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">Défis techniques</h4>
+                        <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">${project.challenges}</p>
+                        
+                        <a href="${project.url}" target="_blank" class="bg-primary-red px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-red-700 transition inline-block text-sm sm:text-base">
+                            Voir le site <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fonctions pour les formulaires
+        function sendContact(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const subject = "Nouveau message de contact - SiteOnWeb";
+            const body = `Nom: ${formData.get('nom')}\nEmail: ${formData.get('email')}\nMessage: ${formData.get('message')}`;
+            window.location.href = `mailto:gabain.potelet-berry@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function sendQuote(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const subject = "Demande de devis - SiteOnWeb";
+            const body = `Nom: ${formData.get('nom')}\nEmail: ${formData.get('email')}\nTéléphone: ${formData.get('telephone')}\nType de projet: ${formData.get('type')}\nDescription: ${formData.get('description')}`;
+            window.location.href = `mailto:gabain.potelet-berry@protonmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.tech-card, .project-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Fermer modal avec Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeProjectModal();
+                closeMobileMenu();
+            }
+        });
+
+        // Fermer modal en cliquant à l'extérieur
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectModal();
+            }
+        });
+
+        // Fermer menu mobile en cliquant à l'extérieur
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const menuButton = e.target.closest('button');
+            
+            if (!menu.contains(e.target) && !menuButton && menu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>
