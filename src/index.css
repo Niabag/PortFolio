@@ -1,0 +1,32 @@
+/* Styles globaux et animations personnalisées */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations personnalisées inspirées de la version statique */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(220,38,38,0.3), rgba(220,38,38,0.1));
+  animation: bubble-rise 15s infinite linear;
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 1; }
+}
