@@ -30,3 +30,10 @@
   0% { transform: translateY(100vh) scale(0); opacity: 0; }
   100% { transform: translateY(-10vh) scale(1); opacity: 1; }
 }
+
+.hero-text {
+  background: linear-gradient(45deg, #ffffff, #dc2626);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
