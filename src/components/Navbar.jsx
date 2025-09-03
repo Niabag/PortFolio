@@ -14,7 +14,7 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-50">
+    <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-[1100]">
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
