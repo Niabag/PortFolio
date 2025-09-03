@@ -20,8 +20,8 @@ export default function Contact() {
       setResult('Adresse e-mail invalide.');
       return;
     }
-
-    formData.append('access_key', accessKey);
+"
+    formData.append('access_key', "accessKey");
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
