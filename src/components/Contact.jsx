@@ -20,7 +20,7 @@ export default function Contact() {
       setResult('Adresse e-mail invalide.');
       return;
     }
-"
+
     formData.append('access_key', "accessKey");
 
     try {
