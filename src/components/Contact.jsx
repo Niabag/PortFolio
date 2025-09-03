@@ -1,9 +1,47 @@
 import React from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
+const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
 export default function Contact() {
   const { t } = useLanguage();
   const title = t('contact.title');
+  const [result, setResult] = React.useState('');
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult('Envoi en cours...');
+
+    const formData = new FormData(event.target);
+    const email = formData.get('email');
+
+    if (!emailRegex.test(email)) {
+      setResult('Adresse e-mail invalide.');
+      return;
+    }
+
+    formData.append('access_key', accessKey);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setResult('Formulaire envoyé avec succès !');
+        event.target.reset();
+      } else {
+        console.log('Error', data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.error('Network Error', error);
+      setResult('Erreur de réseau. Veuillez réessayer plus tard.');
+    }
+  };
+
   return (
     <section id="contact" className="py-12 sm:py-20 relative z-10">
       <div className="container mx-auto px-4 sm:px-6">
@@ -38,25 +76,31 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <form className="space-y-4 sm:space-y-6">
+          <form className="space-y-4 sm:space-y-6" onSubmit={onSubmit}>
             <div>
               <input
                 type="text"
+                name="name"
                 placeholder={t('contact.namePlaceholder')}
+                required
                 className="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base"
               />
             </div>
             <div>
               <input
                 type="email"
+                name="email"
                 placeholder={t('contact.emailPlaceholder')}
+                required
                 className="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base"
               />
             </div>
             <div>
               <textarea
+                name="message"
                 placeholder={t('contact.messagePlaceholder')}
                 rows="5"
+                required
                 className="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none resize-none text-sm sm:text-base"
               ></textarea>
             </div>
@@ -67,6 +111,7 @@ export default function Contact() {
               {t('contact.send')}
             </button>
           </form>
+          <span className="block mt-4 text-center text-sm sm:text-base">{result}</span>
         </div>
       </div>
     </section>
