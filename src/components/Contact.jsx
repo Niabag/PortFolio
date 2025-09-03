@@ -1,15 +1,18 @@
 import React from 'react';
+import { useLanguage } from '../LanguageContext.jsx';
 
 export default function Contact() {
+  const { t } = useLanguage();
+  const title = t('contact.title');
   return (
     <section id="contact" className="py-12 sm:py-20 relative z-10">
       <div className="container mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
-          Me <span className="text-primary-red">Contacter</span>
+          {title.part1} <span className="text-primary-red">{title.part2}</span>
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Informations de contact</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t('contact.infoTitle')}</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <i className="fas fa-envelope text-primary-red text-lg sm:text-xl"></i>
@@ -26,12 +29,12 @@ export default function Contact() {
                   target="_blank"
                   className="text-sm sm:text-base hover:text-primary-red transition"
                 >
-                  WhatsApp: 06 48 45 69 37
+                  {t('contact.whatsapp')}
                 </a>
               </div>
               <div className="flex items-center space-x-4">
                 <i className="fas fa-map-marker-alt text-primary-red text-lg sm:text-xl"></i>
-                <span className="text-sm sm:text-base">France</span>
+                <span className="text-sm sm:text-base">{t('contact.country')}</span>
               </div>
             </div>
           </div>
@@ -39,20 +42,20 @@ export default function Contact() {
             <div>
               <input
                 type="text"
-                placeholder="Votre nom"
+                placeholder={t('contact.namePlaceholder')}
                 className="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base"
               />
             </div>
             <div>
               <input
                 type="email"
-                placeholder="Votre email"
+                placeholder={t('contact.emailPlaceholder')}
                 className="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none text-sm sm:text-base"
               />
             </div>
             <div>
               <textarea
-                placeholder="Votre message"
+                placeholder={t('contact.messagePlaceholder')}
                 rows="5"
                 className="w-full p-3 sm:p-4 bg-card-bg border border-gray-600 rounded-lg text-white focus:border-primary-red focus:outline-none resize-none text-sm sm:text-base"
               ></textarea>
@@ -61,7 +64,7 @@ export default function Contact() {
               type="submit"
               className="w-full bg-primary-red py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-700 transition text-sm sm:text-base"
             >
-              Envoyer le message
+              {t('contact.send')}
             </button>
           </form>
         </div>

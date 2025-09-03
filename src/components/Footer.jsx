@@ -1,6 +1,8 @@
 import React from 'react';
+import { useLanguage } from '../LanguageContext.jsx';
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-black border-t border-primary-red/30 py-8 sm:py-12 relative z-10">
       <div className="container mx-auto px-4 sm:px-6">
@@ -13,20 +15,20 @@ export default function Footer() {
               <span className="text-xl sm:text-2xl font-bold">SiteOnWeb</span>
             </div>
             <p className="text-gray-400 text-sm sm:text-base">
-              Développeur web professionnel spécialisé dans les solutions modernes et performantes.
+              {t('footer.description')}
             </p>
           </div>
           <div>
-            <h4 className="text-base sm:text-lg font-bold mb-4">Services</h4>
+            <h4 className="text-base sm:text-lg font-bold mb-4">{t('footer.servicesTitle')}</h4>
             <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-              <li>Développement WordPress</li>
-              <li>Applications React</li>
-              <li>Backend Node.js</li>
-              <li>Sites E-commerce</li>
+              <li>{t('footer.serviceWordpress')}</li>
+              <li>{t('footer.serviceReact')}</li>
+              <li>{t('footer.serviceNode')}</li>
+              <li>{t('footer.serviceEcommerce')}</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-base sm:text-lg font-bold mb-4">Contact</h4>
+            <h4 className="text-base sm:text-lg font-bold mb-4">{t('footer.contactTitle')}</h4>
             <p className="text-gray-400 mb-2 text-sm sm:text-base break-all">gabain.potelet-berry@protonmail.com</p>
             <p className="text-gray-400 mb-4 text-sm sm:text-base">06 48 45 69 37</p>
             <div className="flex space-x-4">
@@ -58,7 +60,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
-          <p>&copy; {new Date().getFullYear()} SiteOnWeb. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} SiteOnWeb. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>
