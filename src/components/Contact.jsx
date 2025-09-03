@@ -21,7 +21,7 @@ export default function Contact() {
       return;
     }
 
-    formData.append('access_key', "accessKey");
+    formData.append('access_key', accessKey);
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
