@@ -17,12 +17,12 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-[1100]">
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-3">
+        <a href="#accueil" className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
             <i className="fas fa-code text-white text-sm sm:text-lg"></i>
           </div>
           <span className="text-xl sm:text-2xl font-bold text-white">SiteOnWeb</span>
-        </div>
+        </a>
 
         <ul className="hidden md:flex space-x-8">
           {links.map((link) => (
