@@ -6,6 +6,7 @@ export const projects = [
       en: 'React + Node.js web application with client dashboard and insurance management'
     },
     image: 'https://picsum.photos/400/250?random=101',
+    url: '/Site%20a%20reproduire.html',
     tags: {
       fr: ['React', 'Node.js', 'Dashboard'],
       en: ['React', 'Node.js', 'Dashboard']
@@ -18,6 +19,7 @@ export const projects = [
       en: 'WordPress showcase site for a naturopath with health blog and appointment booking'
     },
     image: 'https://picsum.photos/400/250?random=102',
+    url: '/Site%20a%20reproduire.html',
     tags: {
       fr: ['WordPress', 'Blog', 'Santé'],
       en: ['WordPress', 'Blog', 'Health']
@@ -30,6 +32,7 @@ export const projects = [
       en: 'Ionos CMS e-commerce site for a writer with integrated book store'
     },
     image: 'https://picsum.photos/400/250?random=103',
+    url: '/Site%20a%20reproduire.html',
     tags: {
       fr: ['CMS Ionos', 'E-commerce', 'Littérature'],
       en: ['Ionos CMS', 'E-commerce', 'Literature']
