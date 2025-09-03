@@ -13,7 +13,7 @@ export default function AnimatedBackground() {
   ];
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none hidden md:block">
+    <div className="fixed inset-0 z-0 pointer-events-none">
       {bubbles.map((b, i) => (
         <div
           key={i}
