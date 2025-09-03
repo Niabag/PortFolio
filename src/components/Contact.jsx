@@ -7,22 +7,35 @@ export default function Contact() {
   const { t } = useLanguage();
   const title = t('contact.title');
   const [result, setResult] = React.useState('');
-  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult('Envoi en cours...');
+// Petit log de debug (masqué), à supprimer après test
+if (!accessKey) {
+  console.warn("VITE_WEB3FORMS_ACCESS_KEY manquante au build.");
+} else {
+  console.debug("Clé Web3Forms présente:", accessKey.slice(0, 8) + "•••");
+}
 
-    const formData = new FormData(event.target);
-    const email = formData.get('email');
+const onSubmit = async (event) => {
+  event.preventDefault();
+  setResult('Envoi en cours...');
 
-    if (!emailRegex.test(email)) {
-      setResult('Adresse e-mail invalide.');
-      return;
-    }
+  if (!accessKey) {
+    setResult('Clé Web3Forms absente. Définis VITE_WEB3FORMS_ACCESS_KEY dans .env/hébergeur puis rebuild.');
+    return;
+  }
 
-    formData.append('access_key', accessKey);
+  // (Optionnel) Valider le format UUID v4
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  if (!uuidRegex.test(accessKey)) {
+    setResult('Clé Web3Forms invalide (doit être un UUID).');
+    return;
+  }
 
+  const formData = new FormData(event.target);
+  // ... vérif email comme tu fais déjà
+  formData.append('access_key', accessKey);
+  
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
