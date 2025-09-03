@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-
-const links = [
-  { href: '#accueil', label: 'Accueil' },
-  { href: '#competences', label: 'Compétences' },
-  { href: '#realisations', label: 'Réalisations' },
-  { href: '#contact', label: 'Contact' },
-  { href: '#devis', label: 'Devis', button: true }
-];
+import { useLanguage } from '../LanguageContext.jsx';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t, lang, setLang } = useLanguage();
+  const links = [
+    { href: '#accueil', label: t('nav.home') },
+    { href: '#competences', label: t('nav.skills') },
+    { href: '#realisations', label: t('nav.projects') },
+    { href: '#contact', label: t('nav.contact') },
+    { href: '#devis', label: t('nav.quote'), button: true }
+  ];
   const toggle = () => setOpen(!open);
   const close = () => setOpen(false);
 
@@ -45,15 +46,38 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <button className="md:hidden text-white z-50" onClick={toggle}>
-          <i className={`fas ${open ? 'fa-times' : 'fa-bars'} text-xl`}></i>
-        </button>
+        <div className="flex items-center space-x-4">
+          <select
+            value={lang}
+            onChange={(e) => setLang(e.target.value)}
+            className="bg-black text-white border border-primary-red rounded px-2 py-1"
+          >
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+          </select>
+          <button className="md:hidden text-white z-50" onClick={toggle}>
+            <i className={`fas ${open ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+          </button>
+        </div>
       </div>
 
       <div
         className={`fixed top-0 left-0 h-screen w-screen bg-black transform transition-transform duration-300 md:hidden ${open ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="pt-20 px-6">
+          <div className="mb-6">
+            <select
+              value={lang}
+              onChange={(e) => {
+                setLang(e.target.value);
+                close();
+              }}
+              className="w-full bg-black text-white border border-primary-red rounded px-2 py-1"
+            >
+              <option value="fr">FR</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
           <ul className="space-y-6">
             {links.map((link) => (
               <li key={link.href}>

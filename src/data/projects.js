@@ -1,23 +1,39 @@
 export const projects = [
   {
     name: 'Gold Assurance',
-    description:
-      'Application web React + Node.js avec dashboard client et gestion des assurances',
+    description: {
+      fr: 'Application web React + Node.js avec dashboard client et gestion des assurances',
+      en: 'React + Node.js web application with client dashboard and insurance management'
+    },
     image: 'https://picsum.photos/400/250?random=101',
-    tags: ['React', 'Node.js', 'Dashboard']
+    tags: {
+      fr: ['React', 'Node.js', 'Dashboard'],
+      en: ['React', 'Node.js', 'Dashboard']
+    }
   },
   {
     name: 'Nathalie Allemand',
-    description:
-      'Site vitrine WordPress pour naturopathe avec blog santé et prise de rendez-vous',
+    description: {
+      fr: 'Site vitrine WordPress pour naturopathe avec blog santé et prise de rendez-vous',
+      en: 'WordPress showcase site for a naturopath with health blog and appointment booking'
+    },
     image: 'https://picsum.photos/400/250?random=102',
-    tags: ['WordPress', 'Blog', 'Santé']
+    tags: {
+      fr: ['WordPress', 'Blog', 'Santé'],
+      en: ['WordPress', 'Blog', 'Health']
+    }
   },
   {
     name: 'JF Donny Écrivain',
-    description:
-      "Site e-commerce CMS Ionos pour écrivain avec boutique de livres intégrée",
+    description: {
+      fr: 'Site e-commerce CMS Ionos pour écrivain avec boutique de livres intégrée',
+      en: 'Ionos CMS e-commerce site for a writer with integrated book store'
+    },
     image: 'https://picsum.photos/400/250?random=103',
-    tags: ['CMS Ionos', 'E-commerce', 'Littérature']
+    tags: {
+      fr: ['CMS Ionos', 'E-commerce', 'Littérature'],
+      en: ['Ionos CMS', 'E-commerce', 'Literature']
+    }
   }
 ];
+
