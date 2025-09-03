@@ -30,3 +30,50 @@
   0% { transform: translateY(100vh) scale(0); opacity: 0; }
   100% { transform: translateY(-10vh) scale(1); opacity: 1; }
 }
+
+/* Styles spécifiques inspirés de la maquette statique */
+.hero-text {
+  background: linear-gradient(45deg, #ffffff, #dc2626);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #dc2626;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.tech-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #dc2626;
+  transition: all 0.3s ease;
+}
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(220,38,38,0.3);
+  border-color: #ef4444;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(220,38,38,0.4);
+}
