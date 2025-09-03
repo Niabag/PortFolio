@@ -1,15 +1,24 @@
 // Composant principal de l'application
-// Nous utilisons une iframe pour conserver le site existant tel quel
+// Affiche les différentes sections du portfolio
 import React from 'react';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import About from './components/About.jsx';
+import Projects from './components/Projects.jsx';
+import Experience from './components/Experience.jsx';
+import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
 
 export default function App() {
   return (
-    <div className="w-full h-screen">
-      <iframe
-        src="/portfolio-professionnel-complet.html"
-        title="Portfolio professionnel"
-        className="w-full h-full border-0"
-      />
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Experience />
+      <Contact />
+      <Footer />
+    </>
   );
 }
