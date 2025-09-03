@@ -138,6 +138,12 @@ export default function Projects() {
                 >
                   Voir le site <i className="fas fa-external-link-alt ml-2"></i>
                 </a>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="mt-4 w-full sm:hidden bg-gray-700 px-4 py-2 rounded-lg text-white hover:bg-gray-600 transition text-sm"
+                >
+                  {t('projects.close')}
+                </button>
               </div>
             </div>
           </div>

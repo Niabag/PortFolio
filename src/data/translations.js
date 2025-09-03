@@ -27,7 +27,7 @@ export const translations = {
         { icon: 'fa-js-square', title: 'JavaScript', text: 'Interactivité', delay: '1s' }
       ]
     },
-    projects: { title: { part1: 'Mes', part2: 'Réalisations' } },
+    projects: { title: { part1: 'Mes', part2: 'Réalisations' }, close: 'Fermer' },
     contact: {
       title: { part1: 'Me', part2: 'Contacter' },
       infoTitle: 'Informations de contact',
@@ -78,7 +78,7 @@ export const translations = {
         { icon: 'fa-js-square', title: 'JavaScript', text: 'Interactivity', delay: '1s' }
       ]
     },
-    projects: { title: { part1: 'My', part2: 'Projects' } },
+    projects: { title: { part1: 'My', part2: 'Projects' }, close: 'Close' },
     contact: {
       title: { part1: 'Contact', part2: 'Me' },
       infoTitle: 'Contact Information',
