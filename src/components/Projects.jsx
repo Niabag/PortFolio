@@ -13,7 +13,13 @@ export default function Projects() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {projects.map((project) => (
-            <div key={project.name} className="project-card rounded-xl overflow-hidden">
+            <a
+              key={project.name}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block project-card rounded-xl overflow-hidden"
+            >
               <div className="relative">
                 <img
                   src={project.image}
@@ -36,7 +42,7 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
