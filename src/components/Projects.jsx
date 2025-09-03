@@ -12,7 +12,7 @@ export default function Projects() {
   }, [selectedProject]);
 
   return (
-    <section id="realisations" className="py-12 sm:py-20 bg-gradient-to-b from-transparent to-black/50 relative z-10">
+    <section id="realisations" className="py-12 sm:py-20 bg-gradient-to-b from-transparent to-black/50 relative z-20">
       <div className="container mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
           {title.part1} <span className="text-primary-red">{title.part2}</span>
