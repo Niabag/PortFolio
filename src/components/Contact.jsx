@@ -35,7 +35,7 @@ const onSubmit = async (event) => {
   const formData = new FormData(event.target);
   // ... vérif email comme tu fais déjà
   formData.append('access_key', accessKey);
-  
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
