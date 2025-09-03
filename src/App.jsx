@@ -7,10 +7,12 @@ import Competences from './components/Competences.jsx';
 import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import AnimatedBackground from './components/AnimatedBackground.jsx';
 
 export default function App() {
   return (
     <>
+      <AnimatedBackground />
       <Navbar />
       <Hero />
       <Competences />
