@@ -5,12 +5,11 @@ export const projects = [
       fr: 'Application web React + Node.js avec dashboard client et gestion des assurances',
       en: 'React + Node.js web application with client dashboard and insurance management'
     },
-    image: 'https://postimg.cc/TKycgh5P',
     imageAlt: {
       fr: "Capture d'écran du tableau de bord de Gold Assurance",
       en: 'Screenshot of the Gold Assurance dashboard'
     },
-    image: '/images/gold-assurance.png',
+    image: 'images/gold-assurance.png',
     tags: {
       fr: ['React', 'Node.js', 'Dashboard'],
       en: ['React', 'Node.js', 'Dashboard']
@@ -51,7 +50,7 @@ export const projects = [
       fr: 'Site vitrine WordPress pour naturopathe avec blog santé et prise de rendez-vous',
       en: 'WordPress showcase site for a naturopath with health blog and appointment booking'
     },
-    image: '/images/nathalie-allemand.png',
+    image: 'images/nathalie-allemand.png',
     imageAlt: {
       fr: "Page d'accueil du site de Nathalie Allemand",
       en: "Home page of Nathalie Allemand's website"
@@ -97,7 +96,7 @@ export const projects = [
       fr: 'Site e-commerce CMS Ionos pour écrivain avec boutique de livres intégrée',
       en: 'Ionos CMS e-commerce site for a writer with integrated book store'
     },
-    image: '/images/jf-donny.png',
+    image: 'images/jf-donny.png',
     imageAlt: {
       fr: 'Boutique en ligne de JF Donny Écrivain',
       en: 'Online store of author JF Donny'
