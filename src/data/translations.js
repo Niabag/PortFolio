@@ -19,12 +19,13 @@ export const translations = {
     skills: {
       title: { part1: 'Mes', part2: 'Compétences' },
       list: [
-        { icon: 'fa-wordpress', title: 'WordPress', text: 'CMS Expert', delay: '' },
-        { icon: 'fa-react', title: 'React.js', text: 'Frontend', delay: '0.2s' },
-        { icon: 'fa-node-js', title: 'Node.js', text: 'Backend', delay: '0.4s' },
-        { icon: 'fa-html5', title: 'HTML5', text: 'Structure', delay: '0.6s' },
-        { icon: 'fa-css3-alt', title: 'CSS3', text: 'Style', delay: '0.8s' },
-        { icon: 'fa-js-square', title: 'JavaScript', text: 'Interactivité', delay: '1s' }
+        { icon: 'fab fa-wordpress', title: 'WordPress', text: 'CMS Expert', delay: '' },
+        { icon: 'fab fa-react', title: 'React.js', text: 'Frontend', delay: '0.2s' },
+        { icon: 'fab fa-node-js', title: 'Node.js', text: 'Backend', delay: '0.4s' },
+        { icon: 'fab fa-html5', title: 'HTML5', text: 'Structure', delay: '0.6s' },
+        { icon: 'fab fa-css3-alt', title: 'CSS3', text: 'Style', delay: '0.8s' },
+        { icon: 'fab fa-js-square', title: 'JavaScript', text: 'Interactivité', delay: '1s' },
+        { icon: 'devicon-powershell-plain', title: 'PowerShell', text: 'Scripts', delay: '1.2s' }
       ]
     },
     projects: { title: { part1: 'Mes', part2: 'Réalisations' }, close: 'Fermer' },
@@ -70,12 +71,13 @@ export const translations = {
     skills: {
       title: { part1: 'My', part2: 'Skills' },
       list: [
-        { icon: 'fa-wordpress', title: 'WordPress', text: 'CMS Expert', delay: '' },
-        { icon: 'fa-react', title: 'React.js', text: 'Frontend', delay: '0.2s' },
-        { icon: 'fa-node-js', title: 'Node.js', text: 'Backend', delay: '0.4s' },
-        { icon: 'fa-html5', title: 'HTML5', text: 'Structure', delay: '0.6s' },
-        { icon: 'fa-css3-alt', title: 'CSS3', text: 'Style', delay: '0.8s' },
-        { icon: 'fa-js-square', title: 'JavaScript', text: 'Interactivity', delay: '1s' }
+        { icon: 'fab fa-wordpress', title: 'WordPress', text: 'CMS Expert', delay: '' },
+        { icon: 'fab fa-react', title: 'React.js', text: 'Frontend', delay: '0.2s' },
+        { icon: 'fab fa-node-js', title: 'Node.js', text: 'Backend', delay: '0.4s' },
+        { icon: 'fab fa-html5', title: 'HTML5', text: 'Structure', delay: '0.6s' },
+        { icon: 'fab fa-css3-alt', title: 'CSS3', text: 'Style', delay: '0.8s' },
+        { icon: 'fab fa-js-square', title: 'JavaScript', text: 'Interactivity', delay: '1s' },
+        { icon: 'devicon-powershell-plain', title: 'PowerShell', text: 'Scripting', delay: '1.2s' }
       ]
     },
     projects: { title: { part1: 'My', part2: 'Projects' }, close: 'Close' },

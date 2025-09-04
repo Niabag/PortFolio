@@ -18,7 +18,7 @@ export default function Competences() {
               className="tech-card p-4 sm:p-6 rounded-xl text-center animate-float"
               style={{ animationDelay: skill.delay }}
             >
-              <i className={`fab ${skill.icon} text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4`}></i>
+              <i className={`${skill.icon} text-2xl sm:text-4xl text-primary-red mb-2 sm:mb-4`}></i>
               <h3 className="font-bold text-sm sm:text-lg">{skill.title}</h3>
               <p className="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">{skill.text}</p>
             </div>
