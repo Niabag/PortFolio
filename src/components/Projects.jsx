@@ -28,7 +28,10 @@ export default function Projects() {
                 <img
                   src={project.image}
                   alt={project.name}
-                  loading="eager"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="250"
                   className="w-full h-48 sm:h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -77,7 +80,10 @@ export default function Projects() {
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.name}
-                  loading="eager"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="250"
                   className="w-full rounded-lg mb-4 sm:mb-6"
                 />
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
