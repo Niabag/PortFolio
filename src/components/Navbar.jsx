@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <a href="#accueil" className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
-            <i className="fas fa-code text-white text-sm sm:text-lg"></i>
+            <span className="text-white text-sm sm:text-lg">&lt;/&gt;</span>
           </div>
           <span className="text-xl sm:text-2xl font-bold text-white">SiteOnWeb</span>
         </a>
@@ -56,7 +56,7 @@ export default function Navbar() {
             <option value="en">EN</option>
           </select>
           <button className="md:hidden text-white z-50" onClick={toggle}>
-            <i className={`fas ${open ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+            <span className="text-xl">{open ? '✖' : '☰'}</span>
           </button>
         </div>
       </div>
