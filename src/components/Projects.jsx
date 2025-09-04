@@ -27,8 +27,8 @@ export default function Projects() {
               <div className="relative">
                 <img
                   src={project.image}
-                  alt={project.name}
-                  loading="eager"
+                  alt={project.imageAlt[lang] || project.name}
+                  loading="lazy"
                   className="w-full h-48 sm:h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -76,8 +76,8 @@ export default function Projects() {
               <div>
                 <img
                   src={selectedProject.image}
-                  alt={selectedProject.name}
-                  loading="eager"
+                  alt={selectedProject.imageAlt[lang] || selectedProject.name}
+                  loading="lazy"
                   className="w-full rounded-lg mb-4 sm:mb-6"
                 />
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
