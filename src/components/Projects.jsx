@@ -60,14 +60,12 @@ export default function Projects() {
           onClick={() => setSelectedProject(null)}
         >
           <div
-
-            className="bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-4 pt-40 pb-40 sm:p-8"
-
+            className="relative bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-4 pt-40 pb-40 sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl sm:text-3xl"
+              className="absolute top-4 right-4 text-primary-red hover:text-white text-2xl sm:text-3xl"
               aria-label={t('projects.close')}
             >
               ×
