@@ -60,7 +60,7 @@ export default function Projects() {
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-4 sm:p-8"
+            className="bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-10 sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4 sm:mb-6">
