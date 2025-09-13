@@ -52,8 +52,8 @@ export default function Navbar() {
             onChange={(e) => setLang(e.target.value)}
             className="bg-black text-white border border-primary-red rounded px-2 py-1"
           >
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
+            <option value="fr">Français</option>
+            <option value="en">English</option>
           </select>
           <button className="md:hidden text-white z-50" onClick={toggle}>
             <span className="text-xl">{open ? '✖' : '☰'}</span>
@@ -74,8 +74,8 @@ export default function Navbar() {
               }}
               className="w-full bg-black text-white border border-primary-red rounded px-2 py-1"
             >
-              <option value="fr">FR</option>
-              <option value="en">EN</option>
+              <option value="fr">Français</option>
+              <option value="en">English</option>
             </select>
           </div>
           <ul className="space-y-6">
