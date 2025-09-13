@@ -65,10 +65,10 @@ export default function Projects() {
           >
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl sm:text-2xl"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl sm:text-3xl"
               aria-label={t('projects.close')}
             >
-              <i className="fas fa-times"></i>
+              ×
             </button>
             <div className="mb-4 sm:mb-6">
               <h3 className="text-xl sm:text-3xl font-bold text-white">
