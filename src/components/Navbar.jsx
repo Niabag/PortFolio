@@ -9,7 +9,7 @@ export default function Navbar() {
     { href: '#competences', label: t('nav.skills') },
     { href: '#realisations', label: t('nav.projects') },
     { href: '#contact', label: t('nav.contact') },
-    { href: '#devis', label: t('nav.quote'), button: true }
+    { href: '#contact', label: t('nav.quote'), button: true }
   ];
   const toggle = () => setOpen(!open);
   const close = () => setOpen(false);

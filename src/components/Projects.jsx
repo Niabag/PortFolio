@@ -60,19 +60,22 @@ export default function Projects() {
           onClick={() => setSelectedProject(null)}
         >
           <div
+
             className="bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-10 sm:p-8"
+
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center mb-4 sm:mb-6">
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl sm:text-2xl"
+              aria-label={t('projects.close')}
+            >
+              <i className="fas fa-times"></i>
+            </button>
+            <div className="mb-4 sm:mb-6">
               <h3 className="text-xl sm:text-3xl font-bold text-white">
                 {selectedProject.name}
               </h3>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="text-gray-400 hover:text-white text-xl sm:text-2xl"
-              >
-                <i className="fas fa-times"></i>
-              </button>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               <div>
