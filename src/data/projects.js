@@ -10,6 +10,7 @@ export const projects = [
       en: 'Screenshot of the Gold Assurance dashboard'
     },
     image: 'images/gold-assurance.png',
+    url: 'https://www.goldassurance.fr/home',
     tags: {
       fr: ['React', 'Node.js', 'Dashboard'],
       en: ['React', 'Node.js', 'Dashboard']
