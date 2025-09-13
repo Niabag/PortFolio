@@ -61,7 +61,7 @@ export default function Projects() {
         >
           <div
 
-            className="bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-20 sm:p-8"
+            className="bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-4 pt-20 pb-20 sm:p-8"
 
             onClick={(e) => e.stopPropagation()}
           >
