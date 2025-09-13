@@ -118,6 +118,13 @@
   }
 }
 
+.typing {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+
 .typing::after {
   content: '|';
   animation: blink 1s step-start infinite;

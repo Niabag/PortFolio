@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 
-export default function TypingText({ text, speed = 100, pause = 5000, className = '' }) {
+export default function TypingText({ text, speed = 200, pause = 5000, className = '' }) {
+
 
   const [displayed, setDisplayed] = useState('');
   const [index, setIndex] = useState(0);
@@ -23,6 +24,5 @@ export default function TypingText({ text, speed = 100, pause = 5000, className 
   }, [index, text, speed, pause]);
 
   return <span className={`typing ${className}`.trim()}>{displayed}</span>;
-
 }
 
