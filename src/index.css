@@ -124,6 +124,7 @@
   text-align: center;
 }
 
+
 .typing::after {
   content: '|';
   animation: blink 1s step-start infinite;
