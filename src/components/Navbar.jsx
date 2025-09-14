@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
+import TypingText from './TypingText.jsx';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <a href="#accueil" className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
-            <span className="text-white text-sm sm:text-lg">&lt;/&gt;</span>
+            <TypingText text={"</>"} className="text-white text-sm sm:text-lg" />
           </div>
           <span className="text-xl sm:text-2xl font-bold text-white">SiteOnWeb</span>
         </a>
