@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
+import TypingText from './TypingText.jsx';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -8,7 +9,7 @@ export default function Hero() {
       <div className="container mx-auto text-center">
         <div className="animate-slide-up">
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 hero-text leading-tight">
-            {t('hero.title')}
+            <TypingText text={t('hero.title')} />
           </h1>
           <h2 className="text-xl sm:text-3xl md:text-4xl font-light mb-6 sm:mb-8 text-gray-300">
             {t('hero.subtitle')}
