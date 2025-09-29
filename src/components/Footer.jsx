@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
+import TypingText from './TypingText.jsx';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -10,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
-                <i className="fas fa-code text-white text-sm sm:text-lg"></i>
+                <TypingText text={"</>"} className="text-white text-sm sm:text-lg" />
               </div>
               <span className="text-xl sm:text-2xl font-bold">SiteOnWeb</span>
             </div>
