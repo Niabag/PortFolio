@@ -1,6 +1,6 @@
 export const translations = {
   fr: {
-    title: 'SiteOnWeb - Développeur Web Professionnel',
+    title: 'SiteOnWeb - Création de sites web sur-mesure pour booster votre entreprise en ligne',
     nav: {
       home: 'Accueil',
       skills: 'Compétences',
@@ -12,7 +12,7 @@ export const translations = {
       title: 'Développeur Web',
       subtitle: 'Fullstack Professionnel',
       description:
-        'Spécialisé dans la création de sites web performants et modernes. WordPress, React, Node.js, CMS personnalisés. Plus de 10 réalisations avec respect strict des deadlines.',
+        'Création de sites web sur-mesure pour booster votre entreprise en ligne. Spécialistes de la création et de la vente de sites internet professionnels, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO.',
       viewProjects: 'Voir mes réalisations',
       contactMe: 'Me contacter'
     },
