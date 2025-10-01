@@ -98,11 +98,11 @@ export default function SiteResponsive() {
                 {lang === 'fr' ? 'Plusieurs méthodes pour tester votre site :' : 'Several methods to test your site:'}
               </p>
               <ol className="list-decimal list-inside text-gray-300 mb-8 space-y-3">
-                <li><strong className="text-white">Test Google Mobile-Friendly :</strong> Outil gratuit de Google</li>
-                <li><strong className="text-white">Redimensionnement navigateur :</strong> Réduisez la fenêtre et observez l'adaptation</li>
-                <li><strong className="text-white">DevTools :</strong> F12 puis mode responsive (Ctrl+Shift+M)</li>
-                <li><strong className="text-white">Test réel :</strong> Consultez votre site sur différents appareils</li>
-                <li><strong className="text-white">PageSpeed Insights :</strong> Analyse mobile et desktop</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Test Google Mobile-Friendly :' : 'Google Mobile-Friendly Test:'}</strong> {lang === 'fr' ? 'Outil gratuit de Google' : 'Free tool from Google'}</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Redimensionnement navigateur :' : 'Browser resizing:'}</strong> {lang === 'fr' ? 'Réduisez la fenêtre et observez l\'adaptation' : 'Resize the window and observe the adaptation'}</li>
+                <li><strong className="text-white">DevTools:</strong> {lang === 'fr' ? 'F12 puis mode responsive (Ctrl+Shift+M)' : 'F12 then responsive mode (Ctrl+Shift+M)'}</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Test réel :' : 'Real test:'}</strong> {lang === 'fr' ? 'Consultez votre site sur différents appareils' : 'Check your site on different devices'}</li>
+                <li><strong className="text-white">PageSpeed Insights:</strong> {lang === 'fr' ? 'Analyse mobile et desktop' : 'Mobile and desktop analysis'}</li>
               </ol>
 
               <h2 className="text-3xl font-bold text-primary-red mb-4">
@@ -112,18 +112,20 @@ export default function SiteResponsive() {
                 {lang === 'fr' ? "Si votre site n'est pas responsive, voici vos options :" : 'If your site is not responsive, here are your options:'}
               </p>
               <ul className="list-disc list-inside text-gray-300 mb-8 space-y-2">
-                <li><strong className="text-white">Refonte complète :</strong> Solution idéale pour moderniser entièrement</li>
-                <li><strong className="text-white">Thème responsive :</strong> Pour WordPress, changez de thème</li>
-                <li><strong className="text-white">Framework CSS :</strong> Bootstrap, Tailwind pour adaptation rapide</li>
-                <li><strong className="text-white">Développement custom :</strong> Media queries CSS personnalisées</li>
-                <li><strong className="text-white">Constructeur de pages :</strong> Elementor, Divi (WordPress)</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Refonte complète :' : 'Complete redesign:'}</strong> {lang === 'fr' ? 'Solution idéale pour moderniser entièrement' : 'Ideal solution for a complete modernization'}</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Thème responsive :' : 'Responsive theme:'}</strong> {lang === 'fr' ? 'Pour WordPress, changez de thème' : 'For WordPress, change your theme'}</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Framework CSS :' : 'CSS Framework:'}</strong> {lang === 'fr' ? 'Bootstrap, Tailwind pour adaptation rapide' : 'Bootstrap, Tailwind for quick adaptation'}</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Développement custom :' : 'Custom development:'}</strong> {lang === 'fr' ? 'Media queries CSS personnalisées' : 'Custom CSS media queries'}</li>
+                <li><strong className="text-white">{lang === 'fr' ? 'Constructeur de pages :' : 'Page builders:'}</strong> {lang === 'fr' ? 'Elementor, Divi (WordPress)' : 'Elementor, Divi (WordPress)'}</li>
               </ul>
 
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                {lang === 'fr' 
-                  ? "<strong class='text-white'>Conclusion :</strong> En 2025, un site non-responsive n'est plus acceptable. Vous perdez du trafic, des conversions et de la crédibilité. C'est un investissement essentiel pour rester compétitif."
-                  : "<strong class='text-white'>Conclusion:</strong> In 2025, a non-responsive site is no longer acceptable. You lose traffic, conversions and credibility. It's an essential investment to stay competitive."}
-              </p>
+              <p className="text-gray-300 mb-8 leading-relaxed" 
+                 dangerouslySetInnerHTML={{ 
+                   __html: lang === 'fr' 
+                     ? "<strong class='text-white'>Conclusion :</strong> En 2025, un site non-responsive n'est plus acceptable. Vous perdez du trafic, des conversions et de la crédibilité. C'est un investissement essentiel pour rester compétitif."
+                     : "<strong class='text-white'>Conclusion:</strong> In 2025, a non-responsive site is no longer acceptable. You lose traffic, conversions and credibility. It's an essential investment to stay competitive."
+                 }} 
+              />
 
               <div className="bg-gradient-to-r from-primary-red/10 to-red-500/10 border border-primary-red/30 rounded-lg p-8 mt-12">
                 <h3 className="text-2xl font-bold mb-4 text-white">
