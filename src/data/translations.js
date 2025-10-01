@@ -53,6 +53,15 @@ export const translations = {
       contactTitle: 'Contact',
       rights: 'Tous droits réservés.'
     },
+    blog: {
+      title: { part1: 'Notre', part2: 'Blog' },
+      subtitle: 'Conseils, guides et actualités sur la création de sites web, le développement et le marketing digital',
+      readArticle: 'Lire l\'article',
+      backToBlog: 'Retour au blog',
+      needWebsite: 'Besoin d\'un site web professionnel ?',
+      agencySupport: 'Notre agence vous accompagne dans tous vos projets web : création, refonte, SEO et maintenance.',
+      requestQuote: 'Demander un devis gratuit'
+    },
     faq: {
       title: { part1: 'Foire aux', part2: 'Questions' },
       subtitle: 'Trouvez les réponses aux questions les plus fréquemment posées',
@@ -185,6 +194,15 @@ export const translations = {
       serviceEcommerce: 'E-commerce Sites',
       contactTitle: 'Contact',
       rights: 'All rights reserved.'
+    },
+    blog: {
+      title: { part1: 'Our', part2: 'Blog' },
+      subtitle: 'Tips, guides and news about web development, design and digital marketing',
+      readArticle: 'Read article',
+      backToBlog: 'Back to blog',
+      needWebsite: 'Need a professional website?',
+      agencySupport: 'Our agency supports you in all your web projects: creation, redesign, SEO and maintenance.',
+      requestQuote: 'Request a free quote'
     },
     faq: {
       title: { part1: 'Frequently Asked', part2: 'Questions' },

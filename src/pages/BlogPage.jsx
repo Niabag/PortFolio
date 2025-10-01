@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
 
 export default function BlogPage() {
-  const { lang } = useLanguage();
+  const { lang, t } = useLanguage();
 
   const articles = [
     {
@@ -16,7 +16,7 @@ export default function BlogPage() {
       excerpt: lang === 'fr'
         ? 'Découvrez les avantages et limites de WordPress et React pour faire le meilleur choix selon vos besoins et votre budget.'
         : 'Discover the advantages and limitations of WordPress and React to make the best choice for your needs and budget.',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop',
+      image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=500&fit=crop&q=80',
       date: '15 Mars 2025',
       category: lang === 'fr' ? 'Développement Web' : 'Web Development'
     },
@@ -28,7 +28,7 @@ export default function BlogPage() {
       excerpt: lang === 'fr'
         ? 'Analyse détaillée des coûts de création d\'une boutique en ligne : de la solution simple aux projets sur mesure.'
         : 'Detailed analysis of the costs of creating an online store: from simple solutions to custom projects.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
+      image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=500&fit=crop&q=80',
       date: '10 Mars 2025',
       category: lang === 'fr' ? 'E-commerce' : 'E-commerce'
     },
@@ -40,7 +40,7 @@ export default function BlogPage() {
       excerpt: lang === 'fr'
         ? 'Tous les points essentiels à vérifier pour optimiser le référencement de votre site avant sa mise en ligne.'
         : 'All essential points to check to optimize your site\'s SEO before going live.',
-      image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=800&h=500&fit=crop',
+      image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=500&fit=crop&q=80',
       date: '5 Mars 2025',
       category: 'SEO'
     },
@@ -52,7 +52,7 @@ export default function BlogPage() {
       excerpt: lang === 'fr'
         ? 'Évitez les pièges courants lors de la refonte de votre site web et assurez le succès de votre projet.'
         : 'Avoid common pitfalls when redesigning your website and ensure the success of your project.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
+      image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=500&fit=crop&q=80',
       date: '1 Mars 2025',
       category: lang === 'fr' ? 'Refonte Web' : 'Web Redesign'
     },
@@ -64,7 +64,7 @@ export default function BlogPage() {
       excerpt: lang === 'fr'
         ? 'L\'importance d\'un site adapté aux mobiles et son impact sur le SEO et les conversions en 2025.'
         : 'The importance of a mobile-friendly site and its impact on SEO and conversions in 2025.',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=500&fit=crop',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=500&fit=crop&q=80',
       date: '25 Février 2025',
       category: lang === 'fr' ? 'Design Web' : 'Web Design'
     }
@@ -81,12 +81,10 @@ export default function BlogPage() {
             {/* En-tête du blog */}
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                <span className="text-white">Notre</span> <span className="text-primary-red">Blog</span>
+                <span className="text-white">{t('blog.title.part1')}</span> <span className="text-primary-red">{t('blog.title.part2')}</span>
               </h1>
               <p className="text-gray-400 text-xl max-w-3xl mx-auto">
-                {lang === 'fr'
-                  ? 'Conseils, guides et actualités sur la création de sites web, le développement et le marketing digital'
-                  : 'Tips, guides and news about web development, design and digital marketing'}
+                {t('blog.subtitle')}
               </p>
             </div>
 
@@ -99,13 +97,14 @@ export default function BlogPage() {
                 >
                   <a href={`/blog/${article.id}.html`} className="block">
                     {/* Image */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
                       <img
                         src={article.image}
                         alt={article.title}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        loading="lazy"
                       />
-                      <div className="absolute top-4 left-4">
+                      <div className="absolute top-4 left-4 z-10">
                         <span className="bg-primary-red px-3 py-1 rounded-full text-sm font-semibold">
                           {article.category}
                         </span>
@@ -124,7 +123,7 @@ export default function BlogPage() {
                         {article.excerpt}
                       </p>
                       <div className="flex items-center text-primary-red font-semibold">
-                        {lang === 'fr' ? 'Lire l\'article' : 'Read article'}
+                        {t('blog.readArticle')}
                         <svg
                           className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform"
                           fill="none"

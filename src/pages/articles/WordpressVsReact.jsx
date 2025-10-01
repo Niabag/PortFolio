@@ -40,7 +40,7 @@ export default function WordpressVsReact() {
             {/* Contenu de l'article */}
             <div className="prose prose-invert prose-lg max-w-none">
               <h2 className="text-3xl font-bold text-primary-red mb-4">
-                Qu'est-ce que WordPress ? Avantages et limites
+                {lang === 'fr' ? 'Qu\'est-ce que WordPress ? Avantages et limites' : 'What is WordPress? Advantages and limitations'}
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 WordPress est le CMS (Content Management System) le plus populaire au monde, alimentant plus de 40% des sites web. 
