@@ -41,7 +41,7 @@ export const translations = {
     },
     footer: {
       description:
-        'Développeur web professionnel spécialisé dans les solutions modernes et performantes.',
+        'Création de Sites Web Modernes | Développeur Web WordPress & React',
       servicesTitle: 'Services',
       serviceWordpress: 'Développement WordPress',
       serviceReact: 'Applications React',
