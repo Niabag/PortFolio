@@ -10,8 +10,8 @@ export const translations = {
       quote: 'Devis'
     },
     hero: {
-      title: 'Développeur Web',
-      subtitle: 'Fullstack Professionnel',
+      title: 'Site On Web',
+      subtitle: 'Agence web spécialisée dans la création de site internet',
       description:
         'Création de sites web sur-mesure pour booster votre entreprise en ligne. Spécialistes de la création et de la vente de sites internet professionnels, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO.',
       viewProjects: 'Voir mes réalisations',
@@ -141,8 +141,8 @@ export const translations = {
       quote: 'Quote'
     },
     hero: {
-      title: 'Web Developer',
-      subtitle: 'Fullstack Professional',
+      title: 'Site On Web',
+      subtitle: 'Web agency specialized in website creation',
       description:
         'Specialized in creating high-performance and modern websites. WordPress, React, Node.js, custom CMS. Over 10 projects completed with strict respect for deadlines.',
       viewProjects: 'See my projects',
