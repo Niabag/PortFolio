@@ -6,11 +6,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { t, lang, setLang } = useLanguage();
   const links = [
-    { href: '#accueil', label: t('nav.home') },
-    { href: '#competences', label: t('nav.skills') },
-    { href: '#realisations', label: t('nav.projects') },
-    { href: '#contact', label: t('nav.contact') },
-    { href: '#contact', label: t('nav.quote'), button: true }
+    { id: 'home', href: '/#accueil', label: t('nav.home') },
+    { id: 'skills', href: '/#competences', label: t('nav.skills') },
+    { id: 'projects', href: '/#realisations', label: t('nav.projects') },
+    { id: 'faq', href: '/faq.html', label: t('nav.faq'), external: true },
+    { id: 'contact', href: '/#contact', label: t('nav.contact') },
+    { id: 'quote', href: '/#contact', label: t('nav.quote'), button: true }
   ];
   const toggle = () => setOpen(!open);
   const close = () => setOpen(false);
@@ -18,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-[1100]">
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        <a href="#accueil" className="flex items-center space-x-3">
+        <a href="/" className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
             <TypingText text={"</>"} className="text-white text-sm sm:text-lg" />
           </div>
@@ -27,7 +28,7 @@ export default function Navbar() {
 
         <ul className="hidden md:flex space-x-8">
           {links.map((link) => (
-            <li key={link.href}>
+            <li key={link.id}>
               {link.button ? (
                 <a
                   href={link.href}
@@ -81,7 +82,7 @@ export default function Navbar() {
           </div>
           <ul className="space-y-6">
             {links.map((link) => (
-              <li key={link.href}>
+              <li key={link.id}>
                 {link.button ? (
                   <a
                     href={link.href}

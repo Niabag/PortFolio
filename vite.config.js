@@ -1,3 +1,13 @@
+import { resolve } from 'path';
+
 export default {
-  base: './'
+  base: './',
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        faq: resolve(__dirname, 'faq.html')
+      }
+    }
+  }
 };
