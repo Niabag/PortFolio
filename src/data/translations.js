@@ -18,7 +18,7 @@ export const translations = {
       contactMe: 'Me contacter'
     },
     skills: {
-      title: { part1: 'Mes', part2: 'Compétences' },
+      title: { part1: 'Nos', part2: 'Compétences' },
       list: [
         { icon: '🌐', title: 'WordPress', text: 'CMS Expert', delay: '' },
         { icon: '⚛️', title: 'React.js', text: 'Frontend', delay: '0.2s' },
@@ -26,12 +26,13 @@ export const translations = {
         { icon: '📄', title: 'HTML5', text: 'Structure', delay: '0.6s' },
         { icon: '🎨', title: 'CSS3', text: 'Style', delay: '0.8s' },
         { icon: '📜', title: 'JavaScript', text: 'Interactivité', delay: '1s' },
-        { icon: '💻', title: 'PowerShell', text: 'Scripts', delay: '1.2s' }
+        { icon: '💻', title: 'PowerShell', text: 'Scripts', delay: '1.2s' },
+        { icon: '✨', title: 'Et + encore', text: 'Bien plus', delay: '1.4s' }
       ]
     },
-    projects: { title: { part1: 'Mes', part2: 'Réalisations' }, close: 'Fermer' },
+    projects: { title: { part1: 'Nos', part2: 'Réalisations' }, close: 'Fermer' },
     contact: {
-      title: { part1: 'Me', part2: 'Contacter' },
+      title: { part1: 'Nous', part2: 'Contacter' },
       infoTitle: 'Informations de contact',
       namePlaceholder: 'Votre nom',
       emailPlaceholder: 'Votre email',
@@ -149,7 +150,7 @@ export const translations = {
       contactMe: 'Contact me'
     },
     skills: {
-      title: { part1: 'My', part2: 'Skills' },
+      title: { part1: 'Our', part2: 'Skills' },
       list: [
         { icon: '🌐', title: 'WordPress', text: 'CMS Expert', delay: '' },
         { icon: '⚛️', title: 'React.js', text: 'Frontend', delay: '0.2s' },
@@ -157,12 +158,13 @@ export const translations = {
         { icon: '📄', title: 'HTML5', text: 'Structure', delay: '0.6s' },
         { icon: '🎨', title: 'CSS3', text: 'Style', delay: '0.8s' },
         { icon: '📜', title: 'JavaScript', text: 'Interactivity', delay: '1s' },
-        { icon: '💻', title: 'PowerShell', text: 'Scripting', delay: '1.2s' }
+        { icon: '💻', title: 'PowerShell', text: 'Scripting', delay: '1.2s' },
+        { icon: '✨', title: 'And more', text: 'Much more', delay: '1.4s' }
       ]
     },
-    projects: { title: { part1: 'My', part2: 'Projects' }, close: 'Close' },
+    projects: { title: { part1: 'Our', part2: 'Projects' }, close: 'Close' },
     contact: {
-      title: { part1: 'Contact', part2: 'Me' },
+      title: { part1: 'Contact', part2: 'Us' },
       infoTitle: 'Contact Information',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'Your email',
