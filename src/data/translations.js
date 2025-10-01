@@ -5,6 +5,7 @@ export const translations = {
       home: 'Accueil',
       skills: 'Compétences',
       projects: 'Réalisations',
+      blog: 'Blog',
       contact: 'Contact',
       faq: 'FAQ',
       quote: 'Devis'
@@ -137,6 +138,7 @@ export const translations = {
       home: 'Home',
       skills: 'Skills',
       projects: 'Projects',
+      blog: 'Blog',
       contact: 'Contact',
       faq: 'FAQ',
       quote: 'Quote'

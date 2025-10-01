@@ -9,6 +9,7 @@ export default function Navbar() {
     { id: 'home', href: '/#accueil', label: t('nav.home') },
     { id: 'skills', href: '/#competences', label: t('nav.skills') },
     { id: 'projects', href: '/#realisations', label: t('nav.projects') },
+    { id: 'blog', href: '/blog.html', label: t('nav.blog'), external: true },
     { id: 'faq', href: '/faq.html', label: t('nav.faq'), external: true },
     { id: 'contact', href: '/#contact', label: t('nav.contact') },
     { id: 'quote', href: '/#contact', label: t('nav.quote'), button: true }
