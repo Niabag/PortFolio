@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+const RECIPIENT_EMAIL = 'contact@siteonweb.fr';
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -33,8 +34,16 @@ const onSubmit = async (event) => {
   }
 
   const formData = new FormData(event.target);
-  // ... vérif email comme tu fais déjà
+  const visitorEmail = formData.get('email');
+
+  if (!visitorEmail || !emailRegex.test(visitorEmail)) {
+    setResult(t('contact.invalidEmail'));
+    return;
+  }
+
   formData.append('access_key', accessKey);
+  formData.set('email', RECIPIENT_EMAIL);
+  formData.set('reply_to', visitorEmail);
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -67,7 +76,7 @@ const onSubmit = async (event) => {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <i className="fas fa-envelope text-primary-red text-lg sm:text-xl"></i>
-                <span className="text-sm sm:text-base break-all">gabain.potelet-berry@protonmail.com</span>
+                <span className="text-sm sm:text-base break-all">contact@siteonweb.fr</span>
               </div>
               <div className="flex items-center space-x-4">
                 <i className="fas fa-phone text-primary-red text-lg sm:text-xl"></i>

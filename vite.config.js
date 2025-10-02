@@ -1,4 +1,25 @@
-import { resolve } from 'path';
+import { readdirSync } from 'fs';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const blogDir = resolve(__dirname, 'blog');
+
+const blogInputs = Object.fromEntries(
+  readdirSync(blogDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.html'))
+    .map((entry) => {
+      const baseName = entry.name.replace(/\.html$/, '');
+      const segments = baseName.split(/[-_\s]+/);
+      const inputName =
+        'blog' +
+        segments
+          .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+          .join('');
+
+      return [inputName, resolve(blogDir, entry.name)];
+    })
+);
 
 export default {
   base: './',
@@ -7,7 +28,8 @@ export default {
       input: {
         main: resolve(__dirname, 'index.html'),
         faq: resolve(__dirname, 'faq.html'),
-        blog: resolve(__dirname, 'blog.html')
+        blog: resolve(__dirname, 'blog.html'),
+        ...blogInputs
       }
     }
   }
