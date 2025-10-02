@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function TypingText({ text, className = '', animate = false }) {
+
+export default function TypingText({ text, className = '', animate = true }) {
+
   const classes = [
     'typing-text',
     animate ? 'typing-text--animate' : '',
@@ -9,14 +11,7 @@ export default function TypingText({ text, className = '', animate = false }) {
     .filter(Boolean)
     .join(' ');
 
-  const style = animate
-    ? { '--typing-target-width': `calc(${Math.max(text.length, 1)}ch + 0.5ch)` }
-    : undefined;
 
-  return (
-    <span className={classes} style={style}>
-      {text}
-    </span>
-  );
+  return <span className={classes}>{text}</span>;
 }
 
