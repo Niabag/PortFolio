@@ -145,8 +145,6 @@
   display: inline-block;
   width: 100%;
   text-align: center;
-}
-
 
 .typing::after {
   content: '|';
