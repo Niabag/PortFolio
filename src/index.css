@@ -130,7 +130,6 @@
     bottom: 15px;
     right: 15px;
   }
-}
 
 @keyframes typing-reveal {
   from {
@@ -138,28 +137,35 @@
   }
   to {
     clip-path: inset(0 0 0 0);
+
   }
 }
 
 .typing-text {
+
   display: inline-block;
   white-space: inherit;
+
 }
 
 .typing-text--animate {
   --typing-duration: 2.6s;
+
   clip-path: inset(0 100% 0 0);
   animation: typing-reveal var(--typing-duration) steps(40, end) forwards;
 }
 
 .hero-text__content {
+
   --typing-duration: 2.8s;
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .typing-text--animate,
   .hero-text__content {
     clip-path: none;
     animation: none;
+
   }
 }
