@@ -67,7 +67,7 @@ const onSubmit = async (event) => {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <i className="fas fa-envelope text-primary-red text-lg sm:text-xl"></i>
-                <span className="text-sm sm:text-base break-all">gabain.potelet-berry@protonmail.com</span>
+                <span className="text-sm sm:text-base break-all">contact@siteonweb.fr</span>
               </div>
               <div className="flex items-center space-x-4">
                 <i className="fas fa-phone text-primary-red text-lg sm:text-xl"></i>

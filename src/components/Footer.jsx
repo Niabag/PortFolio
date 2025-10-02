@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-base sm:text-lg font-bold mb-4">{t('footer.contactTitle')}</h4>
-            <p className="text-gray-400 mb-2 text-sm sm:text-base break-all">gabain.potelet-berry@protonmail.com</p>
+            <p className="text-gray-400 mb-2 text-sm sm:text-base break-all">contact@siteonweb.fr</p>
             <p className="text-gray-400 mb-4 text-sm sm:text-base">06 48 45 69 37</p>
             <div className="flex space-x-4">
               <a
