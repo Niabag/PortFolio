@@ -1,8 +1,6 @@
 import React from 'react';
 
-
-export default function TypingText({ text, className = '', animate = true }) {
-
+export default function TypingText({ text, className = '', animate = false }) {
   const classes = [
     'typing-text',
     animate ? 'typing-text--animate' : '',
@@ -12,6 +10,11 @@ export default function TypingText({ text, className = '', animate = true }) {
     .join(' ');
 
 
-  return <span className={classes}>{text}</span>;
+  return (
+    <span className={classes}>
+      <span className="typing-text__inner">{text}</span>
+    </span>
+  );
+
 }
 

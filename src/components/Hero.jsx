@@ -6,16 +6,17 @@ export default function Hero() {
   const heroTitle = t('hero.title');
   const heroSubtitle = t('hero.subtitle');
   const heroDescription = t('hero.description');
-  const heroTitleWidth = `calc(${Math.max(heroTitle.length, 1)}ch + 0.5ch)`;
+
 
   return (
     <section id="accueil" className="min-h-screen flex items-center justify-center relative z-10 px-4">
       <div className="container mx-auto text-center">
         <div className="animate-slide-up">
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 hero-text leading-tight">
 
-            <span className="typing-text typing-text--animate hero-text__content">
-              {t('hero.title')}
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
+            <span className="typing-text typing-text--animate typing-text--hero">
+              <span className="typing-text__inner hero-text__content">{heroTitle}</span>
+
             </span>
           </h1>
           <h2 className="text-xl sm:text-3xl md:text-4xl font-light mb-6 sm:mb-8 text-gray-300">
