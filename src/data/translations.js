@@ -40,7 +40,8 @@ export const translations = {
       messagePlaceholder: 'Votre message',
       send: 'Envoyer le message',
       whatsapp: 'WhatsApp: 06 48 45 69 37',
-      country: 'France'
+      country: 'France',
+      invalidEmail: 'Adresse e-mail invalide.'
     },
     footer: {
       description:
@@ -182,7 +183,8 @@ export const translations = {
       messagePlaceholder: 'Your message',
       send: 'Send message',
       whatsapp: 'WhatsApp: +33 6 48 45 69 37',
-      country: 'France'
+      country: 'France',
+      invalidEmail: 'Invalid email address.'
     },
     footer: {
       description:
