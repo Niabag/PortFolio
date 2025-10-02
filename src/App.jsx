@@ -50,8 +50,8 @@ export default function App() {
       <AnimatedBackground />
       <Navbar />
       <Hero />
-      <Competences />
       <Projects />
+      <Competences />
       <Contact />
       <Footer />
     </>
