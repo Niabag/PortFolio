@@ -42,14 +42,6 @@ export default function Footer() {
                 <i className="fab fa-linkedin text-lg sm:text-xl"></i>
               </a>
               <a
-                href="https://github.com/Niabag"
-                target="_blank"
-                className="text-gray-400 hover:text-primary-red transition"
-                title="GitHub"
-              >
-                <i className="fab fa-github text-lg sm:text-xl"></i>
-              </a>
-              <a
                 href="https://wa.me/33648456937"
                 target="_blank"
                 className="text-gray-400 hover:text-primary-red transition"
