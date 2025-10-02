@@ -9,10 +9,12 @@ export default function TypingText({ text, className = '', animate = false }) {
     .filter(Boolean)
     .join(' ');
 
+
   return (
     <span className={classes}>
       <span className="typing-text__inner">{text}</span>
     </span>
   );
+
 }
 

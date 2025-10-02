@@ -123,11 +123,11 @@
     bottom: 15px;
     right: 15px;
   }
-}
 
 @keyframes typing-reveal {
   from {
     clip-path: inset(0 100% 0 0);
+
     -webkit-clip-path: inset(0 100% 0 0);
   }
   to {
@@ -144,10 +144,12 @@
   50.01%,
   100% {
     opacity: 0;
+
   }
 }
 
 .typing-text {
+
   position: relative;
   display: inline-block;
   white-space: nowrap;
@@ -198,5 +200,6 @@
   .typing-text--animate::after {
     animation: none;
     opacity: 0;
+
   }
 }
