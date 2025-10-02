@@ -32,13 +32,6 @@
 }
 
 /* Styles spécifiques inspirés de la maquette statique */
-.hero-text {
-  background: linear-gradient(45deg, #ffffff, #dc2626);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .nav-link {
   position: relative;
   transition: all 0.3s ease;
@@ -132,24 +125,78 @@
   }
 }
 
-@keyframes blink {
-  0%, 49% {
+@keyframes typing-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+    -webkit-clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes caret {
+  0%,
+  50% {
     opacity: 1;
   }
-  50%, 100% {
+  50.01%,
+  100% {
     opacity: 0;
   }
 }
 
-.typing {
+.typing-text {
+  position: relative;
   display: inline-block;
-  width: 100%;
-  text-align: center;
+  white-space: nowrap;
 }
 
+.typing-text__inner {
+  display: inline-block;
+}
 
-.typing::after {
-  content: '|';
-  animation: blink 1s step-start infinite;
-  margin-left: 2px;
+.typing-text--animate {
+  --typing-duration: 2.6s;
+  padding-right: 0.25em;
+  clip-path: inset(0 100% 0 0);
+  -webkit-clip-path: inset(0 100% 0 0);
+  animation: typing-reveal var(--typing-duration) steps(var(--typing-steps, 40)) forwards;
+}
+
+.typing-text--animate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0.12em;
+  background: rgba(255, 255, 255, 0.85);
+  animation: caret 0.8s steps(1, end) infinite;
+}
+
+.typing-text--hero {
+  --typing-duration: 2.8s;
+}
+
+.typing-text__inner.hero-text__content {
+  background: linear-gradient(45deg, #ffffff, #dc2626);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-text--animate {
+    padding-right: 0;
+    clip-path: none;
+    -webkit-clip-path: none;
+    animation: none;
+  }
+
+  .typing-text--animate::after {
+    animation: none;
+    opacity: 0;
+  }
 }
