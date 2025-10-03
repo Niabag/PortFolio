@@ -158,7 +158,7 @@ export const translations = {
       subtitle: 'Web agency specialized in website creation',
       description:
         'Specialized in creating high-performance and modern websites. WordPress, React, Node.js, custom CMS. Over 10 projects completed with strict respect for deadlines.',
-      viewProjects: 'See my projects',
+      viewProjects: 'See our projects',
       contactMe: 'Contact me'
     },
     skills: {
