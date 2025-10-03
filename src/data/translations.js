@@ -178,7 +178,7 @@ export const translations = {
         'We build tailor-made websites to boost your business online. As specialists in creating and delivering professional websites, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites.',
 
       viewProjects: 'See our projects',
-      contactMe: 'Contact me'
+      contactMe: 'Contact us'
 
     },
     skills: {
