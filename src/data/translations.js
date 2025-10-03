@@ -15,7 +15,7 @@ export const translations = {
       subtitle: 'Agence web spécialisée dans la création de site internet',
       description:
         'Création de sites web sur-mesure pour booster votre entreprise en ligne. Spécialistes de la création et de la vente de sites internet professionnels, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO.',
-      viewProjects: 'Voir mes réalisations',
+      viewProjects: 'Voir nos réalisations',
       contactMe: 'Me contacter'
     },
     skills: {
