@@ -226,7 +226,7 @@ export const translations = {
     },
     footer: {
       description:
-        'Professional web developer specializing in modern, high-performance solutions.',
+        'Modern Website Creation | WordPress & React Web Developer',
       servicesTitle: 'Services',
       serviceWordpress: 'WordPress Development',
       serviceReact: 'React Applications',
