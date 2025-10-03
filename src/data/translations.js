@@ -31,7 +31,18 @@ export const translations = {
         { icon: '✨', title: 'Et + encore', text: 'Bien plus', delay: '1.4s' }
       ]
     },
-    projects: { title: { part1: 'Nos', part2: 'Réalisations' }, close: 'Fermer' },
+    projects: {
+      title: { part1: 'Nos', part2: 'Réalisations' },
+      close: 'Fermer',
+      modal: {
+        description: 'Description',
+        features: 'Fonctionnalités',
+        duration: 'Durée',
+        client: 'Client',
+        challenges: 'Défis techniques',
+        visitSite: 'Voir le site'
+      }
+    },
     contact: {
       title: { part1: 'Nous', part2: 'Contacter' },
       infoTitle: 'Informations de contact',
@@ -41,7 +52,14 @@ export const translations = {
       send: 'Envoyer le message',
       whatsapp: 'WhatsApp: 06 48 45 69 37',
       country: 'France',
-      invalidEmail: 'Adresse e-mail invalide.'
+      invalidEmail: 'Adresse e-mail invalide.',
+      status: {
+        sending: 'Envoi en cours...',
+        missingKey: 'Clé Web3Forms absente. Définis VITE_WEB3FORMS_ACCESS_KEY dans ton environnement puis rebuild.',
+        invalidKey: 'Clé Web3Forms invalide (doit être un UUID).',
+        success: 'Formulaire envoyé avec succès !',
+        networkError: 'Erreur de réseau. Veuillez réessayer plus tard.'
+      }
     },
     footer: {
       description:
@@ -176,7 +194,18 @@ export const translations = {
         { icon: '✨', title: 'And more', text: 'Much more', delay: '1.4s' }
       ]
     },
-    projects: { title: { part1: 'Our', part2: 'Projects' }, close: 'Close' },
+    projects: {
+      title: { part1: 'Our', part2: 'Projects' },
+      close: 'Close',
+      modal: {
+        description: 'Description',
+        features: 'Features',
+        duration: 'Duration',
+        client: 'Client',
+        challenges: 'Technical challenges',
+        visitSite: 'Visit the website'
+      }
+    },
     contact: {
       title: { part1: 'Contact', part2: 'Us' },
       infoTitle: 'Contact Information',
@@ -186,7 +215,14 @@ export const translations = {
       send: 'Send message',
       whatsapp: 'WhatsApp: +33 6 48 45 69 37',
       country: 'France',
-      invalidEmail: 'Invalid email address.'
+      invalidEmail: 'Invalid email address.',
+      status: {
+        sending: 'Sending...',
+        missingKey: 'Web3Forms key missing. Set VITE_WEB3FORMS_ACCESS_KEY in your environment and rebuild.',
+        invalidKey: 'Invalid Web3Forms key (must be a UUID).',
+        success: 'Form successfully sent!',
+        networkError: 'Network error. Please try again later.'
+      }
     },
     footer: {
       description:

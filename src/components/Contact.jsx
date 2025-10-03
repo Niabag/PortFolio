@@ -19,17 +19,17 @@ if (!accessKey) {
 
 const onSubmit = async (event) => {
   event.preventDefault();
-  setResult('Envoi en cours...');
+  setResult(t('contact.status.sending'));
 
   if (!accessKey) {
-    setResult('Clé Web3Forms absente. Définis VITE_WEB3FORMS_ACCESS_KEY dans .env/hébergeur puis rebuild.');
+    setResult(t('contact.status.missingKey'));
     return;
   }
 
   // (Optionnel) Valider le format UUID v4
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   if (!uuidRegex.test(accessKey)) {
-    setResult('Clé Web3Forms invalide (doit être un UUID).');
+    setResult(t('contact.status.invalidKey'));
     return;
   }
 
@@ -52,7 +52,7 @@ const onSubmit = async (event) => {
       });
       const data = await response.json();
       if (data.success) {
-        setResult('Formulaire envoyé avec succès !');
+        setResult(t('contact.status.success'));
         event.target.reset();
       } else {
         console.log('Error', data);
@@ -60,7 +60,7 @@ const onSubmit = async (event) => {
       }
     } catch (error) {
       console.error('Network Error', error);
-      setResult('Erreur de réseau. Veuillez réessayer plus tard.');
+      setResult(t('contact.status.networkError'));
     }
   };
 

@@ -97,12 +97,12 @@ export default function Projects() {
                 </div>
               </div>
               <div>
-                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">Description</h4>
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">{t('projects.modal.description')}</h4>
                 <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                   {selectedProject.description[lang]}
                 </p>
 
-                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">Fonctionnalités</h4>
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">{t('projects.modal.features')}</h4>
                 <ul className="space-y-2 mb-4 sm:mb-6">
                   {selectedProject.features[lang].map((feature) => (
                     <li
@@ -117,20 +117,20 @@ export default function Projects() {
 
                 <div className="grid grid-cols-2 gap-4 mb-4 sm:mb-6">
                   <div>
-                    <h5 className="font-bold text-primary-red text-sm sm:text-base">Durée</h5>
+                    <h5 className="font-bold text-primary-red text-sm sm:text-base">{t('projects.modal.duration')}</h5>
                     <p className="text-gray-300 text-sm sm:text-base">
                       {selectedProject.duration[lang]}
                     </p>
                   </div>
                   <div>
-                    <h5 className="font-bold text-primary-red text-sm sm:text-base">Client</h5>
+                    <h5 className="font-bold text-primary-red text-sm sm:text-base">{t('projects.modal.client')}</h5>
                     <p className="text-gray-300 text-sm sm:text-base">
                       {selectedProject.client}
                     </p>
                   </div>
                 </div>
 
-                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">Défis techniques</h4>
+                <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-primary-red">{t('projects.modal.challenges')}</h4>
                 <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                   {selectedProject.challenges[lang]}
                 </p>
@@ -141,7 +141,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="bg-primary-red px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-red-700 transition inline-block text-sm sm:text-base"
                 >
-                  Voir le site <i className="fas fa-external-link-alt ml-2"></i>
+                  {t('projects.modal.visitSite')} <i className="fas fa-external-link-alt ml-2"></i>
                 </a>
                 <button
                   onClick={() => setSelectedProject(null)}
