@@ -16,7 +16,7 @@ export const translations = {
       description:
         'Création de sites web sur-mesure pour booster votre entreprise en ligne. Spécialistes de la création et de la vente de sites internet professionnels, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO.',
       viewProjects: 'Voir nos réalisations',
-      contactMe: 'Me contacter'
+      contactMe: 'Nous contacter'
     },
     skills: {
       title: { part1: 'Nos', part2: 'Compétences' },
@@ -158,8 +158,10 @@ export const translations = {
       subtitle: 'Web agency specialized in website creation',
       description:
         'Specialized in creating high-performance and modern websites. WordPress, React, Node.js, custom CMS. Over 10 projects completed with strict respect for deadlines.',
+
       viewProjects: 'See our projects',
       contactMe: 'Contact me'
+
     },
     skills: {
       title: { part1: 'Our', part2: 'Skills' },
