@@ -15,8 +15,8 @@ export const translations = {
       subtitle: 'Agence web spécialisée dans la création de site internet',
       description:
         'Création de sites web sur-mesure pour booster votre entreprise en ligne. Spécialistes de la création et de la vente de sites internet professionnels, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO.',
-      viewProjects: 'Voir mes réalisations',
-      contactMe: 'Me contacter'
+      viewProjects: 'Voir nos réalisations',
+      contactMe: 'Nous contacter'
     },
     skills: {
       title: { part1: 'Nos', part2: 'Compétences' },
@@ -31,7 +31,18 @@ export const translations = {
         { icon: '✨', title: 'Et + encore', text: 'Bien plus', delay: '1.4s' }
       ]
     },
-    projects: { title: { part1: 'Nos', part2: 'Réalisations' }, close: 'Fermer' },
+    projects: {
+      title: { part1: 'Nos', part2: 'Réalisations' },
+      close: 'Fermer',
+      modal: {
+        description: 'Description',
+        features: 'Fonctionnalités',
+        duration: 'Durée',
+        client: 'Client',
+        challenges: 'Défis techniques',
+        visitSite: 'Voir le site'
+      }
+    },
     contact: {
       title: { part1: 'Nous', part2: 'Contacter' },
       infoTitle: 'Informations de contact',
@@ -41,7 +52,14 @@ export const translations = {
       send: 'Envoyer le message',
       whatsapp: 'WhatsApp: 06 48 45 69 37',
       country: 'France',
-      invalidEmail: 'Adresse e-mail invalide.'
+      invalidEmail: 'Adresse e-mail invalide.',
+      status: {
+        sending: 'Envoi en cours...',
+        missingKey: 'Clé Web3Forms absente. Définis VITE_WEB3FORMS_ACCESS_KEY dans ton environnement puis rebuild.',
+        invalidKey: 'Clé Web3Forms invalide (doit être un UUID).',
+        success: 'Formulaire envoyé avec succès !',
+        networkError: 'Erreur de réseau. Veuillez réessayer plus tard.'
+      }
     },
     footer: {
       description:
@@ -157,9 +175,11 @@ export const translations = {
       title: 'Site On Web',
       subtitle: 'Web agency specialized in website creation',
       description:
-        'Specialized in creating high-performance and modern websites. WordPress, React, Node.js, custom CMS. Over 10 projects completed with strict respect for deadlines.',
-      viewProjects: 'See my projects',
-      contactMe: 'Contact me'
+        'We build tailor-made websites to boost your business online. As specialists in creating and delivering professional websites, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites.',
+
+      viewProjects: 'See our projects',
+      contactMe: 'Contact us'
+
     },
     skills: {
       title: { part1: 'Our', part2: 'Skills' },
@@ -174,7 +194,18 @@ export const translations = {
         { icon: '✨', title: 'And more', text: 'Much more', delay: '1.4s' }
       ]
     },
-    projects: { title: { part1: 'Our', part2: 'Projects' }, close: 'Close' },
+    projects: {
+      title: { part1: 'Our', part2: 'Projects' },
+      close: 'Close',
+      modal: {
+        description: 'Description',
+        features: 'Features',
+        duration: 'Duration',
+        client: 'Client',
+        challenges: 'Technical challenges',
+        visitSite: 'Visit the website'
+      }
+    },
     contact: {
       title: { part1: 'Contact', part2: 'Us' },
       infoTitle: 'Contact Information',
@@ -184,11 +215,18 @@ export const translations = {
       send: 'Send message',
       whatsapp: 'WhatsApp: +33 6 48 45 69 37',
       country: 'France',
-      invalidEmail: 'Invalid email address.'
+      invalidEmail: 'Invalid email address.',
+      status: {
+        sending: 'Sending...',
+        missingKey: 'Web3Forms key missing. Set VITE_WEB3FORMS_ACCESS_KEY in your environment and rebuild.',
+        invalidKey: 'Invalid Web3Forms key (must be a UUID).',
+        success: 'Form successfully sent!',
+        networkError: 'Network error. Please try again later.'
+      }
     },
     footer: {
       description:
-        'Professional web developer specializing in modern, high-performance solutions.',
+        'Modern Website Creation | WordPress & React Web Developer',
       servicesTitle: 'Services',
       serviceWordpress: 'WordPress Development',
       serviceReact: 'React Applications',
