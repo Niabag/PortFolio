@@ -128,7 +128,9 @@ export const translations = {
       serviceMarketing: 'Marketing Digital',
       serviceEcommerce: 'Sites E-commerce',
       contactTitle: 'Contact',
-      rights: 'Tous droits réservés.'
+      rights: 'Tous droits réservés.',
+      privacy: 'Politique de confidentialité & Mentions légales',
+      legalContact: 'Mentions légales'
     },
     blog: {
       title: { part1: 'Notre', part2: 'Blog' },
@@ -409,7 +411,9 @@ export const translations = {
       serviceMarketing: 'Digital Marketing',
       serviceEcommerce: 'E-commerce Sites',
       contactTitle: 'Contact',
-      rights: 'All rights reserved.'
+      rights: 'All rights reserved.',
+      privacy: 'Privacy Policy & Legal Notice',
+      legalContact: 'Legal Notice'
     },
     blog: {
       title: { part1: 'Our', part2: 'Blog' },

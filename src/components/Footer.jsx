@@ -74,6 +74,14 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+            <a 
+              href="/privacy.html" 
+              className="hover:text-primary-red transition"
+            >
+              {t('footer.privacy')}
+            </a>
+          </div>
           <p>&copy; {new Date().getFullYear()} SiteOnWeb. {t('footer.rights')}</p>
         </div>
       </div>

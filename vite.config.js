@@ -29,6 +29,7 @@ export default {
         main: resolve(__dirname, 'index.html'),
         faq: resolve(__dirname, 'faq.html'),
         blog: resolve(__dirname, 'blog.html'),
+        privacy: resolve(__dirname, 'privacy.html'),
         ...blogInputs
       }
     }
