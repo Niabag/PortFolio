@@ -8,7 +8,7 @@ export const translations = {
       blog: 'Blog',
       contact: 'Contact',
       faq: 'FAQ',
-      quote: 'Devis'
+      booking: 'Rendez-vous'
     },
     hero: {
       title: 'Site On Web',
@@ -289,7 +289,7 @@ export const translations = {
       blog: 'Blog',
       contact: 'Contact',
       faq: 'FAQ',
-      quote: 'Quote'
+      booking: 'Appointment'
     },
     hero: {
       title: 'Site On Web',

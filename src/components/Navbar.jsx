@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 import TypingText from './TypingText.jsx';
+import Booking from './Booking.jsx';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
   const { t, lang, setLang } = useLanguage();
   const links = [
     { id: 'home', href: '/#accueil', label: t('nav.home') },
@@ -12,7 +14,7 @@ export default function Navbar() {
     { id: 'blog', href: '/blog.html', label: t('nav.blog'), external: true },
     { id: 'faq', href: '/#faq', label: t('nav.faq') },
     { id: 'contact', href: '/#contact', label: t('nav.contact') },
-    { id: 'quote', href: '/#contact', label: t('nav.quote'), button: true }
+    { id: 'booking', href: '#', label: t('nav.booking'), button: true, onClick: () => setShowBooking(true) }
   ];
   const toggle = () => setOpen(!open);
   const close = () => setOpen(false);
@@ -81,13 +83,19 @@ export default function Navbar() {
           {links.map((link) => (
             <li key={link.id}>
               {link.button ? (
-                <a
-                  href={link.href}
-                  onClick={(e) => handleSmoothScroll(e, link.href, link.external)}
+                <button
+                  onClick={(e) => {
+                    if (link.onClick) {
+                      e.preventDefault();
+                      link.onClick();
+                    } else {
+                      handleSmoothScroll(e, link.href, link.external);
+                    }
+                  }}
                   className="bg-primary-red px-4 py-2 rounded-lg hover:bg-red-700 transition"
                 >
                   {link.label}
-                </a>
+                </button>
               ) : (
                 <a
                   href={link.href}
@@ -137,13 +145,20 @@ export default function Navbar() {
             {links.map((link) => (
               <li key={link.id}>
                 {link.button ? (
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleSmoothScroll(e, link.href, link.external)}
-                    className="block bg-primary-red px-4 py-3 rounded-lg hover:bg-red-700 transition text-center"
+                  <button
+                    onClick={(e) => {
+                      if (link.onClick) {
+                        e.preventDefault();
+                        link.onClick();
+                        close();
+                      } else {
+                        handleSmoothScroll(e, link.href, link.external);
+                      }
+                    }}
+                    className="block w-full bg-primary-red px-4 py-3 rounded-lg hover:bg-red-700 transition text-center"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 ) : (
                   <a
                     href={link.href}
@@ -158,6 +173,8 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
+      
+      {showBooking && <Booking onClose={() => setShowBooking(false)} />}
     </nav>
   );
 }

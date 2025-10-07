@@ -7,6 +7,7 @@ import Competences from './components/Competences.jsx';
 import Projects from './components/Projects.jsx';
 import FAQ from './components/FAQ.jsx';
 import Contact from './components/Contact.jsx';
+import Location from './components/Location.jsx';
 import Footer from './components/Footer.jsx';
 import AnimatedBackground from './components/AnimatedBackground.jsx';
 import SocialButtons from './components/SocialButtons.jsx';
@@ -57,6 +58,7 @@ export default function App() {
       <Projects />
       <FAQ />
       <Contact />
+      <Location />
       <Footer />
     </>
   );
