@@ -38,6 +38,7 @@ export const translations = {
           color: '#dc2626',
           services: [
             'Développement de sites vitrines, e-commerce et sur mesure',
+            'Création de site sur mesure',
             'Optimisation mobile (responsive design)',
             'Maintenance et mise à jour technique'
           ]
@@ -320,6 +321,7 @@ export const translations = {
           color: '#dc2626',
           services: [
             'Development of showcase, e-commerce and custom websites',
+            'Custom website creation',
             'Mobile optimization (responsive design)',
             'Technical maintenance and updates'
           ]
