@@ -109,13 +109,22 @@ function PrivacyPolicySimple() {
               <div className="space-y-6">
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
                   <h3 className="text-xl font-bold text-white mb-3">📋 Identification de l'éditeur</h3>
-                  <p>
+                  <p className="mb-4">
                     <strong className="text-white">Raison sociale :</strong> SiteOnWeb<br />
-                    <strong className="text-white">Forme juridique :</strong> Micro-entreprise<br />
+                    <strong className="text-white">Activité :</strong> Agence Web et Marketing Digital<br />
                     <strong className="text-white">Email :</strong> <a href="mailto:contact@siteonweb.fr" className="text-primary-red hover:underline">contact@siteonweb.fr</a><br />
                     <strong className="text-white">Téléphone :</strong> <a href="tel:+33648456937" className="text-primary-red hover:underline">+33 6 48 45 69 37</a><br />
                     <strong className="text-white">Siège social :</strong> Région Centre-Val de Loire, France
                   </p>
+                  
+                  <div className="flex flex-wrap gap-4 mt-6">
+                    <div className="bg-primary-red text-white px-6 py-3 rounded-xl text-base font-bold shadow-lg">
+                      💻 Agence Web
+                    </div>
+                    <div className="bg-blue-600 text-white px-6 py-3 rounded-xl text-base font-bold shadow-lg">
+                      📊 Agence Marketing
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">

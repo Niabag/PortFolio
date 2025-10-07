@@ -146,7 +146,7 @@ export const translations = {
       subtitle: 'Trouvez les réponses aux questions les plus fréquemment posées sur notre agence web et marketing digital',
       categories: {
         web: {
-          title: 'Web',
+          title: 'Agence Web',
           items: [
         {
           question: 'Qu\'est-ce qu\'une agence web et agence marketing et quels services proposez-vous ?',
@@ -223,7 +223,7 @@ export const translations = {
           ]
         },
         marketing: {
-          title: 'Marketing',
+          title: 'Agence Marketing',
           items: [
             {
               question: 'Pourquoi choisir une agence web et agence marketing ?',
