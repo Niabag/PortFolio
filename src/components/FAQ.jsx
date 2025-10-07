@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useLanguage } from '../LanguageContext';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../LanguageContext.jsx';
 
 export default function FAQ() {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState('web');
   const [activeIndex, setActiveIndex] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('web');
+  const sectionRef = useRef(null);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -15,17 +16,35 @@ export default function FAQ() {
     setActiveIndex(null);
   };
 
+  // Scroll au début de la section quand elle devient visible
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (section) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              section.scrollTop = 0;
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(section);
+      return () => observer.disconnect();
+    }
+  }, []);
+
   const categories = t('faq.categories');
   const currentItems = categories[activeCategory]?.items || [];
 
   return (
-    <section id="faq" className="snap-section scrollable relative z-10">
+    <section id="faq" ref={sectionRef} className="snap-section scrollable relative z-10">
       <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px]">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
             {t('faq.title.part1')} <span className="text-primary-red">{t('faq.title.part2')}</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary-red to-transparent mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             {t('faq.subtitle')}
           </p>

@@ -100,6 +100,14 @@ export const translations = {
         visitSite: 'Voir le site'
       }
     },
+    stats: {
+      clients: 'Clients',
+      satisfaction: 'Satisfaction',
+      response: 'Réponse',
+      tagline: 'Agence SiteOnWeb à votre écoute',
+      title: 'Parlez-nous de votre projet. Une réponse en moins de 24h.',
+      cta: 'Contactez-nous'
+    },
     contact: {
       title: { part1: 'Nous', part2: 'Contacter' },
       infoTitle: 'Informations de contact',
@@ -382,6 +390,14 @@ export const translations = {
         challenges: 'Technical challenges',
         visitSite: 'Visit the website'
       }
+    },
+    stats: {
+      clients: 'Clients',
+      satisfaction: 'Satisfaction',
+      response: 'Response',
+      tagline: 'SiteOnWeb Agency at your service',
+      title: 'Tell us about your project. A response in less than 24h.',
+      cta: 'Contact us'
     },
     contact: {
       title: { part1: 'Contact', part2: 'Us' },

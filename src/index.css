@@ -60,7 +60,8 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   align-items: flex-start;
-  padding-top: 5rem;
+  padding-top: 0;
+  scroll-padding-top: 5rem;
 }
 
 .snap-section.scrollable .container {
@@ -68,8 +69,9 @@ body {
   min-height: auto;
   overflow-y: visible;
   overflow-x: hidden;
-  padding: 2rem 1.5rem 4rem;
+  padding: 6rem 1.5rem 4rem;
   justify-content: flex-start;
+  margin-top: 0;
 }
 
 /* Scrollbar stylisée pour sections scrollables */
