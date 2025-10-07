@@ -20,15 +20,72 @@ export const translations = {
     },
     skills: {
       title: { part1: 'Nos', part2: 'Compétences' },
-      list: [
-        { icon: '🌐', title: 'WordPress', text: 'CMS Expert', delay: '' },
-        { icon: '⚛️', title: 'React.js', text: 'Frontend', delay: '0.2s' },
-        { icon: '🟢', title: 'Node.js', text: 'Backend', delay: '0.4s' },
-        { icon: '📄', title: 'HTML5', text: 'Structure', delay: '0.6s' },
-        { icon: '🎨', title: 'CSS3', text: 'Style', delay: '0.8s' },
-        { icon: '📜', title: 'JavaScript', text: 'Interactivité', delay: '1s' },
-        { icon: '💻', title: 'PowerShell', text: 'Scripts', delay: '1.2s' },
-        { icon: '✨', title: 'Et + encore', text: 'Bien plus', delay: '1.4s' }
+      categories: [
+        {
+          icon: '🎯',
+          title: 'Stratégie digitale',
+          color: '#dc2626',
+          services: [
+            'Audit et analyse de la présence en ligne',
+            'Élaboration de stratégies de communication et marketing digital',
+            'Positionnement de marque et étude de marché',
+            'Planification de campagnes multicanal'
+          ]
+        },
+        {
+          icon: '💻',
+          title: 'Création de sites web',
+          color: '#dc2626',
+          services: [
+            'Développement de sites vitrines, e-commerce et sur mesure',
+            'Optimisation mobile (responsive design)',
+            'Maintenance et mise à jour technique'
+          ]
+        },
+        {
+          icon: '🚀',
+          title: 'Référencement & Performance',
+          color: '#dc2626',
+          services: [
+            'SEO (référencement naturel) : audit, optimisation on-page/off-page',
+            'SEA (publicité payante) : campagnes Google Ads, Meta Ads, etc.',
+            'Suivi et analyse des performances (Google Analytics, Search Console)',
+            'Stratégies de contenu optimisé pour le SEO'
+          ]
+        },
+        {
+          icon: '📱',
+          title: 'Marketing & Réseaux sociaux',
+          color: '#dc2626',
+          services: [
+            'Gestion et animation des réseaux sociaux (Facebook, Instagram, LinkedIn, TikTok, etc.)',
+            'Création de contenus engageants (textes, visuels, vidéos)',
+            'Campagnes publicitaires social media (Meta Ads, LinkedIn Ads…)',
+            'Gestion de communauté et e-réputation'
+          ]
+        },
+        {
+          icon: '✉️',
+          title: 'Communication & Branding',
+          color: '#dc2626',
+          services: [
+            'Création d\'identité visuelle (logo, charte graphique, univers de marque)',
+            'Rédaction de contenus web et storytelling',
+            'Email marketing & automation (newsletters, séquences automatisées)',
+            'Stratégies de fidélisation client'
+          ]
+        },
+        {
+          icon: '📊',
+          title: 'Analyse & Optimisation',
+          color: '#dc2626',
+          services: [
+            'Reporting mensuel et suivi des KPIs',
+            'Analyse du trafic et du comportement utilisateur',
+            'A/B testing et amélioration continue des performances',
+            'Conseils personnalisés pour maximiser le ROI'
+          ]
+        }
       ]
     },
     projects: {
@@ -84,7 +141,10 @@ export const translations = {
     faq: {
       title: { part1: 'Foire aux', part2: 'Questions' },
       subtitle: 'Trouvez les réponses aux questions les plus fréquemment posées',
-      items: [
+      categories: {
+        web: {
+          title: 'Web',
+          items: [
         {
           question: 'Qu\'est-ce qu\'une agence web et quels services proposez-vous ?',
           answer: 'Une agence web est une entreprise spécialisée dans la création, le développement, la maintenance et la promotion de sites internet. Nous proposons des services comme la création de site vitrine, site e-commerce, refonte, SEO, hébergement, maintenance, marketing digital, etc.'
@@ -157,7 +217,66 @@ export const translations = {
           question: 'Comment démarrer un projet avec vous ?',
           answer: 'Contactez-nous via le formulaire ou email, décrivez votre besoin, nous organisons un rendez-vous ou appel pour définir le cahier des charges, puis nous vous envoyons un devis détaillé.'
         }
-      ]
+          ]
+        },
+        marketing: {
+          title: 'Marketing',
+          items: [
+            {
+              question: 'Qu\'est-ce qu\'une agence web marketing ?',
+              answer: 'Une agence web marketing aide les entreprises à développer leur présence en ligne grâce à des stratégies de communication digitale, du référencement, de la publicité en ligne et de la création de sites web performants.'
+            },
+            {
+              question: 'Quels services proposez-vous ?',
+              answer: 'Nous proposons la création de sites web, le référencement naturel (SEO), la publicité en ligne (SEA), la gestion des réseaux sociaux, le branding, ainsi que l\'analyse et l\'optimisation des performances digitales.'
+            },
+            {
+              question: 'Travaillez-vous avec tous les types d\'entreprises ?',
+              answer: 'Oui ! Nous accompagnons aussi bien les TPE/PME, startups, entreprises locales, particuliers, que les grandes marques souhaitant renforcer leur visibilité en ligne.'
+            },
+            {
+              question: 'Proposez-vous des services de référencement (SEO) ?',
+              answer: 'Oui, nous réalisons des audits SEO, des optimisations techniques et éditoriales, et mettons en place une stratégie de contenu pour améliorer votre position sur Google durablement.'
+            },
+            {
+              question: 'Faites-vous de la publicité en ligne (Google Ads, Meta Ads, etc.) ?',
+              answer: 'Absolument. Nous gérons vos campagnes publicitaires sur Google, Facebook, Instagram, LinkedIn, et d\'autres plateformes, afin de maximiser votre visibilité et votre retour sur investissement (ROI).'
+            },
+            {
+              question: 'Gérer mes réseaux sociaux fait-il partie de vos prestations ?',
+              answer: 'Oui. Nous créons des stratégies social media, planifions et publions des contenus engageants, et assurons la gestion complète de vos comptes.'
+            },
+            {
+              question: 'Comment se déroule une collaboration avec vous ?',
+              answer: 'Tout commence par un rendez-vous découverte, suivi d\'un audit et d\'une proposition personnalisée. Ensuite, nous mettons en place un plan d\'action digital clair et assurons un suivi régulier.'
+            },
+            {
+              question: 'Proposez-vous des formations en marketing digital ?',
+              answer: 'Oui, nous proposons des formations personnalisées sur le SEO, les réseaux sociaux, la publicité en ligne, et la création de contenu.'
+            },
+            {
+              question: 'Offrez-vous un accompagnement à long terme ?',
+              answer: 'Oui, nous privilégions les partenariats durables. Nous accompagnons nos clients sur le long terme pour analyser, optimiser et faire évoluer leur stratégie digitale.'
+            },
+            {
+              question: 'Puis-je demander un audit gratuit de mon site ou de ma communication ?',
+              answer: 'Oui, nous proposons un audit digital gratuit afin d\'évaluer vos besoins et de vous orienter vers les meilleures solutions.'
+            },
+            {
+              question: 'Travaillez-vous à distance ou en présentiel ?',
+              answer: 'Nous travaillons partout en France (et à l\'étranger) grâce à des outils collaboratifs, mais nous nous déplaçons également en présentiel selon les besoins du projet.'
+            },
+            {
+              question: 'Combien de temps faut-il pour obtenir des résultats en marketing digital ?',
+              answer: 'Les résultats varient selon les leviers utilisés : une campagne publicitaire peut donner des résultats immédiats, tandis que le SEO nécessite généralement 2 à 6 mois pour des effets durables.'
+            },
+            {
+              question: 'Comment puis-je vous contacter ?',
+              answer: 'Vous pouvez nous contacter via notre formulaire de contact, par email, par téléphone, ou directement sur nos réseaux sociaux. Nous répondrons dans les 24 à 48 heures.'
+            }
+          ]
+        }
+      }
     }
   },
   en: {
@@ -183,15 +302,72 @@ export const translations = {
     },
     skills: {
       title: { part1: 'Our', part2: 'Skills' },
-      list: [
-        { icon: '🌐', title: 'WordPress', text: 'CMS Expert', delay: '' },
-        { icon: '⚛️', title: 'React.js', text: 'Frontend', delay: '0.2s' },
-        { icon: '🟢', title: 'Node.js', text: 'Backend', delay: '0.4s' },
-        { icon: '📄', title: 'HTML5', text: 'Structure', delay: '0.6s' },
-        { icon: '🎨', title: 'CSS3', text: 'Style', delay: '0.8s' },
-        { icon: '📜', title: 'JavaScript', text: 'Interactivity', delay: '1s' },
-        { icon: '💻', title: 'PowerShell', text: 'Scripting', delay: '1.2s' },
-        { icon: '✨', title: 'And more', text: 'Much more', delay: '1.4s' }
+      categories: [
+        {
+          icon: '🎯',
+          title: 'Digital Strategy',
+          color: '#dc2626',
+          services: [
+            'Online presence audit and analysis',
+            'Development of communication and digital marketing strategies',
+            'Brand positioning and market research',
+            'Multi-channel campaign planning'
+          ]
+        },
+        {
+          icon: '💻',
+          title: 'Website Creation',
+          color: '#dc2626',
+          services: [
+            'Development of showcase, e-commerce and custom websites',
+            'Mobile optimization (responsive design)',
+            'Technical maintenance and updates'
+          ]
+        },
+        {
+          icon: '🚀',
+          title: 'SEO & Performance',
+          color: '#dc2626',
+          services: [
+            'SEO (search engine optimization): audit, on-page/off-page optimization',
+            'SEA (paid advertising): Google Ads, Meta Ads campaigns, etc.',
+            'Performance tracking and analysis (Google Analytics, Search Console)',
+            'SEO-optimized content strategies'
+          ]
+        },
+        {
+          icon: '📱',
+          title: 'Marketing & Social Media',
+          color: '#dc2626',
+          services: [
+            'Social media management and animation (Facebook, Instagram, LinkedIn, TikTok, etc.)',
+            'Creation of engaging content (text, visuals, videos)',
+            'Social media advertising campaigns (Meta Ads, LinkedIn Ads…)',
+            'Community management and e-reputation'
+          ]
+        },
+        {
+          icon: '✉️',
+          title: 'Communication & Branding',
+          color: '#dc2626',
+          services: [
+            'Visual identity creation (logo, graphic charter, brand universe)',
+            'Web content writing and storytelling',
+            'Email marketing & automation (newsletters, automated sequences)',
+            'Customer loyalty strategies'
+          ]
+        },
+        {
+          icon: '📊',
+          title: 'Analysis & Optimization',
+          color: '#dc2626',
+          services: [
+            'Monthly reporting and KPI tracking',
+            'Traffic and user behavior analysis',
+            'A/B testing and continuous performance improvement',
+            'Personalized advice to maximize ROI'
+          ]
+        }
       ]
     },
     projects: {
@@ -247,7 +423,10 @@ export const translations = {
     faq: {
       title: { part1: 'Frequently Asked', part2: 'Questions' },
       subtitle: 'Find answers to the most commonly asked questions',
-      items: [
+      categories: {
+        web: {
+          title: 'Web',
+          items: [
         {
           question: 'What is a web agency and what services do you offer?',
           answer: 'A web agency is a company specialized in creating, developing, maintaining, and promoting websites. We offer services such as showcase website creation, e-commerce websites, redesign, SEO, hosting, maintenance, digital marketing, etc.'
@@ -320,7 +499,66 @@ export const translations = {
           question: 'How do I start a project with you?',
           answer: 'Contact us via the form or email, describe your needs, we\'ll schedule a meeting or call to define the specifications, and then we\'ll send you a detailed quote.'
         }
-      ]
+          ]
+        },
+        marketing: {
+          title: 'Marketing',
+          items: [
+            {
+              question: 'What is a web marketing agency?',
+              answer: 'A web marketing agency helps businesses develop their online presence through digital communication strategies, SEO, online advertising, and high-performance website creation.'
+            },
+            {
+              question: 'What services do you offer?',
+              answer: 'We offer website creation, natural referencing (SEO), online advertising (SEA), social media management, branding, as well as digital performance analysis and optimization.'
+            },
+            {
+              question: 'Do you work with all types of businesses?',
+              answer: 'Yes! We support SMEs, startups, local businesses, individuals, as well as large brands looking to strengthen their online visibility.'
+            },
+            {
+              question: 'Do you offer SEO services?',
+              answer: 'Yes, we conduct SEO audits, technical and editorial optimizations, and implement content strategies to improve your Google rankings sustainably.'
+            },
+            {
+              question: 'Do you do online advertising (Google Ads, Meta Ads, etc.)?',
+              answer: 'Absolutely. We manage your advertising campaigns on Google, Facebook, Instagram, LinkedIn, and other platforms to maximize your visibility and return on investment (ROI).'
+            },
+            {
+              question: 'Is social media management part of your services?',
+              answer: 'Yes. We create social media strategies, plan and publish engaging content, and ensure complete management of your accounts.'
+            },
+            {
+              question: 'How does collaboration with you work?',
+              answer: 'It all starts with a discovery meeting, followed by an audit and a personalized proposal. Then, we implement a clear digital action plan and ensure regular follow-up.'
+            },
+            {
+              question: 'Do you offer digital marketing training?',
+              answer: 'Yes, we offer personalized training on SEO, social media, online advertising, and content creation.'
+            },
+            {
+              question: 'Do you offer long-term support?',
+              answer: 'Yes, we favor lasting partnerships. We support our clients long-term to analyze, optimize and evolve their digital strategy.'
+            },
+            {
+              question: 'Can I request a free audit of my site or communication?',
+              answer: 'Yes, we offer a free digital audit to assess your needs and guide you towards the best solutions.'
+            },
+            {
+              question: 'Do you work remotely or in person?',
+              answer: 'We work throughout France (and abroad) thanks to collaborative tools, but we also travel in person according to project needs.'
+            },
+            {
+              question: 'How long does it take to get results in digital marketing?',
+              answer: 'Results vary depending on the levers used: an advertising campaign can give immediate results, while SEO generally requires 2 to 6 months for lasting effects.'
+            },
+            {
+              question: 'How can I contact you?',
+              answer: 'You can contact us via our contact form, by email, by phone, or directly on our social media. We will respond within 24 to 48 hours.'
+            }
+          ]
+        }
+      }
     }
   }
 };

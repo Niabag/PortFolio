@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Competences from './components/Competences.jsx';
 import Projects from './components/Projects.jsx';
+import FAQ from './components/FAQ.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import AnimatedBackground from './components/AnimatedBackground.jsx';
@@ -50,8 +51,9 @@ export default function App() {
       <AnimatedBackground />
       <Navbar />
       <Hero />
-      <Projects />
       <Competences />
+      <Projects />
+      <FAQ />
       <Contact />
       <Footer />
     </>

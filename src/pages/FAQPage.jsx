@@ -7,11 +7,19 @@ import AnimatedBackground from '../components/AnimatedBackground';
 
 export default function FAQPage() {
   const { t, lang } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState('web');
   const [activeIndex, setActiveIndex] = useState(null);
-  const faqItems = translations[lang].faq.items;
+  
+  const categories = translations[lang]?.faq?.categories || {};
+  const currentItems = categories[activeCategory]?.items || [];
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    setActiveIndex(null);
   };
 
   return (
@@ -32,10 +40,36 @@ export default function FAQPage() {
               </p>
             </div>
 
+            {/* Onglets de catégories */}
+            <div className="max-w-4xl mx-auto mb-8">
+              <div className="flex justify-center gap-4 flex-wrap">
+                <button
+                  onClick={() => handleCategoryChange('web')}
+                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
+                    activeCategory === 'web'
+                      ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                >
+                  💻 {categories.web?.title || 'Web'}
+                </button>
+                <button
+                  onClick={() => handleCategoryChange('marketing')}
+                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
+                    activeCategory === 'marketing'
+                      ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                >
+                  📊 {categories.marketing?.title || 'Marketing'}
+                </button>
+              </div>
+            </div>
+
             {/* Liste des questions */}
             <div className="max-w-4xl mx-auto">
               <div className="space-y-4">
-                {faqItems.map((item, index) => (
+                {currentItems.map((item, index) => (
                   <div 
                     key={index} 
                     className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-primary-red/50"
