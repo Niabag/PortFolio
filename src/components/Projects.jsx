@@ -7,9 +7,41 @@ export default function Projects() {
   const title = t('projects.title');
   const [selectedProject, setSelectedProject] = useState(null);
 
+  // Gestion du scroll quand modal ouvert
   useEffect(() => {
     document.body.style.overflow = selectedProject ? 'hidden' : 'auto';
   }, [selectedProject]);
+
+  // Gestion du bouton retour du téléphone
+  useEffect(() => {
+    const handlePopState = () => {
+      if (selectedProject) {
+        setSelectedProject(null);
+      }
+    };
+
+    if (selectedProject) {
+      // Ajouter un état dans l'historique quand on ouvre le modal
+      window.history.pushState({ modal: true }, '');
+    }
+
+    // Écouter l'événement popstate (bouton retour)
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [selectedProject]);
+
+  // Fonction pour fermer le modal proprement
+  const closeModal = () => {
+    // Si un modal est ouvert et qu'il y a un état modal dans l'historique
+    if (selectedProject && window.history.state?.modal) {
+      window.history.back();
+    } else {
+      setSelectedProject(null);
+    }
+  };
 
   return (
     <section id="realisations" className="py-12 sm:py-20 bg-gradient-to-b from-transparent to-black/50 relative z-20">
@@ -57,14 +89,14 @@ export default function Projects() {
       {selectedProject && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
-          onClick={() => setSelectedProject(null)}
+          onClick={closeModal}
         >
           <div
             className="relative bg-card-bg rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-4 pt-40 pb-40 sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setSelectedProject(null)}
+              onClick={closeModal}
               className="absolute top-4 right-4 text-primary-red hover:text-white text-2xl sm:text-3xl"
               aria-label={t('projects.close')}
             >
@@ -144,7 +176,7 @@ export default function Projects() {
                   {t('projects.modal.visitSite')} <i className="fas fa-external-link-alt ml-2"></i>
                 </a>
                 <button
-                  onClick={() => setSelectedProject(null)}
+                  onClick={closeModal}
                   className="mt-4 w-full sm:hidden bg-gray-700 px-4 py-2 rounded-lg text-white hover:bg-gray-600 transition text-sm"
                 >
                   {t('projects.close')}

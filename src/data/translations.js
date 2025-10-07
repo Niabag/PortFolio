@@ -15,7 +15,7 @@ export const translations = {
       subtitle: 'Agence web et marketing digital spécialisée dans la création de sites internet',
       description:
         'Création de sites web sur-mesure et stratégies marketing digital pour booster votre entreprise en ligne. Spécialistes de la création de sites internet professionnels et du marketing digital, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO, accompagnés de campagnes marketing performantes.',
-      viewProjects: 'Voir nos réalisations',
+      viewProjects: 'Voir nos dernières réalisations',
       contactMe: 'Nous contacter'
     },
     skills: {
@@ -89,7 +89,7 @@ export const translations = {
       ]
     },
     projects: {
-      title: { part1: 'Nos', part2: 'Réalisations' },
+      title: { part1: 'Nos dernières', part2: 'Réalisations' },
       close: 'Fermer',
       modal: {
         description: 'Description',
@@ -296,7 +296,7 @@ export const translations = {
       subtitle: 'Web and digital marketing agency specialized in website creation',
       description:
         'We build tailor-made websites and digital marketing strategies to boost your business online. As specialists in creating professional websites and digital marketing, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites, accompanied by high-performance marketing campaigns.',
-      viewProjects: 'See our projects',
+      viewProjects: 'See our latest projects',
       contactMe: 'Contact us'
     },
     skills: {
@@ -370,7 +370,7 @@ export const translations = {
       ]
     },
     projects: {
-      title: { part1: 'Our', part2: 'Projects' },
+      title: { part1: 'Our latest', part2: 'Projects' },
       close: 'Close',
       modal: {
         description: 'Description',
