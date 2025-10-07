@@ -129,7 +129,7 @@ export default function Booking({ onClose }) {
             </div>
           </div>
 
-          <div className="my-6">
+          <div style={{ marginTop: '50px', marginBottom: '50px' }}>
             <label className="block text-white mb-2 text-sm">
               {lang === 'fr' ? 'Téléphone' : 'Phone'}
             </label>
