@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .env
+faq.html
+src/faq-main.jsx
+src/pages/FAQPage.jsx
