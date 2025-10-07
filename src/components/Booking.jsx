@@ -77,9 +77,29 @@ export default function Booking({ onClose }) {
     };
   }, []);
 
+  // Gérer le bouton retour du téléphone pour fermer le modal
+  useEffect(() => {
+    // Ajouter un état dans l'historique
+    window.history.pushState({ modal: 'booking' }, '');
+    
+    const handlePopState = (event) => {
+      onClose();
+    };
+    
+    window.addEventListener('popstate', handlePopState);
+    
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      // Si le modal est toujours dans l'historique, on le retire
+      if (window.history.state?.modal === 'booking') {
+        window.history.back();
+      }
+    };
+  }, [onClose]);
+
   const modalContent = (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[1200] flex items-center justify-center p-4">
-      <div className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-primary-red/30" style={{ paddingBottom: '100px' }}>
+      <div className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-primary-red/30" style={{ paddingTop: '50px', paddingBottom: '100px' }}>
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-primary-red text-2xl"
