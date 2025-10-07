@@ -4,12 +4,13 @@ import { translations } from '../data/translations';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
+import SocialButtons from '../components/SocialButtons';
 
 export default function FAQPage() {
   const { t, lang } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('web');
   const [activeIndex, setActiveIndex] = useState(null);
-  
+
   const categories = translations[lang]?.faq?.categories || {};
   const currentItems = categories[activeCategory]?.items || [];
 
@@ -24,9 +25,10 @@ export default function FAQPage() {
 
   return (
     <>
+      <SocialButtons />
       <AnimatedBackground />
       <Navbar />
-      
+
       <main className="min-h-screen pt-24 pb-20">
         <section className="py-20 bg-transparent text-white">
           <div className="container mx-auto px-4">
@@ -45,21 +47,19 @@ export default function FAQPage() {
               <div className="flex justify-center gap-4 flex-wrap">
                 <button
                   onClick={() => handleCategoryChange('web')}
-                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                    activeCategory === 'web'
+                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === 'web'
                       ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
                       : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                  }`}
+                    }`}
                 >
                   💻 {categories.web?.title || 'Web'}
                 </button>
                 <button
                   onClick={() => handleCategoryChange('marketing')}
-                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
-                    activeCategory === 'marketing'
+                  className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === 'marketing'
                       ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
                       : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                  }`}
+                    }`}
                 >
                   📊 {categories.marketing?.title || 'Marketing'}
                 </button>
@@ -70,21 +70,19 @@ export default function FAQPage() {
             <div className="max-w-4xl mx-auto">
               <div className="space-y-4">
                 {currentItems.map((item, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-primary-red/50"
                   >
                     <button
-                      className={`w-full px-6 py-5 text-left flex justify-between items-center ${
-                        activeIndex === index ? 'bg-gray-800/70' : ''
-                      } hover:bg-gray-800/70 transition-colors`}
+                      className={`w-full px-6 py-5 text-left flex justify-between items-center ${activeIndex === index ? 'bg-gray-800/70' : ''
+                        } hover:bg-gray-800/70 transition-colors`}
                       onClick={() => toggleAccordion(index)}
                     >
                       <span className="font-semibold text-lg pr-4">{item.question}</span>
                       <svg
-                        className={`w-6 h-6 flex-shrink-0 transform transition-transform duration-300 text-primary-red ${
-                          activeIndex === index ? 'rotate-180' : ''
-                        }`}
+                        className={`w-6 h-6 flex-shrink-0 transform transition-transform duration-300 text-primary-red ${activeIndex === index ? 'rotate-180' : ''
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -115,7 +113,7 @@ export default function FAQPage() {
                   {lang === 'fr' ? 'Vous avez d\'autres questions ?' : 'Have more questions?'}
                 </h2>
                 <p className="text-gray-400 mb-6">
-                  {lang === 'fr' 
+                  {lang === 'fr'
                     ? 'N\'hésitez pas à nous contacter pour obtenir plus d\'informations sur nos services.'
                     : 'Feel free to contact us for more information about our services.'}
                 </p>

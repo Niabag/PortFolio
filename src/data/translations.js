@@ -38,7 +38,6 @@ export const translations = {
           color: '#dc2626',
           services: [
             'Développement de sites vitrines, e-commerce et sur mesure',
-            'Création de site sur mesure',
             'Optimisation mobile (responsive design)',
             'Maintenance et mise à jour technique'
           ]
@@ -233,7 +232,7 @@ export const translations = {
             },
             {
               question: 'Travaillez-vous avec tous les types d\'entreprises ?',
-              answer: 'Oui ! Nous accompagnons aussi bien les TPE/PME, startups, entreprises locales, particuliers, que les grandes marques souhaitant renforcer leur visibilité en ligne.'
+              answer: 'Oui ! Nous accompagnons aussi bien les TPE/PME, startups, entreprises locales, que les grandes marques souhaitant renforcer leur visibilité en ligne.'
             },
             {
               question: 'Proposez-vous des services de référencement (SEO) ?',
@@ -321,7 +320,6 @@ export const translations = {
           color: '#dc2626',
           services: [
             'Development of showcase, e-commerce and custom websites',
-            'Custom website creation',
             'Mobile optimization (responsive design)',
             'Technical maintenance and updates'
           ]
@@ -516,7 +514,7 @@ export const translations = {
             },
             {
               question: 'Do you work with all types of businesses?',
-              answer: 'Yes! We support SMEs, startups, local businesses, individuals, as well as large brands looking to strengthen their online visibility.'
+              answer: 'Yes! We support SMEs, startups, local businesses, as well as large brands looking to strengthen their online visibility.'
             },
             {
               question: 'Do you offer SEO services?',

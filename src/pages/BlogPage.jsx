@@ -3,6 +3,7 @@ import { useLanguage } from '../LanguageContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
+import SocialButtons from '../components/SocialButtons';
 
 export default function BlogPage() {
   const { lang, t } = useLanguage();
@@ -10,8 +11,8 @@ export default function BlogPage() {
   const articles = [
     {
       id: 'wordpress-vs-react',
-      title: lang === 'fr' 
-        ? 'Comment choisir entre WordPress et React pour créer son site web ?' 
+      title: lang === 'fr'
+        ? 'Comment choisir entre WordPress et React pour créer son site web ?'
         : 'How to choose between WordPress and React for your website?',
       excerpt: lang === 'fr'
         ? 'Découvrez les avantages et limites de WordPress et React pour faire le meilleur choix selon vos besoins et votre budget.'
@@ -72,9 +73,10 @@ export default function BlogPage() {
 
   return (
     <>
+      <SocialButtons />
       <AnimatedBackground />
       <Navbar />
-      
+
       <main className="min-h-screen pt-24 pb-20">
         <section className="py-20 bg-transparent text-white">
           <div className="container mx-auto px-4">

@@ -9,6 +9,7 @@ import FAQ from './components/FAQ.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import AnimatedBackground from './components/AnimatedBackground.jsx';
+import SocialButtons from './components/SocialButtons.jsx';
 
 export default function App() {
   useEffect(() => {
@@ -48,6 +49,7 @@ export default function App() {
 
   return (
     <>
+      <SocialButtons />
       <AnimatedBackground />
       <Navbar />
       <Hero />
