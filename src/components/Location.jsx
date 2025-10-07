@@ -3,11 +3,11 @@ import { useLanguage } from '../LanguageContext.jsx';
 
 export default function Location() {
   const { lang } = useLanguage();
-  
-  // Adresse à Paris
-  const address = "Paris, France";
-  const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(address)}&zoom=12`;
-  
+
+  // Adresse à Blois centre-ville sans numéro
+  const address = "Rue Denis Papin, 41000 Blois, France";
+  const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(address)}&zoom=15`;
+
   return (
     <section id="location" className="py-12 sm:py-20 bg-black/50 relative z-20">
       <div className="container mx-auto px-4 sm:px-6">
@@ -22,7 +22,7 @@ export default function Location() {
             </>
           )}
         </h2>
-        
+
         <div className="max-w-5xl mx-auto">
           <div className="bg-card-bg rounded-xl overflow-hidden border border-gray-700 shadow-xl">
             <div className="p-4 sm:p-6 bg-gradient-to-r from-primary-red/10 to-transparent border-b border-gray-700">
@@ -33,12 +33,12 @@ export default function Location() {
                     {lang === 'fr' ? 'Notre emplacement' : 'Our Location'}
                   </p>
                   <p className="text-gray-400 text-sm sm:text-base">
-                    France
+                    {lang === 'fr' ? 'Secteur de Blois, France' : 'Blois area, France'}
                   </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
               <iframe
                 src={googleMapsUrl}
@@ -50,12 +50,12 @@ export default function Location() {
                 title={lang === 'fr' ? 'Carte de notre emplacement' : 'Map of our location'}
               ></iframe>
             </div>
-            
+
             <div className="p-4 sm:p-6 bg-gradient-to-r from-transparent to-primary-red/10">
               <p className="text-gray-300 text-sm sm:text-base text-center">
-                {lang === 'fr' 
-                  ? '📍 Nous sommes situés en France'
-                  : '📍 We are located in France'}
+                {lang === 'fr'
+                  ? '📍 Nous sommes situés dans le secteur de Blois, en région Centre-Val de Loire'
+                  : '📍 We are located in the Blois area, in the Centre-Val de Loire region'}
               </p>
             </div>
           </div>

@@ -5,30 +5,56 @@
 
 /* Animations personnalisées inspirées de la version statique */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .bubble {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(45deg, rgba(220,38,38,0.3), rgba(220,38,38,0.1));
+  background: linear-gradient(45deg, rgba(220, 38, 38, 0.3), rgba(220, 38, 38, 0.1));
   animation: bubble-rise 15s infinite linear;
 }
 
 @keyframes bubble-rise {
-  0% { transform: translateY(100vh) scale(0); opacity: 0; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 1; }
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 1;
+  }
 }
 
 /* Styles spécifiques inspirés de la maquette statique */
@@ -36,6 +62,7 @@
   position: relative;
   transition: all 0.3s ease;
 }
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -46,6 +73,7 @@
   background: #dc2626;
   transition: width 0.3s ease;
 }
+
 .nav-link:hover::after {
   width: 100%;
 }
@@ -55,9 +83,10 @@
   border: 1px solid #dc2626;
   transition: all 0.3s ease;
 }
+
 .tech-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(220,38,38,0.3);
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
   border-color: #ef4444;
 }
 
@@ -66,15 +95,16 @@
   transition: all 0.4s ease;
   overflow: hidden;
 }
+
 .project-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 15px 30px rgba(220,38,38,0.4);
+  box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
 }
 
 /* Floating social buttons */
 .whatsapp-float {
   position: fixed;
-  bottom: 20px;
+  bottom: 70px;
   right: 20px;
   z-index: 1200;
   background: #25d366;
@@ -88,6 +118,7 @@
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
 }
+
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
@@ -95,7 +126,7 @@
 
 .facebook-float {
   position: fixed;
-  bottom: 160px;
+  bottom: 210px;
   right: 20px;
   z-index: 1200;
   background: #1877f2;
@@ -117,7 +148,7 @@
 
 .instagram-float {
   position: fixed;
-  bottom: 90px;
+  bottom: 140px;
   right: 20px;
   z-index: 1200;
   background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
@@ -166,6 +197,7 @@
 
     -webkit-clip-path: inset(0 100% 0 0);
   }
+
   to {
     clip-path: inset(0 0 0 0);
     -webkit-clip-path: inset(0 0 0 0);
@@ -173,10 +205,12 @@
 }
 
 @keyframes caret {
+
   0%,
   50% {
     opacity: 1;
   }
+
   50.01%,
   100% {
     opacity: 0;
@@ -239,6 +273,7 @@
 
   }
 }
+
 /* ========================================
    SECTION COMPÉTENCES - ANIMATIONS BULLES
    ======================================== */
@@ -252,18 +287,36 @@
   animation: cardAppear 0.6s ease-out backwards;
 }
 
-.skill-card-wrapper:nth-child(1) { animation-delay: 0.1s; }
-.skill-card-wrapper:nth-child(2) { animation-delay: 0.2s; }
-.skill-card-wrapper:nth-child(3) { animation-delay: 0.3s; }
-.skill-card-wrapper:nth-child(4) { animation-delay: 0.4s; }
-.skill-card-wrapper:nth-child(5) { animation-delay: 0.5s; }
-.skill-card-wrapper:nth-child(6) { animation-delay: 0.6s; }
+.skill-card-wrapper:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.skill-card-wrapper:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.skill-card-wrapper:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.skill-card-wrapper:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.skill-card-wrapper:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.skill-card-wrapper:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 @keyframes cardAppear {
   from {
     opacity: 0;
     transform: translateY(50px) scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -290,11 +343,10 @@
   inset: -2px;
   border-radius: 20px;
   padding: 2px;
-  background: linear-gradient(45deg, 
-    rgba(220, 38, 38, 0.4), 
-    rgba(220, 38, 38, 0.1),
-    rgba(220, 38, 38, 0.4)
-  );
+  background: linear-gradient(45deg,
+      rgba(220, 38, 38, 0.4),
+      rgba(220, 38, 38, 0.1),
+      rgba(220, 38, 38, 0.4));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -306,7 +358,7 @@
 .skill-card.hovered {
   transform: translateY(-20px) scale(1.02);
   border-color: rgba(220, 38, 38, 0.6);
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(220, 38, 38, 0.3),
     0 0 40px rgba(220, 38, 38, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -321,11 +373,9 @@
 .skill-card-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(220, 38, 38, 0.15) 0%,
-    transparent 50%
-  );
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(220, 38, 38, 0.15) 0%,
+      transparent 50%);
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 20px;
@@ -351,11 +401,10 @@
   position: absolute;
   inset: 0;
   border-radius: 20px;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    rgba(220, 38, 38, 0.8) 50%,
-    rgba(220, 38, 38, 0.9) 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(220, 38, 38, 0.8) 50%,
+      rgba(220, 38, 38, 0.9) 100%);
   opacity: 0;
   transform: translateX(-100%);
   transition: opacity 0.2s ease;
@@ -380,6 +429,7 @@
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -401,17 +451,15 @@
 .skill-bubble {
   position: absolute;
   bottom: 0;
-  background: radial-gradient(
-    circle at 35% 30%,
-    rgba(220, 38, 38, 0.8),
-    rgba(220, 38, 38, 0.5),
-    rgba(220, 38, 38, 0.15),
-    rgba(220, 38, 38, 0.05)
-  );
+  background: radial-gradient(circle at 35% 30%,
+      rgba(220, 38, 38, 0.8),
+      rgba(220, 38, 38, 0.5),
+      rgba(220, 38, 38, 0.15),
+      rgba(220, 38, 38, 0.05));
   border-radius: 50%;
   animation: bubbleRise 1.1s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
   opacity: 0;
-  box-shadow: 
+  box-shadow:
     0 0 25px rgba(220, 38, 38, 0.5),
     0 0 40px rgba(220, 38, 38, 0.2),
     inset -8px -8px 15px rgba(0, 0, 0, 0.3),
@@ -425,25 +473,31 @@
     transform: translateY(0) translateX(0) scale(0.2);
     opacity: 0;
   }
+
   5% {
     opacity: 0.7;
   }
+
   20% {
     transform: translateY(-25px) translateX(8px) scale(0.5);
     opacity: 0.85;
   }
+
   40% {
     transform: translateY(-55px) translateX(-10px) scale(0.75);
     opacity: 0.75;
   }
+
   65% {
     transform: translateY(-90px) translateX(12px) scale(0.95);
     opacity: 0.55;
   }
+
   85% {
     transform: translateY(-115px) translateX(-6px) scale(1.05);
     opacity: 0.25;
   }
+
   100% {
     transform: translateY(-130px) translateX(3px) scale(1.15);
     opacity: 0;
@@ -469,25 +523,31 @@
     transform: translateY(0) translateX(0) scale(0.2) rotate(0deg);
     opacity: 0;
   }
+
   5% {
     opacity: 0.75;
   }
+
   20% {
     transform: translateY(-25px) translateX(-8px) scale(0.5) rotate(-5deg);
     opacity: 0.85;
   }
+
   40% {
     transform: translateY(-55px) translateX(-16px) scale(0.75) rotate(-8deg);
     opacity: 0.75;
   }
+
   65% {
     transform: translateY(-90px) translateX(-22px) scale(0.95) rotate(-10deg);
     opacity: 0.55;
   }
+
   85% {
     transform: translateY(-115px) translateX(-18px) scale(1.05) rotate(-7deg);
     opacity: 0.25;
   }
+
   100% {
     transform: translateY(-130px) translateX(-20px) scale(1.15) rotate(-5deg);
     opacity: 0;
@@ -500,25 +560,31 @@
     transform: translateY(0) translateX(0) scale(0.2) rotate(0deg);
     opacity: 0;
   }
+
   5% {
     opacity: 0.75;
   }
+
   20% {
     transform: translateY(-25px) translateX(8px) scale(0.5) rotate(5deg);
     opacity: 0.85;
   }
+
   40% {
     transform: translateY(-55px) translateX(16px) scale(0.75) rotate(8deg);
     opacity: 0.75;
   }
+
   65% {
     transform: translateY(-90px) translateX(24px) scale(0.95) rotate(10deg);
     opacity: 0.55;
   }
+
   85% {
     transform: translateY(-115px) translateX(20px) scale(1.05) rotate(7deg);
     opacity: 0.25;
   }
+
   100% {
     transform: translateY(-130px) translateX(23px) scale(1.15) rotate(5deg);
     opacity: 0;
@@ -531,29 +597,36 @@
     transform: translateY(0) translateX(0) scale(0.2) rotate(0deg);
     opacity: 0;
   }
+
   5% {
     opacity: 0.7;
   }
+
   15% {
     transform: translateY(-20px) translateX(-6px) scale(0.45) rotate(-3deg);
     opacity: 0.8;
   }
+
   35% {
     transform: translateY(-48px) translateX(10px) scale(0.7) rotate(6deg);
     opacity: 0.75;
   }
+
   55% {
     transform: translateY(-75px) translateX(-8px) scale(0.9) rotate(-4deg);
     opacity: 0.6;
   }
+
   75% {
     transform: translateY(-102px) translateX(6px) scale(1.05) rotate(3deg);
     opacity: 0.4;
   }
+
   90% {
     transform: translateY(-120px) translateX(-3px) scale(1.12) rotate(-2deg);
     opacity: 0.15;
   }
+
   100% {
     transform: translateY(-130px) translateX(0) scale(1.18) rotate(0deg);
     opacity: 0;
@@ -577,12 +650,10 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.1) 50%,
-    transparent 70%
-  );
+  background: linear-gradient(45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%);
   transform: translateX(-100%) translateY(-100%) rotate(45deg);
   opacity: 0;
   transition: all 0.6s ease;
@@ -611,37 +682,37 @@
   .skill-card.hovered {
     transform: translateY(-10px) scale(1.01);
   }
-  
+
   .skill-bubbles-container {
     height: 100%;
     bottom: 0;
   }
-  
+
   .skill-bubble {
     animation-duration: 1.1s !important;
   }
-  
+
   @keyframes bubbleRise {
     100% {
       transform: translateY(-120px) translateX(-5px) scale(1.1);
       opacity: 0;
     }
   }
-  
+
   @keyframes bubbleRiseLeft {
     100% {
       transform: translateY(-120px) translateX(-15px) scale(1.1);
       opacity: 0;
     }
   }
-  
+
   @keyframes bubbleRiseRight {
     100% {
       transform: translateY(-120px) translateX(20px) scale(1.1);
       opacity: 0;
     }
   }
-  
+
   @keyframes bubbleRiseWave {
     100% {
       transform: translateY(-120px) translateX(0) scale(1.1);

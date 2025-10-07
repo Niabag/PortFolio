@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
 export default function Booking({ onClose }) {
@@ -69,37 +68,9 @@ export default function Booking({ onClose }) {
   // Date minimum (aujourd'hui)
   const today = new Date().toISOString().split('T')[0];
 
-  // Bloquer le scroll quand le modal est ouvert
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
-  // Gérer le bouton retour du téléphone pour fermer le modal
-  useEffect(() => {
-    // Ajouter un état dans l'historique
-    window.history.pushState({ modal: 'booking' }, '');
-    
-    const handlePopState = (event) => {
-      onClose();
-    };
-    
-    window.addEventListener('popstate', handlePopState);
-    
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-      // Si le modal est toujours dans l'historique, on le retire
-      if (window.history.state?.modal === 'booking') {
-        window.history.back();
-      }
-    };
-  }, [onClose]);
-
-  const modalContent = (
+  return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[1200] flex items-center justify-center p-4">
-      <div className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-primary-red/30" style={{ paddingTop: '50px', paddingBottom: '100px', paddingLeft: '30px', paddingRight: '30px' }}>
+      <div className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative border border-primary-red/30">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-primary-red text-2xl"
@@ -113,7 +84,7 @@ export default function Booking({ onClose }) {
             {lang === 'fr' ? '📅 Réserver un rendez-vous' : '📅 Book an Appointment'}
           </h2>
           <p className="text-gray-400">
-            {lang === 'fr' 
+            {lang === 'fr'
               ? 'Choisissez une date et un créneau horaire pour échanger avec nous'
               : 'Choose a date and time slot to meet with us'}
           </p>
@@ -149,7 +120,7 @@ export default function Booking({ onClose }) {
             </div>
           </div>
 
-          <div style={{ marginTop: '50px', marginBottom: '50px' }}>
+          <div>
             <label className="block text-white mb-2 text-sm">
               {lang === 'fr' ? 'Téléphone' : 'Phone'}
             </label>
@@ -212,7 +183,7 @@ export default function Booking({ onClose }) {
 
           {status === 'success' && (
             <div className="bg-green-900/30 border border-green-600 rounded-lg p-4 text-green-400">
-              {lang === 'fr' 
+              {lang === 'fr'
                 ? '✅ Votre demande de rendez-vous a été envoyée ! Nous vous contacterons rapidement.'
                 : '✅ Your appointment request has been sent! We will contact you soon.'}
             </div>
@@ -220,7 +191,7 @@ export default function Booking({ onClose }) {
 
           {status === 'error' && (
             <div className="bg-red-900/30 border border-red-600 rounded-lg p-4 text-red-400">
-              {lang === 'fr' 
+              {lang === 'fr'
                 ? '❌ Erreur lors de l\'envoi. Veuillez réessayer.'
                 : '❌ Error sending. Please try again.'}
             </div>
@@ -231,7 +202,7 @@ export default function Booking({ onClose }) {
             disabled={status === 'sending'}
             className="w-full bg-primary-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {status === 'sending' 
+            {status === 'sending'
               ? (lang === 'fr' ? 'Envoi en cours...' : 'Sending...')
               : (lang === 'fr' ? 'Confirmer le rendez-vous' : 'Confirm Appointment')}
           </button>
@@ -239,6 +210,4 @@ export default function Booking({ onClose }) {
       </div>
     </div>
   );
-
-  return createPortal(modalContent, document.body);
 }
