@@ -11,13 +11,13 @@ export default function Competences() {
   const createBubbles = (cardIndex) => {
     const bubbles = [];
     const bubbleCount = 20;
-    
+
     for (let i = 0; i < bubbleCount; i++) {
       const delay = Math.random() * 0.7;
       const size = Math.random() * 20 + 10;
       const leftPos = Math.random() * 100;
       const duration = 1.1;
-      
+
       bubbles.push(
         <div
           key={`bubble-${cardIndex}-${i}`}
@@ -70,7 +70,7 @@ export default function Competences() {
             >
               <div className={`skill-card relative ${hoveredCard === index ? 'hovered' : ''}`}>
                 <div className="skill-card-gradient"></div>
-                
+
                 <div className="relative z-10 p-6 sm:p-8">
                   <div className="skill-icon-wrapper mb-4">
                     <span className="text-5xl sm:text-6xl">{category.icon}</span>
@@ -84,11 +84,10 @@ export default function Competences() {
                     {category.services.map((service, serviceIndex) => {
                       const isVisible = expandedCard === index || serviceIndex < 2;
                       return (
-                        <li 
+                        <li
                           key={serviceIndex}
-                          className={`flex items-start gap-2 text-gray-300 text-sm transition-all duration-300 ${
-                            isVisible ? 'opacity-100 max-h-32' : 'opacity-0 max-h-0 overflow-hidden'
-                          }`}
+                          className={`flex items-start gap-2 text-gray-300 text-sm transition-all duration-300 ${isVisible ? 'opacity-100 max-h-32' : 'opacity-0 max-h-0 overflow-hidden'
+                            }`}
                         >
                           <span className="text-primary-red mt-1 flex-shrink-0">▸</span>
                           <span>{service}</span>

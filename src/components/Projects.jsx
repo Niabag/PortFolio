@@ -44,8 +44,8 @@ export default function Projects() {
   };
 
   return (
-    <section id="realisations" className="py-12 sm:py-20 bg-gradient-to-b from-transparent to-black/50 relative z-20">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section id="realisations" className="snap-section bg-gradient-to-b from-transparent to-black/50 relative z-20">
+      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px]">
         <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
           {title.part1} <span className="text-primary-red">{title.part2}</span>
         </h2>

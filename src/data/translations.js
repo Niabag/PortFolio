@@ -3,7 +3,7 @@ export const translations = {
     title: 'SiteOnWeb - Agence Web et Marketing Digital | Création de Sites Internet et Stratégies Marketing',
     nav: {
       home: 'Accueil',
-      skills: 'Compétences',
+      skills: 'Services',
       projects: 'Réalisations',
       blog: 'Blog',
       contact: 'Contact',
@@ -19,7 +19,7 @@ export const translations = {
       contactMe: 'Nous contacter'
     },
     skills: {
-      title: { part1: 'Nos', part2: 'Compétences' },
+      title: { part1: 'Nos', part2: 'Services' },
       categories: [
         {
           icon: '🎯',
@@ -302,7 +302,7 @@ export const translations = {
       contactMe: 'Contact us'
     },
     skills: {
-      title: { part1: 'Our', part2: 'Skills' },
+      title: { part1: 'Our', part2: 'Services' },
       categories: [
         {
           icon: '🎯',

@@ -11,36 +11,25 @@ import Location from './components/Location.jsx';
 import Footer from './components/Footer.jsx';
 import AnimatedBackground from './components/AnimatedBackground.jsx';
 import SocialButtons from './components/SocialButtons.jsx';
+import { useSnapScroll } from './hooks/useSnapScroll.jsx';
 
 export default function App() {
+  // Activer le scroll snap bloc par bloc
+  useSnapScroll();
+
   useEffect(() => {
+    // Smooth scroll pour les liens de navigation
     const links = document.querySelectorAll('a[href^="#"]');
-
-    function smoothScroll(target) {
-      const startY = window.pageYOffset;
-      const targetY = target.getBoundingClientRect().top + startY;
-      const distance = targetY - startY;
-      const duration = 800;
-      let startTime = null;
-
-      function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        const easing = progress * progress;
-        window.scrollTo(0, startY + distance * easing);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-      }
-
-      requestAnimationFrame(animation);
-    }
 
     function handleClick(e) {
       const href = e.currentTarget.getAttribute('href');
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        smoothScroll(target);
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
     }
 
@@ -53,12 +42,14 @@ export default function App() {
       <SocialButtons />
       <AnimatedBackground />
       <Navbar />
-      <Hero />
-      <Competences />
-      <Projects />
-      <FAQ />
-      <Contact />
-      <Location />
+      <main className="scroll-container">
+        <Hero />
+        <Competences />
+        <Projects />
+        <FAQ />
+        <Contact />
+        <Location />
+      </main>
       <Footer />
     </>
   );

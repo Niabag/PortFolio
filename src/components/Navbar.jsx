@@ -26,15 +26,15 @@ export default function Navbar() {
     // Si le lien contient un hash (#)
     if (href.includes('#')) {
       const targetId = href.split('#')[1];
-      
+
       // Vérifier si on est sur la page d'accueil
       const isOnHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
-      
+
       if (isOnHomePage) {
         // Sur la page d'accueil : animation smooth scroll
         e.preventDefault();
         const targetElement = document.getElementById(targetId);
-        
+
         if (targetElement) {
           // Animation de transition élégante
           const startPosition = window.pageYOffset;
@@ -53,9 +53,9 @@ export default function Navbar() {
             const timeElapsed = currentTime - start;
             const progress = Math.min(timeElapsed / duration, 1);
             const ease = easeInOutCubic(progress);
-            
+
             window.scrollTo(0, startPosition + distance * ease);
-            
+
             if (timeElapsed < duration) {
               requestAnimationFrame(animation);
             }
@@ -177,7 +177,7 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      
+
       {showBooking && <Booking onClose={() => setShowBooking(false)} />}
     </nav>
   );

@@ -3,6 +3,154 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll snap section par section - Fluide et centré */
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  overscroll-behavior-y: none; /* Empêcher le bounce sur mobile */
+}
+
+/* Conteneur principal pour l'effet de stack */
+.scroll-container {
+  position: relative;
+}
+
+/* Sections plein écran avec snap - Effet overlay */
+.snap-section {
+  min-height: 100vh;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  padding-top: 0;
+}
+
+/* Ordre des z-index inversé - La prochaine section apparaît par-dessus */
+#accueil { z-index: 1; }
+#competences { z-index: 2; }
+#realisations { z-index: 3; }
+#faq { z-index: 4; }
+#contact { z-index: 5; }
+#location { z-index: 6; }
+
+/* Conteneur centré et responsive */
+.snap-section .container {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.5rem;
+  margin: auto 0;
+}
+
+/* Scroll interne si contenu trop grand */
+.snap-section.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+  align-items: flex-start;
+  padding-top: 5rem;
+}
+
+.snap-section.scrollable .container {
+  max-height: none;
+  min-height: auto;
+  overflow-y: visible;
+  overflow-x: hidden;
+  padding: 2rem 1.5rem 4rem;
+  justify-content: flex-start;
+}
+
+/* Scrollbar stylisée pour sections scrollables */
+.snap-section.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.snap-section.scrollable::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.snap-section.scrollable::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.5);
+  border-radius: 10px;
+}
+
+.snap-section.scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.8);
+}
+
+/* Firefox scrollbar */
+.snap-section.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(220, 38, 38, 0.5) rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar toujours au-dessus */
+nav {
+  z-index: 1100 !important;
+}
+
+/* Footer en dehors du système de stack */
+footer {
+  position: relative;
+  z-index: 10;
+}
+
+/* Désactiver snap sur mobile pour meilleure UX */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+  
+  .snap-section {
+    min-height: auto;
+    height: auto;
+    scroll-snap-align: none;
+    position: relative;
+  }
+  
+  .snap-section .container {
+    padding: 4rem 1rem 2rem;
+  }
+}
+
+/* Tablettes */
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  
+  .snap-section {
+    scroll-snap-stop: normal;
+    position: relative;
+  }
+}
+
+/* Désactiver pour ceux qui préfèrent moins d'animations */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Animations personnalisées inspirées de la version statique */
 @keyframes float {
 
@@ -750,10 +898,8 @@
   }
 
   100% {
-    transform: translate(
-      calc(-50% + var(--distance) * cos(var(--angle))),
-      calc(-50% + var(--distance) * sin(var(--angle)))
-    ) scale(0);
+    transform: translate(calc(-50% + var(--distance) * cos(var(--angle))),
+        calc(-50% + var(--distance) * sin(var(--angle)))) scale(0);
     opacity: 0;
   }
 }

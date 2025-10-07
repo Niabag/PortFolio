@@ -9,7 +9,7 @@ export default function Hero() {
 
 
   return (
-    <section id="accueil" className="min-h-screen flex items-center justify-center relative z-10 px-4">
+    <section id="accueil" className="snap-section relative z-10">
       <div className="container mx-auto text-center">
         <div className="animate-slide-up">
 

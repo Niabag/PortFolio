@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
-export default function Competences() {
+export default function Services() {
   const { t } = useLanguage();
   const categories = t('skills.categories');
   const title = t('skills.title');
@@ -51,9 +51,9 @@ export default function Competences() {
   };
 
   return (
-    <section id="competences" className="snap-section relative z-10">
-      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px] py-8">
-        <div className="text-center mb-8 sm:mb-12">
+    <section id="services" className="py-16 sm:py-24 relative z-10 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-20">
           <h2 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
             {title.part1} <span className="text-primary-red">{title.part2}</span>
           </h2>

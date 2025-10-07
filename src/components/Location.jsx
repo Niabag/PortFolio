@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
 export default function Location() {
   const { lang } = useLanguage();
+  const [mapActive, setMapActive] = useState(false);
 
   // Vue de la région Centre-Val de Loire
   const googleMapsUrl = `https://www.google.com/maps/embed/v1/view?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&center=47.5,1.5&zoom=8`;
 
   return (
-    <section id="location" className="py-12 sm:py-20 bg-black/50 relative z-20">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section id="location" className="snap-section bg-black/50 relative z-20">
+      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px]">
         <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
           {lang === 'fr' ? (
             <>
@@ -38,16 +39,28 @@ export default function Location() {
               </div>
             </div>
 
-            <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+            <div 
+              className="relative" 
+              style={{ paddingBottom: '56.25%', height: 0 }}
+              onClick={() => setMapActive(true)}
+            >
               <iframe
                 src={googleMapsUrl}
                 className="absolute top-0 left-0 w-full h-full"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: mapActive ? 'auto' : 'none' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title={lang === 'fr' ? 'Carte de notre emplacement' : 'Map of our location'}
               ></iframe>
+              {!mapActive && (
+                <div 
+                  className="absolute inset-0 cursor-pointer group"
+                  onClick={() => setMapActive(true)}
+                >
+                  <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors"></div>
+                </div>
+              )}
             </div>
 
             <div className="p-4 sm:p-6 bg-gradient-to-r from-transparent to-primary-red/10">
