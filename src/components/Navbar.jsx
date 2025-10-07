@@ -84,9 +84,11 @@ export default function Navbar() {
             <li key={link.id}>
               {link.button ? (
                 <button
+                  type="button"
                   onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (link.onClick) {
-                      e.preventDefault();
                       link.onClick();
                     } else {
                       handleSmoothScroll(e, link.href, link.external);
@@ -146,9 +148,11 @@ export default function Navbar() {
               <li key={link.id}>
                 {link.button ? (
                   <button
+                    type="button"
                     onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
                       if (link.onClick) {
-                        e.preventDefault();
                         link.onClick();
                         close();
                       } else {

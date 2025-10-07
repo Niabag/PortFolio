@@ -79,21 +79,22 @@ export default function Booking({ onClose }) {
 
   // Gérer le bouton retour du téléphone pour fermer le modal
   useEffect(() => {
-    // Ajouter un état dans l'historique
-    window.history.pushState({ modal: 'booking' }, '');
-    
     const handlePopState = (event) => {
-      onClose();
+      if (event.state?.modal === 'booking') {
+        onClose();
+      }
     };
+    
+    // Ajouter un état dans l'historique après un court délai
+    const timer = setTimeout(() => {
+      window.history.pushState({ modal: 'booking' }, '');
+    }, 100);
     
     window.addEventListener('popstate', handlePopState);
     
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('popstate', handlePopState);
-      // Si le modal est toujours dans l'historique, on le retire
-      if (window.history.state?.modal === 'booking') {
-        window.history.back();
-      }
     };
   }, [onClose]);
 
@@ -240,5 +241,9 @@ export default function Booking({ onClose }) {
     </div>
   );
 
-  return createPortal(modalContent, document.body);
+  // Utiliser le portal si document.body existe
+  if (typeof document !== 'undefined' && document.body) {
+    return createPortal(modalContent, document.body);
+  }
+  return modalContent;
 }
