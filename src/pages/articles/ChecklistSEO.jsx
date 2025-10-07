@@ -28,7 +28,7 @@ export default function ChecklistSEO() {
               </h1>
               
               <img
-                src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=1200&h=600&fit=crop&q=80"
+                src="/images/articles/seo-checklist.webp"
                 alt="Checklist SEO"
                 className="w-full h-64 md:h-96 object-cover rounded-lg mb-8 relative z-10"
               />

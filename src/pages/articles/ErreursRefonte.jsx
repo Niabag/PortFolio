@@ -28,7 +28,7 @@ export default function ErreursRefonte() {
               </h1>
               
               <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop"
+                src="/images/articles/refonte-web.webp"
                 alt="Erreurs refonte site"
                 className="w-full h-64 md:h-96 object-cover rounded-lg mb-8 relative z-10"
               />
@@ -145,7 +145,7 @@ export default function ErreursRefonte() {
                   {lang === 'fr' ? 'Vous envisagez une refonte ?' : 'Planning a redesign?'}
                 </h3>
                 <p className="text-gray-300 mb-6">
-                  {lang === 'fr' ? 'Contactez notre agence pour un accompagnement sur mesure et évitez les pièges courants.' : 'Contact our agency for tailored support and avoid common pitfalls.'}
+                  {lang === 'fr' ? 'Contactez notre agence web et marketing pour un accompagnement sur mesure et évitez les pièges courants.' : 'Contact our web and marketing agency for tailored support and avoid common pitfalls.'}
                 </p>
                 <a
                   href="/index.html#contact"

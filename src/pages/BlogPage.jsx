@@ -1,75 +1,45 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../LanguageContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AnimatedBackground from '../components/AnimatedBackground';
 import SocialButtons from '../components/SocialButtons';
+import { getAllArticles, getCategories } from '../data/blogArticles';
 
 export default function BlogPage() {
   const { lang, t } = useLanguage();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const articlesPerPage = 6;
 
-  const articles = [
-    {
-      id: 'wordpress-vs-react',
-      title: lang === 'fr'
-        ? 'Comment choisir entre WordPress et React pour créer son site web ?'
-        : 'How to choose between WordPress and React for your website?',
-      excerpt: lang === 'fr'
-        ? 'Découvrez les avantages et limites de WordPress et React pour faire le meilleur choix selon vos besoins et votre budget.'
-        : 'Discover the advantages and limitations of WordPress and React to make the best choice for your needs and budget.',
-      image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=500&fit=crop&q=80',
-      date: '15 Mars 2025',
-      category: lang === 'fr' ? 'Développement Web' : 'Web Development'
-    },
-    {
-      id: 'cout-site-ecommerce',
-      title: lang === 'fr'
-        ? 'Combien coûte un site e-commerce en 2025 ? Décryptage complet'
-        : 'How much does an e-commerce site cost in 2025? Complete breakdown',
-      excerpt: lang === 'fr'
-        ? 'Analyse détaillée des coûts de création d\'une boutique en ligne : de la solution simple aux projets sur mesure.'
-        : 'Detailed analysis of the costs of creating an online store: from simple solutions to custom projects.',
-      image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=500&fit=crop&q=80',
-      date: '10 Mars 2025',
-      category: lang === 'fr' ? 'E-commerce' : 'E-commerce'
-    },
-    {
-      id: 'checklist-seo',
-      title: lang === 'fr'
-        ? 'Checklist SEO technique avant de lancer votre site web'
-        : 'Technical SEO checklist before launching your website',
-      excerpt: lang === 'fr'
-        ? 'Tous les points essentiels à vérifier pour optimiser le référencement de votre site avant sa mise en ligne.'
-        : 'All essential points to check to optimize your site\'s SEO before going live.',
-      image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=500&fit=crop&q=80',
-      date: '5 Mars 2025',
-      category: 'SEO'
-    },
-    {
-      id: 'erreurs-refonte',
-      title: lang === 'fr'
-        ? '5 erreurs fréquentes à éviter lors de la refonte d\'un site internet'
-        : '5 common mistakes to avoid when redesigning a website',
-      excerpt: lang === 'fr'
-        ? 'Évitez les pièges courants lors de la refonte de votre site web et assurez le succès de votre projet.'
-        : 'Avoid common pitfalls when redesigning your website and ensure the success of your project.',
-      image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=500&fit=crop&q=80',
-      date: '1 Mars 2025',
-      category: lang === 'fr' ? 'Refonte Web' : 'Web Redesign'
-    },
-    {
-      id: 'site-responsive',
-      title: lang === 'fr'
-        ? 'Pourquoi un site web responsive est indispensable en 2025 ?'
-        : 'Why is a responsive website essential in 2025?',
-      excerpt: lang === 'fr'
-        ? 'L\'importance d\'un site adapté aux mobiles et son impact sur le SEO et les conversions en 2025.'
-        : 'The importance of a mobile-friendly site and its impact on SEO and conversions in 2025.',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=500&fit=crop&q=80',
-      date: '25 Février 2025',
-      category: lang === 'fr' ? 'Design Web' : 'Web Design'
+  const categories = getCategories(lang);
+  const allArticles = getAllArticles(lang);
+
+  // Filtrer les articles par catégorie
+  const filteredArticles = useMemo(() => {
+    if (selectedCategory === 'all') {
+      return allArticles;
     }
-  ];
+    return allArticles.filter(article => article.category === selectedCategory);
+  }, [allArticles, selectedCategory]);
+
+  // Calculer les articles pour la page actuelle
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = filteredArticles.slice(indexOfFirstArticle, indexOfLastArticle);
+  const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+
+  // Gérer le changement de catégorie
+  const handleCategoryChange = (categoryId) => {
+    setSelectedCategory(categoryId);
+    setCurrentPage(1);
+  };
+
+  // Gérer le changement de page
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -83,16 +53,41 @@ export default function BlogPage() {
             {/* En-tête du blog */}
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                <span className="text-white">{t('blog.title.part1')}</span> <span className="text-primary-red">{t('blog.title.part2')}</span>
+                <span className="text-white">{t('blog.title.part1')}</span>{' '}
+                <span className="text-primary-red">{t('blog.title.part2')}</span>
               </h1>
               <p className="text-gray-400 text-xl max-w-3xl mx-auto">
                 {t('blog.subtitle')}
               </p>
             </div>
 
+            {/* Filtres de catégories */}
+            <div className="flex justify-center gap-4 mb-12 flex-wrap">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => handleCategoryChange(category.id)}
+                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700'
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Compteur d'articles */}
+            <div className="text-center mb-8">
+              <p className="text-gray-400">
+                {filteredArticles.length} {lang === 'fr' ? 'article(s)' : 'article(s)'}
+              </p>
+            </div>
+
             {/* Grille d'articles */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {articles.map((article) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+              {currentArticles.map((article) => (
                 <article
                   key={article.id}
                   className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-primary-red/50 hover:transform hover:scale-105 group"
@@ -100,15 +95,26 @@ export default function BlogPage() {
                   <a href={`/blog/${article.id}.html`} className="block">
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        loading="lazy"
-                      />
+                      {article.image ? (
+                        <img
+                          src={article.image}
+                          alt={article.title}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                          }}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <svg className="w-16 h-16 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                      )}
                       <div className="absolute top-4 left-4 z-10">
                         <span className="bg-primary-red px-3 py-1 rounded-full text-sm font-semibold">
-                          {article.category}
+                          {article.categoryLabel}
                         </span>
                       </div>
                     </div>
@@ -146,22 +152,66 @@ export default function BlogPage() {
               ))}
             </div>
 
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center items-center gap-2 mt-12">
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                    currentPage === 1
+                      ? 'bg-gray-800 text-gray-600 cursor-not-allowed'
+                      : 'bg-gray-800 text-white hover:bg-primary-red'
+                  }`}
+                >
+                  {lang === 'fr' ? 'Précédent' : 'Previous'}
+                </button>
+
+                {[...Array(totalPages)].map((_, index) => {
+                  const pageNumber = index + 1;
+                  return (
+                    <button
+                      key={pageNumber}
+                      onClick={() => handlePageChange(pageNumber)}
+                      className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                        currentPage === pageNumber
+                          ? 'bg-primary-red text-white'
+                          : 'bg-gray-800 text-white hover:bg-gray-700'
+                      }`}
+                    >
+                      {pageNumber}
+                    </button>
+                  );
+                })}
+
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                    currentPage === totalPages
+                      ? 'bg-gray-800 text-gray-600 cursor-not-allowed'
+                      : 'bg-gray-800 text-white hover:bg-primary-red'
+                  }`}
+                >
+                  {lang === 'fr' ? 'Suivant' : 'Next'}
+                </button>
+              </div>
+            )}
+
             {/* CTA */}
             <div className="mt-16 text-center">
               <div className="bg-gradient-to-r from-primary-red/10 to-red-500/10 border border-primary-red/30 rounded-lg p-8 max-w-2xl mx-auto">
                 <h2 className="text-2xl font-bold mb-4">
-                  {lang === 'fr' ? 'Besoin d\'un site web professionnel ?' : 'Need a professional website?'}
+                  {t('blog.needWebsite')}
                 </h2>
                 <p className="text-gray-400 mb-6">
-                  {lang === 'fr'
-                    ? 'Notre agence vous accompagne dans tous vos projets web : création, refonte, SEO et maintenance.'
-                    : 'Our agency supports you in all your web projects: creation, redesign, SEO and maintenance.'}
+                  {t('blog.agencySupport')}
                 </p>
                 <a
                   href="/index.html#contact"
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
-                  {lang === 'fr' ? 'Demander un devis gratuit' : 'Request a free quote'}
+                  {t('blog.requestQuote')}
                 </a>
               </div>
             </div>

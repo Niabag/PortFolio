@@ -1,6 +1,6 @@
 export const translations = {
   fr: {
-    title: 'SiteOnWeb - Création de sites web sur-mesure pour booster votre entreprise en ligne',
+    title: 'SiteOnWeb - Agence Web et Marketing Digital | Création de Sites Internet et Stratégies Marketing',
     nav: {
       home: 'Accueil',
       skills: 'Compétences',
@@ -12,9 +12,9 @@ export const translations = {
     },
     hero: {
       title: 'Site On Web',
-      subtitle: 'Agence web spécialisée dans la création de site internet',
+      subtitle: 'Agence web et marketing digital spécialisée dans la création de sites internet',
       description:
-        'Création de sites web sur-mesure pour booster votre entreprise en ligne. Spécialistes de la création et de la vente de sites internet professionnels, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO.',
+        'Création de sites web sur-mesure et stratégies marketing digital pour booster votre entreprise en ligne. Spécialistes de la création de sites internet professionnels et du marketing digital, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO, accompagnés de campagnes marketing performantes.',
       viewProjects: 'Voir nos réalisations',
       contactMe: 'Nous contacter'
     },
@@ -120,11 +120,12 @@ export const translations = {
     },
     footer: {
       description:
-        'Création de Sites Web Modernes | Développeur Web WordPress & React',
+        'Agence Web et Marketing Digital | Création de Sites Web Modernes & Stratégies Marketing | WordPress & React',
       servicesTitle: 'Services',
       serviceWordpress: 'Développement WordPress',
       serviceReact: 'Applications React',
-      serviceNode: 'Backend Node.js',
+      serviceSEO: 'Référencement SEO',
+      serviceMarketing: 'Marketing Digital',
       serviceEcommerce: 'Sites E-commerce',
       contactTitle: 'Contact',
       rights: 'Tous droits réservés.'
@@ -135,19 +136,19 @@ export const translations = {
       readArticle: 'Lire l\'article',
       backToBlog: 'Retour au blog',
       needWebsite: 'Besoin d\'un site web professionnel ?',
-      agencySupport: 'Notre agence vous accompagne dans tous vos projets web : création, refonte, SEO et maintenance.',
+      agencySupport: 'Notre agence web et marketing vous accompagne dans tous vos projets digitaux : création de sites, refonte, SEO, réseaux sociaux, publicité en ligne et maintenance.',
       requestQuote: 'Demander un devis gratuit'
     },
     faq: {
       title: { part1: 'Foire aux', part2: 'Questions' },
-      subtitle: 'Trouvez les réponses aux questions les plus fréquemment posées',
+      subtitle: 'Trouvez les réponses aux questions les plus fréquemment posées sur notre agence web et marketing digital',
       categories: {
         web: {
           title: 'Web',
           items: [
         {
-          question: 'Qu\'est-ce qu\'une agence web et quels services proposez-vous ?',
-          answer: 'Une agence web est une entreprise spécialisée dans la création, le développement, la maintenance et la promotion de sites internet. Nous proposons des services comme la création de site vitrine, site e-commerce, refonte, SEO, hébergement, maintenance, marketing digital, etc.'
+          question: 'Qu\'est-ce qu\'une agence web et agence marketing et quels services proposez-vous ?',
+          answer: 'Une agence web et agence marketing est une entreprise spécialisée dans la création, le développement, la maintenance et la promotion de sites internet, ainsi que dans la stratégie marketing digital. Nous proposons des services complets : création de site vitrine et e-commerce, refonte web, référencement SEO/SEA, gestion des réseaux sociaux, campagnes publicitaires, branding, email marketing, hébergement et maintenance.'
         },
         {
           question: 'Combien coûte un site web avec votre agence ?',
@@ -223,8 +224,8 @@ export const translations = {
           title: 'Marketing',
           items: [
             {
-              question: 'Qu\'est-ce qu\'une agence web marketing ?',
-              answer: 'Une agence web marketing aide les entreprises à développer leur présence en ligne grâce à des stratégies de communication digitale, du référencement, de la publicité en ligne et de la création de sites web performants.'
+              question: 'Pourquoi choisir une agence web et agence marketing ?',
+              answer: 'Une agence web et agence marketing offre une expertise complète pour développer votre présence en ligne. Nous combinons la création de sites web performants avec des stratégies marketing digital efficaces : référencement naturel (SEO), publicité en ligne (SEA), gestion des réseaux sociaux, branding et analyse de performances pour maximiser votre visibilité et votre retour sur investissement.'
             },
             {
               question: 'Quels services proposez-vous ?',
@@ -280,7 +281,7 @@ export const translations = {
     }
   },
   en: {
-    title: 'SiteOnWeb - Professional Web Developer',
+    title: 'SiteOnWeb - Web and Digital Marketing Agency | Website Creation and Marketing Strategies',
     nav: {
       home: 'Home',
       skills: 'Skills',
@@ -292,13 +293,11 @@ export const translations = {
     },
     hero: {
       title: 'Site On Web',
-      subtitle: 'Web agency specialized in website creation',
+      subtitle: 'Web and digital marketing agency specialized in website creation',
       description:
-        'We build tailor-made websites to boost your business online. As specialists in creating and delivering professional websites, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites.',
-
+        'We build tailor-made websites and digital marketing strategies to boost your business online. As specialists in creating professional websites and digital marketing, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites, accompanied by high-performance marketing campaigns.',
       viewProjects: 'See our projects',
       contactMe: 'Contact us'
-
     },
     skills: {
       title: { part1: 'Our', part2: 'Skills' },
@@ -402,11 +401,12 @@ export const translations = {
     },
     footer: {
       description:
-        'Modern Website Creation | WordPress & React Web Developer',
+        'Web & Digital Marketing Agency | Modern Website Creation & Marketing Strategies | WordPress & React',
       servicesTitle: 'Services',
       serviceWordpress: 'WordPress Development',
       serviceReact: 'React Applications',
-      serviceNode: 'Node.js Backend',
+      serviceSEO: 'SEO Optimization',
+      serviceMarketing: 'Digital Marketing',
       serviceEcommerce: 'E-commerce Sites',
       contactTitle: 'Contact',
       rights: 'All rights reserved.'
@@ -417,19 +417,19 @@ export const translations = {
       readArticle: 'Read article',
       backToBlog: 'Back to blog',
       needWebsite: 'Need a professional website?',
-      agencySupport: 'Our agency supports you in all your web projects: creation, redesign, SEO and maintenance.',
+      agencySupport: 'Our web and marketing agency supports you in all your digital projects: website creation, redesign, SEO, social media, online advertising, and maintenance.',
       requestQuote: 'Request a free quote'
     },
     faq: {
       title: { part1: 'Frequently Asked', part2: 'Questions' },
-      subtitle: 'Find answers to the most commonly asked questions',
+      subtitle: 'Find answers to the most commonly asked questions about our web and digital marketing agency',
       categories: {
         web: {
           title: 'Web',
           items: [
         {
-          question: 'What is a web agency and what services do you offer?',
-          answer: 'A web agency is a company specialized in creating, developing, maintaining, and promoting websites. We offer services such as showcase website creation, e-commerce websites, redesign, SEO, hosting, maintenance, digital marketing, etc.'
+          question: 'What is a web and marketing agency and what services do you offer?',
+          answer: 'A web and marketing agency is a company specialized in creating, developing, maintaining, and promoting websites, as well as digital marketing strategy. We offer comprehensive services: showcase and e-commerce website creation, web redesign, SEO/SEA optimization, social media management, advertising campaigns, branding, email marketing, hosting, and maintenance.'
         },
         {
           question: 'How much does a website cost with your agency?',
@@ -505,8 +505,8 @@ export const translations = {
           title: 'Marketing',
           items: [
             {
-              question: 'What is a web marketing agency?',
-              answer: 'A web marketing agency helps businesses develop their online presence through digital communication strategies, SEO, online advertising, and high-performance website creation.'
+              question: 'Why choose a web and marketing agency?',
+              answer: 'A web and marketing agency offers complete expertise to develop your online presence. We combine high-performance website creation with effective digital marketing strategies: natural referencing (SEO), online advertising (SEA), social media management, branding, and performance analysis to maximize your visibility and return on investment.'
             },
             {
               question: 'What services do you offer?',

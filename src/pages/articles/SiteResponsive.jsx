@@ -28,7 +28,7 @@ export default function SiteResponsive() {
               </h1>
               
               <img
-                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=600&fit=crop"
+                src="/images/articles/responsive.webp"
                 alt="Site responsive"
                 className="w-full h-64 md:h-96 object-cover rounded-lg mb-8 relative z-10"
               />
@@ -132,7 +132,7 @@ export default function SiteResponsive() {
                   {lang === 'fr' ? "Besoin d'un site adapté à tous les écrans ?" : 'Need a site that fits all screens?'}
                 </h3>
                 <p className="text-gray-300 mb-6">
-                  {lang === 'fr' ? 'Notre agence crée des sites web 100% responsive, optimisés pour tous les appareils.' : 'Our agency creates 100% responsive websites, optimized for all devices.'}
+                  {lang === 'fr' ? 'Notre agence web et marketing crée des sites web 100% responsive, optimisés pour tous les appareils et le référencement.' : 'Our web and marketing agency creates 100% responsive websites, optimized for all devices and SEO.'}
                 </p>
                 <a
                   href="/index.html#contact"

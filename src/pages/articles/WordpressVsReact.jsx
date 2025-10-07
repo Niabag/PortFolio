@@ -31,7 +31,7 @@ export default function WordpressVsReact() {
               </h1>
               
               <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop"
+                src="/images/articles/wordpress-react.webp"
                 alt="WordPress vs React"
                 className="w-full h-64 md:h-96 object-cover rounded-lg mb-8 relative z-10"
               />
@@ -147,7 +147,7 @@ export default function WordpressVsReact() {
                   {lang === 'fr' ? "Besoin d'aide pour choisir la meilleure solution technique ?" : 'Need help choosing the best technical solution?'}
                 </h3>
                 <p className="text-gray-300 mb-6">
-                  {lang === 'fr' ? 'Contactez notre agence pour un audit gratuit et des recommandations personnalisées.' : 'Contact our agency for a free audit and personalized recommendations.'}
+                  {lang === 'fr' ? 'Contactez notre agence web et marketing pour un audit gratuit et des recommandations personnalisées.' : 'Contact our web and marketing agency for a free audit and personalized recommendations.'}
                 </p>
                 <a
                   href="/index.html#contact"

@@ -28,7 +28,7 @@ export default function CoutSiteEcommerce() {
               </h1>
               
               <img
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop"
+                src="/images/articles/ecommerce.webp"
                 alt="Coût site e-commerce"
                 className="w-full h-64 md:h-96 object-cover rounded-lg mb-8 relative z-10"
               />

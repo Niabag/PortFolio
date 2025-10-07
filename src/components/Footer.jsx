@@ -24,7 +24,8 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
               <li>{t('footer.serviceWordpress')}</li>
               <li>{t('footer.serviceReact')}</li>
-              <li>{t('footer.serviceNode')}</li>
+              <li>{t('footer.serviceSEO')}</li>
+              <li>{t('footer.serviceMarketing')}</li>
               <li>{t('footer.serviceEcommerce')}</li>
             </ul>
           </div>
