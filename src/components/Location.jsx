@@ -4,9 +4,8 @@ import { useLanguage } from '../LanguageContext.jsx';
 export default function Location() {
   const { lang } = useLanguage();
 
-  // Adresse à Blois centre-ville sans numéro
-  const address = "Rue Denis Papin, 41000 Blois, France";
-  const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(address)}&zoom=15`;
+  // Vue du monde entier
+  const googleMapsUrl = `https://www.google.com/maps/embed/v1/view?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&center=20,0&zoom=2`;
 
   return (
     <section id="location" className="py-12 sm:py-20 bg-black/50 relative z-20">
@@ -14,11 +13,11 @@ export default function Location() {
         <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
           {lang === 'fr' ? (
             <>
-              Où <span className="text-primary-red">Sommes-nous</span>
+              Avec qui <span className="text-primary-red">Travaillons-nous</span>
             </>
           ) : (
             <>
-              Where <span className="text-primary-red">We Are</span>
+              Who We <span className="text-primary-red">Work With</span>
             </>
           )}
         </h2>
@@ -27,13 +26,13 @@ export default function Location() {
           <div className="bg-card-bg rounded-xl overflow-hidden border border-gray-700 shadow-xl">
             <div className="p-4 sm:p-6 bg-gradient-to-r from-primary-red/10 to-transparent border-b border-gray-700">
               <div className="flex items-center space-x-3">
-                <i className="fas fa-map-marker-alt text-primary-red text-xl sm:text-2xl"></i>
+                <i className="fas fa-globe text-primary-red text-xl sm:text-2xl"></i>
                 <div>
                   <p className="text-white font-bold text-base sm:text-lg">
-                    {lang === 'fr' ? 'Notre emplacement' : 'Our Location'}
+                    {lang === 'fr' ? 'Notre portée' : 'Our Reach'}
                   </p>
                   <p className="text-gray-400 text-sm sm:text-base">
-                    {lang === 'fr' ? 'Secteur de Blois, France' : 'Blois area, France'}
+                    {lang === 'fr' ? 'Monde entier' : 'Worldwide'}
                   </p>
                 </div>
               </div>
@@ -54,8 +53,8 @@ export default function Location() {
             <div className="p-4 sm:p-6 bg-gradient-to-r from-transparent to-primary-red/10">
               <p className="text-gray-300 text-sm sm:text-base text-center">
                 {lang === 'fr'
-                  ? '📍 Nous sommes situés dans le secteur de Blois, en région Centre-Val de Loire'
-                  : '📍 We are located in the Blois area, in the Centre-Val de Loire region'}
+                  ? '🌍 Nous collaborons avec des clients partout dans le monde'
+                  : '🌍 We collaborate with clients worldwide'}
               </p>
             </div>
           </div>
