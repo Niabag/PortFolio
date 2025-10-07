@@ -76,14 +76,15 @@ const onSubmit = async (event) => {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <i className="fas fa-envelope text-primary-red text-lg sm:text-xl"></i>
-                <span className="text-sm sm:text-base break-all">contact@siteonweb.fr</span>
+                <a
+                  href="mailto:contact@siteonweb.fr"
+                  className="text-sm sm:text-base break-all hover:text-primary-red transition"
+                >
+                  contact@siteonweb.fr
+                </a>
               </div>
               <div className="flex items-center space-x-4">
-                <i className="fas fa-phone text-primary-red text-lg sm:text-xl"></i>
-                <span className="text-sm sm:text-base">06 48 45 69 37</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <i className="fab fa-whatsapp text-primary-red text-lg sm:text-xl"></i>
+                <i className="fab fa-whatsapp text-green-500 text-lg sm:text-xl"></i>
                 <a
                   href="https://wa.me/33648456937"
                   target="_blank"
@@ -95,6 +96,36 @@ const onSubmit = async (event) => {
               <div className="flex items-center space-x-4">
                 <i className="fas fa-map-marker-alt text-primary-red text-lg sm:text-xl"></i>
                 <span className="text-sm sm:text-base">{t('contact.country')}</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <i className="fab fa-facebook text-blue-600 text-lg sm:text-xl"></i>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61581954327555"
+                  target="_blank"
+                  className="text-sm sm:text-base hover:text-primary-red transition"
+                >
+                  Facebook
+                </a>
+              </div>
+              <div className="flex items-center space-x-4">
+                <i className="fab fa-instagram text-pink-500 text-lg sm:text-xl"></i>
+                <a
+                  href="https://www.instagram.com/siteonweb/"
+                  target="_blank"
+                  className="text-sm sm:text-base hover:text-primary-red transition"
+                >
+                  Instagram
+                </a>
+              </div>
+              <div className="flex items-center space-x-4">
+                <i className="fab fa-linkedin text-blue-500 text-lg sm:text-xl"></i>
+                <a
+                  href="https://www.linkedin.com/in/gabain-potelet-berry-162aa7257/"
+                  target="_blank"
+                  className="text-sm sm:text-base hover:text-primary-red transition"
+                >
+                  LinkedIn
+                </a>
               </div>
             </div>
           </div>

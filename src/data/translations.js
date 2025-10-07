@@ -107,7 +107,7 @@ export const translations = {
       emailPlaceholder: 'Votre email',
       messagePlaceholder: 'Votre message',
       send: 'Envoyer le message',
-      whatsapp: 'WhatsApp: 06 48 45 69 37',
+      whatsapp: 'WhatsApp: +33 6 48 45 69 37',
       country: 'France',
       invalidEmail: 'Adresse e-mail invalide.',
       status: {

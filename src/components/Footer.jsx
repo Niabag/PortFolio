@@ -31,9 +31,29 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-base sm:text-lg font-bold mb-4">{t('footer.contactTitle')}</h4>
-            <p className="text-gray-400 mb-2 text-sm sm:text-base break-all">contact@siteonweb.fr</p>
-            <p className="text-gray-400 mb-4 text-sm sm:text-base">06 48 45 69 37</p>
+            <a 
+              href="mailto:contact@siteonweb.fr"
+              className="text-gray-400 hover:text-primary-red transition mb-4 text-sm sm:text-base break-all inline-block"
+            >
+              contact@siteonweb.fr
+            </a>
             <div className="flex space-x-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=61581954327555"
+                target="_blank"
+                className="text-gray-400 hover:text-primary-red transition"
+                title="Facebook"
+              >
+                <i className="fab fa-facebook text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/siteonweb/"
+                target="_blank"
+                className="text-gray-400 hover:text-primary-red transition"
+                title="Instagram"
+              >
+                <i className="fab fa-instagram text-lg sm:text-xl"></i>
+              </a>
               <a
                 href="https://www.linkedin.com/in/gabain-potelet-berry-162aa7257/"
                 target="_blank"

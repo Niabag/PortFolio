@@ -17,6 +17,56 @@ export default function Navbar() {
   const toggle = () => setOpen(!open);
   const close = () => setOpen(false);
 
+  // Animation fluide et luxueuse pour le scroll
+  const handleSmoothScroll = (e, href, isExternal) => {
+    if (isExternal) return; // Pas d'animation pour le blog
+
+    // Si le lien contient un hash (#)
+    if (href.includes('#')) {
+      const targetId = href.split('#')[1];
+      
+      // Vérifier si on est sur la page d'accueil
+      const isOnHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+      
+      if (isOnHomePage) {
+        // Sur la page d'accueil : animation smooth scroll
+        e.preventDefault();
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Animation de transition élégante
+          const startPosition = window.pageYOffset;
+          const targetPosition = targetElement.getBoundingClientRect().top + startPosition - 80;
+          const distance = targetPosition - startPosition;
+          const duration = 1200; // 1.2s pour une animation fluide et luxueuse
+          let start = null;
+
+          // Fonction d'easing cubique pour un effet luxueux
+          const easeInOutCubic = (t) => {
+            return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+          };
+
+          const animation = (currentTime) => {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const progress = Math.min(timeElapsed / duration, 1);
+            const ease = easeInOutCubic(progress);
+            
+            window.scrollTo(0, startPosition + distance * ease);
+            
+            if (timeElapsed < duration) {
+              requestAnimationFrame(animation);
+            }
+          };
+
+          requestAnimationFrame(animation);
+          close();
+        }
+      }
+      // Sinon, laisser le comportement par défaut (navigation vers /#section)
+    }
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-[1100]">
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
@@ -33,6 +83,7 @@ export default function Navbar() {
               {link.button ? (
                 <a
                   href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href, link.external)}
                   className="bg-primary-red px-4 py-2 rounded-lg hover:bg-red-700 transition"
                 >
                   {link.label}
@@ -40,6 +91,7 @@ export default function Navbar() {
               ) : (
                 <a
                   href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href, link.external)}
                   className="nav-link text-white hover:text-primary-red"
                 >
                   {link.label}
@@ -87,16 +139,16 @@ export default function Navbar() {
                 {link.button ? (
                   <a
                     href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href, link.external)}
                     className="block bg-primary-red px-4 py-3 rounded-lg hover:bg-red-700 transition text-center"
-                    onClick={close}
                   >
                     {link.label}
                   </a>
                 ) : (
                   <a
                     href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href, link.external)}
                     className="block text-white hover:text-primary-red text-lg"
-                    onClick={close}
                   >
                     {link.label}
                   </a>

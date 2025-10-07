@@ -150,7 +150,7 @@ if ('serviceWorker' in navigator) {
                 <li>☑️ Responsive design (mobile-first)</li>
                 <li>☑️ Performance > 90 (Lighthouse)</li>
                 <li>☑️ Fonctionne offline</li>
-                <li>☑️ Fast load time (&lt; 3s)</li>
+                <li>☑️ Fast load time {'<'} 3s</li>
               </ul>
             </div>
 
@@ -192,6 +192,161 @@ if ('serviceWorker' in navigator) {
             <p className="lead text-xl mb-8">
               Progressive Web Apps combine the best of web and native applications. Installation from browser, offline functionality, push notifications: discover why PWAs dominate in 2025.
             </p>
+
+            <h2 className="text-3xl font-bold text-white mt-12 mb-6">📱 What is a PWA?</h2>
+            <p className="mb-6">
+              A PWA is a website that behaves like a native mobile application, without requiring download from an app store.
+            </p>
+
+            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-600/30 rounded-lg p-6 mb-6">
+              <h4 className="text-xl font-bold text-blue-400 mb-3">✨ PWA Characteristics:</h4>
+              <ul className="list-disc list-inside space-y-2">
+                <li><strong>Installable</strong>: add to home screen without app store</li>
+                <li><strong>Offline-first</strong>: works even without internet connection</li>
+                <li><strong>Fast</strong>: instant loading thanks to caching</li>
+                <li><strong>Responsive</strong>: adapts to all screens</li>
+                <li><strong>Secure</strong>: HTTPS mandatory</li>
+                <li><strong>Engaging</strong>: push notifications possible</li>
+              </ul>
+            </div>
+
+            <h2 className="text-3xl font-bold text-white mt-12 mb-6">💰 ROI and Measurable Benefits</h2>
+
+            <div className="bg-green-900/20 border border-green-600/30 rounded-lg p-6 mb-6">
+              <h4 className="text-xl font-bold text-green-400 mb-3">📈 Famous Company Cases:</h4>
+              <ul className="list-disc list-inside space-y-3">
+                <li><strong>Twitter Lite (PWA)</strong>: +75% tweets sent, -70% data consumed</li>
+                <li><strong>Starbucks PWA</strong>: 2x increase in daily orders</li>
+                <li><strong>Pinterest PWA</strong>: +40% time spent, +44% ad revenue</li>
+                <li><strong>Alibaba PWA</strong>: +76% conversions from iOS</li>
+                <li><strong>Uber PWA</strong>: loads in 3s on 2G networks</li>
+              </ul>
+            </div>
+
+            <h2 className="text-3xl font-bold text-white mt-12 mb-6">🛠️ How to Create a PWA in 2025</h2>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">1. Manifest.json</h3>
+            <div className="bg-gray-800 rounded-lg p-6 mb-6">
+              <pre className="text-sm overflow-x-auto">
+{`{
+  "name": "My PWA App",
+  "short_name": "PWA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}`}
+              </pre>
+            </div>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">2. Service Worker</h3>
+            <div className="bg-gray-800 rounded-lg p-6 mb-6">
+              <pre className="text-sm overflow-x-auto">
+{`// service-worker.js
+const CACHE_NAME = 'v1';
+const urlsToCache = ['/', '/styles.css', '/app.js'];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
+  );
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
+  );
+});`}
+              </pre>
+            </div>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">3. Registration</h3>
+            <div className="bg-gray-800 rounded-lg p-6 mb-6">
+              <pre className="text-sm overflow-x-auto">
+{`// app.js
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(reg => console.log('SW registered', reg))
+    .catch(err => console.log('SW error', err));
+}`}
+              </pre>
+            </div>
+
+            <h2 className="text-3xl font-bold text-white mt-12 mb-6">🚀 Frameworks with Built-in PWA Support</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                <h4 className="font-bold text-white mb-2">⚛️ Next.js + next-pwa</h4>
+                <p className="text-sm">5-minute setup. Automatic offline support.</p>
+              </div>
+              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                <h4 className="font-bold text-white mb-2">🅰️ Angular PWA</h4>
+                <p className="text-sm">ng add @angular/pwa - Pre-configured service worker.</p>
+              </div>
+              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                <h4 className="font-bold text-white mb-2">💚 Vue.js PWA Plugin</h4>
+                <p className="text-sm">@vue/cli-plugin-pwa for Vue CLI.</p>
+              </div>
+              <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                <h4 className="font-bold text-white mb-2">⚡ Vite PWA Plugin</h4>
+                <p className="text-sm">vite-plugin-pwa for Vite/React projects.</p>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold text-white mt-12 mb-6">📊 Complete PWA Checklist</h2>
+
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 mb-6">
+              <h4 className="text-xl font-bold text-white mb-4">✅ Essential Requirements:</h4>
+              <ul className="space-y-2">
+                <li>☑️ HTTPS enabled (mandatory)</li>
+                <li>☑️ Manifest.json configured</li>
+                <li>☑️ Service Worker registered</li>
+                <li>☑️ Icons 192x192 and 512x512</li>
+                <li>☑️ start_url defined</li>
+                <li>☑️ display: standalone</li>
+                <li>☑️ Responsive design (mobile-first)</li>
+                <li>☑️ Performance {'>'} 90 (Lighthouse)</li>
+                <li>☑️ Works offline</li>
+                <li>☑️ Fast load time {'<'} 3s</li>
+              </ul>
+            </div>
+
+            <h2 className="text-3xl font-bold text-white mt-12 mb-6">🔔 Push Notifications</h2>
+            <p className="mb-6">
+              PWAs can send push notifications like native apps:
+            </p>
+            <ul className="list-disc list-inside mb-6 space-y-2">
+              <li>User engagement +88% on average</li>
+              <li>Abandoned cart reminders</li>
+              <li>Promotional alerts</li>
+              <li>Update notifications</li>
+            </ul>
+
+            <h2 className="text-3xl font-bold text-white mt-12 mb-6">⚠️ Limitations to Know</h2>
+
+            <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-6 mb-6">
+              <h4 className="text-xl font-bold text-yellow-400 mb-3">⚡ Points of Attention:</h4>
+              <ul className="list-disc list-inside space-y-2">
+                <li>iOS: limited support (no push notifications on Safari)</li>
+                <li>Limited storage (50-100MB depending on browser)</li>
+                <li>Not all native APIs available (limited Bluetooth, NFC)</li>
+                <li>Installation less obvious than app stores</li>
+              </ul>
+            </div>
 
             <div className="bg-primary-red/10 border border-primary-red/30 rounded-lg p-6 mt-12">
               <h3 className="text-2xl font-bold text-white mb-4">🎯 Conclusion</h3>
