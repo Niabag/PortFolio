@@ -125,6 +125,7 @@ export const translations = {
         },
         {
           icon: '✉️',
+          iconImage: '/images/icons-competences/lettre.webp',
           title: 'Communication & Branding',
           color: '#dc2626',
           services: [
@@ -150,6 +151,7 @@ export const translations = {
         },
         {
           icon: '📊',
+          iconImage: '/images/icons-competences/court.webp',
           title: 'Analyse & Optimisation',
           color: '#dc2626',
           services: [
