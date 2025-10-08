@@ -19,6 +19,11 @@ export default function App() {
   const [selectedService, setSelectedService] = useState(null);
   const [showBooking, setShowBooking] = useState(false);
 
+  // Debug - Log when selectedService changes
+  useEffect(() => {
+    console.log('App - selectedService changed:', selectedService?.title || 'null');
+  }, [selectedService]);
+
   useEffect(() => {
     // Smooth scroll pour les liens de navigation
     const links = document.querySelectorAll('a[href^="#"]');

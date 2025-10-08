@@ -8,6 +8,9 @@ export default function Competences({ onServiceClick }) {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [expandedCard, setExpandedCard] = useState(null);
 
+  // Debug
+  console.log('Competences - onServiceClick defined:', typeof onServiceClick);
+
   const createBubbles = (cardIndex) => {
     const bubbles = [];
     const bubbleCount = 20;
@@ -51,10 +54,12 @@ export default function Competences({ onServiceClick }) {
   };
 
   const handleCardClick = (index, hasMoreServices, e) => {
-    // Ne pas ouvrir la page si on clique sur le bouton "Voir plus"
-    if (e && e.target.tagName === 'BUTTON') {
+    // Ne pas ouvrir la page si on clique sur un bouton ou un de ses enfants
+    if (e && (e.target.tagName === 'BUTTON' || e.target.closest('button'))) {
+      console.log('Click on button detected, ignoring card click');
       return;
     }
+    console.log('Card clicked, opening service:', categories[index].title);
     onServiceClick(categories[index]);
   };
 
@@ -128,7 +133,14 @@ export default function Competences({ onServiceClick }) {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        onServiceClick(category);
+                        console.log('Button clicked, category:', category.title);
+                        console.log('onServiceClick type:', typeof onServiceClick);
+                        if (onServiceClick) {
+                          onServiceClick(category);
+                          console.log('onServiceClick called successfully');
+                        } else {
+                          console.error('onServiceClick is not defined!');
+                        }
                       }}
                       className="w-full bg-gradient-to-r from-primary-red to-red-600 hover:from-red-600 hover:to-primary-red text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                       type="button"

@@ -51,7 +51,7 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
   };
 
   return (
-    <div className="min-h-screen bg-dark-bg text-white">
+    <div className="fixed inset-0 min-h-screen bg-dark-bg text-white overflow-y-auto z-[9998]">
       {/* Header avec retour */}
       <div className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
