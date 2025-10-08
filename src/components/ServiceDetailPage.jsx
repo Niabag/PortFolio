@@ -46,9 +46,23 @@ function ServiceNavbar({ onBookingClick }) {
 
 export default function ServiceDetailPage() {
   const { lang } = useLanguage();
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get('slug');
   const [showBooking, setShowBooking] = useState(false);
+  
+  // Extract slug from URL - support both /services/:slug and /service.html?slug=:slug
+  const slug = useMemo(() => {
+    // First try query parameter
+    const params = new URLSearchParams(window.location.search);
+    const querySlug = params.get('slug');
+    if (querySlug) return querySlug;
+    
+    // Then try pathname /services/:slug
+    const pathMatch = window.location.pathname.match(/\/services\/([^\/]+)/);
+    if (pathMatch && pathMatch[1]) {
+      return pathMatch[1];
+    }
+    
+    return null;
+  }, []);
 
   const service = useMemo(() => {
     const list = translations[lang]?.skills?.categories || [];
