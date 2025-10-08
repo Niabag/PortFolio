@@ -73,39 +73,19 @@ export default function Booking({ onClose }) {
 
   // Bloquer le scroll quand le modal est ouvert
   useEffect(() => {
-    // Sauvegarder la position de scroll actuelle
     const scrollY = window.scrollY;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     
-    // Bloquer complètement le scroll du body
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = '0';
-    document.body.style.right = '0';
+    // Bloquer le scroll du body
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    
-    // Permettre le scroll à la molette dans la popup uniquement
-    const handleWheel = (e) => {
-      const modalContent = modalContentRef.current;
-      if (!modalContent || !modalContent.contains(e.target)) {
-        e.preventDefault();
-        return false;
-      }
-    };
-    
-    // Ajouter l'écouteur avec passive: false pour pouvoir preventDefault
-    window.addEventListener('wheel', handleWheel, { passive: false });
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
     
     return () => {
       // Restaurer le scroll
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
+      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
-      window.scrollTo(0, scrollY);
-      
-      // Retirer l'écouteur
-      window.removeEventListener('wheel', handleWheel);
+      document.body.style.paddingRight = '';
     };
   }, []);
 
