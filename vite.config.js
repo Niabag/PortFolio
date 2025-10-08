@@ -23,17 +23,6 @@ const blogInputs = Object.fromEntries(
 
 export default {
   base: './',
-  server: {
-    // Middleware pour gérer les rewrites en développement local
-    proxy: {},
-    // Configuration pour gérer les routes /services/:slug
-    fs: {
-      strict: false
-    }
-  },
-  preview: {
-    proxy: {}
-  },
   build: {
     rollupOptions: {
       input: {
@@ -46,21 +35,5 @@ export default {
         ...blogInputs
       }
     }
-  },
-  plugins: [
-    {
-      name: 'rewrite-middleware',
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-          // Rewrite /services/:slug vers /service.html?slug=:slug
-          const match = req.url?.match(/^\/services\/([^/?]+)/);
-          if (match && match[1]) {
-            const slug = match[1];
-            req.url = `/service.html?slug=${slug}`;
-          }
-          next();
-        });
-      }
-    }
-  ]
+  }
 };
