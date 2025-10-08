@@ -30,6 +30,7 @@ export default {
         faq: resolve(__dirname, 'faq.html'),
         blog: resolve(__dirname, 'blog.html'),
         privacy: resolve(__dirname, 'privacy.html'),
+        service: resolve(__dirname, 'service.html'),
         ...blogInputs
       }
     }
