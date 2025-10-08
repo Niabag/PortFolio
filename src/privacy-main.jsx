@@ -47,7 +47,7 @@ function PrivacyPolicySimple() {
               
               <div className="space-y-4">
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">📝 Via les formulaires</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Via les formulaires</h3>
                   <ul className="list-disc list-inside space-y-2">
                     <li>Nom et prénom</li>
                     <li>Adresse email</li>
@@ -58,7 +58,7 @@ function PrivacyPolicySimple() {
                 </div>
 
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">🌐 Données de navigation</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Données de navigation</h3>
                   <ul className="list-disc list-inside space-y-2">
                     <li>Adresse IP</li>
                     <li>Type de navigateur</li>
@@ -75,19 +75,19 @@ function PrivacyPolicySimple() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-4">
-                  <h4 className="font-bold text-white mb-2">🔍 Droit d'accès</h4>
+                  <h4 className="font-bold text-white mb-2">Droit d'accès</h4>
                   <p className="text-sm">Obtenir une copie de vos données</p>
                 </div>
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-4">
-                  <h4 className="font-bold text-white mb-2">✏️ Droit de rectification</h4>
+                  <h4 className="font-bold text-white mb-2">Droit de rectification</h4>
                   <p className="text-sm">Corriger vos données</p>
                 </div>
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-4">
-                  <h4 className="font-bold text-white mb-2">🗑️ Droit à l'effacement</h4>
+                  <h4 className="font-bold text-white mb-2">Droit à l'effacement</h4>
                   <p className="text-sm">Demander la suppression</p>
                 </div>
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-4">
-                  <h4 className="font-bold text-white mb-2">⛔ Droit d'opposition</h4>
+                  <h4 className="font-bold text-white mb-2">Droit d'opposition</h4>
                   <p className="text-sm">Vous opposer au traitement</p>
                 </div>
               </div>
@@ -108,7 +108,7 @@ function PrivacyPolicySimple() {
               
               <div className="space-y-6">
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">📋 Identification de l'éditeur</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Identification de l'éditeur</h3>
                   <p className="mb-4">
                     <strong className="text-white">Raison sociale :</strong> SiteOnWeb<br />
                     <strong className="text-white">Activité :</strong> Agence Web et Marketing Digital<br />
@@ -119,16 +119,16 @@ function PrivacyPolicySimple() {
                   
                   <div className="flex flex-wrap gap-4 mt-6">
                     <div className="bg-primary-red text-white px-6 py-3 rounded-xl text-base font-bold shadow-lg">
-                      💻 Agence Web
+                      Agence Web
                     </div>
                     <div className="bg-blue-600 text-white px-6 py-3 rounded-xl text-base font-bold shadow-lg">
-                      📊 Agence Marketing
+                      Agence Marketing
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">🌐 Hébergement du site</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Hébergement du site</h3>
                   <p>
                     <strong className="text-white">Hébergeur :</strong> À préciser<br />
                     <em className="text-sm text-gray-400">
@@ -138,7 +138,7 @@ function PrivacyPolicySimple() {
                 </div>
 
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">⚖️ Propriété intellectuelle</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Propriété intellectuelle</h3>
                   <p className="mb-3">
                     L'ensemble du contenu de ce site (textes, images, logos, vidéos, structure) est la propriété exclusive de SiteOnWeb, 
                     sauf mention contraire.
@@ -150,7 +150,7 @@ function PrivacyPolicySimple() {
                 </div>
 
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">🔗 Liens hypertextes</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Liens hypertextes</h3>
                   <p className="mb-3">
                     <strong className="text-white">Liens sortants :</strong> Ce site peut contenir des liens vers des sites externes. 
                     SiteOnWeb n'est pas responsable du contenu de ces sites tiers.
@@ -161,7 +161,7 @@ function PrivacyPolicySimple() {
                 </div>
 
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">📜 Conditions d'utilisation</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Conditions d'utilisation</h3>
                   <p>
                     L'utilisation du site implique l'acceptation pleine et entière des conditions générales d'utilisation. 
                     Ces conditions peuvent être modifiées à tout moment. Les utilisateurs sont invités à les consulter régulièrement.
@@ -169,7 +169,7 @@ function PrivacyPolicySimple() {
                 </div>
 
                 <div className="bg-card-bg border border-gray-700 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-white mb-3">⚠️ Limitation de responsabilité</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Limitation de responsabilité</h3>
                   <p className="mb-3">
                     SiteOnWeb met tout en œuvre pour offrir des informations fiables et à jour. Toutefois, des erreurs ou omissions peuvent survenir.
                   </p>
@@ -188,8 +188,8 @@ function PrivacyPolicySimple() {
                   Pour toute question concernant cette politique de confidentialité ou les mentions légales :
                 </p>
                 <p className="text-white">
-                  📧 Email : <a href="mailto:contact@siteonweb.fr" className="text-primary-red hover:underline font-bold">contact@siteonweb.fr</a><br />
-                  📱 WhatsApp : <a href="https://wa.me/33648456937" className="text-primary-red hover:underline font-bold">+33 6 48 45 69 37</a>
+                  Email : <a href="mailto:contact@siteonweb.fr" className="text-primary-red hover:underline font-bold">contact@siteonweb.fr</a><br />
+                  WhatsApp : <a href="https://wa.me/33648456937" className="text-primary-red hover:underline font-bold">+33 6 48 45 69 37</a>
                 </p>
               </div>
             </section>
