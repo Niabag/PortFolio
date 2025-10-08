@@ -74,6 +74,7 @@ export const translations = {
         },
         {
           icon: '🚀',
+          iconImage: '/images/icons-competences/referencement.webp',
           title: 'Référencement & Performance',
           color: '#dc2626',
           services: [
