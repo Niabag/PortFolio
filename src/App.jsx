@@ -51,12 +51,12 @@ export default function App() {
     }
   }, [selectedService]);
 
-  // Réinitialiser booking quand on change de service
-  useEffect(() => {
-    if (selectedService) {
-      setShowBooking(false);
-    }
-  }, [selectedService]);
+  // Ne pas réinitialiser booking automatiquement
+  // useEffect(() => {
+  //   if (selectedService) {
+  //     setShowBooking(false);
+  //   }
+  // }, [selectedService]);
 
   // Si un service est sélectionné, afficher la page de détail
   if (selectedService) {

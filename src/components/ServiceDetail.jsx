@@ -11,25 +11,25 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
     // Ajouter un état dans l'historique quand on ouvre la page de service
     window.history.pushState({ serviceDetail: true }, '');
     let historyPushed = true;
-    let isClosing = false;
 
     const handlePopState = (event) => {
-      // Ne pas fermer si on est déjà en train de fermer
-      if (isClosing) return;
+      console.log('ServiceDetail popstate, state:', event.state);
       
-      // Ne pas fermer si c'est le booking qui gère son propre popstate
+      // Ne pas fermer si c'est le booking
       if (event.state?.modal === 'booking') {
-        console.log('Booking popstate detected, keeping ServiceDetail open');
+        console.log('Booking is open, keeping ServiceDetail');
         return;
       }
       
-      // Si on appuie sur retour et qu'on n'est plus sur serviceDetail, fermer
-      if (!event.state?.serviceDetail) {
-        console.log('Closing ServiceDetail due to back button');
-        isClosing = true;
-        historyPushed = false;
-        onClose();
+      // Ne rien faire si on est toujours sur serviceDetail ou si booking vient de s'ajouter
+      if (event.state?.serviceDetail || event.state?.modal === 'booking') {
+        return;
       }
+      
+      // Sinon, fermer la page de service
+      console.log('Closing ServiceDetail');
+      historyPushed = false;
+      onClose();
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -37,7 +37,7 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
     return () => {
       window.removeEventListener('popstate', handlePopState);
       // Nettoyer l'historique si la page se ferme autrement (bouton X, etc.)
-      if (!isClosing && historyPushed && window.history.state?.serviceDetail) {
+      if (historyPushed && window.history.state?.serviceDetail) {
         window.history.back();
       }
     };
