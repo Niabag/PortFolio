@@ -72,9 +72,22 @@ export default function Booking({ onClose }) {
 
   // Bloquer le scroll quand le modal est ouvert
   useEffect(() => {
+    // Sauvegarder la position de scroll actuelle
+    const scrollY = window.scrollY;
+    
+    // Bloquer le scroll du body
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
+    
     return () => {
-      document.body.style.overflow = 'auto';
+      // Restaurer le scroll
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
     };
   }, []);
 
@@ -102,8 +115,22 @@ export default function Booking({ onClose }) {
   }, [onClose]);
 
   const modalContent = (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[1200] flex items-center justify-center p-4">
-      <div className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-primary-red/30" style={{ paddingTop: '50px', paddingBottom: '100px', paddingLeft: '30px', paddingRight: '30px' }}>
+    <div 
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[1200] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-primary-red/30" 
+        style={{ 
+          paddingTop: '50px', 
+          paddingBottom: '100px', 
+          paddingLeft: '30px', 
+          paddingRight: '30px',
+          overscrollBehavior: 'contain',
+          WebkitOverflowScrolling: 'touch'
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-primary-red text-2xl"
