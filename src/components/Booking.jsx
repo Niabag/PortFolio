@@ -83,6 +83,18 @@ export default function Booking({ onClose }) {
     document.body.style.right = '0';
     document.body.style.overflow = 'hidden';
     
+    // Permettre le scroll à la molette dans la popup uniquement
+    const handleWheel = (e) => {
+      const modalContent = modalContentRef.current;
+      if (!modalContent || !modalContent.contains(e.target)) {
+        e.preventDefault();
+        return false;
+      }
+    };
+    
+    // Ajouter l'écouteur avec passive: false pour pouvoir preventDefault
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    
     return () => {
       // Restaurer le scroll
       document.body.style.position = '';
@@ -91,6 +103,9 @@ export default function Booking({ onClose }) {
       document.body.style.right = '';
       document.body.style.overflow = '';
       window.scrollTo(0, scrollY);
+      
+      // Retirer l'écouteur
+      window.removeEventListener('wheel', handleWheel);
     };
   }, []);
 

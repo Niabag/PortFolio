@@ -41,21 +41,21 @@ export default function FAQ() {
   return (
     <section id="faq" ref={sectionRef} className="snap-section scrollable relative z-10">
       <div className="container mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 max-w-[1400px]">
-        <div className="text-center mb-6">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-white">
+        <div className="text-center mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-white">
             {t('faq.title.part1')} <span className="text-primary-red">{t('faq.title.part2')}</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
             {t('faq.subtitle')}
           </p>
         </div>
 
         {/* Onglets de catégories */}
-        <div className="max-w-4xl mx-auto mb-8">
-          <div className="flex justify-center gap-4 flex-wrap">
+        <div className="max-w-4xl mx-auto mb-4 sm:mb-5">
+          <div className="flex justify-center gap-2 sm:gap-3 flex-wrap">
             <button
               onClick={() => handleCategoryChange('web')}
-              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === 'web'
+              className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 ${activeCategory === 'web'
                   ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 }`}
@@ -64,7 +64,7 @@ export default function FAQ() {
             </button>
             <button
               onClick={() => handleCategoryChange('marketing')}
-              className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === 'marketing'
+              className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 ${activeCategory === 'marketing'
                   ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 }`}
@@ -76,17 +76,17 @@ export default function FAQ() {
 
         {/* Questions/Réponses */}
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
+          <div className="space-y-2 sm:space-y-3">
             {currentItems.map((item, index) => (
               <div
                 key={index}
                 className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 transition-all duration-300"
               >
                 <button
-                  className={`w-full px-6 py-4 text-left flex justify-between items-center ${activeIndex === index ? 'bg-gray-750' : ''} hover:bg-gray-750 transition-colors`}
+                  className={`w-full px-4 py-3 text-left flex justify-between items-center ${activeIndex === index ? 'bg-gray-750' : ''} hover:bg-gray-750 transition-colors`}
                   onClick={() => toggleAccordion(index)}
                 >
-                  <span className="font-medium text-lg">{item.question}</span>
+                  <span className="font-medium text-sm sm:text-base">{item.question}</span>
                   <svg
                     className={`w-5 h-5 transform transition-transform ${activeIndex === index ? 'rotate-180' : ''}`}
                     fill="none"
@@ -103,8 +103,8 @@ export default function FAQ() {
                   </svg>
                 </button>
                 {activeIndex === index && (
-                  <div className="px-6 py-4 bg-gray-800">
-                    <p className="text-gray-300">{item.answer}</p>
+                  <div className="px-4 py-3 bg-gray-800">
+                    <p className="text-gray-300 text-sm sm:text-base">{item.answer}</p>
                   </div>
                 )}
               </div>
