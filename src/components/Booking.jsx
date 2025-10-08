@@ -114,6 +114,16 @@ export default function Booking({ onClose }) {
     };
   }, []);
 
+  // Fonction de fermeture centralisée
+  const closeBooking = () => {
+    // Si nous avons poussé un état, revenir en arrière pour le retirer
+    if (historyPushedRef.current) {
+      historyPushedRef.current = false;
+      window.history.back();
+    }
+    onClose();
+  };
+
   // Gérer le bouton retour du téléphone pour fermer le modal
   useEffect(() => {
     console.log('Booking mounted, adding to history');
@@ -132,18 +142,13 @@ export default function Booking({ onClose }) {
     return () => {
       console.log('Booking unmounting');
       window.removeEventListener('popstate', handlePopState);
-      // Nettoyer l'historique si le modal se ferme autrement (bouton X, etc.)
-      // et que l'historique n'a pas déjà été retiré par le bouton retour
-      if (historyPushedRef.current && window.history.state?.modal === 'booking') {
-        console.log('Booking cleaning history');
-        window.history.back();
-      }
+      // Ne pas manipuler l'historique ici pour éviter les doubles back en StrictMode
     };
   }, [onClose]);
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      closeBooking();
     }
   };
 
