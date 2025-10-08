@@ -49,6 +49,7 @@ export const translations = {
         },
         {
           icon: '💻',
+          iconImage: '/images/icons-competences/creation-site-web.webp',
           title: 'Création de sites web',
           color: '#dc2626',
           services: [
