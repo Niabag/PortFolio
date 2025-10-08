@@ -55,21 +55,23 @@ export default function FAQ() {
           <div className="flex justify-center gap-2 sm:gap-3 flex-wrap">
             <button
               onClick={() => handleCategoryChange('web')}
-              className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 ${activeCategory === 'web'
+              className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${activeCategory === 'web'
                   ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 }`}
             >
-              💻 {categories.web?.title || 'Web'}
+              <img src="/images/icons-competences/creation-site-web.webp" alt="" className="w-5 h-5 object-contain" />
+              {categories.web?.title || 'Web'}
             </button>
             <button
               onClick={() => handleCategoryChange('marketing')}
-              className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 ${activeCategory === 'marketing'
+              className={`px-4 sm:px-6 py-2 text-sm sm:text-base rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${activeCategory === 'marketing'
                   ? 'bg-primary-red text-white shadow-lg shadow-primary-red/50'
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 }`}
             >
-              📊 {categories.marketing?.title || 'Marketing'}
+              <img src="/images/icons-competences/court.webp" alt="" className="w-5 h-5 object-contain" />
+              {categories.marketing?.title || 'Marketing'}
             </button>
           </div>
         </div>
