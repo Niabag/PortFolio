@@ -52,8 +52,21 @@ export default function ServiceDetailPage() {
 
   const service = useMemo(() => {
     const list = translations[lang]?.skills?.categories || [];
-    if (!slug) return null;
-    return list.find(c => getSlug(c.title) === slug) || null;
+    if (!slug) {
+      console.log('No slug found in URL');
+      return null;
+    }
+    
+    console.log('Searching for slug:', slug);
+    console.log('Available services:', list.map(c => ({ title: c.title, slug: getSlug(c.title) })));
+    
+    const found = list.find(c => getSlug(c.title) === slug);
+    if (!found) {
+      console.log('Service not found for slug:', slug);
+    } else {
+      console.log('Service found:', found.title);
+    }
+    return found || null;
   }, [lang, slug]);
 
   return (
@@ -69,6 +82,22 @@ export default function ServiceDetailPage() {
               <div className="text-center">
                 <h1 className="text-4xl font-bold mb-4">Service introuvable</h1>
                 <p className="text-gray-400 text-lg mb-8">Vérifiez l'URL ou revenez aux services.</p>
+                
+                {/* Debug info */}
+                <div className="text-left bg-gray-800 p-4 rounded-lg mb-8 text-sm">
+                  <p className="text-white mb-2"><strong>Debug :</strong></p>
+                  <p className="text-gray-300">Slug recherché : <span className="text-primary-red">{slug || 'null'}</span></p>
+                  <p className="text-gray-300">Langue : <span className="text-primary-red">{lang}</span></p>
+                  <p className="text-gray-300 mt-2">Services disponibles :</p>
+                  <ul className="text-gray-400 text-xs mt-1">
+                    {translations[lang]?.skills?.categories?.map((c, i) => (
+                      <li key={i}>
+                        {c.title} → <span className="text-green-400">{getSlug(c.title)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
                 <a href="/#competences" className="inline-block bg-primary-red hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Retour aux services
                 </a>
