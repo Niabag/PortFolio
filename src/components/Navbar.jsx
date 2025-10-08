@@ -127,7 +127,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`fixed top-0 left-0 h-screen w-screen bg-black transform transition-transform duration-300 md:hidden ${open ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 right-0 h-screen w-screen bg-black transform transition-transform duration-300 md:hidden z-[2000] ${open ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="pt-20 px-6">
           <div className="mb-6">
