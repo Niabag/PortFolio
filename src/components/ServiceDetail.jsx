@@ -10,9 +10,15 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
   useEffect(() => {
     // Ajouter un état dans l'historique quand on ouvre la page de service
     window.history.pushState({ serviceDetail: true }, '');
+    let historyPushed = true;
 
     const handlePopState = (event) => {
+      // Ne pas fermer si c'est le booking qui gère son propre popstate
+      if (event.state?.modal === 'booking') {
+        return;
+      }
       // Si on appuie sur retour, fermer la page de service
+      historyPushed = false;
       onClose();
     };
 
@@ -21,7 +27,7 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
     return () => {
       window.removeEventListener('popstate', handlePopState);
       // Nettoyer l'historique si la page se ferme autrement (bouton X, etc.)
-      if (window.history.state?.serviceDetail) {
+      if (historyPushed && window.history.state?.serviceDetail) {
         window.history.back();
       }
     };

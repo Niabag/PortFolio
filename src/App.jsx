@@ -63,11 +63,21 @@ export default function App() {
             setShowBooking(false);
           }}
           onBooking={() => {
-            console.log('onBooking called'); // Debug
+            console.log('onBooking called, showBooking was:', showBooking); // Debug
             setShowBooking(true);
+            console.log('onBooking called, showBooking now:', true); // Debug
           }}
         />
-        {showBooking && <Booking onClose={() => setShowBooking(false)} />}
+        {showBooking && (
+          <>
+            <div style={{ position: 'relative', zIndex: 9999 }}>
+              <Booking onClose={() => {
+                console.log('Booking onClose called');
+                setShowBooking(false);
+              }} />
+            </div>
+          </>
+        )}
       </>
     );
   }
