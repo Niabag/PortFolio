@@ -73,7 +73,15 @@ export default function Competences() {
 
                 <div className="relative z-10 p-6 sm:p-8">
                   <div className="skill-icon-wrapper mb-4">
-                    <span className="text-5xl sm:text-6xl">{category.icon}</span>
+                    {category.iconImage ? (
+                      <img 
+                        src={category.iconImage} 
+                        alt={category.title}
+                        className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                      />
+                    ) : (
+                      <span className="text-5xl sm:text-6xl">{category.icon}</span>
+                    )}
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">

@@ -23,6 +23,7 @@ export const translations = {
       categories: [
         {
           icon: '🎯',
+          iconImage: '/images/icons-competences/Strategie-digital.webp',
           title: 'Stratégie digitale',
           color: '#dc2626',
           services: [
@@ -314,6 +315,7 @@ export const translations = {
       categories: [
         {
           icon: '🎯',
+          iconImage: '/images/icons-competences/Strategie-digital.webp',
           title: 'Digital Strategy',
           color: '#dc2626',
           services: [
