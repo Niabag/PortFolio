@@ -17,15 +17,16 @@ body {
   position: relative;
 }
 
-/* Sections standard - espacement professionnel */
+/* Sections standard - avec padding-top */
 .snap-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
+  padding-top: 260px;
+  padding-bottom: 2rem;
 }
 
 /* Conteneur centré et responsive */
@@ -35,24 +36,36 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 1.5rem;
+  padding: 0 1.5rem;
 }
 
 /* Sections scrollables - comportement standard */
 .snap-section.scrollable {
   min-height: auto;
-  padding: 4rem 0;
+  padding-top: 260px;
+  padding-bottom: 2rem;
   align-items: flex-start;
 }
 
 .snap-section.scrollable .container {
-  padding: 3rem 1.5rem;
+  padding: 0 1.5rem;
+}
+
+/* Section Compétences - padding spécifique */
+#competences {
+  padding-top: 281px !important;
+}
+
+/* Section FAQ - padding spécifique */
+#faq {
+  padding-top: 120px !important;
 }
 
 /* Section Stats - mise en valeur */
 .snap-section.stats-section {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding-top: 30px;
+  padding-bottom: 2rem;
 }
 
 /* Navbar toujours au-dessus */
@@ -68,36 +81,40 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
   .snap-section {
-    min-height: auto;
-    padding: 3rem 0;
+    padding-top: 260px;
+    padding-bottom: 1.5rem;
   }
   
   .snap-section .container {
-    padding: 1.5rem 1rem;
+    padding: 0 1rem;
   }
   
   .snap-section.scrollable {
-    padding: 3rem 0;
+    padding-top: 260px;
+    padding-bottom: 1.5rem;
   }
   
   .snap-section.scrollable .container {
-    padding: 2rem 1rem;
+    padding: 0 1rem;
   }
   
   .snap-section.stats-section {
     min-height: 80vh;
-    padding: 3rem 0;
+    padding-top: 30px;
+    padding-bottom: 2rem;
   }
 }
 
 /* Tablettes */
 @media (min-width: 769px) and (max-width: 1024px) {
   .snap-section {
-    padding: 3.5rem 0;
+    padding-top: 260px;
+    padding-bottom: 2rem;
   }
   
   .snap-section.scrollable {
-    padding: 3.5rem 0;
+    padding-top: 260px;
+    padding-bottom: 2rem;
   }
 }
 
@@ -105,20 +122,23 @@ footer {
 @media (max-height: 700px) {
   .snap-section {
     min-height: auto;
-    padding: 2.5rem 0;
+    padding-top: 260px;
+    padding-bottom: 1.5rem;
   }
   
   .snap-section .container {
-    padding: 1.5rem 1rem;
+    padding: 0 1rem;
   }
   
   .snap-section.scrollable {
-    padding: 2.5rem 0;
+    padding-top: 260px;
+    padding-bottom: 1.5rem;
   }
   
   .snap-section.stats-section {
     min-height: auto;
-    padding: 2.5rem 0;
+    padding-top: 30px;
+    padding-bottom: 1.5rem;
   }
 }
 

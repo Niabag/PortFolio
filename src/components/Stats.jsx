@@ -21,7 +21,7 @@ export default function Stats() {
 
   return (
     <section className="snap-section stats-section relative z-10 bg-gradient-to-b from-black/50 to-transparent overflow-hidden">
-      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px] py-12 sm:py-16 flex items-center justify-center min-h-full">
+      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px] flex items-center justify-center min-h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           {/* Statistiques */}
           <div className="grid grid-cols-3 gap-8 sm:gap-12">
