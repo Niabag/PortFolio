@@ -53,7 +53,9 @@ export default function App() {
 
   // Réinitialiser booking quand on change de service
   useEffect(() => {
-    setShowBooking(false);
+    if (selectedService) {
+      setShowBooking(false);
+    }
   }, [selectedService]);
 
   // Si un service est sélectionné, afficher la page de détail
