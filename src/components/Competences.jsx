@@ -61,17 +61,21 @@ export default function Competences({ onServiceClick }) {
 
   const navigateToService = (category) => {
     const slug = toSlug(category.title);
-    // Utiliser la jolie URL /services/:slug en production
-    window.location.href = `/services/${slug}`;
+    // En développement, utiliser directement service.html avec query param
+    // En production, Vercel gérera le rewrite de /services/:slug
+    const isDev = import.meta.env.DEV;
+    if (isDev) {
+      window.location.href = `/service.html?slug=${slug}`;
+    } else {
+      window.location.href = `/services/${slug}`;
+    }
   };
 
   const handleCardClick = (index, hasMoreServices, e) => {
     // Ne pas ouvrir la page si on clique sur un bouton ou un de ses enfants
     if (e && (e.target.tagName === 'BUTTON' || e.target.closest('button'))) {
-      console.log('Click on button detected, ignoring card click');
       return;
     }
-    console.log('Card clicked, opening service page:', categories[index].title);
     navigateToService(categories[index]);
   };
 

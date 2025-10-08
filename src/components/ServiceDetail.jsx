@@ -72,8 +72,9 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
           
           <button
             onClick={handleBookingClick}
-            className="bg-primary-red hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="bg-primary-red hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
           >
+            <img src="/images/icons-competences/marketing.webp" alt="" className="w-5 h-5 object-contain" />
             Prendre rendez-vous
           </button>
         </div>
@@ -210,9 +211,7 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
                 onClick={handleBookingClick}
                 className="inline-flex items-center justify-center gap-2 bg-primary-red hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary-red/50"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+                <img src="/images/icons-competences/marketing.webp" alt="" className="w-6 h-6 object-contain" />
                 Demander un devis gratuit
               </button>
               <button

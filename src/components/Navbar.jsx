@@ -94,8 +94,9 @@ export default function Navbar() {
                       handleSmoothScroll(e, link.href, link.external);
                     }
                   }}
-                  className="bg-primary-red px-4 py-2 rounded-lg hover:bg-red-700 transition"
+                  className="bg-primary-red px-4 py-2 rounded-lg hover:bg-red-700 transition flex items-center gap-2"
                 >
+                  <img src="/images/icons-competences/marketing.webp" alt="" className="w-4 h-4 object-contain" />
                   {link.label}
                 </button>
               ) : (
@@ -159,8 +160,9 @@ export default function Navbar() {
                         handleSmoothScroll(e, link.href, link.external);
                       }
                     }}
-                    className="block w-full bg-primary-red px-4 py-3 rounded-lg hover:bg-red-700 transition text-center"
+                    className="block w-full bg-primary-red px-4 py-3 rounded-lg hover:bg-red-700 transition text-center flex items-center justify-center gap-2"
                   >
+                    <img src="/images/icons-competences/marketing.webp" alt="" className="w-5 h-5 object-contain" />
                     {link.label}
                   </button>
                 ) : (

@@ -179,8 +179,9 @@ export default function Booking({ onClose }) {
         </button>
 
         <div className="mb-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-            {lang === 'fr' ? '📅 Réserver un rendez-vous' : '📅 Book an Appointment'}
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 flex items-center gap-3">
+            <img src="/images/icons-competences/marketing.webp" alt="" className="w-8 h-8 object-contain" />
+            {lang === 'fr' ? 'Réserver un rendez-vous' : 'Book an Appointment'}
           </h2>
           <p className="text-gray-400">
             {lang === 'fr'
