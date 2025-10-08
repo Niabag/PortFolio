@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
-export default function Competences() {
+export default function Competences({ onServiceClick }) {
   const { t } = useLanguage();
   const categories = t('skills.categories');
   const title = t('skills.title');
@@ -46,8 +46,16 @@ export default function Competences() {
   };
 
   const toggleExpand = (index, e) => {
-    e.stopPropagation();
+    if (e) e.stopPropagation();
     setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  const handleCardClick = (index, hasMoreServices, e) => {
+    // Ne pas ouvrir la page si on clique sur le bouton "Voir plus"
+    if (e && e.target.tagName === 'BUTTON') {
+      return;
+    }
+    onServiceClick(categories[index]);
   };
 
   return (
@@ -67,8 +75,9 @@ export default function Competences() {
               className="skill-card-wrapper relative"
               onMouseEnter={() => handleCardHover(index, true)}
               onMouseLeave={() => handleCardHover(index, false)}
+              onClick={(e) => handleCardClick(index, category.services.length > 2, e)}
             >
-              <div className={`skill-card relative ${hoveredCard === index ? 'hovered' : ''}`}>
+              <div className={`skill-card relative cursor-pointer ${hoveredCard === index ? 'hovered' : ''}`}>
                 <div className="skill-card-gradient"></div>
 
                 <div className="relative z-10 p-4 sm:p-5">
@@ -113,6 +122,23 @@ export default function Competences() {
                       {expandedCard === index ? '− Voir moins' : '+ Voir plus'}
                     </button>
                   )}
+
+                  {/* Bouton En savoir plus */}
+                  <div className="mt-4 pt-4 border-t border-gray-700">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onServiceClick(category);
+                      }}
+                      className="w-full bg-gradient-to-r from-primary-red to-red-600 hover:from-red-600 hover:to-primary-red text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                      type="button"
+                    >
+                      En savoir plus
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="skill-card-border"></div>

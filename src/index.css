@@ -51,9 +51,15 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Section Compétences - padding spécifique */
+/* Section Compétences - sans padding */
 #competences {
-  padding-top: 380px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Section Accueil - padding bottom */
+#accueil {
+  padding-bottom: 380px !important;
 }
 
 /* Section FAQ - padding spécifique */

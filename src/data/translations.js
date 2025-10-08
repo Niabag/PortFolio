@@ -31,6 +31,20 @@ export const translations = {
             'Élaboration de stratégies de communication et marketing digital',
             'Positionnement de marque et étude de marché',
             'Planification de campagnes multicanal'
+          ],
+          detailedDescription: 'Développez votre présence en ligne avec une stratégie digitale sur-mesure. Nous analysons votre marché, vos concurrents et votre audience pour créer une stratégie qui génère des résultats concrets.',
+          benefits: [
+            'Visibilité accrue sur le web',
+            'Meilleur retour sur investissement',
+            'Positionnement optimal face à la concurrence',
+            'Croissance mesurable de votre activité'
+          ],
+          process: [
+            'Audit complet de votre présence digitale',
+            'Analyse de votre marché et concurrence',
+            'Définition des objectifs et KPIs',
+            'Mise en place de la stratégie',
+            'Suivi et optimisation continue'
           ]
         },
         {
@@ -41,6 +55,20 @@ export const translations = {
             'Développement de sites vitrines, e-commerce et sur mesure',
             'Optimisation mobile (responsive design)',
             'Maintenance et mise à jour technique'
+          ],
+          detailedDescription: 'Votre site web est votre vitrine digitale. Nous créons des sites modernes, performants et optimisés pour convertir vos visiteurs en clients. Du site vitrine à la boutique en ligne, nous donnons vie à vos projets.',
+          benefits: [
+            'Site professionnel et sur-mesure',
+            'Performance et rapidité optimales',
+            'Design responsive adapté à tous les écrans',
+            'Optimisé pour le référencement Google'
+          ],
+          process: [
+            'Analyse de vos besoins et objectifs',
+            'Conception graphique personnalisée',
+            'Développement et intégration',
+            'Tests et optimisation',
+            'Mise en ligne et formation'
           ]
         },
         {
@@ -52,6 +80,20 @@ export const translations = {
             'SEA (publicité payante) : campagnes Google Ads, Meta Ads, etc.',
             'Suivi et analyse des performances (Google Analytics, Search Console)',
             'Stratégies de contenu optimisé pour le SEO'
+          ],
+          detailedDescription: 'Être visible sur Google, c\'est essentiel. Nous améliorons votre positionnement naturel (SEO) et gérons vos campagnes publicitaires (SEA) pour générer du trafic qualifié et des conversions.',
+          benefits: [
+            'Meilleur positionnement sur Google',
+            'Trafic qualifié et ciblé',
+            'Augmentation du taux de conversion',
+            'ROI mesurable et optimisé'
+          ],
+          process: [
+            'Audit SEO complet de votre site',
+            'Optimisation technique et contenu',
+            'Stratégie de netlinking',
+            'Mise en place campagnes SEA',
+            'Suivi et reporting mensuel'
           ]
         },
         {
@@ -63,6 +105,20 @@ export const translations = {
             'Création de contenus engageants (textes, visuels, vidéos)',
             'Campagnes publicitaires social media (Meta Ads, LinkedIn Ads…)',
             'Gestion de communauté et e-réputation'
+          ],
+          detailedDescription: 'Les réseaux sociaux sont essentiels pour votre visibilité. Nous gérons votre présence sur les réseaux, créons du contenu engageant et lançons des campagnes publicitaires performantes.',
+          benefits: [
+            'Présence active sur les réseaux sociaux',
+            'Engagement et fidélisation de votre audience',
+            'Augmentation de votre notoriété',
+            'Génération de leads qualifiés'
+          ],
+          process: [
+            'Audit de votre présence actuelle',
+            'Définition de la stratégie de contenu',
+            'Création et programmation des posts',
+            'Interaction avec la communauté',
+            'Analyse et optimisation continue'
           ]
         },
         {
@@ -74,6 +130,20 @@ export const translations = {
             'Rédaction de contenus web et storytelling',
             'Email marketing & automation (newsletters, séquences automatisées)',
             'Stratégies de fidélisation client'
+          ],
+          detailedDescription: 'Votre image de marque est votre identité. Nous créons une identité visuelle forte, rédigeons du contenu impactant et mettons en place des campagnes email marketing qui convertissent.',
+          benefits: [
+            'Identité de marque unique et mémorable',
+            'Messages cohérents sur tous vos supports',
+            'Fidélisation de vos clients',
+            'Augmentation de la notoriété de votre marque'
+          ],
+          process: [
+            'Étude de votre marque et vos valeurs',
+            'Création de l\'identité visuelle',
+            'Développement de votre stratégie de contenu',
+            'Mise en place email marketing',
+            'Suivi et optimisation des campagnes'
           ]
         },
         {
@@ -85,6 +155,20 @@ export const translations = {
             'Analyse du trafic et du comportement utilisateur',
             'A/B testing et amélioration continue des performances',
             'Conseils personnalisés pour maximiser le ROI'
+          ],
+          detailedDescription: 'Les données sont la clé du succès digital. Nous analysons vos performances, identifions les opportunités d\'amélioration et optimisons en continu pour maximiser votre retour sur investissement.',
+          benefits: [
+            'Vision claire de vos performances',
+            'Décisions basées sur les données',
+            'Amélioration continue des résultats',
+            'ROI optimisé sur toutes vos actions'
+          ],
+          process: [
+            'Mise en place des outils d\'analyse',
+            'Définition des KPIs pertinents',
+            'Collecte et analyse des données',
+            'Identification des axes d\'amélioration',
+            'Reporting et recommandations'
           ]
         }
       ]
