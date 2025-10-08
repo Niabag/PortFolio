@@ -87,8 +87,8 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
   .snap-section {
-    padding-top: 260px;
-    padding-bottom: 1.5rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   
   .snap-section .container {
@@ -96,8 +96,8 @@ footer {
   }
   
   .snap-section.scrollable {
-    padding-top: 260px;
-    padding-bottom: 1.5rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   
   .snap-section.scrollable .container {
@@ -107,7 +107,21 @@ footer {
   .snap-section.stats-section {
     min-height: 80vh;
     padding-top: 30px;
-    padding-bottom: 2rem;
+    padding-bottom: 30px;
+  }
+  
+  #accueil {
+    padding-bottom: 60px !important;
+  }
+  
+  #competences {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  #faq {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
   }
 }
 
