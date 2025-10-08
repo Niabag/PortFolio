@@ -1,6 +1,7 @@
 import { readdirSync } from 'fs';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
+import react from '@vitejs/plugin-react';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const blogDir = resolve(__dirname, 'blog');
@@ -22,7 +23,7 @@ const blogInputs = Object.fromEntries(
 );
 
 export default {
-  base: './',
+  base: '/',
   build: {
     rollupOptions: {
       input: {
@@ -37,6 +38,7 @@ export default {
     }
   },
   plugins: [
+    react(),
     {
       name: 'rewrite-services',
       configureServer(server) {
