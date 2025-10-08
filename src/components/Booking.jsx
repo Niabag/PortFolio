@@ -81,11 +81,36 @@ export default function Booking({ onClose }) {
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = `${scrollbarWidth}px`;
     
+    // Gérer le scroll uniquement dans la popup quand la souris est dessus
+    const handleWheel = (e) => {
+      const modalContent = modalContentRef.current;
+      if (!modalContent) return;
+      
+      // Si la souris n'est pas sur la popup, bloquer le scroll
+      if (!modalContent.contains(e.target)) {
+        e.preventDefault();
+        return;
+      }
+      
+      // Si on est sur la popup, laisser le scroll naturel se faire
+      const { scrollTop, scrollHeight, clientHeight } = modalContent;
+      const isAtTop = scrollTop === 0;
+      const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
+      
+      // Empêcher le scroll de se propager si on n'est pas aux limites
+      if ((e.deltaY < 0 && !isAtTop) || (e.deltaY > 0 && !isAtBottom)) {
+        e.stopPropagation();
+      }
+    };
+    
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    
     return () => {
       // Restaurer le scroll
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
       document.body.style.paddingRight = '';
+      window.removeEventListener('wheel', handleWheel);
     };
   }, []);
 

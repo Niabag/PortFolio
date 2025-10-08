@@ -12,12 +12,8 @@ import Location from './components/Location.jsx';
 import Footer from './components/Footer.jsx';
 import AnimatedBackground from './components/AnimatedBackground.jsx';
 import SocialButtons from './components/SocialButtons.jsx';
-import { useSnapScroll } from './hooks/useSnapScroll.jsx';
 
 export default function App() {
-  // Activer le scroll snap bloc par bloc
-  useSnapScroll();
-
   useEffect(() => {
     // Smooth scroll pour les liens de navigation
     const links = document.querySelectorAll('a[href^="#"]');

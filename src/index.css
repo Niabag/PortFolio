@@ -3,46 +3,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Scroll snap section par section - Fluide et centré */
+/* Scroll classique */
 html {
   scroll-behavior: smooth;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
-  overscroll-behavior-y: none; /* Empêcher le bounce sur mobile */
 }
 
-/* Conteneur principal pour l'effet de stack */
+/* Conteneur principal */
 .scroll-container {
   position: relative;
 }
 
-/* Sections plein écran avec snap - Effet overlay */
+/* Sections standard - espacement professionnel */
 .snap-section {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
-  height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  position: sticky;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  z-index: 1;
-  padding-top: 0;
+  padding: 4rem 0;
 }
-
-/* Ordre des z-index inversé - La prochaine section apparaît par-dessus */
-#accueil { z-index: 1; }
-#competences { z-index: 2; }
-#realisations { z-index: 3; }
-#faq { z-index: 4; }
-#contact { z-index: 5; }
-#location { z-index: 6; }
 
 /* Conteneur centré et responsive */
 .snap-section .container {
@@ -51,52 +35,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 1.5rem;
-  margin: auto 0;
+  padding: 2rem 1.5rem;
 }
 
-/* Scroll interne si contenu trop grand */
+/* Sections scrollables - comportement standard */
 .snap-section.scrollable {
-  overflow-y: auto;
-  overflow-x: hidden;
+  min-height: auto;
+  padding: 4rem 0;
   align-items: flex-start;
-  padding-top: 0;
-  scroll-padding-top: 4rem;
 }
 
 .snap-section.scrollable .container {
-  max-height: none;
-  min-height: auto;
-  overflow-y: visible;
-  overflow-x: hidden;
-  padding: 4rem 1.5rem 2rem;
-  justify-content: flex-start;
-  margin-top: 0;
+  padding: 3rem 1.5rem;
 }
 
-/* Scrollbar stylisée pour sections scrollables */
-.snap-section.scrollable::-webkit-scrollbar {
-  width: 8px;
-}
-
-.snap-section.scrollable::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
-
-.snap-section.scrollable::-webkit-scrollbar-thumb {
-  background: rgba(220, 38, 38, 0.5);
-  border-radius: 10px;
-}
-
-.snap-section.scrollable::-webkit-scrollbar-thumb:hover {
-  background: rgba(220, 38, 38, 0.8);
-}
-
-/* Firefox scrollbar */
-.snap-section.scrollable {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(220, 38, 38, 0.5) rgba(0, 0, 0, 0.3);
+/* Section Stats - mise en valeur */
+.snap-section.stats-section {
+  min-height: 100vh;
+  padding: 4rem 0;
 }
 
 /* Navbar toujours au-dessus */
@@ -104,73 +60,65 @@ nav {
   z-index: 1100 !important;
 }
 
-/* Footer en dehors du système de stack */
+/* Footer */
 footer {
   position: relative;
-  z-index: 10;
 }
 
-/* Désactiver snap sur mobile pour meilleure UX */
+/* Mobile */
 @media (max-width: 768px) {
-  html {
-    scroll-snap-type: none;
-  }
-  
   .snap-section {
     min-height: auto;
-    height: auto;
-    scroll-snap-align: none;
-    position: relative;
+    padding: 3rem 0;
   }
   
   .snap-section .container {
-    padding: 4rem 1rem 2rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .snap-section.scrollable {
+    padding: 3rem 0;
+  }
+  
+  .snap-section.scrollable .container {
+    padding: 2rem 1rem;
+  }
+  
+  .snap-section.stats-section {
+    min-height: 80vh;
+    padding: 3rem 0;
   }
 }
 
 /* Tablettes */
 @media (min-width: 769px) and (max-width: 1024px) {
-  html {
-    scroll-snap-type: y proximity;
+  .snap-section {
+    padding: 3.5rem 0;
   }
   
-  .snap-section {
-    scroll-snap-stop: normal;
-    position: relative;
+  .snap-section.scrollable {
+    padding: 3.5rem 0;
   }
 }
 
-/* Désactiver snap sur petite hauteur d'écran */
+/* Petite hauteur d'écran */
 @media (max-height: 700px) {
-  html {
-    scroll-snap-type: none !important;
-  }
-  
   .snap-section {
     min-height: auto;
-    height: auto;
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
-    position: relative;
+    padding: 2.5rem 0;
   }
   
   .snap-section .container {
-    padding: 2rem 1rem 1.5rem;
+    padding: 1.5rem 1rem;
   }
   
-  .snap-section.scrollable .container {
-    padding: 3rem 1rem 2rem;
-  }
-}
-
-/* Optimisation pour écrans moyens en hauteur */
-@media (min-height: 701px) and (max-height: 900px) {
-  .snap-section .container {
-    padding: 1.5rem;
+  .snap-section.scrollable {
+    padding: 2.5rem 0;
   }
   
-  .snap-section.scrollable .container {
-    padding: 3.5rem 1.5rem 2.5rem;
+  .snap-section.stats-section {
+    min-height: auto;
+    padding: 2.5rem 0;
   }
 }
 
