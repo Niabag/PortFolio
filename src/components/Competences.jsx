@@ -53,14 +53,25 @@ export default function Competences({ onServiceClick }) {
     setExpandedCard(expandedCard === index ? null : index);
   };
 
+  const toSlug = (str) => str
+    .toLowerCase()
+    .normalize('NFD').replace(/\p{Diacritic}/gu, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
+  const navigateToService = (category) => {
+    const slug = toSlug(category.title);
+    window.location.href = `/service.html?slug=${slug}`;
+  };
+
   const handleCardClick = (index, hasMoreServices, e) => {
     // Ne pas ouvrir la page si on clique sur un bouton ou un de ses enfants
     if (e && (e.target.tagName === 'BUTTON' || e.target.closest('button'))) {
       console.log('Click on button detected, ignoring card click');
       return;
     }
-    console.log('Card clicked, opening service:', categories[index].title);
-    onServiceClick(categories[index]);
+    console.log('Card clicked, opening service page:', categories[index].title);
+    navigateToService(categories[index]);
   };
 
   return (
@@ -133,14 +144,8 @@ export default function Competences({ onServiceClick }) {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        console.log('Button clicked, category:', category.title);
-                        console.log('onServiceClick type:', typeof onServiceClick);
-                        if (onServiceClick) {
-                          onServiceClick(category);
-                          console.log('onServiceClick called successfully');
-                        } else {
-                          console.error('onServiceClick is not defined!');
-                        }
+                        console.log('En savoir plus -> navigate to service page:', category.title);
+                        navigateToService(category);
                       }}
                       className="w-full bg-gradient-to-r from-primary-red to-red-600 hover:from-red-600 hover:to-primary-red text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
                       type="button"
