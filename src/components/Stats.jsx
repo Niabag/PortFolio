@@ -27,7 +27,7 @@ export default function Stats() {
           <div className="grid grid-cols-3 gap-8 sm:gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl sm:text-6xl lg:text-7xl font-bold text-primary-red mb-2 sm:mb-4">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-red mb-1 sm:mb-2">
                   {stat.number}
                 </div>
                 <div className="text-sm sm:text-base lg:text-lg text-gray-400 font-medium">
@@ -42,7 +42,7 @@ export default function Stats() {
             <p className="text-gray-400 text-sm sm:text-base mb-4">
               {t('stats.tagline')}
             </p>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8 leading-tight">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-5 leading-tight">
               {t('stats.title')}
             </h3>
             <a

@@ -40,9 +40,9 @@ export default function FAQ() {
 
   return (
     <section id="faq" ref={sectionRef} className="snap-section scrollable relative z-10">
-      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px]">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 max-w-[1400px]">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-white">
             {t('faq.title.part1')} <span className="text-primary-red">{t('faq.title.part2')}</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

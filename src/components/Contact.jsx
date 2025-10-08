@@ -66,11 +66,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="snap-section scrollable relative z-10">
-      <div className="container mx-auto px-12 sm:px-20 lg:px-[120px] max-w-[1300px]">
-        <h2 className="text-3xl sm:text-5xl font-bold text-center mb-12 sm:mb-20 text-white">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-16 max-w-[1300px]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-white">
           {title.part1} <span className="text-primary-red">{title.part2}</span>
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 xl:gap-20 px-4 sm:px-8 mx-0 lg:mx-[100px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 xl:gap-10 px-2 sm:px-4 mx-0 lg:mx-[50px]">
           <div className="flex flex-col items-center lg:items-start space-y-8">
             <h3 className="text-2xl sm:text-3xl font-bold text-center lg:text-left text-white">{t('contact.infoTitle')}</h3>
             <div className="space-y-5 w-auto max-w-fit">

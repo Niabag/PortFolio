@@ -13,16 +13,16 @@ export default function Hero() {
       <div className="container mx-auto text-center">
         <div className="animate-slide-up">
 
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
             <span className="typing-text typing-text--animate typing-text--hero">
               <span className="typing-text__inner hero-text__content">{heroTitle}</span>
 
             </span>
           </h1>
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-light mb-6 sm:mb-8 text-gray-300">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-light mb-4 sm:mb-5 text-gray-300">
             {heroSubtitle}
           </h2>
-          <p className="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
+          <p className="text-sm sm:text-base text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed px-4">
             {heroDescription}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">

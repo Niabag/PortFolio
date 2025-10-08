@@ -10,8 +10,8 @@ export default function Location() {
 
   return (
     <section id="location" className="snap-section bg-black/50 relative z-20">
-      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px]">
-        <h2 className="text-3xl sm:text-5xl font-bold text-center mb-8 sm:mb-16 text-white">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 max-w-[1400px]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-6 text-white">
           {lang === 'fr' ? (
             <>
               Où sommes-nous <span className="text-primary-red">situés ?</span>

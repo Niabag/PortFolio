@@ -52,15 +52,15 @@ export default function Competences() {
 
   return (
     <section id="competences" className="snap-section relative z-10">
-      <div className="container mx-auto px-8 sm:px-16 lg:px-24 xl:px-32 max-w-[1400px] py-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-4xl sm:text-6xl font-bold mb-4 text-white">
+      <div className="container mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 max-w-[1400px] py-4 sm:py-6">
+        <div className="text-center mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-white">
             {title.part1} <span className="text-primary-red">{title.part2}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary-red to-transparent mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
           {categories.map((category, index) => (
             <div
               key={`skill-${index}-${category.title}`}
@@ -71,24 +71,24 @@ export default function Competences() {
               <div className={`skill-card relative ${hoveredCard === index ? 'hovered' : ''}`}>
                 <div className="skill-card-gradient"></div>
 
-                <div className="relative z-10 p-6 sm:p-8">
-                  <div className="skill-icon-wrapper mb-4">
+                <div className="relative z-10 p-4 sm:p-5">
+                  <div className="skill-icon-wrapper mb-2">
                     {category.iconImage ? (
                       <img 
                         src={category.iconImage} 
                         alt={category.title}
-                        className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                        className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                       />
                     ) : (
-                      <span className="text-5xl sm:text-6xl">{category.icon}</span>
+                      <span className="text-4xl sm:text-5xl">{category.icon}</span>
                     )}
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">
                     {category.title}
                   </h3>
 
-                  <ul className="space-y-3 text-left">
+                  <ul className="space-y-2 text-left">
                     {category.services.map((service, serviceIndex) => {
                       const isVisible = expandedCard === index || serviceIndex < 2;
                       return (
