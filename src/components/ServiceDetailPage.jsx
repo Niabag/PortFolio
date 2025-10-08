@@ -35,7 +35,7 @@ export default function ServiceDetailPage() {
       <main className="scroll-container">
         {!service ? (
           <section className="snap-section relative z-10">
-            <div className="container mx-auto px-6 max-w-[1200px] py-10">
+            <div className="container mx-auto px-6 sm:px-8 max-w-[1100px] py-16 sm:py-20">
               <h1 className="text-2xl font-bold">Service introuvable</h1>
               <p className="text-gray-400 mt-2">Vérifiez l'URL ou revenez aux services.</p>
               <a href="/#competences" className="inline-block mt-4 text-primary-red underline">Retour aux services</a>
@@ -43,8 +43,17 @@ export default function ServiceDetailPage() {
           </section>
         ) : (
           <section className="snap-section relative z-10">
-            <div className="container mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 max-w-[1200px] py-10">
-              <div className="text-center mb-8">
+            <div className="container mx-auto px-6 sm:px-8 max-w-[1100px] pt-28 pb-20">
+              {/* Fil d'Ariane / Retour */}
+              <div className="mb-6">
+                <a href="/" className="text-gray-400 hover:text-white transition">Accueil</a>
+                <span className="mx-2 text-gray-600">/</span>
+                <a href="/#competences" className="text-gray-400 hover:text-white transition">Services</a>
+                <span className="mx-2 text-gray-600">/</span>
+                <span className="text-white">{service.title}</span>
+              </div>
+
+              <div className="text-center mb-10">
                 <div className="mb-4">
                   {service.iconImage ? (
                     <img src={service.iconImage} alt={service.title} className="w-20 h-20 object-contain mx-auto" />
@@ -53,11 +62,12 @@ export default function ServiceDetailPage() {
                   )}
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold mb-3">{service.title}</h1>
-                <p className="text-gray-300 max-w-3xl mx-auto text-lg">{service.detailedDescription}</p>
+                <p className="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">{service.detailedDescription}</p>
               </div>
 
-              <div className="mb-10">
+              <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-4"><span className="text-primary-red">✓</span> Services inclus</h2>
+                <p className="text-gray-400 mb-6">Découvrez tout ce que nous mettons en place pour un résultat concret et mesurable.</p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.services.map((s, i) => (
                     <li key={i} className="flex items-start gap-2 bg-gray-800/50 border border-gray-700 rounded-lg p-4">
@@ -69,7 +79,7 @@ export default function ServiceDetailPage() {
               </div>
 
               {service.benefits && (
-                <div className="mb-10">
+                <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-4"><span className="text-primary-red">★</span> Vos avantages</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {service.benefits.map((b, i) => (
@@ -83,7 +93,7 @@ export default function ServiceDetailPage() {
               )}
 
               {service.process && (
-                <div className="mb-10">
+                <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-4"><span className="text-primary-red">→</span> Notre processus</h2>
                   <div className="space-y-3">
                     {service.process.map((p, i) => (
