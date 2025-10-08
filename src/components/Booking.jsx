@@ -76,14 +76,21 @@ export default function Booking({ onClose }) {
     // Sauvegarder la position de scroll actuelle
     const scrollY = window.scrollY;
     
-    // Bloquer le scroll du body uniquement
+    // Bloquer complètement le scroll du body
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
     document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = '0px'; // Éviter le décalage de la scrollbar
     
     return () => {
       // Restaurer le scroll
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
-      document.body.style.paddingRight = '';
+      window.scrollTo(0, scrollY);
     };
   }, []);
 
