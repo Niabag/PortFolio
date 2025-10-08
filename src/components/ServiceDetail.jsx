@@ -6,6 +6,35 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
     console.log('ServiceDetail mounted, onBooking:', typeof onBooking);
   }, [onBooking]);
 
+  // Gestion du bouton retour du téléphone
+  useEffect(() => {
+    // Ajouter un état dans l'historique quand on ouvre la page de service
+    window.history.pushState({ serviceDetail: true }, '');
+
+    const handlePopState = (event) => {
+      // Si on appuie sur retour, fermer la page de service
+      onClose();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      // Nettoyer l'historique si la page se ferme autrement (bouton X, etc.)
+      if (window.history.state?.serviceDetail) {
+        window.history.back();
+      }
+    };
+  }, [onClose]);
+
+  const handleCloseClick = () => {
+    // Retour en arrière dans l'historique avant de fermer
+    if (window.history.state?.serviceDetail) {
+      window.history.back();
+    }
+    onClose();
+  };
+
   const handleBookingClick = () => {
     console.log('Button clicked, calling onBooking');
     if (onBooking) {
@@ -21,7 +50,7 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
       <div className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <button
-            onClick={onClose}
+            onClick={handleCloseClick}
             className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group"
           >
             <svg className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,7 +206,7 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
               </button>
               <button
                 onClick={() => {
-                  onClose();
+                  handleCloseClick();
                   setTimeout(() => {
                     const servicesSection = document.querySelector('#competences');
                     if (servicesSection) {
