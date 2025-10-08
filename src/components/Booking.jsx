@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useLanguage } from '../LanguageContext.jsx';
 
@@ -13,6 +13,7 @@ export default function Booking({ onClose }) {
     message: ''
   });
   const [status, setStatus] = useState('');
+  const historyPushedRef = useRef(false);
 
   // Créneaux horaires disponibles
   const timeSlots = [
@@ -79,22 +80,24 @@ export default function Booking({ onClose }) {
 
   // Gérer le bouton retour du téléphone pour fermer le modal
   useEffect(() => {
-    const handlePopState = (event) => {
-      if (event.state?.modal === 'booking') {
-        onClose();
-      }
-    };
+    // Ajouter un état dans l'historique
+    window.history.pushState({ modal: 'booking' }, '');
+    historyPushedRef.current = true;
     
-    // Ajouter un état dans l'historique après un court délai
-    const timer = setTimeout(() => {
-      window.history.pushState({ modal: 'booking' }, '');
-    }, 100);
+    const handlePopState = () => {
+      historyPushedRef.current = false;
+      onClose();
+    };
     
     window.addEventListener('popstate', handlePopState);
     
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('popstate', handlePopState);
+      // Nettoyer l'historique si le modal se ferme autrement (bouton X, etc.)
+      // et que l'historique n'a pas déjà été retiré par le bouton retour
+      if (historyPushedRef.current && window.history.state?.modal === 'booking') {
+        window.history.back();
+      }
     };
   }, [onClose]);
 
