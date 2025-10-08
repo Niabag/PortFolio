@@ -8,8 +8,10 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
 
   // Gestion du bouton retour du téléphone
   useEffect(() => {
-    // Ajouter un état dans l'historique quand on ouvre la page de service
-    window.history.pushState({ serviceDetail: true }, '');
+    // Ajouter un état dans l'historique quand on ouvre la page de service (éviter double push en StrictMode)
+    if (!window.history.state || window.history.state.serviceDetail !== true) {
+      window.history.pushState({ serviceDetail: true }, '');
+    }
 
     const handlePopState = (event) => {
       console.log('ServiceDetail popstate, state:', event.state);
@@ -36,11 +38,12 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
   }, [onClose]);
 
   const handleCloseClick = () => {
-    // Retour en arrière dans l'historique avant de fermer
+    // Si l'entrée serviceDetail est présente, revenir en arrière pour restaurer l'accueil
     if (window.history.state?.serviceDetail) {
       window.history.back();
+    } else {
+      onClose();
     }
-    onClose();
   };
 
   const handleBookingClick = () => {
