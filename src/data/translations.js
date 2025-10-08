@@ -100,6 +100,7 @@ export const translations = {
         },
         {
           icon: '📱',
+          iconImage: '/images/icons-competences/marketing.webp',
           title: 'Marketing & Réseaux sociaux',
           color: '#dc2626',
           services: [
