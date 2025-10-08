@@ -14,6 +14,7 @@ export default function Booking({ onClose }) {
   });
   const [status, setStatus] = useState('');
   const historyPushedRef = useRef(false);
+  const modalContentRef = useRef(null);
 
   // Créneaux horaires disponibles
   const timeSlots = [
@@ -81,6 +82,17 @@ export default function Booking({ onClose }) {
     document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
     
+    // Empêcher le scroll sur la page mais permettre dans la modal
+    const preventScroll = (e) => {
+      if (modalContentRef.current && !modalContentRef.current.contains(e.target)) {
+        e.preventDefault();
+      }
+    };
+    
+    // Ajouter l'écouteur pour bloquer le scroll en dehors de la modal
+    document.addEventListener('wheel', preventScroll, { passive: false });
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+    
     return () => {
       // Restaurer le scroll
       document.body.style.position = '';
@@ -88,6 +100,10 @@ export default function Booking({ onClose }) {
       document.body.style.width = '';
       document.body.style.overflow = '';
       window.scrollTo(0, scrollY);
+      
+      // Retirer les écouteurs
+      document.removeEventListener('wheel', preventScroll);
+      document.removeEventListener('touchmove', preventScroll);
     };
   }, []);
 
@@ -127,6 +143,7 @@ export default function Booking({ onClose }) {
       style={{ overscrollBehavior: 'contain' }}
     >
       <div 
+        ref={modalContentRef}
         className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-primary-red/30" 
         style={{ 
           paddingTop: '50px', 
