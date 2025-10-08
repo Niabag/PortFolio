@@ -114,11 +114,17 @@ export default function Booking({ onClose }) {
     };
   }, [onClose]);
 
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   const modalContent = (
     <div 
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[1200] flex items-center justify-center p-4 overflow-hidden"
-      onClick={onClose}
-      style={{ touchAction: 'none' }}
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[1200] flex items-center justify-center p-4"
+      onClick={handleOverlayClick}
+      style={{ overscrollBehavior: 'contain' }}
     >
       <div 
         className="bg-card-bg rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-primary-red/30" 
@@ -128,10 +134,8 @@ export default function Booking({ onClose }) {
           paddingLeft: '30px', 
           paddingRight: '30px',
           overscrollBehavior: 'contain',
-          WebkitOverflowScrolling: 'touch',
-          touchAction: 'pan-y'
+          WebkitOverflowScrolling: 'touch'
         }}
-        onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
