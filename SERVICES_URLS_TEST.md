@@ -1,8 +1,6 @@
-# URLs de Services - Test
+# URLs de Services - Configuration finale
 
-## URLs disponibles
-
-Les URLs suivantes devraient fonctionner :
+## ✅ URLs disponibles en production ET en local
 
 1. **Stratégie digitale** : `/services/strategie-digitale`
 2. **Création de sites web** : `/services/creation-de-sites-web`
@@ -11,38 +9,79 @@ Les URLs suivantes devraient fonctionner :
 5. **Communication & Branding** : `/services/communication-branding`
 6. **Analyse & Optimisation** : `/services/analyse-optimisation`
 
-## Comment tester en local
+## 🧪 Comment tester en local
 
-1. Arrêtez le serveur de développement s'il est en cours
+1. Arrêtez le serveur de développement s'il est en cours (`Ctrl+C`)
 2. Exécutez : `npm run dev`
 3. Testez une URL comme : `http://localhost:5173/services/strategie-digitale`
+4. ✨ Les jolies URLs fonctionnent maintenant !
 
-## Comment déployer sur Vercel
+## 🚀 Comment déployer sur Vercel
 
-1. Commit les changements : `git add . && git commit -m "Fix service URLs routing"`
-2. Push : `git push`
-3. Attendez le déploiement Vercel (automatique si configuré)
-4. Testez une URL comme : `https://siteonweb.fr/services/strategie-digitale`
+```bash
+# 1. Commit tous les changements
+git add .
+git commit -m "Fix: Service URLs routing for production and local"
 
-## Changements effectués
+# 2. Push vers Vercel
+git push
 
-### 1. vite.config.js
-- Ajout d'un middleware de rewrite pour gérer les URLs `/services/:slug` en local
-- Les URLs `/services/xxx` sont maintenant automatiquement redirigées vers `/service.html?slug=xxx`
+# 3. Attendez le déploiement automatique (2-3 minutes)
+# 4. Testez sur votre site
+```
 
-### 2. vercel.json
-- Déplacé `/services` et `/services/` vers les redirects (au lieu de rewrites)
-- Gardé uniquement le rewrite pour `/services/:slug`
-- Simplifié la configuration
+**URLs de test en production** :
+- `https://www.siteonweb.fr/services/strategie-digitale`
+- `https://www.siteonweb.fr/services/creation-de-sites-web`
 
-### 3. 404.html
-- Supprimé le script JavaScript de redirection
-- Amélioré le design de la page 404
-- Ajouté plus de liens utiles
+## 🔧 Changements effectués (dernière version)
 
-## Si ça ne marche toujours pas
+### 1. **vite.config.js**
+- ✅ Plugin middleware qui rewrite `/services/:slug` → `/service.html?slug=:slug` en local
+- ✅ Fonctionne maintenant en développement
 
-1. Vérifiez que le build fonctionne : `npm run build`
-2. Testez le preview : `npm run preview`
-3. Vérifiez la console du navigateur pour les erreurs
-4. Sur Vercel, vérifiez les logs de déploiement
+### 2. **vercel.json**
+- ✅ Supprimé `cleanUrls: true` et `error: true` qui causaient des problèmes
+- ✅ Configuration des rewrites : `/services/:slug` → `/service.html?slug=:slug`
+- ✅ Redirections 301/302 correctement configurées
+- ✅ Correction du wildcard dans le redirect du domaine
+
+### 3. **Competences.jsx**
+- ✅ Les liens utilisent maintenant `/services/:slug` (jolies URLs)
+- ✅ Fonctionne en local ET en production
+
+### 4. **service.html**
+- ✅ Supprimé le script de redirection JavaScript (plus nécessaire)
+
+### 5. **ServiceDetailPage.jsx**
+- ✅ Nouveau design avec navbar simplifiée
+- ✅ Contenu bien centré avec marges
+- ✅ Modal de réservation fonctionnel
+
+## 🐛 Si ça ne marche toujours pas
+
+### En local
+```bash
+# 1. Supprimez le cache et node_modules
+rm -rf node_modules dist
+npm install
+
+# 2. Redémarrez le serveur
+npm run dev
+```
+
+### En production
+1. Vérifiez les logs Vercel : https://vercel.com/dashboard
+2. Forcez un nouveau déploiement
+3. Vérifiez que `service.html` est bien dans le build
+4. Testez avec l'inspecteur réseau (F12) pour voir les erreurs
+
+## 📋 Checklist de déploiement
+
+- [ ] Build fonctionne : `npm run build`
+- [ ] Preview fonctionne : `npm run preview`
+- [ ] Commit et push effectués
+- [ ] Déploiement Vercel terminé
+- [ ] Test des URLs `/services/:slug` en production
+- [ ] Modal de réservation fonctionne
+- [ ] Design responsive OK

@@ -1,14 +1,12 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     { "source": "/services/:slug", "destination": "/service.html?slug=:slug" }
   ],
   "redirects": [
-    { "source": "/services", "destination": "/#competences", "permanent": false },
-    { "source": "/services/", "destination": "/#competences", "permanent": false },
-    { "source": "/service/:slug", "destination": "/services/:slug", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "siteonweb.fr" }], "destination": "https://www.siteonweb.fr/:1", "permanent": true }
+    { "source": "/services", "destination": "/#competences", "statusCode": 302 },
+    { "source": "/services/", "destination": "/#competences", "statusCode": 302 },
+    { "source": "/service/:slug", "destination": "/services/:slug", "statusCode": 301 },
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "siteonweb.fr" }], "destination": "https://www.siteonweb.fr/$1", "statusCode": 301 }
   ],
   "headers": [
     {
@@ -17,6 +15,5 @@
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
-  ],
-  "error": true
+  ]
 }

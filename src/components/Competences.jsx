@@ -61,7 +61,8 @@ export default function Competences({ onServiceClick }) {
 
   const navigateToService = (category) => {
     const slug = toSlug(category.title);
-    window.location.href = `/service.html?slug=${slug}`;
+    // Utiliser la jolie URL /services/:slug en production
+    window.location.href = `/services/${slug}`;
   };
 
   const handleCardClick = (index, hasMoreServices, e) => {

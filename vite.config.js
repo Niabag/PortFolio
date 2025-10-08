@@ -35,5 +35,20 @@ export default {
         ...blogInputs
       }
     }
-  }
+  },
+  plugins: [
+    {
+      name: 'rewrite-services',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          // Rewrite /services/:slug to /service.html in dev
+          if (req.url && req.url.match(/^\/services\/[^/?]+/)) {
+            const slug = req.url.match(/^\/services\/([^/?]+)/)[1];
+            req.url = `/service.html?slug=${slug}`;
+          }
+          next();
+        });
+      }
+    }
+  ]
 };

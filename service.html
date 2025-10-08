@@ -6,17 +6,6 @@
     <meta name="robots" content="index, follow" />
     <title>Service | SiteOnWeb</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <script>
-      // Redirect /services/:slug to /service.html?slug=:slug in development
-      (function() {
-        const path = window.location.pathname;
-        const match = path.match(/^\/services\/([^\/]+)$/);
-        if (match && match[1] && !window.location.search) {
-          const slug = match[1];
-          window.location.replace('/service.html?slug=' + encodeURIComponent(slug));
-        }
-      })();
-    </script>
   </head>
   <body class="bg-dark-bg text-white">
     <div id="service-root"></div>
