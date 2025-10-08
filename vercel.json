@@ -1,9 +1,14 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
+    { "source": "/services", "destination": "/#competences" },
+    { "source": "/services/", "destination": "/#competences" },
     { "source": "/services/:slug", "destination": "/service.html?slug=:slug" }
   ],
   "redirects": [
-    { "source": "/service/:slug", "destination": "/services/:slug", "permanent": true }
+    { "source": "/service/:slug", "destination": "/services/:slug", "permanent": true },
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "siteonweb.fr" }], "destination": "https://www.siteonweb.fr/:1", "permanent": true }
   ],
   "headers": [
     {
