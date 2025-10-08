@@ -87,6 +87,7 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
   .snap-section {
+    min-height: auto;
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -96,6 +97,7 @@ footer {
   }
   
   .snap-section.scrollable {
+    min-height: auto;
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -105,12 +107,13 @@ footer {
   }
   
   .snap-section.stats-section {
-    min-height: 80vh;
+    min-height: auto;
     padding-top: 30px;
     padding-bottom: 30px;
   }
   
   #accueil {
+    padding-top: 30px !important;
     padding-bottom: 60px !important;
   }
   
