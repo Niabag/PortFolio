@@ -76,34 +76,14 @@ export default function Booking({ onClose }) {
     // Sauvegarder la position de scroll actuelle
     const scrollY = window.scrollY;
     
-    // Bloquer le scroll du body
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
+    // Bloquer le scroll du body uniquement
     document.body.style.overflow = 'hidden';
-    
-    // Empêcher le scroll sur la page mais permettre dans la modal
-    const preventScroll = (e) => {
-      if (modalContentRef.current && !modalContentRef.current.contains(e.target)) {
-        e.preventDefault();
-      }
-    };
-    
-    // Ajouter l'écouteur pour bloquer le scroll en dehors de la modal
-    document.addEventListener('wheel', preventScroll, { passive: false });
-    document.addEventListener('touchmove', preventScroll, { passive: false });
+    document.body.style.paddingRight = '0px'; // Éviter le décalage de la scrollbar
     
     return () => {
       // Restaurer le scroll
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
       document.body.style.overflow = '';
-      window.scrollTo(0, scrollY);
-      
-      // Retirer les écouteurs
-      document.removeEventListener('wheel', preventScroll);
-      document.removeEventListener('touchmove', preventScroll);
+      document.body.style.paddingRight = '';
     };
   }, []);
 
