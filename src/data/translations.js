@@ -412,20 +412,50 @@ export const translations = {
             'Development of communication and digital marketing strategies',
             'Brand positioning and market research',
             'Multi-channel campaign planning'
+          ],
+          detailedDescription: 'Develop your online presence with a tailor-made digital strategy. We analyze your market, competitors and audience to create a strategy that generates concrete results.',
+          benefits: [
+            'Increased web visibility',
+            'Better return on investment',
+            'Optimal positioning against competition',
+            'Measurable business growth'
+          ],
+          process: [
+            'Complete audit of your digital presence',
+            'Market and competition analysis',
+            'Define objectives and KPIs',
+            'Strategy implementation',
+            'Continuous monitoring and optimization'
           ]
         },
         {
           icon: '💻',
           title: 'Website Creation',
+          iconImage: '/images/icons-competences/creation-site-web.webp',
           color: '#dc2626',
           services: [
             'Development of showcase, e-commerce and custom websites',
             'Mobile optimization (responsive design)',
             'Technical maintenance and updates'
+          ],
+          detailedDescription: 'Your website is your digital showcase. We create modern, high-performance websites optimized to convert your visitors into customers. From showcase sites to online stores, we bring your projects to life.',
+          benefits: [
+            'Professional and tailor-made website',
+            'Optimal performance and speed',
+            'Responsive design adapted to all screens',
+            'Optimized for Google SEO'
+          ],
+          process: [
+            'Analysis of your needs and objectives',
+            'Personalized graphic design',
+            'Development and integration',
+            'Testing and optimization',
+            'Launch and training'
           ]
         },
         {
           icon: '🚀',
+          iconImage: '/images/icons-competences/referencement.webp',
           title: 'SEO & Performance',
           color: '#dc2626',
           services: [
@@ -433,9 +463,24 @@ export const translations = {
             'SEA (paid advertising): Google Ads, Meta Ads campaigns, etc.',
             'Performance tracking and analysis (Google Analytics, Search Console)',
             'SEO-optimized content strategies'
+          ],
+          detailedDescription: 'Being visible on Google is essential. We improve your natural positioning (SEO) and manage your advertising campaigns (SEA) to generate qualified traffic and conversions.',
+          benefits: [
+            'Better positioning on Google',
+            'Qualified and targeted traffic',
+            'Increased conversion rate',
+            'Measurable and optimized ROI'
+          ],
+          process: [
+            'Complete SEO audit of your site',
+            'Technical and content optimization',
+            'Link building strategy',
+            'SEA campaigns setup',
+            'Monthly monitoring and reporting'
           ]
         },
         {
+          iconImage: '/images/icons-competences/marketing.webp',
           icon: '📱',
           title: 'Marketing & Social Media',
           color: '#dc2626',
@@ -444,9 +489,24 @@ export const translations = {
             'Creation of engaging content (text, visuals, videos)',
             'Social media advertising campaigns (Meta Ads, LinkedIn Ads…)',
             'Community management and e-reputation'
+          ],
+          detailedDescription: 'Build a strong presence on social media and engage your community. We create captivating content and manage your advertising campaigns to increase your visibility and generate leads.',
+          benefits: [
+            'Increased brand awareness',
+            'Engaged and loyal community',
+            'Lead generation',
+            'Enhanced online reputation'
+          ],
+          process: [
+            'Social media audit',
+            'Content strategy definition',
+            'Content creation and publishing',
+            'Advertising campaigns management',
+            'Performance analysis and adjustments'
           ]
         },
         {
+          iconImage: '/images/icons-competences/lettre.webp',
           icon: '✉️',
           title: 'Communication & Branding',
           color: '#dc2626',
@@ -455,9 +515,24 @@ export const translations = {
             'Web content writing and storytelling',
             'Email marketing & automation (newsletters, automated sequences)',
             'Customer loyalty strategies'
+          ],
+          detailedDescription: 'Build a strong and consistent brand. We create your visual identity and develop impactful communication that resonates with your target audience.',
+          benefits: [
+            'Professional and memorable brand image',
+            'Increased customer engagement',
+            'Effective communication',
+            'Customer loyalty'
+          ],
+          process: [
+            'Brand audit and positioning',
+            'Visual identity creation',
+            'Communication strategy development',
+            'Content creation and deployment',
+            'Results monitoring and optimization'
           ]
         },
         {
+          iconImage: '/images/icons-competences/court.webp',
           icon: '📊',
           title: 'Analysis & Optimization',
           color: '#dc2626',
@@ -466,6 +541,20 @@ export const translations = {
             'Traffic and user behavior analysis',
             'A/B testing and continuous performance improvement',
             'Personalized advice to maximize ROI'
+          ],
+          detailedDescription: 'Make data-driven decisions. We analyze your performance, identify improvement opportunities, and continuously optimize your strategies to maximize your results.',
+          benefits: [
+            'Better understanding of your performance',
+            'Data-driven decisions',
+            'Continuous optimization',
+            'Maximized ROI'
+          ],
+          process: [
+            'Tracking tools setup',
+            'Data collection and analysis',
+            'Monthly reporting',
+            'Improvement recommendations',
+            'Implementation and optimization'
           ]
         }
       ]

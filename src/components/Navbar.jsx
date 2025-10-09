@@ -116,7 +116,7 @@ export default function Navbar() {
           <select
             value={lang}
             onChange={(e) => setLang(e.target.value)}
-            className="bg-black text-white border border-primary-red rounded px-2 py-1"
+            className="hidden md:block bg-black text-white border border-primary-red rounded px-2 py-1"
           >
             <option value="fr">Français</option>
             <option value="en">English</option>
