@@ -8,33 +8,6 @@ export default function Competences() {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [expandedCard, setExpandedCard] = useState(null);
 
-  const createBubbles = (cardIndex) => {
-    const bubbles = [];
-    const bubbleCount = 20;
-
-    for (let i = 0; i < bubbleCount; i++) {
-      const delay = Math.random() * 0.7;
-      const size = Math.random() * 20 + 10;
-      const leftPos = Math.random() * 100;
-      const duration = 1.1;
-
-      bubbles.push(
-        <div
-          key={`bubble-${cardIndex}-${i}`}
-          className="skill-bubble"
-          style={{
-            left: `${leftPos}%`,
-            width: `${size}px`,
-            height: `${size}px`,
-            animationDelay: `${delay}s`,
-            animationDuration: `${duration}s`
-          }}
-        />
-      );
-    }
-    return bubbles;
-  };
-
   const handleCardHover = (index, isHovering) => {
     if (isHovering) {
       setHoveredCard(index);
@@ -91,8 +64,8 @@ export default function Competences() {
             <div
               key={`skill-${index}-${category.title}`}
               className="skill-card-wrapper relative"
-              onMouseEnter={() => handleCardHover(index, true)}
-              onMouseLeave={() => handleCardHover(index, false)}
+              onMouseEnter={(e) => { e.stopPropagation(); handleCardHover(index, true); }}
+              onMouseLeave={(e) => { e.stopPropagation(); handleCardHover(index, false); }}
               onClick={(e) => handleCardClick(index, category.services.length > 2, e)}
             >
               <div className={`skill-card relative cursor-pointer ${hoveredCard === index ? 'hovered' : ''}`}>
@@ -161,12 +134,6 @@ export default function Competences() {
 
                 <div className="skill-card-border"></div>
               </div>
-
-              {hoveredCard === index && (
-                <div className="skill-bubbles-container" key={`bubbles-${index}`}>
-                  {createBubbles(index)}
-                </div>
-              )}
             </div>
           ))}
         </div>
