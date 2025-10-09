@@ -83,6 +83,7 @@ body {
 /* Section Accueil - padding bottom */
 #accueil {
   padding-bottom: 380px !important;
+  overflow-y: hidden !important;
 }
 
 /* Section FAQ - padding spécifique */
