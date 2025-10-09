@@ -80,7 +80,7 @@ export default function Competences() {
     <section id="competences" className="snap-section relative z-10">
       <div className="container mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 max-w-[1400px] py-4 sm:py-6">
         <div className="text-center mb-4 sm:mb-6">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-white" style={{ marginTop: '30px', marginBottom: '30px' }}>
             {title.part1} <span className="text-primary-red">{title.part2}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary-red to-transparent mx-auto"></div>
@@ -101,8 +101,8 @@ export default function Competences() {
                 <div className="relative z-10 p-4 sm:p-5">
                   <div className="skill-icon-wrapper mb-2">
                     {category.iconImage ? (
-                      <img 
-                        src={category.iconImage} 
+                      <img
+                        src={category.iconImage}
                         alt={category.title}
                         className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                       />
