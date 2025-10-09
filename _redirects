@@ -1,1 +1,2 @@
 /services/:slug  /service.html?slug=:slug  200
+/*  /404.html  404
