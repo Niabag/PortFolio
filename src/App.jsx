@@ -19,11 +19,6 @@ export default function App() {
   const [selectedService, setSelectedService] = useState(null);
   const [showBooking, setShowBooking] = useState(false);
 
-  // Debug - Log when selectedService changes
-  useEffect(() => {
-    console.log('App - selectedService changed:', selectedService?.title || 'null');
-  }, [selectedService]);
-
   useEffect(() => {
     // Smooth scroll pour les liens de navigation
     const links = document.querySelectorAll('a[href^="#"]');
@@ -50,15 +45,6 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [selectedService]);
-
-  // Ne pas réinitialiser booking automatiquement
-  // useEffect(() => {
-  //   if (selectedService) {
-  //     setShowBooking(false);
-  //   }
-  // }, [selectedService]);
-
-  // Si un service est sélectionné, afficher la page de détail
   if (selectedService) {
     return (
       <>
@@ -69,18 +55,9 @@ export default function App() {
             setSelectedService(null);
             setShowBooking(false);
           }}
-          onBooking={() => {
-            console.log('onBooking called, showBooking was:', showBooking); // Debug
-            setShowBooking(true);
-            console.log('onBooking called, showBooking now:', true); // Debug
-          }}
+          onBooking={() => setShowBooking(true)}
         />
-        {showBooking && (
-          <Booking onClose={() => {
-            console.log('Booking onClose called');
-            setShowBooking(false);
-          }} />
-        )}
+        {showBooking && <Booking onClose={() => setShowBooking(false)} />}
       </>
     );
   }
@@ -93,7 +70,7 @@ export default function App() {
       <Navbar />
       <main className="scroll-container">
         <Hero />
-        <Competences onServiceClick={setSelectedService} />
+        <Competences />
         <Projects />
         <Stats />
         <FAQ />

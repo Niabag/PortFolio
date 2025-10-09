@@ -10,13 +10,6 @@ export default function Contact() {
   const [result, setResult] = React.useState('');
   const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
 
-  // Petit log de debug (masqué), à supprimer après test
-  if (!accessKey) {
-    console.warn("VITE_WEB3FORMS_ACCESS_KEY manquante au build.");
-  } else {
-    console.debug("Clé Web3Forms présente:", accessKey.slice(0, 8) + "•••");
-  }
-
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult(t('contact.status.sending'));
@@ -26,7 +19,6 @@ export default function Contact() {
       return;
     }
 
-    // (Optionnel) Valider le format UUID v4
     const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
     if (!uuidRegex.test(accessKey)) {
       setResult(t('contact.status.invalidKey'));
@@ -55,11 +47,9 @@ export default function Contact() {
         setResult(t('contact.status.success'));
         event.target.reset();
       } else {
-        console.log('Error', data);
         setResult(data.message);
       }
     } catch (error) {
-      console.error('Network Error', error);
       setResult(t('contact.status.networkError'));
     }
   };

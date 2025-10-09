@@ -1,11 +1,6 @@
 import React, { useEffect } from 'react';
 
 export default function ServiceDetail({ service, onClose, onBooking }) {
-  // Debug pour vérifier que onBooking est bien défini
-  useEffect(() => {
-    console.log('ServiceDetail mounted, onBooking:', typeof onBooking);
-  }, [onBooking]);
-
   // Gestion du bouton retour du téléphone
   useEffect(() => {
     // Ajouter un état dans l'historique quand on ouvre la page de service (éviter double push en StrictMode)
@@ -14,17 +9,11 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
     }
 
     const handlePopState = (event) => {
-      console.log('ServiceDetail popstate, state:', event.state);
-      
-      // Ne pas fermer si c'est le booking
       if (event.state?.modal === 'booking') {
-        console.log('Booking is open, keeping ServiceDetail');
         return;
       }
       
-      // Si on appuie sur retour et qu'on n'est plus sur serviceDetail, fermer
       if (!event.state?.serviceDetail) {
-        console.log('Closing ServiceDetail');
         onClose();
       }
     };
@@ -47,11 +36,8 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
   };
 
   const handleBookingClick = () => {
-    console.log('Button clicked, calling onBooking');
     if (onBooking) {
       onBooking();
-    } else {
-      console.error('onBooking is not defined!');
     }
   };
 

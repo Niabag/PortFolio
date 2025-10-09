@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
-export default function Competences({ onServiceClick }) {
+export default function Competences() {
   const { t } = useLanguage();
   const categories = t('skills.categories');
   const title = t('skills.title');
   const [hoveredCard, setHoveredCard] = useState(null);
   const [expandedCard, setExpandedCard] = useState(null);
-
-  // Debug
-  console.log('Competences - onServiceClick defined:', typeof onServiceClick);
 
   const createBubbles = (cardIndex) => {
     const bubbles = [];
@@ -149,7 +146,6 @@ export default function Competences({ onServiceClick }) {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        console.log('En savoir plus -> navigate to service page:', category.title);
                         navigateToService(category);
                       }}
                       className="w-full bg-gradient-to-r from-primary-red to-red-600 hover:from-red-600 hover:to-primary-red text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
