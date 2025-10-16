@@ -1,0 +1,15 @@
+# robots.txt pour SiteOnWeb
+User-agent: *
+Allow: /
+
+# Bloquer l'indexation de fichiers/dossiers non pertinents
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /*.json
+Disallow: /*.config.js
+Disallow: /.git/
+Disallow: /404.html
+
+# Sitemap
+Sitemap: https://www.siteonweb.fr/sitemap.xml
