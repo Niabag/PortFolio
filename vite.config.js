@@ -1,5 +1,5 @@
-import { readdirSync } from 'fs';
-import { dirname, resolve } from 'path';
+import { readdirSync, copyFileSync, mkdirSync } from 'fs';
+import { dirname, resolve, join } from 'path';
 import { fileURLToPath } from 'url';
 import react from '@vitejs/plugin-react';
 
@@ -22,8 +22,27 @@ const blogInputs = Object.fromEntries(
     })
 );
 
+// Plugin pour copier sitemap.xml et robots.txt
+const copyPublicFiles = () => ({
+  name: 'copy-public-files',
+  closeBundle: () => {
+    const distDir = resolve(__dirname, 'dist');
+    const publicDir = resolve(__dirname, 'public');
+    
+    try {
+      mkdirSync(distDir, { recursive: true });
+      copyFileSync(join(publicDir, 'sitemap.xml'), join(distDir, 'sitemap.xml'));
+      copyFileSync(join(publicDir, 'robots.txt'), join(distDir, 'robots.txt'));
+      console.log('✓ sitemap.xml et robots.txt copiés dans dist/');
+    } catch (error) {
+      console.error('Erreur lors de la copie des fichiers:', error);
+    }
+  }
+});
+
 export default {
   base: '/',
+  publicDir: 'public',
   build: {
     rollupOptions: {
       input: {
@@ -37,5 +56,5 @@ export default {
       }
     }
   },
-  plugins: [react()]
+  plugins: [react(), copyPublicFiles()]
 };
