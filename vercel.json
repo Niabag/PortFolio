@@ -4,7 +4,9 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "rewrites": [
-    { "source": "/services/:slug", "destination": "/service.html?slug=:slug" }
+    { "source": "/services/:slug", "destination": "/service.html?slug=:slug" },
+    { "source": "/en/:path*", "destination": "/en/index.html" },
+    { "source": "/:path*", "destination": "/index.html" }
   ],
   "redirects": [
     { "source": "/services", "destination": "/#competences", "statusCode": 302 },
