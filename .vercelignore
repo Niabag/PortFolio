@@ -1,0 +1,4 @@
+# Fichiers à ignorer lors du build Vercel
+node_modules
+.git
+*.log
