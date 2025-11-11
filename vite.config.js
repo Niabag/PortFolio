@@ -47,6 +47,7 @@ export default {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        en: resolve(__dirname, 'en/index.html'),
         faq: resolve(__dirname, 'faq.html'),
         blog: resolve(__dirname, 'blog.html'),
         privacy: resolve(__dirname, 'privacy.html'),

@@ -1,6 +1,7 @@
 // Composant principal de l'application
 // Affiche les différentes sections du portfolio
 import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Competences from './components/Competences.jsx';
@@ -15,7 +16,7 @@ import SocialButtons from './components/SocialButtons.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import Booking from './components/Booking.jsx';
 
-export default function App() {
+function MainContent() {
   const [selectedService, setSelectedService] = useState(null);
   const [showBooking, setShowBooking] = useState(false);
 
@@ -79,5 +80,17 @@ export default function App() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      {/* Routes françaises */}
+      <Route path="/" element={<MainContent />} />
+
+      {/* Routes anglaises */}
+      <Route path="/en/*" element={<MainContent />} />
+    </Routes>
   );
 }

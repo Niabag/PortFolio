@@ -1,2 +1,8 @@
+# Redirection pour les services
 /services/:slug  /service.html?slug=:slug  200
-/*  /404.html  404
+
+# Routes anglaises - toutes les URLs /en/* retournent /en/index.html
+/en/*  /en/index.html  200
+
+# Routes françaises - toutes les autres URLs retournent /index.html
+/*  /index.html  200

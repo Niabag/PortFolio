@@ -2,6 +2,7 @@
 // Ici nous montons le composant principal dans le DOM
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import './index.css';
 import { LanguageProvider } from './LanguageContext.jsx';
@@ -12,8 +13,10 @@ const root = createRoot(document.getElementById('root'));
 // Rendu de l'application
 root.render(
   <React.StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
+    <BrowserRouter>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
