@@ -3,7 +3,7 @@ import { useLanguage } from '../LanguageContext.jsx';
 import TypingText from './TypingText.jsx';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   return (
     <footer className="bg-black border-t border-primary-red/30 py-8 sm:py-12 relative z-10">
       <div className="container mx-auto px-4 sm:px-6">
@@ -75,8 +75,8 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-            <a 
-              href="/privacy.html" 
+            <a
+              href={lang === 'en' ? '/en/privacy.html' : '/privacy.html'}
               className="hover:text-primary-red transition"
             >
               {t('footer.privacy')}

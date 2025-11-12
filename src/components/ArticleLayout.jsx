@@ -58,8 +58,8 @@ export default function ArticleLayout({ children, title, date, category, image, 
           <div className="container mx-auto px-4 max-w-4xl">
             {/* Breadcrumb */}
             <nav className="mb-8">
-              <a 
-                href="/blog.html" 
+              <a
+                href={lang === 'en' ? '/en/blog.html' : '/blog.html'}
                 className="text-primary-red hover:underline inline-flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ export default function ArticleLayout({ children, title, date, category, image, 
                   {t('blog.agencySupport')}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'en' ? '/en/index.html#contact' : '/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {t('blog.requestQuote')}

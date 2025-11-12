@@ -92,7 +92,7 @@ export default function BlogPage() {
                   key={article.id}
                   className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-primary-red/50 hover:transform hover:scale-105 group"
                 >
-                  <a href={`/blog/${article.id}.html`} className="block">
+                  <a href={lang === 'en' ? `/en/blog/${article.id}.html` : `/blog/${article.id}.html`} className="block">
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900">
                       {article.image ? (
@@ -208,7 +208,7 @@ export default function BlogPage() {
                   {t('blog.agencySupport')}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'en' ? "/en/index.html#contact" : "/index.html#contact"}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {t('blog.requestQuote')}

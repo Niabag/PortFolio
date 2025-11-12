@@ -14,7 +14,7 @@ export default function Navbar() {
     { id: 'home', href: `${basePrefix}/#accueil`, label: t('nav.home') },
     { id: 'skills', href: `${basePrefix}/#competences`, label: t('nav.skills') },
     { id: 'projects', href: `${basePrefix}/#realisations`, label: t('nav.projects') },
-    { id: 'blog', href: '/blog.html', label: t('nav.blog'), external: true },
+    { id: 'blog', href: `${basePrefix}/blog.html`, label: t('nav.blog'), external: true },
     { id: 'faq', href: `${basePrefix}/#faq`, label: t('nav.faq') },
     { id: 'contact', href: `${basePrefix}/#contact`, label: t('nav.contact') },
     { id: 'booking', href: '#', label: t('nav.booking'), button: true, onClick: () => setShowBooking(true) }
