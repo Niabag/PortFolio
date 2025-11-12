@@ -56,7 +56,7 @@ export default function TawkToChat() {
           mobile: {
             position: 'br',
             xOffset: 10,
-            yOffset: 40 // Plus bas sur mobile pour ne pas gêner le contenu
+            yOffset: 100 // Monté plus haut sur mobile
           }
         }
       };
