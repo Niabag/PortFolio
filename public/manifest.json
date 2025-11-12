@@ -1,0 +1,22 @@
+{
+  "name": "SiteOnWeb - Agence Web & Marketing Digital",
+  "short_name": "SiteOnWeb",
+  "description": "Agence web et marketing digital spécialisée dans la création de sites web et stratégies marketing",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["business", "productivity"],
+  "prefer_related_applications": false
+}
