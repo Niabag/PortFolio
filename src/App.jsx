@@ -15,6 +15,7 @@ import AnimatedBackground from './components/AnimatedBackground.jsx';
 import SocialButtons from './components/SocialButtons.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import Booking from './components/Booking.jsx';
+import WhatsAppButton from './components/WhatsAppButton.jsx';
 
 function MainContent() {
   const [selectedService, setSelectedService] = useState(null);
@@ -69,6 +70,7 @@ function MainContent() {
       <SocialButtons />
       <AnimatedBackground />
       <Navbar />
+      <WhatsAppButton />
       <main className="scroll-container">
         <Hero />
         <Competences />
