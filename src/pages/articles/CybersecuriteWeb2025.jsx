@@ -234,7 +234,7 @@ export default function CybersecuriteWeb2025() {
                   {lang === 'fr' ? 'Notre agence réalise des audits de sécurité complets : pentesting, analyse de vulnérabilités, recommandations et mise en conformité.' : 'Our agency performs complete security audits: pentesting, vulnerability analysis, recommendations and compliance implementation.'}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'fr' ? '/index.html#contact' : '/en/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {lang === 'fr' ? 'Demander un audit gratuit' : 'Request a free audit'}
@@ -244,7 +244,7 @@ export default function CybersecuriteWeb2025() {
 
             <div className="mt-12 pt-8 border-t border-gray-700">
               <a
-                href="/blog.html"
+                href={lang === 'fr' ? '/blog.html' : '/en/blog.html'}
                 className="inline-flex items-center text-primary-red hover:text-red-400 transition"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

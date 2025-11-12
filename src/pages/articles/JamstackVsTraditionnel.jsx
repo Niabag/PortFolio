@@ -251,7 +251,7 @@ export default function JamstackVsTraditionnel() {
                   {lang === 'fr' ? 'Notre agence vous accompagne dans le choix et la mise en œuvre de la meilleure solution technique : Jamstack, traditionnel ou hybride selon vos besoins.' : 'Our agency supports you in choosing and implementing the best technical solution: Jamstack, traditional or hybrid according to your needs.'}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'fr' ? '/index.html#contact' : '/en/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {lang === 'fr' ? 'Discuter de votre projet' : 'Discuss your project'}
@@ -261,7 +261,7 @@ export default function JamstackVsTraditionnel() {
 
             <div className="mt-12 pt-8 border-t border-gray-700">
               <a
-                href="/blog.html"
+                href={lang === 'fr' ? '/blog.html' : '/en/blog.html'}
                 className="inline-flex items-center text-primary-red hover:text-red-400 transition"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -132,7 +132,7 @@ export default function ChecklistSEO() {
                   {lang === 'fr' ? 'Ou contactez-nous pour un audit SEO complet de votre site avant le lancement.' : 'Or contact us for a complete SEO audit of your site before launch.'}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'fr' ? '/index.html#contact' : '/en/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {lang === 'fr' ? 'Demander un audit SEO gratuit' : 'Request a free SEO audit'}
@@ -142,7 +142,7 @@ export default function ChecklistSEO() {
 
             <div className="mt-12 pt-8 border-t border-gray-700">
               <a
-                href="/blog.html"
+                href={lang === 'fr' ? '/blog.html' : '/en/blog.html'}
                 className="inline-flex items-center text-primary-red hover:text-red-400 transition"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

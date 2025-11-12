@@ -164,7 +164,7 @@ export default function ContentMarketingStrategie() {
                   {lang === 'fr' ? 'Notre agence crée et exécute votre stratégie content marketing de A à Z pour générer du trafic qualifié.' : 'Our agency creates and executes your content marketing strategy from A to Z to generate qualified traffic.'}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'fr' ? '/index.html#contact' : '/en/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {lang === 'fr' ? 'Créer ma stratégie' : 'Create my strategy'}
@@ -174,7 +174,7 @@ export default function ContentMarketingStrategie() {
 
             <div className="mt-12 pt-8 border-t border-gray-700">
               <a
-                href="/blog.html"
+                href={lang === 'fr' ? '/blog.html' : '/en/blog.html'}
                 className="inline-flex items-center text-primary-red hover:text-red-400 transition"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

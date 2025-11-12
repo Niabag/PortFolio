@@ -145,7 +145,7 @@ export default function MarketingVideoViral() {
                   {lang === 'fr' ? 'Notre agence crée et optimise vos contenus vidéo pour maximiser leur viralité et votre engagement.' : 'Our agency creates and optimizes your video content to maximize virality and engagement.'}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'fr' ? '/index.html#contact' : '/en/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {lang === 'fr' ? 'Créer des vidéos virales' : 'Create viral videos'}
@@ -155,7 +155,7 @@ export default function MarketingVideoViral() {
 
             <div className="mt-12 pt-8 border-t border-gray-700">
               <a
-                href="/blog.html"
+                href={lang === 'fr' ? '/blog.html' : '/en/blog.html'}
                 className="inline-flex items-center text-primary-red hover:text-red-400 transition"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

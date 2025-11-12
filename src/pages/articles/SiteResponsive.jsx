@@ -135,7 +135,7 @@ export default function SiteResponsive() {
                   {lang === 'fr' ? 'Notre agence web et marketing crée des sites web 100% responsive, optimisés pour tous les appareils et le référencement.' : 'Our web and marketing agency creates 100% responsive websites, optimized for all devices and SEO.'}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'fr' ? '/index.html#contact' : '/en/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {lang === 'fr' ? 'Demander un devis gratuit' : 'Request a free quote'}
@@ -145,7 +145,7 @@ export default function SiteResponsive() {
 
             <div className="mt-12 pt-8 border-t border-gray-700">
               <a
-                href="/blog.html"
+                href={lang === 'fr' ? '/blog.html' : '/en/blog.html'}
                 className="inline-flex items-center text-primary-red hover:text-red-400 transition"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -229,7 +229,7 @@ export default function AccessibiliteWCAG() {
                   {lang === 'fr' ? 'Notre agence vous accompagne pour rendre votre site conforme aux normes WCAG 2.2 et RGAA. Audit complet, recommandations et mise en conformité.' : 'Our agency supports you in making your site compliant with WCAG 2.2 and RGAA standards. Complete audit, recommendations and compliance implementation.'}
                 </p>
                 <a
-                  href="/index.html#contact"
+                  href={lang === 'fr' ? '/index.html#contact' : '/en/index.html#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {lang === 'fr' ? 'Demander un audit gratuit' : 'Request a free audit'}
@@ -239,7 +239,7 @@ export default function AccessibiliteWCAG() {
 
             <div className="mt-12 pt-8 border-t border-gray-700">
               <a
-                href="/blog.html"
+                href={lang === 'fr' ? '/blog.html' : '/en/blog.html'}
                 className="inline-flex items-center text-primary-red hover:text-red-400 transition"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
