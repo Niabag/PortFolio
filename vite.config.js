@@ -48,6 +48,10 @@ export default {
       input: {
         main: resolve(__dirname, 'index.html'),
         en: resolve(__dirname, 'en/index.html'),
+        enBlog: resolve(__dirname, 'en/blog.html'),
+        enFaq: resolve(__dirname, 'en/faq.html'),
+        enPrivacy: resolve(__dirname, 'en/privacy.html'),
+        enService: resolve(__dirname, 'en/service.html'),
         faq: resolve(__dirname, 'faq.html'),
         blog: resolve(__dirname, 'blog.html'),
         privacy: resolve(__dirname, 'privacy.html'),
