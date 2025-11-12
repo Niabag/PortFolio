@@ -7,13 +7,16 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
   const { t, lang, setLang } = useLanguage();
+
+  // Générer les liens en fonction de la langue actuelle
+  const basePrefix = lang === 'en' ? '/en' : '';
   const links = [
-    { id: 'home', href: '/#accueil', label: t('nav.home') },
-    { id: 'skills', href: '/#competences', label: t('nav.skills') },
-    { id: 'projects', href: '/#realisations', label: t('nav.projects') },
+    { id: 'home', href: `${basePrefix}/#accueil`, label: t('nav.home') },
+    { id: 'skills', href: `${basePrefix}/#competences`, label: t('nav.skills') },
+    { id: 'projects', href: `${basePrefix}/#realisations`, label: t('nav.projects') },
     { id: 'blog', href: '/blog.html', label: t('nav.blog'), external: true },
-    { id: 'faq', href: '/#faq', label: t('nav.faq') },
-    { id: 'contact', href: '/#contact', label: t('nav.contact') },
+    { id: 'faq', href: `${basePrefix}/#faq`, label: t('nav.faq') },
+    { id: 'contact', href: `${basePrefix}/#contact`, label: t('nav.contact') },
     { id: 'booking', href: '#', label: t('nav.booking'), button: true, onClick: () => setShowBooking(true) }
   ];
   const toggle = () => setOpen(!open);
@@ -72,7 +75,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-[1100]">
       <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        <a href="/" className="flex items-center space-x-3">
+        <a href={basePrefix || '/'} className="flex items-center space-x-3">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
             <TypingText text={"</>"} className="text-white text-sm sm:text-lg" />
           </div>
