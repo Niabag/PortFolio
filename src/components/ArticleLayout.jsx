@@ -115,7 +115,7 @@ export default function ArticleLayout({ children, title, date, category, image, 
                   {t('blog.agencySupport')}
                 </p>
                 <a
-                  href={lang === 'en' ? '/en/index.html#contact' : '/index.html#contact'}
+                  href={lang === 'en' ? '/en/#contact' : '/#contact'}
                   className="inline-block bg-primary-red px-8 py-3 rounded-lg hover:bg-red-700 transition font-semibold"
                 >
                   {t('blog.requestQuote')}
