@@ -71,7 +71,7 @@ function MainContent() {
       <SocialButtons />
       <AnimatedBackground />
       <Navbar />
-      {/* <TawkToChat /> */}  {/* Activez après avoir configuré vos IDs Tawk.to */}
+      <TawkToChat />  {/* Chat en direct Tawk.to configuré */}
       <WhatsAppButton />  {/* Bouton WhatsApp actif */}
       <main className="scroll-container">
         <Hero />

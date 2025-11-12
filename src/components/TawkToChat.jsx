@@ -7,8 +7,8 @@ export default function TawkToChat() {
   useEffect(() => {
     // Configuration Tawk.to
     // REMPLACEZ CES VALEURS PAR VOS VRAIS IDs
-    const TAWK_PROPERTY_ID = 'YOUR_PROPERTY_ID'; // Ex: '5f9a1b2c3d4e5f6g7h8i9j0k'
-    const TAWK_WIDGET_ID = 'YOUR_WIDGET_ID';     // Ex: 'default' ou '1a2b3c4d5e6f'
+    const TAWK_PROPERTY_ID = '6914cac9bb284b195b338a4c'; // Ex: '5f9a1b2c3d4e5f6g7h8i9j0k'
+    const TAWK_WIDGET_ID = '1j9sjg91g';     // Ex: 'default' ou '1a2b3c4d5e6f'
 
     // Ne charger que si les IDs sont configurés
     if (TAWK_PROPERTY_ID === 'YOUR_PROPERTY_ID') {
