@@ -5,7 +5,9 @@ export default function Location() {
   const { lang } = useLanguage();
   const [mapActive, setMapActive] = useState(false);
 
-  const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent('Centre-Val de Loire, France')}`;
+  // Utilisation de la variable d'environnement pour la clé API Google Maps
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent('Centre-Val de Loire, France')}`;
   return (
     <section id="location" className="snap-section relative z-10">
       <div className="container mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 max-w-[1400px]">
