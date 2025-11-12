@@ -77,8 +77,8 @@ export default function WhatsAppButton() {
       {/* Bouton flottant WhatsApp */}
       <button
         onClick={() => setShowForm(true)}
-        className="fixed bottom-[170px] right-5 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full w-[60px] h-[60px] shadow-lg transition-all duration-300 flex items-center justify-center group"
-        style={{ animation: 'pulse 2s infinite' }}
+        className="fixed bottom-[180px] right-5 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full w-[60px] h-[60px] shadow-lg transition-all duration-300 flex items-center justify-center group"
+        style={{ animation: 'pulse 2s infinite', boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)' }}
         aria-label={t.button}
       >
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">

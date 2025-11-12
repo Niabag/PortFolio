@@ -45,18 +45,18 @@ export default function TawkToChat() {
         }
       };
 
-      // Personnaliser l'apparence du widget - à droite avec les autres boutons
+      // Personnaliser l'apparence du widget - collé au bord droit avec les autres boutons
       window.Tawk_API.customStyle = {
         visibility: {
           desktop: {
             position: 'br', // bottom-right
             xOffset: 20,
-            yOffset: 250 // Au-dessus de WhatsApp
+            yOffset: 110 // En dessous de Facebook, au-dessus de WhatsApp
           },
           mobile: {
             position: 'br',
             xOffset: 15,
-            yOffset: 155
+            yOffset: 145
           }
         }
       };
