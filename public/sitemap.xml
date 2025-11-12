@@ -26,7 +26,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Page Blog FR -->
   <url>
     <loc>https://www.siteonweb.fr/blog.html</loc>
@@ -114,171 +114,484 @@
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- Articles de blog -->
+
+  <!-- Articles de blog FR -->
   <url>
     <loc>https://www.siteonweb.fr/blog/accessibilite-wcag.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/accessibilite-wcag.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/accessibilite-wcag.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/accessibilite-wcag.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/api-first-development.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/api-first-development.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/api-first-development.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/api-first-development.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/checklist-seo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/checklist-seo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/checklist-seo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/checklist-seo.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/content-marketing-strategie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/content-marketing-strategie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/content-marketing-strategie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/content-marketing-strategie.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/cout-site-ecommerce.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/cout-site-ecommerce.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/cout-site-ecommerce.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/cout-site-ecommerce.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/cybersecurite-web-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/cybersecurite-web-2025.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/cybersecurite-web-2025.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/cybersecurite-web-2025.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/email-marketing-automation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/email-marketing-automation.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/email-marketing-automation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/email-marketing-automation.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/erreurs-refonte.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/erreurs-refonte.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/erreurs-refonte.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/erreurs-refonte.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/google-analytics-4-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/google-analytics-4-guide.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/google-analytics-4-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/google-analytics-4-guide.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/ia-developpement-web.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/ia-developpement-web.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/ia-developpement-web.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/ia-developpement-web.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/ia-marketing-digital.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/ia-marketing-digital.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/ia-marketing-digital.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/ia-marketing-digital.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/jamstack-vs-traditionnel.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/jamstack-vs-traditionnel.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/jamstack-vs-traditionnel.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/jamstack-vs-traditionnel.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/linkedin-b2b-marketing.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/linkedin-b2b-marketing.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/linkedin-b2b-marketing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/linkedin-b2b-marketing.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/marketing-automation-tools.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/marketing-automation-tools.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/marketing-automation-tools.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/marketing-automation-tools.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/marketing-influence-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/marketing-influence-2025.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/marketing-influence-2025.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/marketing-influence-2025.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/marketing-video-viral.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/marketing-video-viral.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/marketing-video-viral.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/marketing-video-viral.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/meta-ads-optimisation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/meta-ads-optimisation.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/meta-ads-optimisation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/meta-ads-optimisation.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/progressive-web-apps.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/progressive-web-apps.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/progressive-web-apps.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/progressive-web-apps.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/seo-local-strategies.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/seo-local-strategies.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/seo-local-strategies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/seo-local-strategies.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/site-responsive.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/site-responsive.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/site-responsive.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/site-responsive.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/tiktok-marketing-entreprises.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/tiktok-marketing-entreprises.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/tiktok-marketing-entreprises.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/tiktok-marketing-entreprises.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/voice-search-seo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/voice-search-seo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/voice-search-seo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/voice-search-seo.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/webassembly-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/webassembly-2025.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/webassembly-2025.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/webassembly-2025.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
     <loc>https://www.siteonweb.fr/blog/wordpress-vs-react.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/wordpress-vs-react.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/wordpress-vs-react.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/wordpress-vs-react.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Articles de blog EN -->
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/accessibilite-wcag.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/accessibilite-wcag.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/accessibilite-wcag.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/accessibilite-wcag.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/api-first-development.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/api-first-development.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/api-first-development.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/api-first-development.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/checklist-seo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/checklist-seo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/checklist-seo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/checklist-seo.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/content-marketing-strategie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/content-marketing-strategie.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/content-marketing-strategie.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/content-marketing-strategie.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/cout-site-ecommerce.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/cout-site-ecommerce.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/cout-site-ecommerce.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/cout-site-ecommerce.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/cybersecurite-web-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/cybersecurite-web-2025.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/cybersecurite-web-2025.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/cybersecurite-web-2025.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/email-marketing-automation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/email-marketing-automation.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/email-marketing-automation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/email-marketing-automation.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/erreurs-refonte.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/erreurs-refonte.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/erreurs-refonte.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/erreurs-refonte.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/google-analytics-4-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/google-analytics-4-guide.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/google-analytics-4-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/google-analytics-4-guide.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/ia-developpement-web.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/ia-developpement-web.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/ia-developpement-web.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/ia-developpement-web.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/ia-marketing-digital.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/ia-marketing-digital.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/ia-marketing-digital.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/ia-marketing-digital.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/jamstack-vs-traditionnel.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/jamstack-vs-traditionnel.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/jamstack-vs-traditionnel.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/jamstack-vs-traditionnel.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/linkedin-b2b-marketing.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/linkedin-b2b-marketing.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/linkedin-b2b-marketing.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/linkedin-b2b-marketing.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/marketing-automation-tools.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/marketing-automation-tools.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/marketing-automation-tools.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/marketing-automation-tools.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/marketing-influence-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/marketing-influence-2025.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/marketing-influence-2025.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/marketing-influence-2025.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/marketing-video-viral.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/marketing-video-viral.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/marketing-video-viral.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/marketing-video-viral.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/meta-ads-optimisation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/meta-ads-optimisation.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/meta-ads-optimisation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/meta-ads-optimisation.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/progressive-web-apps.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/progressive-web-apps.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/progressive-web-apps.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/progressive-web-apps.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/seo-local-strategies.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/seo-local-strategies.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/seo-local-strategies.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/seo-local-strategies.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/site-responsive.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/site-responsive.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/site-responsive.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/site-responsive.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/tiktok-marketing-entreprises.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/tiktok-marketing-entreprises.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/tiktok-marketing-entreprises.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/tiktok-marketing-entreprises.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/voice-search-seo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/voice-search-seo.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/voice-search-seo.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/voice-search-seo.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/webassembly-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/webassembly-2025.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/webassembly-2025.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/webassembly-2025.html" />
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.siteonweb.fr/en/blog/wordpress-vs-react.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.siteonweb.fr/blog/wordpress-vs-react.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.siteonweb.fr/en/blog/wordpress-vs-react.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.siteonweb.fr/blog/wordpress-vs-react.html" />
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
