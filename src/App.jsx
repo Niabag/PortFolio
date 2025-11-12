@@ -16,6 +16,7 @@ import SocialButtons from './components/SocialButtons.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import Booking from './components/Booking.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
+import TawkToChat from './components/TawkToChat.jsx';
 
 function MainContent() {
   const [selectedService, setSelectedService] = useState(null);
@@ -70,7 +71,8 @@ function MainContent() {
       <SocialButtons />
       <AnimatedBackground />
       <Navbar />
-      <WhatsAppButton />
+      <TawkToChat />
+      {/* <WhatsAppButton /> */}  {/* Décommentez si vous voulez les deux */}
       <main className="scroll-container">
         <Hero />
         <Competences />
