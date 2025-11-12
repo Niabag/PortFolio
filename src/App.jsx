@@ -88,9 +88,11 @@ export default function App() {
     <Routes>
       {/* Routes françaises */}
       <Route path="/" element={<MainContent />} />
+      <Route path="/index.html" element={<MainContent />} />
 
       {/* Routes anglaises */}
       <Route path="/en/*" element={<MainContent />} />
+      <Route path="/en/index.html" element={<MainContent />} />
     </Routes>
   );
 }
