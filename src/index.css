@@ -305,33 +305,11 @@ footer {
   box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
 }
 
-/* Floating social buttons */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1200;
-  background: #25d366;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-}
-
+/* Floating social buttons - alignés à gauche */
 .facebook-float {
   position: fixed;
-  bottom: 160px;
-  right: 20px;
+  bottom: 100px;
+  left: 20px;
   z-index: 1200;
   background: #1877f2;
   border-radius: 50%;
@@ -352,8 +330,8 @@ footer {
 
 .instagram-float {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
+  bottom: 30px;
+  left: 20px;
   z-index: 1200;
   background: radial-gradient(circle at 30% 30%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
   border-radius: 50%;
@@ -373,25 +351,18 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    bottom: 65px;
-    right: 15px;
-  }
-
   .facebook-float {
     width: 50px;
     height: 50px;
-    bottom: 185px;
-    right: 15px;
+    bottom: 90px;
+    left: 15px;
   }
 
   .instagram-float {
     width: 50px;
     height: 50px;
-    bottom: 125px;
-    right: 15px;
+    bottom: 30px;
+    left: 15px;
   }
 }
 

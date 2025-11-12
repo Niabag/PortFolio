@@ -48,29 +48,6 @@ export default function SocialButtons() {
           />
         </svg>
       </a>
-
-      {/* Bouton WhatsApp flottant */}
-      <a
-        href="https://wa.me/33648456937"
-        target="_blank"
-        className="whatsapp-float"
-        title="Contactez-nous sur WhatsApp"
-        aria-label="Contactez-nous sur WhatsApp"
-        rel="noopener noreferrer"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          className="w-8 h-8 text-white"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <path
-            fill="currentColor"
-            d="M16.7 13.5c-.5-.2-1-.1-1.4.3l-.9.9c-1.6-.8-3-2.1-3.8-3.8l.9-.9c.4-.4.5-.9.3-1.4l-1.1-2.6c-.2-.5-.7-.8-1.2-.8h-2c-.7 0-1.3.6-1.3 1.3 0 7 5.7 12.7 12.7 12.7.7 0 1.3-.6 1.3-1.3v-2c0-.5-.3-1-.8-1.2l-2.7-1.1z"
-          />
-        </svg>
-      </a>
     </>
   );
 }
