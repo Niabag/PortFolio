@@ -4,30 +4,29 @@ import { useLanguage } from '../LanguageContext';
 const LeadMagnetPopup = () => {
   const { lang } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // TEMPORAIRE : localStorage désactivé pour les tests
-    const hasSeenPopup = null; // localStorage.getItem('hasSeenLeadMagnet');
-    console.log('🎁 LeadMagnet - MODE TEST - localStorage ignoré');
-    console.log('🎁 LeadMagnet - hasSeenPopup:', hasSeenPopup);
+    // Vérifier si le visiteur a déjà vu le popup (mémoire 7 jours)
+    const hasSeenPopup = localStorage.getItem('hasSeenLeadMagnet');
 
     if (!hasSeenPopup) {
-      console.log('🎁 LeadMagnet - Initialisation des timers');
       // Afficher le popup après 30 secondes ou après scroll de 50%
       const timer = setTimeout(() => {
-        console.log('🎁 LeadMagnet - Timer déclenché');
-        setIsVisible(true);
-      }, 2000); // 2 secondes pour les tests (mettre 30000 en production)
+        if (!hasTriggered) {
+          setIsVisible(true);
+          setHasTriggered(true);
+        }
+      }, 30000); // 30 secondes
 
       const handleScroll = () => {
         const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        console.log('🎁 LeadMagnet - Scroll:', Math.round(scrollPercent) + '%');
-        if (scrollPercent > 50 && !hasSeenPopup) {
-          console.log('🎁 LeadMagnet - Scroll 50% atteint, affichage popup');
+        if (scrollPercent > 50 && !hasSeenPopup && !hasTriggered) {
           setIsVisible(true);
+          setHasTriggered(true);
           window.removeEventListener('scroll', handleScroll);
         }
       };
@@ -106,9 +105,6 @@ const LeadMagnetPopup = () => {
     setIsSubmitted(true);
     localStorage.setItem('hasSeenLeadMagnet', new Date().toISOString());
 
-    // Log pour debug
-    console.log('🎁 Email soumis:', email);
-
     // Déclencher le téléchargement après 1 seconde
     setTimeout(() => {
       window.open('/guide-prix-site-web-2026.pdf', '_blank');
@@ -153,8 +149,6 @@ const LeadMagnetPopup = () => {
   };
 
   const t = translations[lang];
-
-  console.log('🎁 LeadMagnet - isVisible:', isVisible, 'lang:', lang);
 
   if (!isVisible) return null;
 
