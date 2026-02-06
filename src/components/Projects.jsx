@@ -84,6 +84,32 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {/* CTA de conversion après la grille */}
+        <div className="mt-8 sm:mt-12 text-center bg-gradient-to-r from-primary-red/20 to-transparent p-6 sm:p-8 rounded-xl border border-primary-red/30">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
+            {lang === 'fr' ? '🚀 Prêt à lancer votre projet ?' : '🚀 Ready to Launch Your Project?'}
+          </h3>
+          <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base max-w-2xl mx-auto">
+            {lang === 'fr'
+              ? 'Transformez votre idée en réalité. Obtenez un devis personnalisé gratuit en moins de 24h.'
+              : 'Transform your idea into reality. Get a free personalized quote in less than 24 hours.'}
+          </p>
+          <a
+            href="#contact"
+            onClick={() => {
+              // Tracking GTM
+              if (window.gtag) {
+                window.gtag('event', 'projects_grid_cta_click', {
+                  page_location: window.location.href
+                });
+              }
+            }}
+            className="inline-block bg-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-red-700 transition text-base sm:text-lg font-semibold"
+          >
+            {lang === 'fr' ? 'Démarrer mon projet' : 'Start My Project'}
+          </a>
+        </div>
       </div>
 
       {selectedProject && (
@@ -175,6 +201,30 @@ export default function Projects() {
                 >
                   {t('projects.modal.visitSite')} <i className="fas fa-external-link-alt ml-2"></i>
                 </a>
+
+                {/* CTA de conversion dans le modal */}
+                <div className="mt-6 p-4 bg-gradient-to-r from-primary-red/10 to-primary-red/5 rounded-lg border border-primary-red/20">
+                  <p className="text-white text-center mb-3 font-semibold text-sm sm:text-base">
+                    {lang === 'fr' ? '✨ Vous voulez un site comme celui-ci ?' : '✨ Want a website like this?'}
+                  </p>
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      // Tracking GTM
+                      if (window.gtag) {
+                        window.gtag('event', 'project_modal_cta_click', {
+                          project_name: selectedProject.name,
+                          page_location: window.location.href
+                        });
+                      }
+                      closeModal();
+                    }}
+                    className="block w-full bg-primary-red px-6 py-3 rounded-lg hover:bg-red-700 transition text-center font-semibold text-sm sm:text-base"
+                  >
+                    {lang === 'fr' ? 'Obtenir mon devis gratuit' : 'Get My Free Quote'}
+                  </a>
+                </div>
+
                 <button
                   onClick={closeModal}
                   className="mt-4 w-full sm:hidden bg-gray-700 px-4 py-2 rounded-lg text-white hover:bg-gray-600 transition text-sm"

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist SEO Local 2026 - SiteOnWeb</title>
+    <style>
+        @page {
+            margin: 2cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #dc2626;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            color: #dc2626;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .header .logo {
+            font-size: 14px;
+            color: #999;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid #dc2626;
+        }
+
+        .intro h2 {
+            color: #dc2626;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .target-audience {
+            background: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .target-audience h3 {
+            color: #f59e0b;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .target-audience ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .target-audience li {
+            padding: 6px 0;
+            color: #555;
+        }
+
+        .target-audience li:before {
+            content: "👉 ";
+            margin-right: 8px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            background: #dc2626;
+            color: white;
+            padding: 15px 20px;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .emoji {
+            font-size: 28px;
+        }
+
+        .priority-high {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+        }
+
+        .priority-medium {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .priority-low {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s;
+        }
+
+        .checklist li:hover {
+            transform: translateX(5px);
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #dc2626;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .subsection {
+            font-weight: 600;
+            color: #dc2626;
+            font-size: 18px;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #fee2e2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .priority-badge {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-high {
+            background: #dc2626;
+            color: white;
+        }
+
+        .badge-medium {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .badge-low {
+            background: #10b981;
+            color: white;
+        }
+
+        .tip-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .tip-box h4 {
+            color: #3b82f6;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .tip-box p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .action-plan {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border: 3px solid #f59e0b;
+        }
+
+        .action-plan h2 {
+            color: #f59e0b;
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .timeline-section {
+            margin-bottom: 20px;
+        }
+
+        .timeline-section h3 {
+            color: #f59e0b;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .timeline-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-section li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .timeline-section li:before {
+            content: "→ ";
+            color: #f59e0b;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #e5e7eb;
+            color: #666;
+        }
+
+        .footer .brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+
+        .footer .contact {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .tools-box {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .tools-box h4 {
+            color: #1f2937;
+            font-size: 16px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .tools-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tools-box li {
+            padding: 6px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .tools-box li:before {
+            content: "🔧 ";
+            margin-right: 8px;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .checklist li {
+                page-break-inside: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📍 CHECKLIST SEO LOCAL 2026</h1>
+        <div class="subtitle">Le Guide Complet pour Dominer les Recherches Locales et Attirer Plus de Clients</div>
+        <div class="logo">SITEONWEB.FR</div>
+    </div>
+
+    <div class="intro">
+        <h2>🎯 Pourquoi le SEO Local est Crucial pour Votre Entreprise</h2>
+        <p>
+            <strong>76% des consommateurs</strong> qui effectuent une recherche locale visitent un commerce dans les 24 heures.
+            <strong>28% de ces recherches aboutissent à un achat.</strong>
+        </p>
+        <p>
+            Cette checklist vous guide pas à pas pour optimiser votre présence en ligne locale et apparaître dans le
+            <strong>"Map Pack"</strong> de Google (les 3 premiers résultats avec carte).
+        </p>
+    </div>
+
+    <div class="target-audience">
+        <h3>🎯 Cette checklist est parfaite pour :</h3>
+        <ul>
+            <li>Restaurants, Cafés, Boulangeries</li>
+            <li>Commerces de proximité (boutiques, magasins)</li>
+            <li>Artisans (plombiers, électriciens, menuisiers)</li>
+            <li>Professionnels de santé (dentistes, médecins, kinés)</li>
+            <li>Services à domicile (coiffure, ménage, jardinage)</li>
+            <li>Agences locales (immobilier, assurance, juridique)</li>
+            <li>Hôtels, Chambres d'hôtes, Locations saisonnières</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 1 : GOOGLE BUSINESS PROFILE -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">🗺️</span>
+            <span>1. Google Business Profile (Priorité #1)</span>
+        </div>
+
+        <div class="subsection">
+            Configuration de Base
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Créer et revendiquer votre fiche Google Business Profile</li>
+            <li class="priority-high"><span class="checkbox"></span> Vérifier votre adresse (code postal envoyé par Google)</li>
+            <li class="priority-high"><span class="checkbox"></span> Choisir la catégorie principale la plus précise possible</li>
+            <li class="priority-high"><span class="checkbox"></span> Ajouter 2-3 catégories secondaires pertinentes</li>
+            <li class="priority-high"><span class="checkbox"></span> Remplir TOUS les champs disponibles (100% de complétion)</li>
+        </ul>
+
+        <div class="subsection">
+            Informations NAP (Name, Address, Phone)
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Nom exact de l'entreprise (sans mots-clés spam)</li>
+            <li class="priority-high"><span class="checkbox"></span> Adresse complète et correcte</li>
+            <li class="priority-high"><span class="checkbox"></span> Numéro de téléphone local (éviter les 08xx si possible)</li>
+            <li class="priority-high"><span class="checkbox"></span> Site web avec URL trackée (pour mesurer le trafic)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Horaires d'ouverture précis (avec horaires spéciaux si nécessaire)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Zone de service (si activité à domicile)</li>
+        </ul>
+
+        <div class="subsection">
+            Photos & Médias
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Logo haute résolution (minimum 720x720px)</li>
+            <li class="priority-high"><span class="checkbox"></span> Photo de couverture professionnelle (1200x900px)</li>
+            <li class="priority-high"><span class="checkbox"></span> 10+ photos de l'intérieur (espaces, produits, équipe)</li>
+            <li class="priority-high"><span class="checkbox"></span> 5+ photos de l'extérieur (façade, parking, signalétique)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Photos des produits/services phares</li>
+            <li class="priority-medium"><span class="checkbox"></span> Photos de l'équipe au travail</li>
+            <li class="priority-low"><span class="checkbox"></span> Vidéo de présentation (30-60 secondes)</li>
+            <li class="priority-low"><span class="checkbox"></span> Visite virtuelle 360° (si applicable)</li>
+        </ul>
+
+        <div class="subsection">
+            Description & Attributs
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Rédiger une description unique de 750 caractères</li>
+            <li class="priority-high"><span class="checkbox"></span> Intégrer naturellement les mots-clés locaux</li>
+            <li class="priority-high"><span class="checkbox"></span> Mentionner les services/produits principaux</li>
+            <li class="priority-medium"><span class="checkbox"></span> Ajouter tous les attributs pertinents (WiFi, parking, accessibilité, etc.)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Indiquer les modes de paiement acceptés</li>
+            <li class="priority-low"><span class="checkbox"></span> Ajouter un lien de rendez-vous en ligne (si applicable)</li>
+        </ul>
+
+        <div class="subsection">
+            Posts & Actualités
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-medium"><span class="checkbox"></span> Publier 1 post par semaine minimum</li>
+            <li class="priority-medium"><span class="checkbox"></span> Partager les offres spéciales et promotions</li>
+            <li class="priority-medium"><span class="checkbox"></span> Annoncer les nouveaux produits/services</li>
+            <li class="priority-medium"><span class="checkbox"></span> Publier les événements à venir</li>
+            <li class="priority-low"><span class="checkbox"></span> Partager les actualités de l'entreprise</li>
+        </ul>
+
+        <div class="tip-box">
+            <h4>💡 Astuce Pro : Questions & Réponses</h4>
+            <p>
+                <strong>Créez vous-même les 10 questions les plus fréquentes</strong> et répondez-y de manière détaillée.
+                Cela permet de contrôler les informations affichées et d'intégrer des mots-clés stratégiques.
+                Les clients peuvent aussi poser des questions - répondez dans les 24h !
+            </p>
+        </div>
+    </div>
+
+    <!-- SECTION 2 : AVIS CLIENTS -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">⭐</span>
+            <span>2. Avis Clients & E-Réputation</span>
+        </div>
+
+        <div class="subsection">
+            Collecte d'Avis Google
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Obtenir au minimum 20 avis Google (objectif : 50+)</li>
+            <li class="priority-high"><span class="checkbox"></span> Maintenir une note moyenne de 4.5+ étoiles</li>
+            <li class="priority-high"><span class="checkbox"></span> Créer un lien court pour faciliter les avis (g.page/review/xxx)</li>
+            <li class="priority-high"><span class="checkbox"></span> Demander des avis après chaque prestation réussie</li>
+            <li class="priority-medium"><span class="checkbox"></span> Envoyer un email de demande d'avis 2-3 jours après l'achat</li>
+            <li class="priority-medium"><span class="checkbox"></span> Afficher un QR code en magasin pour laisser un avis</li>
+            <li class="priority-low"><span class="checkbox"></span> Offrir une petite réduction en échange d'un avis (légal)</li>
+        </ul>
+
+        <div class="subsection">
+            Gestion des Avis
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Répondre à TOUS les avis (positifs et négatifs) sous 24-48h</li>
+            <li class="priority-high"><span class="checkbox"></span> Personnaliser chaque réponse (éviter les réponses génériques)</li>
+            <li class="priority-high"><span class="checkbox"></span> Remercier pour les avis positifs avec sincérité</li>
+            <li class="priority-high"><span class="checkbox"></span> Gérer les avis négatifs avec empathie et solutions concrètes</li>
+            <li class="priority-medium"><span class="checkbox"></span> Intégrer naturellement des mots-clés dans les réponses</li>
+            <li class="priority-low"><span class="checkbox"></span> Signaler les faux avis à Google</li>
+        </ul>
+
+        <div class="subsection">
+            Autres Plateformes d'Avis
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-medium"><span class="checkbox"></span> Créer une page Facebook professionnelle</li>
+            <li class="priority-medium"><span class="checkbox"></span> Collecter des avis sur Facebook (5+ minimum)</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur les plateformes sectorielles (TripAdvisor, Yelp, etc.)</li>
+            <li class="priority-low"><span class="checkbox"></span> Afficher les avis sur votre site web (widgets)</li>
+        </ul>
+
+        <div class="tip-box">
+            <h4>💡 Template de Demande d'Avis</h4>
+            <p>
+                <strong>"Bonjour [Prénom], merci d'avoir fait confiance à [Nom Entreprise] ! Votre satisfaction est notre priorité.
+                Pourriez-vous prendre 2 minutes pour partager votre expérience sur Google ? Cela nous aide énormément à nous améliorer.
+                👉 [Lien court Google] Merci beaucoup !"</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- SECTION 3 : SITE WEB LOCAL -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">🌐</span>
+            <span>3. Optimisation du Site Web Local</span>
+        </div>
+
+        <div class="subsection">
+            Pages Locales
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Créer une page "Contact" avec adresse complète et carte Google Maps</li>
+            <li class="priority-high"><span class="checkbox"></span> Intégrer votre adresse NAP dans le footer (visible sur toutes les pages)</li>
+            <li class="priority-high"><span class="checkbox"></span> Créer une page "À propos" mentionnant votre localisation</li>
+            <li class="priority-medium"><span class="checkbox"></span> Créer des pages de services par ville/quartier (si multi-zones)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Ajouter un numéro de téléphone cliquable (call-to-action)</li>
+        </ul>
+
+        <div class="subsection">
+            Mots-Clés Locaux
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Identifier 10-15 mots-clés locaux principaux (ex: "plombier Paris 15")</li>
+            <li class="priority-high"><span class="checkbox"></span> Intégrer la ville/région dans les balises Title</li>
+            <li class="priority-high"><span class="checkbox"></span> Optimiser les Meta Descriptions avec localisation</li>
+            <li class="priority-high"><span class="checkbox"></span> Utiliser les mots-clés locaux dans les H1/H2</li>
+            <li class="priority-medium"><span class="checkbox"></span> Créer du contenu local (blog sur événements, actualités locales)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Mentionner les quartiers/arrondissements desservis</li>
+        </ul>
+
+        <div class="subsection">
+            Schema.org LocalBusiness
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Implémenter le balisage LocalBusiness (Schema.org)</li>
+            <li class="priority-high"><span class="checkbox"></span> Ajouter le NAP structuré dans le code</li>
+            <li class="priority-high"><span class="checkbox"></span> Inclure les horaires d'ouverture en Schema</li>
+            <li class="priority-medium"><span class="checkbox"></span> Ajouter les coordonnées GPS (latitude/longitude)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Intégrer le logo et images en Schema</li>
+            <li class="priority-medium"><span class="checkbox"></span> Valider le balisage avec Google Rich Results Test</li>
+        </ul>
+
+        <div class="subsection">
+            Contenu Local
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-medium"><span class="checkbox"></span> Rédiger 5+ articles de blog locaux (guides, actualités)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Créer une page "Témoignages clients" avec avis locaux</li>
+            <li class="priority-medium"><span class="checkbox"></span> Publier des études de cas de clients locaux</li>
+            <li class="priority-low"><span class="checkbox"></span> Créer un guide des événements locaux (si pertinent)</li>
+        </ul>
+
+        <div class="tools-box">
+            <h4>🔧 Outils Recommandés pour le Schema Local</h4>
+            <ul>
+                <li>Google Rich Results Test (gratuit) - Valider votre Schema</li>
+                <li>Schema.org Generator (gratuit) - Créer le code Schema</li>
+                <li>Merkle Schema Markup Generator (gratuit) - Alternative simple</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 4 : CITATIONS LOCALES -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📋</span>
+            <span>4. Citations & Annuaires Locaux</span>
+        </div>
+
+        <div class="subsection">
+            Citations NAP
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Uniformiser le NAP partout (exactement la même écriture)</li>
+            <li class="priority-high"><span class="checkbox"></span> S'inscrire sur Pages Jaunes (pagesjaunes.fr)</li>
+            <li class="priority-high"><span class="checkbox"></span> S'inscrire sur Bing Places for Business</li>
+            <li class="priority-high"><span class="checkbox"></span> S'inscrire sur Apple Maps (via Apple Business Connect)</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur Waze (via Waze Map Editor)</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur Here WeGo</li>
+        </ul>
+
+        <div class="subsection">
+            Annuaires Sectoriels
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-medium"><span class="checkbox"></span> Identifier 5-10 annuaires spécifiques à votre secteur</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur TripAdvisor (restaurants, hôtels, tourisme)</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur La Fourchette / TheFork (restaurants)</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur Booking.com (hébergements)</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur Doctolib (professionnels de santé)</li>
+            <li class="priority-low"><span class="checkbox"></span> S'inscrire sur Houzz (artisans, décoration)</li>
+        </ul>
+
+        <div class="subsection">
+            Annuaires Locaux
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur l'annuaire de la Chambre de Commerce locale</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur l'annuaire de la Chambre des Métiers (artisans)</li>
+            <li class="priority-medium"><span class="checkbox"></span> S'inscrire sur les annuaires municipaux</li>
+            <li class="priority-low"><span class="checkbox"></span> Rejoindre les associations de commerçants locaux</li>
+        </ul>
+
+        <div class="tip-box">
+            <h4>💡 Règle d'Or : Cohérence NAP à 100%</h4>
+            <p>
+                <strong>Utilisez EXACTEMENT le même format partout :</strong><br>
+                ✅ "123 rue de la République, 75001 Paris" PARTOUT<br>
+                ❌ Variantes comme "123 r. République Paris 1er" ou "123, Rue de la République, Paris"<br>
+                Les incohérences confondent Google et réduisent votre classement local !
+            </p>
+        </div>
+    </div>
+
+    <!-- SECTION 5 : BACKLINKS LOCAUX -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">🔗</span>
+            <span>5. Backlinks & Partenariats Locaux</span>
+        </div>
+
+        <div class="subsection">
+            Presse & Médias Locaux
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Contacter les journaux locaux pour des articles</li>
+            <li class="priority-high"><span class="checkbox"></span> Proposer des communiqués de presse (ouverture, événements)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Participer à des interviews sur les radios locales</li>
+            <li class="priority-medium"><span class="checkbox"></span> Être mentionné sur les sites d'actualités locales</li>
+        </ul>
+
+        <div class="subsection">
+            Partenariats Locaux
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-medium"><span class="checkbox"></span> Créer des partenariats avec des entreprises locales complémentaires</li>
+            <li class="priority-medium"><span class="checkbox"></span> Échanger des liens avec des partenaires locaux</li>
+            <li class="priority-medium"><span class="checkbox"></span> Sponsoriser des événements locaux (avec lien sur leur site)</li>
+            <li class="priority-low"><span class="checkbox"></span> Rejoindre des clubs d'affaires locaux (Rotary, Lions Club, etc.)</li>
+        </ul>
+
+        <div class="subsection">
+            Contenu Local
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-medium"><span class="checkbox"></span> Publier des articles invités sur des blogs locaux</li>
+            <li class="priority-medium"><span class="checkbox"></span> Créer du contenu unique sur la ville/région</li>
+            <li class="priority-low"><span class="checkbox"></span> Organiser des événements locaux et obtenir de la couverture</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 6 : MOBILE & UX -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📱</span>
+            <span>6. Mobile & Expérience Utilisateur</span>
+        </div>
+
+        <div class="subsection">
+            Optimisation Mobile
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Site 100% responsive (mobile, tablette, desktop)</li>
+            <li class="priority-high"><span class="checkbox"></span> Bouton d'appel cliquable visible (click-to-call)</li>
+            <li class="priority-high"><span class="checkbox"></span> Itinéraire Google Maps intégré et fonctionnel</li>
+            <li class="priority-high"><span class="checkbox"></span> Vitesse de chargement < 3 secondes sur mobile</li>
+            <li class="priority-medium"><span class="checkbox"></span> Formulaire de contact simplifié (3-5 champs max)</li>
+        </ul>
+
+        <div class="subsection">
+            Actions Rapides
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Bouton WhatsApp visible (si applicable)</li>
+            <li class="priority-high"><span class="checkbox"></span> Horaires d'ouverture affichés en évidence</li>
+            <li class="priority-medium"><span class="checkbox"></span> Système de réservation en ligne (si applicable)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Chat en direct ou chatbot (si applicable)</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 7 : SUIVI & MESURE -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📊</span>
+            <span>7. Analytics & Suivi des Performances</span>
+        </div>
+
+        <div class="subsection">
+            Outils de Suivi
+            <span class="priority-badge badge-high">CRITIQUE</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Installer Google Analytics 4 avec suivi des conversions</li>
+            <li class="priority-high"><span class="checkbox"></span> Configurer Google Search Console</li>
+            <li class="priority-high"><span class="checkbox"></span> Activer les statistiques Google Business Profile</li>
+            <li class="priority-medium"><span class="checkbox"></span> Mettre en place le suivi des appels (call tracking)</li>
+        </ul>
+
+        <div class="subsection">
+            KPIs à Suivre
+            <span class="priority-badge badge-medium">IMPORTANT</span>
+        </div>
+        <ul class="checklist">
+            <li class="priority-high"><span class="checkbox"></span> Nombre de vues Google Business Profile (mensuel)</li>
+            <li class="priority-high"><span class="checkbox"></span> Nombre d'appels depuis Google (mensuel)</li>
+            <li class="priority-high"><span class="checkbox"></span> Nombre de demandes d'itinéraire (mensuel)</li>
+            <li class="priority-high"><span class="checkbox"></span> Nombre de clics vers le site web (mensuel)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Position dans le Map Pack (top 3)</li>
+            <li class="priority-medium"><span class="checkbox"></span> Nombre d'avis et note moyenne</li>
+            <li class="priority-medium"><span class="checkbox"></span> Trafic organique local (Google Analytics)</li>
+        </ul>
+    </div>
+
+    <!-- PLAN D'ACTION -->
+    <div class="action-plan">
+        <h2>🚀 <span>Plan d'Action : Les 90 Premiers Jours</span></h2>
+        <p style="color: #555; margin-bottom: 20px;">
+            Suivez ce plan étape par étape pour maximiser votre visibilité locale en 3 mois.
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-section">
+                <h3>📅 Semaine 1-2 : Les Fondations</h3>
+                <ul>
+                    <li>Créer et optimiser complètement Google Business Profile</li>
+                    <li>Ajouter 15+ photos professionnelles</li>
+                    <li>Vérifier et uniformiser le NAP sur tous les canaux</li>
+                    <li>Implémenter Schema.org LocalBusiness sur le site</li>
+                    <li>Obtenir les 10 premiers avis Google</li>
+                </ul>
+            </div>
+
+            <div class="timeline-section">
+                <h3>📅 Semaine 3-4 : Citations & Présence</h3>
+                <ul>
+                    <li>S'inscrire sur 15+ annuaires (Pages Jaunes, Bing, Apple Maps, etc.)</li>
+                    <li>Créer/optimiser la page Facebook professionnelle</li>
+                    <li>Optimiser les pages locales du site web</li>
+                    <li>Publier 2 posts sur Google Business Profile</li>
+                    <li>Atteindre 20 avis Google</li>
+                </ul>
+            </div>
+
+            <div class="timeline-section">
+                <h3>📅 Semaine 5-8 : Contenu & Backlinks</h3>
+                <ul>
+                    <li>Rédiger 3-5 articles de blog locaux</li>
+                    <li>Contacter 5 médias locaux pour de la couverture</li>
+                    <li>Créer 3 partenariats locaux avec échange de liens</li>
+                    <li>Publier 1 post par semaine sur Google Business Profile</li>
+                    <li>Atteindre 30+ avis Google</li>
+                </ul>
+            </div>
+
+            <div class="timeline-section">
+                <h3>📅 Semaine 9-12 : Optimisation & Croissance</h3>
+                <ul>
+                    <li>Analyser les performances (Google Business Insights)</li>
+                    <li>Optimiser les pages les moins performantes</li>
+                    <li>Organiser un événement local pour générer des backlinks</li>
+                    <li>Maintenir 1 post par semaine sur Google Business Profile</li>
+                    <li>Atteindre 50+ avis Google avec note 4.5+</li>
+                    <li>Mesurer les résultats : appels, itinéraires, visites</li>
+                </ul>
+            </div>
+
+            <div class="timeline-section">
+                <h3>📅 Actions Continues (après J+90)</h3>
+                <ul>
+                    <li>Publier 1 post Google Business Profile par semaine</li>
+                    <li>Obtenir 5-10 nouveaux avis Google par mois</li>
+                    <li>Répondre à tous les avis sous 24-48h</li>
+                    <li>Publier 1 article de blog local par mois</li>
+                    <li>Analyser les performances mensuellement</li>
+                    <li>Continuer à créer des partenariats locaux</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tools-box" style="margin-top: 30px;">
+        <h4>🔧 Outils Essentiels pour le SEO Local</h4>
+        <ul>
+            <li><strong>Google Business Profile</strong> (gratuit) - Gestion de votre fiche locale</li>
+            <li><strong>Google Search Console</strong> (gratuit) - Suivi du référencement</li>
+            <li><strong>Google Analytics 4</strong> (gratuit) - Analyse du trafic</li>
+            <li><strong>BrightLocal</strong> (payant) - Gestion des citations et avis</li>
+            <li><strong>Whitespark</strong> (payant) - Recherche de citations locales</li>
+            <li><strong>Moz Local</strong> (payant) - Distribution automatique du NAP</li>
+            <li><strong>GatherUp</strong> (payant) - Collecte automatique d'avis</li>
+            <li><strong>LocalRanker</strong> (payant) - Suivi des positions locales</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <div class="brand">SITEONWEB</div>
+        <div class="contact">🌐 www.siteonweb.fr</div>
+        <div class="contact">📧 contact@siteonweb.fr</div>
+        <div class="contact">📱 WhatsApp : Disponible sur le site</div>
+        <div style="margin-top: 20px; font-size: 12px; color: #999;">
+            © 2026 SiteOnWeb - Tous droits réservés
+        </div>
+    </div>
+</body>
+</html>

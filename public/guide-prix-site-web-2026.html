@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des Prix : Combien Coûte un Site Web en 2026 ? - SiteOnWeb</title>
+    <style>
+        @page {
+            margin: 2cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #dc2626;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .header .logo {
+            font-size: 14px;
+            color: #999;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid #dc2626;
+        }
+
+        .intro h2 {
+            color: #dc2626;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .pricing-table {
+            background: #fff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 20px;
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 3fr;
+            border-bottom: 1px solid #e5e7eb;
+            transition: background 0.2s;
+        }
+
+        .pricing-row:hover {
+            background: #f9fafb;
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-cell {
+            padding: 20px;
+            border-right: 1px solid #e5e7eb;
+        }
+
+        .pricing-cell:last-child {
+            border-right: none;
+        }
+
+        .pricing-type {
+            font-weight: 700;
+            color: #1f2937;
+            font-size: 16px;
+        }
+
+        .pricing-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: #dc2626;
+            text-align: center;
+        }
+
+        .pricing-price-small {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 400;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .pricing-details {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .pricing-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pricing-details li {
+            padding: 4px 0;
+        }
+
+        .pricing-details li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            background: #dc2626;
+            color: white;
+            padding: 15px 20px;
+            font-size: 22px;
+            font-weight: 700;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .emoji {
+            font-size: 26px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: #f3f4f6;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            color: #1f2937;
+            border: 1px solid #e5e7eb;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9fafb;
+        }
+
+        .price-highlight {
+            background: #fef3c7;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: #92400e;
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #dc2626;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .warning-box p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .warning-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .warning-box li {
+            padding: 6px 0;
+            color: #555;
+        }
+
+        .warning-box li:before {
+            content: "⚠️ ";
+            margin-right: 8px;
+        }
+
+        .tip-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .tip-box h3 {
+            color: #3b82f6;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .tip-box p, .tip-box ul {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .tip-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tip-box li {
+            padding: 6px 0;
+        }
+
+        .tip-box li:before {
+            content: "💡 ";
+            margin-right: 8px;
+        }
+
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .success-box h3 {
+            color: #10b981;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .success-box p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .checklist {
+            background: #f9fafb;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .checklist h3 {
+            color: #1f2937;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            margin: 8px 0;
+            background: white;
+            border-left: 3px solid #dc2626;
+            border-radius: 4px;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 18px;
+            margin-right: 10px;
+            color: #dc2626;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #e5e7eb;
+            color: #666;
+        }
+
+        .footer .brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+
+        .footer .contact {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .footer .cta {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 10px;
+            border: 2px solid #f59e0b;
+        }
+
+        .footer .cta h3 {
+            color: #92400e;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .footer .cta p {
+            color: #78350f;
+            font-size: 15px;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💰 Combien Coûte VRAIMENT<br>un Site Web en 2026 ?</h1>
+        <div class="subtitle">Le Guide Transparent des Prix (Sans Langue de Bois)</div>
+        <div class="logo">SITEONWEB.FR</div>
+    </div>
+
+    <div class="intro">
+        <h2>🎯 Pourquoi ce guide existe</h2>
+        <p>
+            <strong>"Combien coûte un site web ?"</strong> C'est LA question que tout le monde se pose, et que personne ne répond clairement.
+        </p>
+        <p>
+            Les prix varient de <strong>500€ à 50 000€+</strong> selon les prestataires. Pourquoi ? Parce que tous les sites ne se valent pas.
+            Un site fait sur une plateforme en 2h n'a RIEN à voir avec un site professionnel sur-mesure développé en 3 mois.
+        </p>
+        <p>
+            <strong>Dans ce guide 100% transparent</strong>, je vous dévoile les prix réels du marché en 2026, ce qui est inclus (ou pas),
+            et comment choisir le bon prestataire sans vous faire arnaquer.
+        </p>
+    </div>
+
+    <!-- GRILLE TARIFAIRE PRINCIPALE -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">💎</span>
+            <span>Grille Tarifaire par Type de Site (2026)</span>
+        </div>
+
+        <div class="pricing-table">
+            <div class="pricing-header">
+                📊 Prix Moyens du Marché Français
+            </div>
+
+            <div class="pricing-row">
+                <div class="pricing-cell">
+                    <div class="pricing-type">Site Vitrine Simple</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 5px;">1-5 pages</div>
+                </div>
+                <div class="pricing-cell">
+                    <div class="pricing-price">
+                        800€ - 3000€
+                        <span class="pricing-price-small">One-shot</span>
+                    </div>
+                </div>
+                <div class="pricing-cell pricing-details">
+                    <ul>
+                        <li>Design responsive</li>
+                        <li>Formulaire de contact</li>
+                        <li>SEO de base</li>
+                        <li>Hébergement 1 an inclus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-row">
+                <div class="pricing-cell">
+                    <div class="pricing-type">Site Vitrine Premium</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 5px;">6-15 pages + blog</div>
+                </div>
+                <div class="pricing-cell">
+                    <div class="pricing-price">
+                        3000€ - 8000€
+                        <span class="pricing-price-small">One-shot</span>
+                    </div>
+                </div>
+                <div class="pricing-cell pricing-details">
+                    <ul>
+                        <li>Design sur-mesure</li>
+                        <li>Blog intégré</li>
+                        <li>SEO avancé</li>
+                        <li>Animations premium</li>
+                        <li>Google Business Profile</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-row">
+                <div class="pricing-cell">
+                    <div class="pricing-type">Site E-commerce (Shopify/WooCommerce)</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 5px;">10-50 produits</div>
+                </div>
+                <div class="pricing-cell">
+                    <div class="pricing-price">
+                        5000€ - 15000€
+                        <span class="pricing-price-small">+ 50-200€/mois</span>
+                    </div>
+                </div>
+                <div class="pricing-cell pricing-details">
+                    <ul>
+                        <li>Shopify ou WooCommerce</li>
+                        <li>Paiement sécurisé</li>
+                        <li>Gestion stock</li>
+                        <li>Livraison intégrée</li>
+                        <li>Formation incluse</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-row">
+                <div class="pricing-cell">
+                    <div class="pricing-type">Site E-commerce Sur-Mesure</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 5px;">50-500+ produits</div>
+                </div>
+                <div class="pricing-cell">
+                    <div class="pricing-price">
+                        15000€ - 50000€+
+                        <span class="pricing-price-small">+ 200-500€/mois</span>
+                    </div>
+                </div>
+                <div class="pricing-cell pricing-details">
+                    <ul>
+                        <li>Développement custom</li>
+                        <li>Fonctionnalités avancées</li>
+                        <li>Intégrations ERP/CRM</li>
+                        <li>Performance optimale</li>
+                        <li>Support prioritaire</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-row">
+                <div class="pricing-cell">
+                    <div class="pricing-type">Landing Page (1 page)</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 5px;">Page de vente unique</div>
+                </div>
+                <div class="pricing-cell">
+                    <div class="pricing-price">
+                        500€ - 2000€
+                        <span class="pricing-price-small">One-shot</span>
+                    </div>
+                </div>
+                <div class="pricing-cell pricing-details">
+                    <ul>
+                        <li>Design conversion-optimisé</li>
+                        <li>Formulaire de capture</li>
+                        <li>A/B testing (option)</li>
+                        <li>Analytics intégré</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pricing-row">
+                <div class="pricing-cell">
+                    <div class="pricing-type">Site Multilingue</div>
+                    <div style="font-size: 13px; color: #6b7280; margin-top: 5px;">2-5 langues</div>
+                </div>
+                <div class="pricing-cell">
+                    <div class="pricing-price">
+                        +30% à +50%
+                        <span class="pricing-price-small">du prix de base</span>
+                    </div>
+                </div>
+                <div class="pricing-cell pricing-details">
+                    <ul>
+                        <li>Traduction professionnelle</li>
+                        <li>SEO multilingue</li>
+                        <li>Sélecteur de langue</li>
+                        <li>Gestion contenus par langue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPARAISON AGENCE VS FREELANCE VS PLATEFORME -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">⚖️</span>
+            <span>Agence vs Freelance vs Plateforme : Qui Choisir ?</span>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Critère</th>
+                    <th>Plateforme DIY<br>(Wix, Squarespace)</th>
+                    <th>Freelance</th>
+                    <th>Agence Web</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Prix</strong></td>
+                    <td><span class="price-highlight">10-50€/mois</span><br>Abonnement mensuel</td>
+                    <td><span class="price-highlight">800-8000€</span><br>One-shot + maintenance</td>
+                    <td><span class="price-highlight">3000-50000€+</span><br>One-shot + maintenance</td>
+                </tr>
+                <tr>
+                    <td><strong>Délai de livraison</strong></td>
+                    <td>Immédiat<br>(vous le faites vous-même)</td>
+                    <td>1-6 semaines</td>
+                    <td>4-16 semaines</td>
+                </tr>
+                <tr>
+                    <td><strong>Qualité design</strong></td>
+                    <td>⭐⭐ Templates limités</td>
+                    <td>⭐⭐⭐ Personnalisé</td>
+                    <td>⭐⭐⭐⭐⭐ Sur-mesure premium</td>
+                </tr>
+                <tr>
+                    <td><strong>SEO</strong></td>
+                    <td>⭐⭐ Basique</td>
+                    <td>⭐⭐⭐⭐ Optimisé</td>
+                    <td>⭐⭐⭐⭐⭐ Expert</td>
+                </tr>
+                <tr>
+                    <td><strong>Support</strong></td>
+                    <td>FAQ / Chat automatique</td>
+                    <td>Direct et réactif</td>
+                    <td>Équipe dédiée</td>
+                </tr>
+                <tr>
+                    <td><strong>Propriété du site</strong></td>
+                    <td>❌ Vous êtes locataire</td>
+                    <td>✅ Vous êtes propriétaire</td>
+                    <td>✅ Vous êtes propriétaire</td>
+                </tr>
+                <tr>
+                    <td><strong>Idéal pour</strong></td>
+                    <td>Débutants, très petit budget, site temporaire</td>
+                    <td>PME, artisans, indépendants, budget moyen</td>
+                    <td>Entreprises, e-commerce, projets complexes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <h3>💡 Mon Conseil Honnête</h3>
+            <p>
+                <strong>Si vous avez moins de 500€ :</strong> Utilisez Wix ou Squarespace en attendant d'avoir le budget pour un vrai site professionnel.
+            </p>
+            <p>
+                <strong>Si vous avez 800-5000€ :</strong> Choisissez un bon freelance local avec un portfolio solide et des avis clients positifs.
+            </p>
+            <p>
+                <strong>Si vous avez 5000€+ :</strong> Une agence web peut vous offrir une équipe complète (designer, développeur, SEO) et un résultat premium.
+            </p>
+        </div>
+    </div>
+
+    <!-- COÛTS CACHÉS -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">🕵️</span>
+            <span>Les Coûts Cachés (Ce Qu'on Ne Vous Dit Pas)</span>
+        </div>
+
+        <div class="warning-box">
+            <h3>⚠️ Attention aux Frais Récurrents</h3>
+            <p>
+                Le prix de création n'est que le début. Voici les coûts annuels à prévoir :
+            </p>
+            <ul>
+                <li><strong>Nom de domaine :</strong> 10-30€/an (.fr, .com)</li>
+                <li><strong>Hébergement :</strong> 50-300€/an (selon performances)</li>
+                <li><strong>Certificat SSL :</strong> 0-100€/an (souvent gratuit avec Let's Encrypt)</li>
+                <li><strong>Maintenance :</strong> 200-1200€/an (mises à jour, sauvegardes, sécurité)</li>
+                <li><strong>Emails professionnels :</strong> 0-100€/an (Google Workspace, Outlook)</li>
+                <li><strong>Plugins premium :</strong> 0-500€/an (selon besoins)</li>
+            </ul>
+            <p style="margin-top: 15px;">
+                <strong>Budget annuel réaliste :</strong> <span class="price-highlight">300-2000€/an</span> après la création initiale.
+            </p>
+        </div>
+
+        <div class="tip-box">
+            <h3>💡 Questions à Poser AVANT de Signer</h3>
+            <ul>
+                <li>Le nom de domaine sera-t-il à mon nom ?</li>
+                <li>Qui possède le code source du site ?</li>
+                <li>Combien coûte la maintenance par an ?</li>
+                <li>Que se passe-t-il si je veux changer de prestataire ?</li>
+                <li>Les mises à jour de sécurité sont-elles incluses ?</li>
+                <li>Ai-je accès complet au back-office ?</li>
+                <li>Les sauvegardes automatiques sont-elles incluses ?</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PIÈGES À ÉVITER -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">🚨</span>
+            <span>Les 7 Pièges à Éviter Absolument</span>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚫 Piège #1 : Le "Site à 200€"</h3>
+            <p>
+                <strong>Promesse :</strong> "Site professionnel complet pour 200€"
+            </p>
+            <p>
+                <strong>Réalité :</strong> Template Wix/WordPress basique installé en 30 minutes, sans personnalisation, sans SEO, sans support.
+                Vous payez 200€ pour quelque chose que vous pourriez faire vous-même gratuitement.
+            </p>
+            <p>
+                <strong>Mon conseil :</strong> Un site professionnel prend du temps. Si c'est trop bon marché, c'est louche.
+            </p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚫 Piège #2 : L'Abonnement à Vie</h3>
+            <p>
+                <strong>Promesse :</strong> "Pas de frais de création, juste 99€/mois à vie"
+            </p>
+            <p>
+                <strong>Réalité :</strong> Au bout de 2 ans, vous aurez payé 2376€ pour un site qui ne vous appartient pas.
+                Si vous arrêtez de payer, votre site disparaît.
+            </p>
+            <p>
+                <strong>Mon conseil :</strong> Privilégiez un paiement unique avec maintenance optionnelle. Vous restez propriétaire.
+            </p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚫 Piège #3 : Le "Pack Complet" Trop Beau</h3>
+            <p>
+                <strong>Promesse :</strong> "Site + Logo + Cartes de visite + SEO + Pub Google pour 999€"
+            </p>
+            <p>
+                <strong>Réalité :</strong> Tout sera bâclé. Un logo professionnel seul coûte 300-1000€, un site vitrine 1500-3000€, le SEO est un travail continu.
+                Impossible de tout faire bien à ce prix.
+            </p>
+            <p>
+                <strong>Mon conseil :</strong> Méfiez-vous des "packs tout-en-un" à prix cassés. La qualité en pâtit toujours.
+            </p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚫 Piège #4 : Les Frais Cachés</h3>
+            <p>
+                <strong>Promesse :</strong> "Site à 500€"
+            </p>
+            <p>
+                <strong>Réalité :</strong> +200€ pour ajouter un formulaire de contact, +300€ pour le responsive mobile, +150€ pour connecter Google Analytics...
+                Total final : 1500€+
+            </p>
+            <p>
+                <strong>Mon conseil :</strong> Demandez un devis TOUT COMPRIS avant de commencer. Aucune surprise.
+            </p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚫 Piège #5 : Le Site "Presque Fini"</h3>
+            <p>
+                <strong>Promesse :</strong> "Livraison en 2 semaines"
+            </p>
+            <p>
+                <strong>Réalité :</strong> 6 mois plus tard, le site est toujours "presque fini". Le prestataire ne répond plus aux emails.
+            </p>
+            <p>
+                <strong>Mon conseil :</strong> Vérifiez les avis clients, demandez des références, et exigez un calendrier avec des jalons clairs.
+            </p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚫 Piège #6 : Le "SEO Garanti 1ère Page Google"</h3>
+            <p>
+                <strong>Promesse :</strong> "Votre site en 1ère page de Google en 1 mois garanti"
+            </p>
+            <p>
+                <strong>Réalité :</strong> Personne ne peut garantir un classement Google. Le SEO prend 3-6 mois minimum et dépend de nombreux facteurs.
+            </p>
+            <p>
+                <strong>Mon conseil :</strong> Fuyez les promesses de "garantie SEO". Un bon prestataire parle de stratégie, pas de miracles.
+            </p>
+        </div>
+
+        <div class="warning-box">
+            <h3>🚫 Piège #7 : Le Site Sans Formation</h3>
+            <p>
+                <strong>Promesse :</strong> "Voilà votre site. Bonne chance !"
+            </p>
+            <p>
+                <strong>Réalité :</strong> Vous ne savez pas comment modifier du texte, ajouter une image, ou publier un article. Résultat : site figé.
+            </p>
+            <p>
+                <strong>Mon conseil :</strong> Exigez une formation de prise en main (1-2h minimum) pour être autonome.
+            </p>
+        </div>
+    </div>
+
+    <!-- ROI D'UN SITE WEB -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📈</span>
+            <span>Le ROI d'un Site Web : Combien Ça Peut Rapporter ?</span>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ Exemple Réel : Restaurant Local</h3>
+            <p>
+                <strong>Investissement :</strong> Site vitrine à 2500€ + SEO local<br>
+                <strong>Résultat après 6 mois :</strong> +40 réservations/mois depuis Google<br>
+                <strong>Panier moyen :</strong> 80€<br>
+                <strong>Chiffre d'affaires additionnel :</strong> 3200€/mois = 38 400€/an<br>
+                <strong>ROI :</strong> <span class="price-highlight">1436% la première année</span>
+            </p>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ Exemple Réel : Artisan Plombier</h3>
+            <p>
+                <strong>Investissement :</strong> Site vitrine à 1800€<br>
+                <strong>Résultat après 3 mois :</strong> 8-12 demandes de devis/mois depuis Google<br>
+                <strong>Taux de conversion :</strong> 40% = 4 chantiers/mois<br>
+                <strong>Panier moyen :</strong> 1200€<br>
+                <strong>Chiffre d'affaires additionnel :</strong> 4800€/mois = 57 600€/an<br>
+                <strong>ROI :</strong> <span class="price-highlight">3100% la première année</span>
+            </p>
+        </div>
+
+        <div class="success-box">
+            <h3>✅ Exemple Réel : Boutique E-commerce</h3>
+            <p>
+                <strong>Investissement :</strong> Site e-commerce à 8000€<br>
+                <strong>Résultat après 12 mois :</strong> 150 commandes/mois<br>
+                <strong>Panier moyen :</strong> 65€<br>
+                <strong>Chiffre d'affaires :</strong> 9750€/mois = 117 000€/an<br>
+                <strong>Marge nette (30%) :</strong> 35 100€/an<br>
+                <strong>ROI :</strong> <span class="price-highlight">339% la première année</span>
+            </p>
+        </div>
+
+        <div class="tip-box">
+            <h3>💡 La Vraie Question à Se Poser</h3>
+            <p>
+                Ne vous demandez pas <strong>"Est-ce que 3000€ c'est cher ?"</strong>, mais plutôt :
+            </p>
+            <p>
+                <strong>"Combien de clients supplémentaires ce site peut-il m'apporter chaque mois ?"</strong>
+            </p>
+            <p>
+                Si votre site vous apporte <strong>ne serait-ce que 2-3 clients par mois</strong>, il s'auto-finance largement.
+                C'est un <strong>investissement</strong>, pas une dépense.
+            </p>
+        </div>
+    </div>
+
+    <!-- CHECKLIST DEVIS -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">✅</span>
+            <span>Checklist : 15 Points à Vérifier Avant de Signer un Devis</span>
+        </div>
+
+        <div class="checklist">
+            <h3>📋 Avant de Signer, Vérifiez Que Tout Est Inclus :</h3>
+            <ul>
+                <li>Design responsive (mobile, tablette, desktop)</li>
+                <li>Hébergement pour la 1ère année minimum</li>
+                <li>Nom de domaine à votre nom</li>
+                <li>Certificat SSL (HTTPS sécurisé)</li>
+                <li>Formulaire de contact fonctionnel</li>
+                <li>Optimisation SEO de base (balises, sitemap, robots.txt)</li>
+                <li>Google Analytics installé et configuré</li>
+                <li>Google Business Profile créé/optimisé (si local)</li>
+                <li>Formation de prise en main (1-2h minimum)</li>
+                <li>Documentation écrite / vidéo</li>
+                <li>Sauvegardes automatiques</li>
+                <li>Garantie correction bugs (30-90 jours)</li>
+                <li>Propriété complète du code source</li>
+                <li>Accès complet au back-office</li>
+                <li>Délai de livraison et pénalités de retard</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FOOTER CTA -->
+    <div class="footer">
+        <div class="brand">SITEONWEB</div>
+        <div class="contact">🌐 www.siteonweb.fr</div>
+        <div class="contact">📧 contact@siteonweb.fr</div>
+        <div class="contact">📱 WhatsApp : Disponible sur le site</div>
+
+        <div class="cta">
+            <h3>🎯 Besoin d'un Devis Transparent ?</h3>
+            <p>
+                Je crée votre site web professionnel <strong>sans frais cachés, sans arnaques, sans bullshit.</strong><br>
+                <strong>Devis détaillé gratuit sous 24h</strong> - Vous saurez EXACTEMENT ce que vous payez.
+            </p>
+            <p style="margin-top: 15px; font-weight: 700;">
+                👉 Contactez-moi sur www.siteonweb.fr
+            </p>
+        </div>
+
+        <div style="margin-top: 30px; font-size: 12px; color: #999;">
+            © 2026 SiteOnWeb - Tous droits réservés
+        </div>
+    </div>
+</body>
+</html>

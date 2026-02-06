@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist SEO 2026 - SiteOnWeb</title>
+    <style>
+        @page {
+            margin: 2cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 4px solid #dc2626;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            color: #dc2626;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .header .logo {
+            font-size: 14px;
+            color: #999;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid #dc2626;
+        }
+
+        .intro h2 {
+            color: #dc2626;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            background: #dc2626;
+            color: white;
+            padding: 15px 20px;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .emoji {
+            font-size: 28px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background: #f9fafb;
+            border-left: 4px solid #dc2626;
+            border-radius: 5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s;
+        }
+
+        .checklist li:hover {
+            background: #fef2f2;
+            transform: translateX(5px);
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #dc2626;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .subsection {
+            font-weight: 600;
+            color: #dc2626;
+            font-size: 18px;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #fee2e2;
+        }
+
+        .bonus {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border: 3px solid #f59e0b;
+        }
+
+        .bonus h2 {
+            color: #f59e0b;
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .calendar {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .calendar-section {
+            margin-bottom: 20px;
+        }
+
+        .calendar-section h3 {
+            color: #f59e0b;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .calendar-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .calendar-section li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .calendar-section li:before {
+            content: "→ ";
+            color: #f59e0b;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #e5e7eb;
+            color: #666;
+        }
+
+        .footer .brand {
+            font-size: 24px;
+            font-weight: 800;
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+
+        .footer .contact {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .checklist li {
+                page-break-inside: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 CHECKLIST SEO 2026</h1>
+        <div class="subtitle">Le Guide Complet pour Propulser Votre Site en Première Page de Google</div>
+        <div class="logo">SITEONWEB.FR</div>
+    </div>
+
+    <div class="intro">
+        <h2>🚀 Bienvenue dans votre Checklist SEO</h2>
+        <p>
+            Cette checklist complète regroupe <strong>100+ actions concrètes</strong> pour optimiser le référencement
+            de votre site web en 2026. Utilisez-la comme un guide étape par étape pour auditer et améliorer
+            chaque aspect de votre présence en ligne. Les algorithmes de Google évoluent constamment :
+            cette checklist est mise à jour pour refléter les dernières bonnes pratiques.
+        </p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">⚙️</span>
+            <span>1. SEO Technique</span>
+        </div>
+
+        <div class="subsection">Indexation & Crawl</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Soumettre le sitemap.xml à Google Search Console</li>
+            <li><span class="checkbox"></span> Vérifier l'indexation des pages importantes (site:votredomaine.com)</li>
+            <li><span class="checkbox"></span> Créer et optimiser le fichier robots.txt</li>
+            <li><span class="checkbox"></span> Éviter le contenu dupliqué (canonical tags)</li>
+            <li><span class="checkbox"></span> Corriger les erreurs 404 et redirections 301</li>
+            <li><span class="checkbox"></span> Installer Google Search Console et Bing Webmaster Tools</li>
+        </ul>
+
+        <div class="subsection">Données Structurées (Schema.org)</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Implémenter le balisage Organization</li>
+            <li><span class="checkbox"></span> Ajouter le balisage LocalBusiness (si applicable)</li>
+            <li><span class="checkbox"></span> Implémenter les breadcrumbs (fil d'Ariane)</li>
+            <li><span class="checkbox"></span> Ajouter le balisage FAQ pour les pages pertinentes</li>
+            <li><span class="checkbox"></span> Implémenter Article schema pour le blog</li>
+            <li><span class="checkbox"></span> Valider avec Google Rich Results Test</li>
+        </ul>
+
+        <div class="subsection">HTTPS & Sécurité</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Activer le certificat SSL (HTTPS)</li>
+            <li><span class="checkbox"></span> Rediriger HTTP vers HTTPS (301)</li>
+            <li><span class="checkbox"></span> Vérifier la validité du certificat SSL</li>
+            <li><span class="checkbox"></span> Configurer HSTS (HTTP Strict Transport Security)</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📝</span>
+            <span>2. Contenu & Mots-Clés</span>
+        </div>
+
+        <div class="subsection">Recherche de Mots-Clés</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Identifier 10-20 mots-clés principaux (forte intention)</li>
+            <li><span class="checkbox"></span> Trouver 50+ mots-clés de longue traîne (faible concurrence)</li>
+            <li><span class="checkbox"></span> Analyser l'intention de recherche (informationnelle, transactionnelle, navigationnelle)</li>
+            <li><span class="checkbox"></span> Étudier les mots-clés des concurrents (Ahrefs, SEMrush)</li>
+            <li><span class="checkbox"></span> Créer une carte de mots-clés par page</li>
+        </ul>
+
+        <div class="subsection">Création de Contenu</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Rédiger au minimum 1000 mots par page (2000+ pour les piliers)</li>
+            <li><span class="checkbox"></span> Créer du contenu unique et à forte valeur ajoutée</li>
+            <li><span class="checkbox"></span> Intégrer naturellement les mots-clés (densité 1-2%)</li>
+            <li><span class="checkbox"></span> Structurer avec des titres H1, H2, H3</li>
+            <li><span class="checkbox"></span> Ajouter des images, vidéos, infographies</li>
+            <li><span class="checkbox"></span> Mettre à jour le contenu régulièrement</li>
+            <li><span class="checkbox"></span> Créer des contenus piliers (guide complets 3000+ mots)</li>
+        </ul>
+
+        <div class="subsection">Stratégie Éditoriale</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Créer un calendrier éditorial (1-2 articles/semaine)</li>
+            <li><span class="checkbox"></span> Viser les featured snippets (position 0)</li>
+            <li><span class="checkbox"></span> Répondre aux questions "People Also Ask"</li>
+            <li><span class="checkbox"></span> Créer du contenu evergreen (toujours pertinent)</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">🎯</span>
+            <span>3. SEO On-Page</span>
+        </div>
+
+        <div class="subsection">Balises Meta</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Optimiser les balises Title (50-60 caractères, mot-clé au début)</li>
+            <li><span class="checkbox"></span> Rédiger des Meta Descriptions uniques (150-160 caractères)</li>
+            <li><span class="checkbox"></span> Utiliser un seul H1 par page (avec mot-clé principal)</li>
+            <li><span class="checkbox"></span> Structurer avec H2, H3, H4 (hiérarchie logique)</li>
+            <li><span class="checkbox"></span> Ajouter des balises Open Graph (Facebook)</li>
+            <li><span class="checkbox"></span> Ajouter des Twitter Cards</li>
+        </ul>
+
+        <div class="subsection">URLs & Navigation</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Créer des URLs courtes et descriptives</li>
+            <li><span class="checkbox"></span> Utiliser des tirets (-) plutôt que des underscores (_)</li>
+            <li><span class="checkbox"></span> Éviter les paramètres d'URL inutiles</li>
+            <li><span class="checkbox"></span> Créer un menu de navigation clair (max 7 items)</li>
+            <li><span class="checkbox"></span> Implémenter un fil d'Ariane (breadcrumbs)</li>
+            <li><span class="checkbox"></span> Créer une architecture en silos thématiques</li>
+        </ul>
+
+        <div class="subsection">Images & Médias</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Optimiser la taille des images (WebP, compression)</li>
+            <li><span class="checkbox"></span> Ajouter des attributs ALT descriptifs</li>
+            <li><span class="checkbox"></span> Nommer les fichiers avec des mots-clés (ex: referencement-seo.jpg)</li>
+            <li><span class="checkbox"></span> Utiliser des images en haute résolution (retina-ready)</li>
+            <li><span class="checkbox"></span> Implémenter le lazy loading</li>
+            <li><span class="checkbox"></span> Créer un sitemap XML pour les images</li>
+        </ul>
+
+        <div class="subsection">Maillage Interne</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Créer 3-5 liens internes par page</li>
+            <li><span class="checkbox"></span> Utiliser des ancres descriptives (éviter "cliquez ici")</li>
+            <li><span class="checkbox"></span> Lier vers les contenus piliers depuis toutes les pages</li>
+            <li><span class="checkbox"></span> Éviter les pages orphelines (sans liens entrants)</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">⚡</span>
+            <span>4. Performance & Vitesse</span>
+        </div>
+
+        <div class="subsection">Core Web Vitals</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> LCP (Largest Contentful Paint) < 2.5s</li>
+            <li><span class="checkbox"></span> FID (First Input Delay) < 100ms</li>
+            <li><span class="checkbox"></span> CLS (Cumulative Layout Shift) < 0.1</li>
+            <li><span class="checkbox"></span> Tester avec Google PageSpeed Insights</li>
+            <li><span class="checkbox"></span> Tester avec GTmetrix</li>
+        </ul>
+
+        <div class="subsection">Optimisations Techniques</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Activer la compression GZIP/Brotli</li>
+            <li><span class="checkbox"></span> Minifier CSS, JavaScript, HTML</li>
+            <li><span class="checkbox"></span> Utiliser un CDN (Cloudflare, etc.)</li>
+            <li><span class="checkbox"></span> Implémenter le cache navigateur</li>
+            <li><span class="checkbox"></span> Différer le JavaScript non critique</li>
+            <li><span class="checkbox"></span> Précharger les ressources critiques (preload, prefetch)</li>
+            <li><span class="checkbox"></span> Réduire le nombre de requêtes HTTP</li>
+            <li><span class="checkbox"></span> Optimiser le TTFB (Time To First Byte) < 600ms</li>
+        </ul>
+
+        <div class="subsection">Hébergement</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Choisir un hébergement performant (SSD, RAM suffisante)</li>
+            <li><span class="checkbox"></span> Activer HTTP/2 ou HTTP/3</li>
+            <li><span class="checkbox"></span> Configurer un serveur de cache (Redis, Memcached)</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📱</span>
+            <span>5. Mobile & Expérience Utilisateur</span>
+        </div>
+
+        <div class="subsection">Mobile-First</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Design 100% responsive (mobile, tablette, desktop)</li>
+            <li><span class="checkbox"></span> Tester avec Google Mobile-Friendly Test</li>
+            <li><span class="checkbox"></span> Éviter les pop-ups intrusifs sur mobile</li>
+            <li><span class="checkbox"></span> Augmenter la taille des boutons (min 44x44px)</li>
+            <li><span class="checkbox"></span> Tester sur différents appareils (iOS, Android)</li>
+        </ul>
+
+        <div class="subsection">UX & Navigation</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Réduire le taux de rebond (< 50%)</li>
+            <li><span class="checkbox"></span> Augmenter le temps moyen sur la page (> 2 min)</li>
+            <li><span class="checkbox"></span> Améliorer la lisibilité (taille police 16px min, contraste)</li>
+            <li><span class="checkbox"></span> Ajouter un moteur de recherche interne</li>
+            <li><span class="checkbox"></span> Créer des CTA clairs et visibles</li>
+            <li><span class="checkbox"></span> Réduire les formulaires (max 3-5 champs)</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">🔗</span>
+            <span>6. Liens & Autorité</span>
+        </div>
+
+        <div class="subsection">Backlinks</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Obtenir des backlinks de sites d'autorité (DR 50+)</li>
+            <li><span class="checkbox"></span> Créer du contenu linkable (études, infographies)</li>
+            <li><span class="checkbox"></span> Guest posting sur des blogs pertinents</li>
+            <li><span class="checkbox"></span> Récupérer les backlinks perdus (broken link building)</li>
+            <li><span class="checkbox"></span> Analyser les backlinks des concurrents</li>
+            <li><span class="checkbox"></span> Désavouer les liens toxiques (Google Disavow Tool)</li>
+        </ul>
+
+        <div class="subsection">Liens Sortants</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Lier vers des sources d'autorité (études, stats)</li>
+            <li><span class="checkbox"></span> Ajouter rel="nofollow" aux liens sponsorisés</li>
+            <li><span class="checkbox"></span> Vérifier les liens cassés (404) mensuellement</li>
+        </ul>
+
+        <div class="subsection">E-A-T (Expertise, Authority, Trust)</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Créer une page "À propos" détaillée</li>
+            <li><span class="checkbox"></span> Afficher les auteurs avec bio et photo</li>
+            <li><span class="checkbox"></span> Ajouter des témoignages clients</li>
+            <li><span class="checkbox"></span> Publier des études de cas</li>
+            <li><span class="checkbox"></span> Obtenir des mentions dans la presse</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📍</span>
+            <span>7. SEO Local</span>
+        </div>
+
+        <div class="subsection">Google Business Profile</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Créer et optimiser Google Business Profile</li>
+            <li><span class="checkbox"></span> Vérifier l'adresse (code postal)</li>
+            <li><span class="checkbox"></span> Ajouter des photos de qualité (10+ photos)</li>
+            <li><span class="checkbox"></span> Choisir les bonnes catégories</li>
+            <li><span class="checkbox"></span> Répondre aux avis clients (tous les avis)</li>
+            <li><span class="checkbox"></span> Publier des posts régulièrement</li>
+        </ul>
+
+        <div class="subsection">Citations Locales</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> S'inscrire sur les annuaires locaux (Pages Jaunes, etc.)</li>
+            <li><span class="checkbox"></span> Uniformiser NAP (Name, Address, Phone) partout</li>
+            <li><span class="checkbox"></span> Créer une page "Contact" avec adresse et carte</li>
+            <li><span class="checkbox"></span> Cibler des mots-clés locaux (ex: "agence SEO Paris")</li>
+        </ul>
+
+        <div class="subsection">Avis Clients</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Obtenir 20+ avis Google (note moyenne > 4.5)</li>
+            <li><span class="checkbox"></span> Répondre à tous les avis (positifs et négatifs)</li>
+            <li><span class="checkbox"></span> Mettre en place un système de collecte d'avis</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="section">
+        <div class="section-title">
+            <span class="emoji">📊</span>
+            <span>8. Analytics & Suivi</span>
+        </div>
+
+        <div class="subsection">Outils Analytics</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Installer Google Analytics 4 (GA4)</li>
+            <li><span class="checkbox"></span> Configurer Google Search Console</li>
+            <li><span class="checkbox"></span> Installer Google Tag Manager (GTM)</li>
+            <li><span class="checkbox"></span> Configurer les objectifs de conversion</li>
+            <li><span class="checkbox"></span> Créer des tableaux de bord personnalisés</li>
+        </ul>
+
+        <div class="subsection">KPIs à Suivre</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Trafic organique (mensuel)</li>
+            <li><span class="checkbox"></span> Positions des mots-clés (top 10, top 3, #1)</li>
+            <li><span class="checkbox"></span> Taux de rebond (objectif < 50%)</li>
+            <li><span class="checkbox"></span> Temps moyen sur la page (objectif > 2 min)</li>
+            <li><span class="checkbox"></span> Taux de conversion (objectif > 3%)</li>
+            <li><span class="checkbox"></span> Pages par session (objectif > 2.5)</li>
+            <li><span class="checkbox"></span> Nombre de backlinks (croissance mensuelle)</li>
+        </ul>
+
+        <div class="subsection">Rapports & Audits</div>
+        <ul class="checklist">
+            <li><span class="checkbox"></span> Audit SEO complet trimestriel</li>
+            <li><span class="checkbox"></span> Rapport mensuel de performance</li>
+            <li><span class="checkbox"></span> Analyse concurrentielle (tous les 6 mois)</li>
+            <li><span class="checkbox"></span> Surveiller les pénalités Google (Manual Actions)</li>
+        </ul>
+    </div>
+
+    <!-- BONUS CALENDAR -->
+    <div class="bonus">
+        <h2>🎁 <span>BONUS : Calendrier SEO 2026</span></h2>
+        <p style="color: #555; margin-bottom: 20px;">
+            Planifiez vos actions SEO avec ce calendrier annuel pour maintenir une croissance constante.
+        </p>
+
+        <div class="calendar">
+            <div class="calendar-section">
+                <h3>📅 Actions Quotidiennes</h3>
+                <ul>
+                    <li>Surveiller les positions clés (Search Console)</li>
+                    <li>Répondre aux avis clients (Google Business Profile)</li>
+                    <li>Vérifier les erreurs critiques (Search Console)</li>
+                </ul>
+            </div>
+
+            <div class="calendar-section">
+                <h3>📅 Actions Hebdomadaires</h3>
+                <ul>
+                    <li>Publier 1-2 articles de blog optimisés SEO</li>
+                    <li>Partager le contenu sur les réseaux sociaux</li>
+                    <li>Analyser le trafic organique (tendances)</li>
+                    <li>Créer 2-3 backlinks de qualité</li>
+                </ul>
+            </div>
+
+            <div class="calendar-section">
+                <h3>📅 Actions Mensuelles</h3>
+                <ul>
+                    <li>Audit complet des performances (GA4 + Search Console)</li>
+                    <li>Optimiser les pages à faible performance</li>
+                    <li>Mettre à jour le contenu existant (evergreen)</li>
+                    <li>Analyser les backlinks (nouveaux, perdus, toxiques)</li>
+                    <li>Vérifier les liens cassés (404)</li>
+                    <li>Améliorer 3-5 pages stratégiques</li>
+                </ul>
+            </div>
+
+            <div class="calendar-section">
+                <h3>📅 Actions Trimestrielles</h3>
+                <ul>
+                    <li>Audit SEO technique complet</li>
+                    <li>Analyse concurrentielle approfondie</li>
+                    <li>Mise à jour de la stratégie de mots-clés</li>
+                    <li>Test A/B des CTAs et landing pages</li>
+                    <li>Optimisation des Core Web Vitals</li>
+                </ul>
+            </div>
+
+            <div class="calendar-section">
+                <h3>📅 Actions Annuelles</h3>
+                <ul>
+                    <li>Refonte complète de la stratégie SEO</li>
+                    <li>Mise à jour des contenus piliers (guides complets)</li>
+                    <li>Migration vers les nouvelles technologies (si nécessaire)</li>
+                    <li>Formation continue sur les algorithmes Google</li>
+                    <li>Planification budget SEO pour l'année suivante</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="brand">SITEONWEB</div>
+        <div class="contact">🌐 www.siteonweb.fr</div>
+        <div class="contact">📧 contact@siteonweb.fr</div>
+        <div class="contact">📱 WhatsApp : Disponible sur le site</div>
+        <div style="margin-top: 20px; font-size: 12px; color: #999;">
+            © 2026 SiteOnWeb - Tous droits réservés
+        </div>
+    </div>
+</body>
+</html>
