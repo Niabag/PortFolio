@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function ChecklistSEO() {
   const { lang } = useLanguage();
@@ -40,6 +41,9 @@ export default function ChecklistSEO() {
                   ? "Avant de mettre votre site en ligne, assurez-vous que tous ces éléments SEO sont en place pour maximiser vos chances d'être bien référencé sur Google."
                   : 'Before putting your site online, make sure all these SEO essentials are in place to maximize your chances of ranking well on Google.'}
               </p>
+
+              {/* CTA Top - Audit SEO */}
+              <ArticleCTA category="seo" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4">
                 {lang === 'fr' ? 'Optimisation technique (vitesse, mobile-friendly, HTTPS)' : 'Technical optimization (speed, mobile-friendly, HTTPS)'}
@@ -82,6 +86,9 @@ export default function ChecklistSEO() {
                 <li><strong className="text-white">Hiérarchie Hn :</strong> H2, H3, H4 dans l'ordre logique</li>
                 <li><strong className="text-white">Balises Alt images :</strong> Description pertinente avec mots-clés</li>
               </ul>
+
+              {/* CTA Middle - Audit SEO */}
+              <ArticleCTA category="seo" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4">
                 {lang === 'fr' ? 'Sitemap XML et robots.txt' : 'XML sitemap and robots.txt'}

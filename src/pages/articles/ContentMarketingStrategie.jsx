@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function ContentMarketingStrategie() {
   const { lang } = useLanguage();
@@ -51,6 +52,9 @@ export default function ContentMarketingStrategie() {
                   ? 'Le content marketing génère 3x plus de leads que la publicité traditionnelle pour 62% moins cher. 70% des consommateurs préfèrent découvrir une entreprise via du contenu plutôt que de la pub. C\'est l\'inbound marketing par excellence.'
                   : 'Content marketing generates 3x more leads than traditional advertising for 62% less. 70% of consumers prefer to discover a company through content rather than ads. It\'s inbound marketing par excellence.'}
               </p>
+
+              {/* CTA Top - Consultation Marketing */}
+              <ArticleCTA category="marketing" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Les 7 étapes d\'une stratégie content marketing' : 'The 7 steps of a content marketing strategy'}
@@ -123,6 +127,9 @@ export default function ContentMarketingStrategie() {
                 <li>{lang === 'fr' ? 'Groupes et forums pertinents' : 'Relevant groups and forums'}</li>
                 <li>{lang === 'fr' ? 'Republication (Medium, LinkedIn Articles)' : 'Republication (Medium, LinkedIn Articles)'}</li>
               </ul>
+
+              {/* CTA Middle - Consultation Marketing */}
+              <ArticleCTA category="marketing" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Types de contenu qui performent' : 'Content types that perform'}

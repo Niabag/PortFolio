@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function ApiFirstDevelopment() {
   const { lang } = useLanguage();
@@ -57,6 +58,9 @@ export default function ApiFirstDevelopment() {
                   : 'This methodology allows total decoupling between frontend and backend, facilitating scalability, reusability and parallel team work. It has become the standard for modern applications.'}
               </p>
 
+              {/* CTA Top */}
+              <ArticleCTA category="dev" position="top" />
+
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Avantages de l\'approche API-first' : 'Benefits of the API-first approach'}
               </h2>
@@ -99,6 +103,9 @@ export default function ApiFirstDevelopment() {
                   ? 'Une seule requête pour multiples ressources, typage fort, introspection'
                   : 'Single request for multiple resources, strong typing, introspection'}
               </p>
+
+              {/* CTA Middle */}
+              <ArticleCTA category="dev" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Bonnes pratiques de conception d\'API' : 'API design best practices'}

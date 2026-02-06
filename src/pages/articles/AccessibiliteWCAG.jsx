@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function AccessibiliteWCAG() {
   const { lang } = useLanguage();
@@ -61,6 +62,9 @@ export default function AccessibiliteWCAG() {
                   ? 'Au-delà de l\'aspect légal, l\'accessibilité améliore l\'expérience utilisateur pour tous : navigation au clavier pour les power users, sous-titres pour les vidéos consultées dans les transports, meilleur contraste pour les personnes âgées. C\'est aussi un avantage SEO : Google privilégie les sites bien structurés et accessibles.'
                   : 'Beyond the legal aspect, accessibility improves user experience for everyone: keyboard navigation for power users, subtitles for videos viewed in transit, better contrast for the elderly. It\'s also an SEO advantage: Google favors well-structured and accessible sites.'}
               </p>
+
+              {/* CTA Top */}
+              <ArticleCTA category="dev" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Comprendre les WCAG 2.2 : Les 4 principes fondamentaux' : 'Understanding WCAG 2.2: The 4 fundamental principles'}
@@ -125,10 +129,13 @@ export default function AccessibiliteWCAG() {
                 <li><strong className="text-white">{lang === 'fr' ? 'Compatibilité :' : 'Compatibility:'}</strong> {lang === 'fr' ? 'Tester avec NVDA, JAWS, VoiceOver' : 'Test with NVDA, JAWS, VoiceOver'}</li>
               </ul>
 
+              {/* CTA Middle */}
+              <ArticleCTA category="dev" position="middle" />
+
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Techniques d\'implémentation pratiques' : 'Practical implementation techniques'}
               </h2>
-              
+
               <h3 className="text-2xl font-bold text-white mb-3 mt-8">
                 {lang === 'fr' ? 'HTML sémantique' : 'Semantic HTML'}
               </h3>

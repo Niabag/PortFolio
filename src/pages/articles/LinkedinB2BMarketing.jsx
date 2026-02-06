@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function LinkedinB2BMarketing() {
   const { lang } = useLanguage();
@@ -51,6 +52,9 @@ export default function LinkedinB2BMarketing() {
                   ? '80% des leads B2B proviennent de LinkedIn. C\'est LA plateforme professionnelle avec 900 millions d\'utilisateurs dont 67 millions de décideurs. 4 personnes sur 5 influencent les décisions d\'achat depuis LinkedIn.'
                   : '80% of B2B leads come from LinkedIn. It\'s THE professional platform with 900 million users including 67 million decision-makers. 4 out of 5 people influence purchasing decisions from LinkedIn.'}
               </p>
+
+              {/* CTA Top */}
+              <ArticleCTA category="marketing" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Optimiser votre profil LinkedIn' : 'Optimize your LinkedIn profile'}
@@ -104,6 +108,9 @@ export default function LinkedinB2BMarketing() {
                 <li>{lang === 'fr' ? 'InMail illimités vers prospects' : 'Unlimited InMail to prospects'}</li>
                 <li>{lang === 'fr' ? 'Intégration CRM (HubSpot, Salesforce)' : 'CRM integration (HubSpot, Salesforce)'}</li>
               </ul>
+
+              {/* CTA Middle */}
+              <ArticleCTA category="marketing" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Prospection LinkedIn : La méthode qui fonctionne' : 'LinkedIn prospecting: The method that works'}

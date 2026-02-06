@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../../LanguageContext';
 import ArticleLayout from '../../components/ArticleLayout';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function IaDeveloppementWeb() {
   const { lang } = useLanguage();
@@ -21,6 +22,9 @@ export default function IaDeveloppementWeb() {
             <p className="lead text-xl mb-8">
               L'intelligence artificielle révolutionne le développement web en 2025. GitHub Copilot, ChatGPT, et d'autres outils d'IA transforment radicalement la façon dont nous créons des sites internet.
             </p>
+
+            {/* CTA Top - Calculateur de Prix Dev */}
+            <ArticleCTA category="dev" position="top" />
 
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">🤖 Les outils d'IA qui changent le développement web</h2>
             
@@ -81,6 +85,9 @@ export default function IaDeveloppementWeb() {
               L'IA analyse votre contenu et suggère des améliorations SEO : mots-clés, structure, meta tags, liens internes. Des outils comme <strong>Surfer SEO</strong> et <strong>Clearscope</strong> utilisent l'IA pour maximiser votre visibilité.
             </p>
 
+            {/* CTA Middle - Calculateur de Prix Dev */}
+            <ArticleCTA category="dev" position="middle" />
+
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">⚠️ Limites et précautions</h2>
 
             <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-6 mb-6">
@@ -130,6 +137,9 @@ export default function IaDeveloppementWeb() {
             <p className="lead text-xl mb-8">
               Artificial intelligence is revolutionizing web development in 2025. GitHub Copilot, ChatGPT, and other AI tools are radically transforming how we create websites.
             </p>
+
+            {/* CTA Top - Price Calculator Dev */}
+            <ArticleCTA category="dev" position="top" />
 
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">🤖 AI Tools Changing Web Development</h2>
             
@@ -189,6 +199,9 @@ export default function IaDeveloppementWeb() {
             <p className="mb-6">
               AI analyzes your content and suggests SEO improvements: keywords, structure, meta tags, internal links. Tools like <strong>Surfer SEO</strong> and <strong>Clearscope</strong> use AI to maximize your visibility.
             </p>
+
+            {/* CTA Middle - Price Calculator Dev */}
+            <ArticleCTA category="dev" position="middle" />
 
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">⚠️ Limitations and Precautions</h2>
 

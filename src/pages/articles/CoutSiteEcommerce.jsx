@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function CoutSiteEcommerce() {
   const { lang } = useLanguage();
@@ -49,6 +50,9 @@ export default function CoutSiteEcommerce() {
                 <li>{lang === 'fr' ? 'Le niveau de personnalisation requis' : 'Required level of customization'}</li>
               </ul>
 
+              {/* CTA Top - Calculateur de Prix E-commerce */}
+              <ArticleCTA category="ecommerce" position="top" />
+
               <h2 className="text-3xl font-bold text-primary-red mb-4">
                 {lang === 'fr' ? 'Fourchettes de prix par type de projet' : 'Price ranges by project type'}
               </h2>
@@ -76,6 +80,9 @@ export default function CoutSiteEcommerce() {
                 <strong className="text-primary-red">{lang === 'fr' ? 'Budget : 25 000€ - 100 000€+' : 'Budget: €25,000 - €100,000+'}</strong><br />
                 {lang === 'fr' ? 'Plateforme entièrement personnalisée avec React/Node.js. Fonctionnalités complexes, architecture scalable, performances optimales, intégrations multiples, tableau de bord avancé.' : 'Fully custom platform with React/Node.js. Complex features, scalable architecture, optimal performance, multiple integrations, advanced dashboard.'}
               </p>
+
+              {/* CTA Middle - Calculateur de Prix E-commerce */}
+              <ArticleCTA category="ecommerce" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4">
                 {lang === 'fr' ? 'Coûts récurrents à prévoir' : 'Recurring costs to expect'}

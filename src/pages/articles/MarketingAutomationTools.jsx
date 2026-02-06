@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function MarketingAutomationTools() {
   const { lang } = useLanguage();
@@ -51,6 +52,9 @@ export default function MarketingAutomationTools() {
                   ? 'Le marketing automation permet d\'automatiser les tâches répétitives : emails, segmentation, scoring, nurturing. Résultat : 14.5% d\'augmentation de productivité et 12.2% de réduction des coûts marketing. 67% des entreprises utilisent déjà une plateforme d\'automation.'
                   : 'Marketing automation allows automating repetitive tasks: emails, segmentation, scoring, nurturing. Result: 14.5% increase in productivity and 12.2% reduction in marketing costs. 67% of companies already use an automation platform.'}
               </p>
+
+              {/* CTA Top */}
+              <ArticleCTA category="marketing" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Comparatif des meilleurs outils' : 'Comparison of the best tools'}
@@ -120,6 +124,9 @@ export default function MarketingAutomationTools() {
                 <li><strong className="text-white">{lang === 'fr' ? 'Points faibles :' : 'Weaknesses:'}</strong> {lang === 'fr' ? 'Prix élevé, courbe d\'apprentissage' : 'High price, learning curve'}</li>
                 <li><strong className="text-white">{lang === 'fr' ? 'Note :' : 'Rating:'}</strong> 8.5/10 (e-commerce)</li>
               </ul>
+
+              {/* CTA Middle */}
+              <ArticleCTA category="marketing" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Comment choisir votre outil ?' : 'How to choose your tool?'}

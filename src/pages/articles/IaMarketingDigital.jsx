@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../../LanguageContext';
 import ArticleLayout from '../../components/ArticleLayout';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function IaMarketingDigital() {
   const { lang } = useLanguage();
@@ -21,6 +22,9 @@ export default function IaMarketingDigital() {
             <p className="lead text-xl mb-8">
               L'intelligence artificielle transforme radicalement le marketing digital en 2025. ChatGPT, les outils d'automatisation IA et l'analyse prédictive redéfinissent les stratégies marketing des entreprises performantes.
             </p>
+
+            {/* CTA Top */}
+            <ArticleCTA category="marketing" position="top" />
 
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">🎯 ChatGPT et création de contenu marketing</h2>
 
@@ -102,6 +106,9 @@ export default function IaMarketingDigital() {
               <li><strong>Créatifs générés par IA</strong> : teste des milliers de variantes visuelles et textuelles</li>
               <li><strong>Budget allocation</strong> : répartit le budget entre les canaux les plus performants</li>
             </ul>
+
+            {/* CTA Middle */}
+            <ArticleCTA category="marketing" position="middle" />
 
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">🛠️ Les meilleurs outils IA marketing en 2025</h2>
 

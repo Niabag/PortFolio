@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
+import PriceCalculator from './PriceCalculator.jsx';
+import SEOAuditQuiz from './SEOAuditQuiz.jsx';
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const [showCalculator, setShowCalculator] = useState(false);
+  const [showSEOQuiz, setShowSEOQuiz] = useState(false);
+
   const heroTitle = t('hero.title');
   const heroSubtitle = t('hero.subtitle');
   const heroDescription = t('hero.description');
@@ -26,21 +31,37 @@ export default function Hero() {
             {heroDescription}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <button
+              onClick={() => setShowCalculator(true)}
+              className="bg-gradient-to-r from-primary-red to-red-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-red-700 hover:to-red-800 transition transform hover:scale-105 shadow-lg"
+            >
+              💰 {lang === 'fr' ? 'Estimez votre site' : 'Estimate Your Site'}
+            </button>
+            <button
+              onClick={() => setShowSEOQuiz(true)}
+              className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105 shadow-lg"
+            >
+              🔍 {lang === 'fr' ? 'Audit SEO gratuit' : 'Free SEO Audit'}
+            </button>
             <a
               href="#realisations"
-              className="bg-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-red-700 transition transform hover:scale-105"
-            >
-              {t('hero.viewProjects')}
-            </a>
-            <a
-              href="#contact"
               className="border-2 border-primary-red px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-primary-red transition transform hover:scale-105"
             >
-              {t('hero.contactMe')}
+              {t('hero.viewProjects')}
             </a>
           </div>
         </div>
       </div>
+
+      {/* Calculateur de Prix */}
+      {showCalculator && (
+        <PriceCalculator onClose={() => setShowCalculator(false)} />
+      )}
+
+      {/* Quiz Audit SEO */}
+      {showSEOQuiz && (
+        <SEOAuditQuiz onClose={() => setShowSEOQuiz(false)} />
+      )}
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function ErreursRefonte() {
   const { lang } = useLanguage();
@@ -36,10 +37,13 @@ export default function ErreursRefonte() {
 
             <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-gray-300 mb-8 leading-relaxed text-lg">
-                {lang === 'fr' 
+                {lang === 'fr'
                   ? "La refonte d'un site web est un projet stratégique qui peut transformer votre présence en ligne. Cependant, certaines erreurs peuvent compromettre le succès de votre projet. Voici les 5 pièges les plus courants et comment les éviter."
                   : 'A website redesign is a strategic project that can transform your online presence. However, certain mistakes can compromise your success. Here are the 5 most common pitfalls and how to avoid them.'}
               </p>
+
+              {/* CTA Top */}
+              <ArticleCTA category="dev" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4">
                 {lang === 'fr' ? "Erreur #1 : Ne pas définir d'objectifs clairs" : 'Mistake #1: Not defining clear objectives'}
@@ -92,6 +96,9 @@ export default function ErreursRefonte() {
                 <li>{lang === 'fr' ? 'Maintien des backlinks de qualité' : 'Keep quality backlinks'}</li>
                 <li>{lang === 'fr' ? 'Surveillance des positions post-lancement' : 'Monitor rankings after launch'}</li>
               </ul>
+
+              {/* CTA Middle */}
+              <ArticleCTA category="dev" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4">
                 {lang === 'fr' ? "Erreur #4 : Ignorer l'expérience utilisateur (UX)" : 'Mistake #4: Ignoring user experience (UX)'}

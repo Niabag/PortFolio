@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function CybersecuriteWeb2025() {
   const { lang } = useLanguage();
@@ -56,6 +57,9 @@ export default function CybersecuriteWeb2025() {
                   ? 'La sécurité web n\'est plus optionnelle : c\'est une nécessité absolue pour protéger vos données, celles de vos clients, et votre activité. Le RGPD impose des sanctions pouvant atteindre 4% du chiffre d\'affaires en cas de négligence.'
                   : 'Web security is no longer optional: it\'s an absolute necessity to protect your data, your customers\' data, and your business. GDPR imposes penalties of up to 4% of turnover in case of negligence.'}
               </p>
+
+              {/* CTA Top */}
+              <ArticleCTA category="dev" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Les 10 menaces principales en 2025' : 'The top 10 threats in 2025'}
@@ -139,10 +143,13 @@ export default function CybersecuriteWeb2025() {
                 <li><strong className="text-white">{lang === 'fr' ? '10. Ransomware :' : '10. Ransomware:'}</strong> {lang === 'fr' ? 'Chiffrement de données contre rançon' : 'Data encryption for ransom'}</li>
               </ul>
 
+              {/* CTA Middle */}
+              <ArticleCTA category="dev" position="middle" />
+
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Checklist sécurité : 20 actions essentielles' : 'Security checklist: 20 essential actions'}
               </h2>
-              
+
               <h3 className="text-2xl font-bold text-white mb-3 mt-8">
                 {lang === 'fr' ? 'Niveau base (obligatoire)' : 'Base level (mandatory)'}
               </h3>

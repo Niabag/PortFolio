@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../../LanguageContext';
 import ArticleLayout from '../../components/ArticleLayout';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function GoogleAnalytics4Guide() {
   const { lang } = useLanguage();
@@ -21,6 +22,9 @@ export default function GoogleAnalytics4Guide() {
             <p className="lead text-xl mb-8">
               Google Analytics 4 a remplacé Universal Analytics en juillet 2023. En 2025, maîtriser GA4 est devenu indispensable pour tout professionnel du marketing digital. Ce guide vous explique tout de A à Z.
             </p>
+
+            {/* CTA Top */}
+            <ArticleCTA category="marketing" position="top" />
 
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">🆕 GA4 vs Universal Analytics : Les changements majeurs</h2>
 
@@ -148,6 +152,9 @@ gtag('event', 'select_promotion', {
 });`}
               </pre>
             </div>
+
+            {/* CTA Middle */}
+            <ArticleCTA category="marketing" position="middle" />
 
             <h2 className="text-3xl font-bold text-white mt-12 mb-6">🔮 Insights prédictifs GA4</h2>
 

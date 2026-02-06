@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function EmailMarketingAutomation() {
   const { lang } = useLanguage();
@@ -52,6 +53,9 @@ export default function EmailMarketingAutomation() {
                   : 'Email marketing generates an average of €42 in revenue for every €1 invested (ROI of 4200%). It\'s the most profitable digital channel, ahead of social media (€28) and SEO (€22). In 2025, with automation, you can multiply these results.'}
               </p>
 
+              {/* CTA Top */}
+              <ArticleCTA category="marketing" position="top" />
+
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Les 7 séquences d\'emails automatisées essentielles' : 'The 7 essential automated email sequences'}
               </h2>
@@ -97,6 +101,9 @@ export default function EmailMarketingAutomation() {
                 <li><strong className="text-white">{lang === 'fr' ? '6. Anniversaire/Birthday :' : '6. Birthday:'}</strong> {lang === 'fr' ? 'Cadeau ou réduction = taux ouverture 60%+' : 'Gift or discount = 60%+ open rate'}</li>
                 <li><strong className="text-white">{lang === 'fr' ? '7. VIP/Fidélité :' : '7. VIP/Loyalty:'}</strong> {lang === 'fr' ? 'Récompenses pour meilleurs clients' : 'Rewards for best customers'}</li>
               </ul>
+
+              {/* CTA Middle */}
+              <ArticleCTA category="marketing" position="middle" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Bonnes pratiques pour maximiser les conversions' : 'Best practices to maximize conversions'}

@@ -3,6 +3,7 @@ import { useLanguage } from '../../LanguageContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import AnimatedBackground from '../../components/AnimatedBackground';
+import ArticleCTA from '../../components/ArticleCTA';
 
 export default function JamstackVsTraditionnel() {
   const { lang } = useLanguage();
@@ -61,6 +62,9 @@ export default function JamstackVsTraditionnel() {
                   ? 'Des frameworks comme Next.js, Gatsby, Nuxt, et Astro ont popularisé cette approche, offrant des outils puissants pour créer des sites Jamstack performants et évolutifs.'
                   : 'Frameworks like Next.js, Gatsby, Nuxt, and Astro have popularized this approach, offering powerful tools to create performant and scalable Jamstack sites.'}
               </p>
+
+              {/* CTA Top */}
+              <ArticleCTA category="dev" position="top" />
 
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Architecture traditionnelle : Le modèle LAMP/MEAN' : 'Traditional Architecture: The LAMP/MEAN model'}
@@ -173,10 +177,13 @@ export default function JamstackVsTraditionnel() {
                   : 'Traditional architecture can be competitive with advanced optimization (Varnish cache, CDN, lazy loading) but requires more effort and maintenance to achieve the same results.'}
               </p>
 
+              {/* CTA Middle */}
+              <ArticleCTA category="dev" position="middle" />
+
               <h2 className="text-3xl font-bold text-primary-red mb-4 mt-12">
                 {lang === 'fr' ? 'Cas d\'usage : Quand choisir quoi ?' : 'Use cases: When to choose what?'}
               </h2>
-              
+
               <h3 className="text-2xl font-bold text-white mb-3 mt-8">
                 {lang === 'fr' ? 'Jamstack est idéal pour :' : 'Jamstack is ideal for:'}
               </h3>
