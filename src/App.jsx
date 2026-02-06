@@ -15,7 +15,7 @@ import AnimatedBackground from './components/AnimatedBackground.jsx';
 import SocialButtons from './components/SocialButtons.jsx';
 import ServiceDetail from './components/ServiceDetail.jsx';
 import Booking from './components/Booking.jsx';
-import WhatsAppButton from './components/WhatsAppButton.jsx';
+import SmartFloatingButton from './components/SmartFloatingButton.jsx';
 import TawkToChat from './components/TawkToChat.jsx';
 
 function MainContent() {
@@ -68,11 +68,11 @@ function MainContent() {
   // Sinon, afficher la page d'accueil normale
   return (
     <>
-      <SocialButtons />
+      <SocialButtons />  {/* Facebook/Instagram désactivés - voir SocialButtons.jsx */}
       <AnimatedBackground />
       <Navbar />
-      <TawkToChat />  {/* Chat en direct Tawk.to configuré */}
-      <WhatsAppButton />  {/* Bouton WhatsApp actif */}
+      <TawkToChat />  {/* Chat Tawk.to - géré par SmartFloatingButton */}
+      <SmartFloatingButton />  {/* Nouveau : Bouton intelligent WhatsApp/Chat */}
       <main className="scroll-container">
         <Hero />
         <Competences />

@@ -3,7 +3,22 @@
     "allow": [
       "Bash(git commit:*)",
       "Bash(npm run build:*)",
-      "Bash(git add:*)"
+      "Bash(npx bmap-methode install:*)",
+      "Bash(npx bmad-method:*)",
+      "Bash(cmd.exe /c \"npx bmad-method install\")",
+      "Bash(\"C:\\\\Program Files\\\\nodejs\\\\npx.cmd\" bmad-method install)",
+      "Bash(claude --list-skills:*)",
+      "Bash(command -v:*)",
+      "Bash(npx bmap-methode:*)",
+      "Bash(npm search:*)",
+      "Bash(npm root:*)",
+      "Bash(npm view:*)",
+      "Bash(node:*)",
+      "Bash(gh repo view:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm --version:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

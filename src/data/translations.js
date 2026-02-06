@@ -8,15 +8,15 @@ export const translations = {
       blog: 'Blog',
       contact: 'Contact',
       faq: 'FAQ',
-      booking: 'Rendez-vous'
+      booking: 'Réserver mon audit gratuit (15 min)'
     },
     hero: {
       title: 'Site On Web',
       subtitle: 'Agence web et marketing digital spécialisée dans la création de sites internet',
       description:
         'Création de sites web sur-mesure et stratégies marketing digital pour booster votre entreprise en ligne. Spécialistes de la création de sites internet professionnels et du marketing digital, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO, accompagnés de campagnes marketing performantes.',
-      viewProjects: 'Voir nos dernières réalisations',
-      contactMe: 'Nous contacter'
+      viewProjects: 'Découvrir mes réalisations',
+      contactMe: 'Recevez votre devis en 24h'
     },
     skills: {
       title: { part1: 'Nos', part2: 'Services' },
@@ -204,7 +204,7 @@ export const translations = {
       namePlaceholder: 'Votre nom',
       emailPlaceholder: 'Votre email',
       messagePlaceholder: 'Votre message',
-      send: 'Envoyer le message',
+      send: 'Recevoir ma réponse sous 24h',
       whatsapp: 'WhatsApp: +33 6 48 45 69 37',
       country: 'France',
       invalidEmail: 'Adresse e-mail invalide.',
@@ -235,9 +235,9 @@ export const translations = {
       subtitle: 'Conseils, guides et actualités sur la création de sites web, le développement et le marketing digital',
       readArticle: 'Lire l\'article',
       backToBlog: 'Retour au blog',
-      needWebsite: 'Besoin d\'un site web professionnel ?',
+      needWebsite: 'Besoin d\'aide pour votre projet ?',
       agencySupport: 'Notre agence web et marketing vous accompagne dans tous vos projets digitaux : création de sites, refonte, SEO, réseaux sociaux, publicité en ligne et maintenance.',
-      requestQuote: 'Demander un devis gratuit'
+      requestQuote: 'Obtenez un devis gratuit'
     },
     faq: {
       title: { part1: 'Foire aux', part2: 'Questions' },
@@ -389,15 +389,15 @@ export const translations = {
       blog: 'Blog',
       contact: 'Contact',
       faq: 'FAQ',
-      booking: 'Appointment'
+      booking: 'Book My Free Audit (15 min)'
     },
     hero: {
       title: 'Site On Web',
       subtitle: 'Web and digital marketing agency specialized in website creation',
       description:
         'We build tailor-made websites and digital marketing strategies to boost your business online. As specialists in creating professional websites and digital marketing, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites, accompanied by high-performance marketing campaigns.',
-      viewProjects: 'See our latest projects',
-      contactMe: 'Contact us'
+      viewProjects: 'Explore My Work',
+      contactMe: 'Get Your Quote in 24h'
     },
     skills: {
       title: { part1: 'Our', part2: 'Services' },
@@ -585,7 +585,7 @@ export const translations = {
       namePlaceholder: 'Your name',
       emailPlaceholder: 'Your email',
       messagePlaceholder: 'Your message',
-      send: 'Send message',
+      send: 'Get My Response Within 24h',
       whatsapp: 'WhatsApp: +33 6 48 45 69 37',
       country: 'France',
       invalidEmail: 'Invalid email address.',
@@ -616,9 +616,9 @@ export const translations = {
       subtitle: 'Tips, guides and news about web development, design and digital marketing',
       readArticle: 'Read article',
       backToBlog: 'Back to blog',
-      needWebsite: 'Need a professional website?',
+      needWebsite: 'Need Help With Your Project?',
       agencySupport: 'Our web and marketing agency supports you in all your digital projects: website creation, redesign, SEO, social media, online advertising, and maintenance.',
-      requestQuote: 'Request a free quote'
+      requestQuote: 'Get a Free Quote'
     },
     faq: {
       title: { part1: 'Frequently Asked', part2: 'Questions' },

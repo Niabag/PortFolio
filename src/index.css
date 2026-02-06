@@ -305,7 +305,35 @@ footer {
   box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
 }
 
-/* Floating social buttons - tous alignés à droite verticalement collés au bord */
+/* Floating social buttons - DÉSACTIVÉS pour optimisation funnel conversion */
+/* Les boutons sont maintenant gérés par SmartFloatingButton.jsx */
+.instagram-float {
+  display: none !important; /* Masqué - optimisation conversion */
+}
+
+.instagram-float:hover {
+  /* Styles désactivés */
+}
+
+.facebook-float {
+  display: none !important; /* Masqué - optimisation conversion */
+}
+
+.facebook-float:hover {
+  /* Styles désactivés */
+}
+
+@media (max-width: 640px) {
+  .instagram-float {
+    display: none !important;
+  }
+
+  .facebook-float {
+    display: none !important;
+  }
+}
+
+/* ANCIEN CODE - Décommentez si vous souhaitez réactiver les boutons
 .instagram-float {
   position: fixed;
   bottom: 320px;
@@ -358,13 +386,14 @@ footer {
     right: 10px;
   }
 
-  .facebook-float {
+  .facebook-flat {
     width: 50px;
     height: 50px;
     bottom: 220px;
     right: 10px;
   }
 }
+*/
 
 @keyframes typing-reveal {
   from {

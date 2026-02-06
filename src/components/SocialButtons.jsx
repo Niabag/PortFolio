@@ -3,8 +3,18 @@ import React from 'react';
 export default function SocialButtons() {
   return (
     <>
-      {/* Bouton Facebook flottant */}
-      <a
+      {/*
+        OPTIMISATION FUNNEL DE CONVERSION
+        Les boutons Facebook et Instagram ont été désactivés car ils :
+        - Créent une distraction visuelle (trop de boutons flottants)
+        - Ne contribuent pas directement à la conversion
+        - Sont remplacés par SmartFloatingButton.jsx qui affiche 1 seul bouton intelligent
+
+        Si vous souhaitez les réactiver, décommentez le code ci-dessous.
+      */}
+
+      {/* Bouton Facebook flottant - DÉSACTIVÉ */}
+      {/* <a
         href="https://www.facebook.com/profile.php?id=61581954327555"
         target="_blank"
         className="facebook-float"
@@ -24,10 +34,10 @@ export default function SocialButtons() {
             d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
           />
         </svg>
-      </a>
+      </a> */}
 
-      {/* Bouton Instagram flottant */}
-      <a
+      {/* Bouton Instagram flottant - DÉSACTIVÉ */}
+      {/* <a
         href="https://www.instagram.com/siteonweb/"
         target="_blank"
         className="instagram-float"
@@ -47,7 +57,7 @@ export default function SocialButtons() {
             d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm10.5 1a1.5 1.5 0 0 0-1.06 2.56A1.5 1.5 0 1 0 17.5 5zm-5.5 2C9.467 7 7 9.467 7 12.5S9.467 18 12.5 18s5.5-2.467 5.5-5.5S15.533 7 12.5 7zm0 2c1.93 0 3.5 1.57 3.5 3.5S14.43 16 12.5 16 9 14.43 9 12.5 10.57 9 12.5 9z"
           />
         </svg>
-      </a>
+      </a> */}
     </>
   );
 }
