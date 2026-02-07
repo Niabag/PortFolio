@@ -3,6 +3,7 @@
     "allow": [
       "Bash(git commit:*)",
       "Bash(npm run build:*)",
+      "Bash(git add:*)",
       "Bash(npx bmap-methode install:*)",
       "Bash(npx bmad-method:*)",
       "Bash(cmd.exe /c \"npx bmad-method install\")",
@@ -18,7 +19,11 @@
       "WebFetch(domain:github.com)",
       "Bash(npm --version:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(npm run dev:*)",
+      "Bash(grep:*)",
+      "Bash(npm install:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
