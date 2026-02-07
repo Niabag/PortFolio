@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useLanguage } from '../LanguageContext.jsx';
 import PriceCalculator from './PriceCalculator.jsx';
 import SEOAuditQuiz from './SEOAuditQuiz.jsx';
@@ -53,14 +54,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Calculateur de Prix */}
-      {showCalculator && (
-        <PriceCalculator onClose={() => setShowCalculator(false)} />
+      {/* Calculateur de Prix - Rendu via Portal */}
+      {showCalculator && createPortal(
+        <PriceCalculator onClose={() => setShowCalculator(false)} />,
+        document.body
       )}
 
-      {/* Quiz Audit SEO */}
-      {showSEOQuiz && (
-        <SEOAuditQuiz onClose={() => setShowSEOQuiz(false)} />
+      {/* Quiz Audit SEO - Rendu via Portal */}
+      {showSEOQuiz && createPortal(
+        <SEOAuditQuiz onClose={() => setShowSEOQuiz(false)} />,
+        document.body
       )}
     </section>
   );
