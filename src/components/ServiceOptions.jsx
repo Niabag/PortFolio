@@ -268,7 +268,7 @@ export default function ServiceOptions() {
                       {lang === 'fr' ? 'Critère' : 'Criteria'}
                     </th>
                     <th className="p-2 sm:p-4 text-center text-white font-bold border-b border-gray-700 text-xs sm:text-base">
-                      🏢 <span className="hidden sm:inline">Agence</span>
+                      🏢 <span className="hidden sm:inline">{lang === 'fr' ? 'Agence' : 'Agency'}</span>
                     </th>
                     <th className="p-2 sm:p-4 text-center text-primary-red font-bold border-b border-gray-700 bg-primary-red/10 text-xs sm:text-base">
                       👨‍💻 <span className="hidden sm:inline">Freelance</span>

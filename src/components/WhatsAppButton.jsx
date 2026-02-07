@@ -64,6 +64,15 @@ export default function WhatsAppButton() {
     // Encoder le message pour l'URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
+    // Tracking GTM - WhatsApp clicked
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'whatsapp_button_clicked',
+        service: formData.service,
+        page_location: window.location.href
+      });
+    }
+
     // Ouvrir WhatsApp
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 

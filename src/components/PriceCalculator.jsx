@@ -251,6 +251,15 @@ const PriceCalculator = ({ onClose }) => {
   };
 
   const handleNext = () => {
+    // Tracking GTM - Calculator step completed
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'calculator_step_completed',
+        step_number: step,
+        page_location: window.location.href
+      });
+    }
+
     if (step < 5) setStep(step + 1);
     else if (step === 5) setStep(6); // Afficher le résultat
   };

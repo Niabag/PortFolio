@@ -204,6 +204,14 @@ const SEOAuditQuiz = ({ onClose }) => {
   const handleAnswer = (answer) => {
     setAnswers(prev => ({ ...prev, [currentQuestion]: answer }));
 
+    // Tracking GTM - First question answered (quiz actually started)
+    if (currentQuestion === 0 && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'seo_quiz_started',
+        page_location: window.location.href
+      });
+    }
+
     if (currentQuestion < questions.length - 1) {
       setTimeout(() => setCurrentQuestion(currentQuestion + 1), 300);
     } else {

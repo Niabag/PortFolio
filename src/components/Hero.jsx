@@ -33,13 +33,31 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <button
-              onClick={() => setShowCalculator(true)}
+              onClick={() => {
+                // Tracking GTM - Calculator opened
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: 'calculator_opened',
+                    page_location: window.location.href
+                  });
+                }
+                setShowCalculator(true);
+              }}
               className="bg-gradient-to-r from-primary-red to-red-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-red-700 hover:to-red-800 transition transform hover:scale-105 shadow-lg"
             >
               💰 {lang === 'fr' ? 'Estimez votre site' : 'Estimate Your Site'}
             </button>
             <button
-              onClick={() => setShowSEOQuiz(true)}
+              onClick={() => {
+                // Tracking GTM - SEO Quiz started
+                if (window.dataLayer) {
+                  window.dataLayer.push({
+                    event: 'seo_quiz_opened',
+                    page_location: window.location.href
+                  });
+                }
+                setShowSEOQuiz(true);
+              }}
               className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105 shadow-lg"
             >
               🔍 {lang === 'fr' ? 'Audit SEO gratuit' : 'Free SEO Audit'}

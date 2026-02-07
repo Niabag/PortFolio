@@ -10,6 +10,7 @@
     "test": "echo \"Pas de tests définis\" && exit 0"
   },
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "jspdf": "^4.1.0",
     "jspdf-autotable": "^5.0.7",
     "react": "^18.2.0",
