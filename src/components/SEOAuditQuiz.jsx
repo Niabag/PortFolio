@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../LanguageContext';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 const SEOAuditQuiz = ({ onClose }) => {
   const { lang } = useLanguage();
@@ -9,6 +11,7 @@ const SEOAuditQuiz = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [pdfGenerated, setPdfGenerated] = useState(false);
 
   const translations = {
     fr: {
@@ -84,8 +87,10 @@ const SEOAuditQuiz = ({ onClose }) => {
       email_subtitle: 'Nous vous enverrons un audit complet avec un plan d\'action personnalisé',
       emailPlaceholder: 'votre@email.com',
       submit: 'Recevoir mon audit gratuit',
-      successTitle: '✅ Audit envoyé !',
-      successMessage: 'Nous vous avons envoyé votre rapport détaillé. Nous vous contacterons sous 24h avec des recommandations personnalisées.',
+      successTitle: '✅ Audit téléchargé !',
+      successTitleNoPdf: '⚠️ Demande envoyée',
+      successMessage: 'Votre rapport d\'audit SEO a été téléchargé. Nous vous contacterons sous 24h avec des recommandations personnalisées.',
+      successMessageNoPdf: 'Votre demande a été envoyée. Nous vous enverrons votre rapport d\'audit par email sous 24h.',
       close: 'Fermer'
     },
     en: {
@@ -161,8 +166,10 @@ const SEOAuditQuiz = ({ onClose }) => {
       email_subtitle: 'We will send you a complete audit with a personalized action plan',
       emailPlaceholder: 'your@email.com',
       submit: 'Get My Free Audit',
-      successTitle: '✅ Audit Sent!',
-      successMessage: 'We sent you your detailed report. We will contact you within 24h with personalized recommendations.',
+      successTitle: '✅ Audit Downloaded!',
+      successTitleNoPdf: '⚠️ Request Sent',
+      successMessage: 'Your SEO audit report has been downloaded. We will contact you within 24h with personalized recommendations.',
+      successMessageNoPdf: 'Your request has been sent. We will send your audit report by email within 24h.',
       close: 'Close'
     }
   };
@@ -214,6 +221,8 @@ const SEOAuditQuiz = ({ onClose }) => {
     e.preventDefault();
     setError('');
 
+    console.log('🎬 Début handleSubmit');
+
     // Validation email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -221,34 +230,302 @@ const SEOAuditQuiz = ({ onClose }) => {
       return;
     }
 
-    const score = calculateScore();
-    const level = getScoreLevel(score);
-    const recommendations = getRecommendations();
+    console.log('✅ Email valide:', email);
 
-    // Envoyer via Web3Forms
+    const score = calculateScore();
+    console.log('📊 Score calculé:', score);
+
+    const level = getScoreLevel(score);
+    console.log('📈 Level:', level);
+
+    const recommendations = getRecommendations();
+    console.log('💡 Recommandations:', recommendations.length);
+
+    // ========================================
+    // 1️⃣ GÉNÉRER LE PDF ET LE TÉLÉCHARGER
+    // ========================================
+    console.log('🔄 Début génération du PDF Audit SEO...');
+    console.log('📦 jsPDF disponible?', typeof jsPDF !== 'undefined');
+    console.log('📦 autoTable disponible?', typeof autoTable !== 'undefined');
+
+    try {
+      console.log('🏗️ Création instance jsPDF...');
+      const doc = new jsPDF();
+      const pageWidth = doc.internal.pageSize.width;
+      const pageHeight = doc.internal.pageSize.height;
+      console.log('✅ jsPDF initialisé, dimensions:', pageWidth, 'x', pageHeight);
+
+      // Charger le logo
+      let logoData = null;
+      try {
+        const logoResponse = await fetch('/logo.png');
+        if (logoResponse.ok) {
+          const logoBlob = await logoResponse.blob();
+          logoData = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.readAsDataURL(logoBlob);
+          });
+          console.log('✅ Logo chargé');
+        }
+      } catch (error) {
+        console.warn('⚠️ Logo non chargé, continue sans logo:', error);
+      }
+
+      // Bannière noire en haut
+      doc.setFillColor(0, 0, 0);
+      doc.rect(0, 0, pageWidth, 40, 'F');
+
+      // Logo image + texte
+      if (logoData) {
+        doc.addImage(logoData, 'PNG', 15, 10, 20, 20);
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(24);
+        doc.setFont('helvetica', 'bold');
+        doc.text('SiteOnWeb', 40, 18);
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        doc.text('Création de sites web professionnels', 40, 26);
+      } else {
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(24);
+        doc.setFont('helvetica', 'bold');
+        doc.text('SiteOnWeb', 15, 18);
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        doc.text('Création de sites web professionnels', 15, 26);
+      }
+
+      // Coordonnées en blanc (coin droit)
+      doc.setFontSize(9);
+      doc.text('contact@siteonweb.fr', pageWidth - 15, 18, { align: 'right' });
+      doc.text('www.siteonweb.fr', pageWidth - 15, 24, { align: 'right' });
+
+      // BADGE "AUDIT SEO" bien visible
+      doc.setFillColor(37, 99, 235); // Bleu
+      doc.roundedRect(15, 50, 70, 12, 3, 3, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text('AUDIT SEO', 18, 58);
+
+      // Titre principal
+      doc.setTextColor(37, 99, 235);
+      doc.setFontSize(20);
+      doc.setFont('helvetica', 'bold');
+      doc.text('RAPPORT D\'AUDIT SEO', 15, 75);
+
+      // Référence et date
+      doc.setTextColor(100, 100, 100);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      const refNumber = `SEO-${Date.now()}`;
+      const dateStr = new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+      doc.text(`Référence: ${refNumber}`, 15, 85);
+      doc.text(`Date: ${dateStr}`, 15, 92);
+      doc.text(`Client: ${email}`, 15, 99);
+
+      // Ligne de séparation
+      doc.setDrawColor(37, 99, 235);
+      doc.setLineWidth(0.5);
+      doc.line(15, 105, pageWidth - 15, 105);
+
+      // ========== SCORE SEO (encadré) ==========
+      let yPos = 115;
+
+      // Couleur selon le niveau
+      let scoreColor;
+      if (score >= 70) scoreColor = [34, 197, 94]; // Vert
+      else if (score >= 40) scoreColor = [250, 204, 21]; // Jaune
+      else scoreColor = [239, 68, 68]; // Rouge
+
+      doc.setFillColor(...scoreColor, 0.1);
+      doc.roundedRect(15, yPos, pageWidth - 30, 35, 3, 3, 'F');
+
+      doc.setTextColor(...scoreColor);
+      doc.setFontSize(14);
+      doc.setFont('helvetica', 'bold');
+      doc.text('VOTRE SCORE SEO', pageWidth / 2, yPos + 10, { align: 'center' });
+
+      doc.setFontSize(32);
+      doc.text(`${Math.round(score)}/100`, pageWidth / 2, yPos + 25, { align: 'center' });
+
+      // Niveau
+      doc.setFontSize(12);
+      let levelText = score >= 70 ? 'SEO EXCELLENT' : score >= 40 ? 'SEO MOYEN' : 'SEO CRITIQUE';
+      doc.text(levelText, pageWidth / 2, yPos + 32, { align: 'center' });
+
+      yPos += 45;
+
+      // ========== RÉPONSES AU QUIZ ==========
+      doc.setFontSize(14);
+      doc.setTextColor(37, 99, 235);
+      doc.setFont('helvetica', 'bold');
+      doc.text('RÉSULTATS DU QUIZ', 15, yPos);
+
+      yPos += 10;
+
+      // Tableau des réponses
+      const tableData = questions.map((q, i) => {
+        const answer = answers[i] || 'Non répondu';
+        const status = answer === 'yes' ? 'OUI' : answer === 'no' ? 'NON' : 'PAS SUR';
+        return [
+          `${i + 1}. ${q.question}`,
+          status
+        ];
+      });
+
+      autoTable(doc, {
+        startY: yPos,
+        head: [['Critère SEO', 'Statut']],
+        body: tableData,
+        theme: 'striped',
+        headStyles: { fillColor: [37, 99, 235], textColor: 255, fontStyle: 'bold' },
+        styles: { fontSize: 9, cellPadding: 3 },
+        alternateRowStyles: { fillColor: [248, 248, 248] },
+        margin: { left: 15, right: 15 },
+        columnStyles: {
+          0: { cellWidth: 130 },
+          1: { cellWidth: 45, halign: 'center' }
+        }
+      });
+
+      yPos = doc.lastAutoTable.finalY + 15;
+
+      // Vérifier si on a besoin d'une nouvelle page
+      if (yPos > pageHeight - 80) {
+        doc.addPage();
+        yPos = 20;
+      }
+
+      // ========== RECOMMANDATIONS PRIORITAIRES ==========
+      doc.setFontSize(14);
+      doc.setTextColor(37, 99, 235);
+      doc.setFont('helvetica', 'bold');
+      doc.text('RECOMMANDATIONS PRIORITAIRES', 15, yPos);
+
+      yPos += 10;
+
+      doc.setFontSize(10);
+      doc.setTextColor(0, 0, 0);
+      doc.setFont('helvetica', 'normal');
+
+      if (recommendations.length > 0) {
+        recommendations.slice(0, 5).forEach((rec, i) => {
+          // Vérifier si on a besoin d'une nouvelle page
+          if (yPos > pageHeight - 40) {
+            doc.addPage();
+            yPos = 20;
+          }
+
+          doc.setFont('helvetica', 'bold');
+          doc.text(`${i + 1}. ${rec.question}`, 20, yPos);
+          yPos += 5;
+
+          doc.setFont('helvetica', 'normal');
+          const descLines = doc.splitTextToSize(rec.description, pageWidth - 45);
+          doc.text(descLines, 25, yPos);
+          yPos += descLines.length * 5 + 5;
+        });
+      } else {
+        doc.text('Excellent ! Aucune recommandation prioritaire.', 20, yPos);
+        yPos += 10;
+      }
+
+      // ========== FOOTER ==========
+      doc.setFillColor(0, 0, 0);
+      doc.rect(0, pageHeight - 25, pageWidth, 25, 'F');
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.text('PRENDRE RENDEZ-VOUS POUR UN AUDIT COMPLET', pageWidth / 2, pageHeight - 16, { align: 'center' });
+
+      doc.setFontSize(9);
+      doc.setFont('helvetica', 'normal');
+      doc.text('www.siteonweb.fr/#contact', pageWidth / 2, pageHeight - 10, { align: 'center' });
+
+      // Télécharger le PDF
+      const fileName = `Audit-SEO-SiteOnWeb-${refNumber}.pdf`;
+      console.log('📥 Tentative de téléchargement du PDF:', fileName);
+      doc.save(fileName);
+      console.log('✅ PDF Audit SEO généré et téléchargé:', fileName);
+      setPdfGenerated(true);
+    } catch (error) {
+      console.error('❌ ERREUR CRITIQUE - Génération PDF échouée:', error);
+      console.error('❌ Message d\'erreur:', error.message);
+      console.error('❌ Stack trace:', error.stack);
+      setPdfGenerated(false);
+    }
+
+    // ========================================
+    // 2️⃣ ENVOYER EMAIL À contact@siteonweb.fr UNIQUEMENT
+    // ========================================
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
 
     if (accessKey) {
       try {
         const formData = new FormData();
         formData.append('access_key', accessKey);
-        formData.append('subject', '🔍 Nouveau Quiz SEO - Audit demandé');
-        formData.append('email', 'contact@siteonweb.fr');
-        formData.append('visitor_email', email);
+        formData.append('subject', `🔍 Audit SEO - Score ${Math.round(score)}/100 (${level})`);
+        formData.append('email', 'contact@siteonweb.fr'); // Uniquement l'agence
+        formData.append('from_name', 'SiteOnWeb - Audit SEO');
         formData.append('message', `
-Nouveau quiz SEO complété !
+═══════════════════════════════════════════════════════════
+🔍 AUDIT SEO - SITEONWEB
+═══════════════════════════════════════════════════════════
 
-📧 Email: ${email}
-📊 Score SEO: ${Math.round(score)}/100 (${level})
+📋 Référence: SEO-${Date.now()}
+📅 Date: ${new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+📧 Client: ${email}
 
-Réponses:
-${questions.map((q, i) => `${i + 1}. ${q.question}: ${answers[i] || 'non répondu'}`).join('\n')}
+═══════════════════════════════════════════════════════════
+📊 SCORE SEO
+═══════════════════════════════════════════════════════════
 
-Recommandations prioritaires:
-${recommendations.map((r, i) => `${i + 1}. ${r.question}`).join('\n')}
+      ${Math.round(score)}/100 - ${level}
 
-Date: ${new Date().toLocaleString('fr-FR')}
-Langue: ${lang}
+═══════════════════════════════════════════════════════════
+✅ RÉPONSES AU QUIZ
+═══════════════════════════════════════════════════════════
+
+${questions.map((q, i) => {
+  const answer = answers[i] || 'non répondu';
+  const emoji = answer === 'yes' ? '✅' : answer === 'no' ? '❌' : '❓';
+  return `${emoji} ${q.question}: ${answer === 'yes' ? 'Oui' : answer === 'no' ? 'Non' : 'Pas sûr'}`;
+}).join('\n')}
+
+─────────────────────────────────────────────────────────────
+🎯 RECOMMANDATIONS PRIORITAIRES
+─────────────────────────────────────────────────────────────
+
+${recommendations.slice(0, 5).map((r, i) => `${i + 1}. ${r.question}\n   ${r.description}`).join('\n\n')}
+
+─────────────────────────────────────────────────────────────
+IMPORTANT - AUDIT INDICATIF
+─────────────────────────────────────────────────────────────
+
+Le client a téléchargé un PDF avec cet audit.
+Cet audit est INDICATIF et basé sur les déclarations du client.
+Un audit technique complet est recommandé.
+
+─────────────────────────────────────────────────────────────
+🚀 PROCHAINES ÉTAPES
+─────────────────────────────────────────────────────────────
+
+1. CONTACTER LE CLIENT sous 24h
+2. AUDIT TECHNIQUE COMPLET
+3. PLAN D'ACTION SEO personnalisé
+
+═══════════════════════════════════════════════════════════
+📞 CONTACT CLIENT
+═══════════════════════════════════════════════════════════
+
+📧 ${email}
+
+═══════════════════════════════════════════════════════════
+SITEONWEB - Audit SEO Automatique
+═══════════════════════════════════════════════════════════
         `);
 
         await fetch('https://api.web3forms.com/submit', {
@@ -256,7 +533,7 @@ Langue: ${lang}
           body: formData
         });
 
-        console.log('✅ Audit SEO envoyé à Web3Forms');
+        console.log('✅ Audit SEO envoyé à contact@siteonweb.fr');
       } catch (error) {
         console.error('❌ Erreur envoi Web3Forms:', error);
       }
@@ -449,12 +726,12 @@ Langue: ${lang}
         ) : (
           /* Success */
           <div className="text-center py-8">
-            <div className="text-6xl mb-4">🎉</div>
+            <div className="text-6xl mb-4">{pdfGenerated ? '🎉' : '📧'}</div>
             <h3 className="text-2xl font-bold text-white mb-3">
-              {t.successTitle}
+              {pdfGenerated ? t.successTitle : t.successTitleNoPdf}
             </h3>
             <p className="text-gray-300 mb-6">
-              {t.successMessage}
+              {pdfGenerated ? t.successMessage : t.successMessageNoPdf}
             </p>
             <button
               onClick={onClose}

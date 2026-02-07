@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../LanguageContext';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 const PriceCalculator = ({ onClose }) => {
   const { lang } = useLanguage();
@@ -84,8 +86,8 @@ const PriceCalculator = ({ onClose }) => {
       result_email_subtitle: 'Entrez votre email pour recevoir une estimation complète et des conseils personnalisés',
       emailPlaceholder: 'votre@email.com',
       submit: 'Recevoir mon devis gratuit',
-      successTitle: '✅ Devis envoyé !',
-      successMessage: 'Nous vous avons envoyé une estimation détaillée. Nous vous contacterons sous 24h.',
+      successTitle: '✅ Devis téléchargé !',
+      successMessage: 'Votre devis indicatif a été téléchargé. Nous vous contacterons sous 24h pour affiner votre projet.',
       close: 'Fermer'
     },
     en: {
@@ -156,8 +158,8 @@ const PriceCalculator = ({ onClose }) => {
       result_email_subtitle: 'Enter your email to receive a complete estimate and personalized advice',
       emailPlaceholder: 'your@email.com',
       submit: 'Get My Free Quote',
-      successTitle: '✅ Quote Sent!',
-      successMessage: 'We sent you a detailed estimate. We will contact you within 24h.',
+      successTitle: '✅ Quote Downloaded!',
+      successMessage: 'Your indicative quote has been downloaded. We will contact you within 24h to refine your project.',
       close: 'Close'
     }
   };
@@ -281,39 +283,449 @@ const PriceCalculator = ({ onClose }) => {
 
     const price = calculatePrice();
 
-    // Envoyer via Web3Forms
+    // ========================================
+    // 1️⃣ GÉNÉRER LE PDF ET LE TÉLÉCHARGER
+    // ========================================
+    try {
+      console.log('🔄 Génération du PDF...');
+
+      const doc = new jsPDF();
+      const pageWidth = doc.internal.pageSize.width;
+      const pageHeight = doc.internal.pageSize.height;
+
+      // Charger le logo
+      let logoData = null;
+      try {
+        const logoResponse = await fetch('/logo.png');
+        const logoBlob = await logoResponse.blob();
+        logoData = await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.readAsDataURL(logoBlob);
+        });
+      } catch (error) {
+        console.warn('⚠️ Logo non chargé:', error);
+      }
+
+      // Traductions pour le PDF
+      const pdfTexts = {
+        fr: {
+          tagline: 'Création de sites web professionnels',
+          badge: 'DEVIS INDICATIF',
+          title: 'ESTIMATION DE PROJET',
+          reference: 'Référence',
+          date: 'Date',
+          client: 'Client',
+          priceTitle: 'FOURCHETTE DE PRIX ESTIMÉE',
+          detailsTitle: 'DÉTAILS DU PROJET',
+          criterion: 'Critère',
+          selection: 'Sélection',
+          siteType: 'Type de site',
+          pageCount: 'Nombre de pages',
+          designLevel: 'Niveau de design',
+          timeline: 'Délai souhaité',
+          toDefine: 'À définir',
+          flexible: 'Flexible',
+          featuresTitle: 'FONCTIONNALITÉS DEMANDÉES',
+          warningTitle: 'IMPORTANT',
+          warningText: 'Ce devis est INDICATIF et basé sur les informations fournies. Un devis détaillé et personnalisé sera établi après un échange pour préciser vos besoins exacts.',
+          nextStepsTitle: 'PROCHAINES ÉTAPES',
+          step1Title: '1. CONSULTATION GRATUITE',
+          step1Text: 'Échange de 30 min pour affiner votre projet',
+          step2Title: '2. DEVIS DÉTAILLÉ',
+          step2Text: 'Proposition commerciale personnalisée sous 24-48h',
+          step3Title: '3. VALIDATION',
+          step3Text: 'Signature du devis et démarrage du projet',
+          footerCta: 'PRENDRE RENDEZ-VOUS'
+        },
+        en: {
+          tagline: 'Professional website creation',
+          badge: 'INDICATIVE QUOTE',
+          title: 'PROJECT ESTIMATE',
+          reference: 'Reference',
+          date: 'Date',
+          client: 'Client',
+          priceTitle: 'ESTIMATED PRICE RANGE',
+          detailsTitle: 'PROJECT DETAILS',
+          criterion: 'Criterion',
+          selection: 'Selection',
+          siteType: 'Site type',
+          pageCount: 'Number of pages',
+          designLevel: 'Design level',
+          timeline: 'Desired timeline',
+          toDefine: 'To define',
+          flexible: 'Flexible',
+          featuresTitle: 'REQUESTED FEATURES',
+          warningTitle: 'IMPORTANT',
+          warningText: 'This quote is INDICATIVE and based on the information provided. A detailed and personalized quote will be prepared after a discussion to clarify your exact needs.',
+          nextStepsTitle: 'NEXT STEPS',
+          step1Title: '1. FREE CONSULTATION',
+          step1Text: '30-minute discussion to refine your project',
+          step2Title: '2. DETAILED QUOTE',
+          step2Text: 'Personalized business proposal within 24-48h',
+          step3Title: '3. VALIDATION',
+          step3Text: 'Quote signature and project kickoff',
+          footerCta: 'BOOK AN APPOINTMENT'
+        }
+      };
+
+      const pdf = pdfTexts[lang];
+
+      // Traductions pour les détails
+      const siteTypeLabels = {
+        vitrine: lang === 'fr' ? 'Site Vitrine' : 'Showcase Website',
+        ecommerce: 'E-commerce',
+        app: lang === 'fr' ? 'Application Web' : 'Web Application',
+        landing: 'Landing Page'
+      };
+
+      const pageLabels = {
+        '1-5': '1-5 pages',
+        '5-10': '5-10 pages',
+        '10-20': '10-20 pages',
+        '20+': '20+ pages'
+      };
+
+      const featureLabels = {
+        none: lang === 'fr' ? 'Aucune' : 'None',
+        blog: 'Blog',
+        booking: lang === 'fr' ? 'Réservation' : 'Booking',
+        payment: lang === 'fr' ? 'Paiement en ligne' : 'Online payment',
+        members: lang === 'fr' ? 'Espace membre' : 'Member area',
+        multilingual: lang === 'fr' ? 'Multilingue' : 'Multilingual',
+        seo: 'SEO'
+      };
+
+      const designLabels = {
+        template: lang === 'fr' ? 'Template modifié' : 'Modified template',
+        semi: lang === 'fr' ? 'Semi-personnalisé' : 'Semi-custom',
+        custom: lang === 'fr' ? '100% sur mesure' : '100% custom'
+      };
+
+      const timelineLabels = {
+        urgent: lang === 'fr' ? 'Urgent (2-3 semaines)' : 'Urgent (2-3 weeks)',
+        normal: lang === 'fr' ? 'Normal (1-2 mois)' : 'Normal (1-2 months)',
+        flexible: lang === 'fr' ? 'Flexible (2-3 mois)' : 'Flexible (2-3 months)'
+      };
+
+      // Bannière noire en haut
+      doc.setFillColor(0, 0, 0);
+      doc.rect(0, 0, pageWidth, 40, 'F');
+
+      // Logo image + texte
+      if (logoData) {
+        // Ajouter le logo à gauche
+        doc.addImage(logoData, 'PNG', 15, 10, 20, 20);
+
+        // Texte "SiteOnWeb" à droite du logo
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(24);
+        doc.setFont('helvetica', 'bold');
+        doc.text('SiteOnWeb', 40, 18);
+
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        doc.text(pdf.tagline, 40, 26);
+      } else {
+        // Fallback sans logo
+        doc.setTextColor(255, 255, 255);
+        doc.setFontSize(24);
+        doc.setFont('helvetica', 'bold');
+        doc.text('SiteOnWeb', 15, 18);
+
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        doc.text(pdf.tagline, 15, 26);
+      }
+
+      // Coordonnées en blanc (coin droit)
+      doc.setFontSize(9);
+      doc.text('contact@siteonweb.fr', pageWidth - 15, 18, { align: 'right' });
+      doc.text('www.siteonweb.fr', pageWidth - 15, 24, { align: 'right' });
+
+      // BADGE "DEVIS INDICATIF" bien visible
+      doc.setFillColor(255, 193, 7); // Jaune
+      const badgeWidth = lang === 'fr' ? 80 : 95;
+      doc.roundedRect(15, 50, badgeWidth, 12, 3, 3, 'F');
+      doc.setTextColor(0, 0, 0);
+      doc.setFontSize(11);
+      doc.setFont('helvetica', 'bold');
+      doc.text(pdf.badge, 18, 58);
+
+      // Titre principal
+      doc.setTextColor(220, 38, 38);
+      doc.setFontSize(20);
+      doc.setFont('helvetica', 'bold');
+      doc.text(pdf.title, 15, 75);
+
+      // Référence et date
+      doc.setTextColor(100, 100, 100);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      const refNumber = `CALC-${Date.now()}`;
+      const dateStr = new Date().toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+      doc.text(`${pdf.reference}: ${refNumber}`, 15, 85);
+      doc.text(`${pdf.date}: ${dateStr}`, 15, 92);
+      doc.text(`${pdf.client}: ${email}`, 15, 99);
+
+      // Ligne de séparation
+      doc.setDrawColor(220, 38, 38);
+      doc.setLineWidth(0.5);
+      doc.line(15, 105, pageWidth - 15, 105);
+
+      // ========== PRIX ESTIMÉ (encadré) ==========
+      doc.setFillColor(252, 252, 252);
+      doc.roundedRect(15, 115, pageWidth - 30, 30, 3, 3, 'F');
+
+      doc.setTextColor(220, 38, 38);
+      doc.setFontSize(12);
+      doc.setFont('helvetica', 'bold');
+      doc.text('FOURCHETTE DE PRIX ESTIMÉE', pageWidth / 2, 125, { align: 'center' });
+
+      doc.setFontSize(22);
+      doc.setTextColor(0, 0, 0);
+      doc.text(`${price.min.toLocaleString('fr-FR')}€ . ${price.max.toLocaleString('fr-FR')}€`, pageWidth / 2, 138, { align: 'center' });
+
+      // ========== DÉTAILS DU PROJET ==========
+      let yPos = 155;
+
+      doc.setFontSize(14);
+      doc.setTextColor(220, 38, 38);
+      doc.setFont('helvetica', 'bold');
+      doc.text('DÉTAILS DU PROJET', 15, yPos);
+
+      yPos += 10;
+
+      autoTable(doc, {
+        startY: yPos,
+        head: [['Critère', 'Sélection']],
+        body: [
+          ['Type de site', siteTypeLabels[answers.siteType] || 'À définir'],
+          ['Nombre de pages', pageLabels[answers.pageCount] || 'À définir'],
+          ['Niveau de design', designLabels[answers.designLevel] || 'À définir'],
+          ['Délai souhaité', timelineLabels[answers.timeline] || 'Flexible']
+        ],
+        theme: 'striped',
+        headStyles: { fillColor: [220, 38, 38], textColor: 255, fontStyle: 'bold' },
+        styles: { fontSize: 10, cellPadding: 5 },
+        alternateRowStyles: { fillColor: [248, 248, 248] },
+        margin: { left: 15, right: 15 }
+      });
+
+      yPos = doc.lastAutoTable.finalY + 15;
+
+      // ========== FONCTIONNALITÉS ==========
+      doc.setFontSize(14);
+      doc.setTextColor(220, 38, 38);
+      doc.setFont('helvetica', 'bold');
+      doc.text('FONCTIONNALITÉS DEMANDÉES', 15, yPos);
+
+      yPos += 8;
+
+      doc.setFontSize(10);
+      doc.setTextColor(0, 0, 0);
+      doc.setFont('helvetica', 'normal');
+
+      answers.features.forEach(feature => {
+        doc.text(`✓ ${featureLabels[feature] || feature}`, 20, yPos);
+        yPos += 7;
+      });
+
+      yPos += 10;
+
+      // ========== AVERTISSEMENT INDICATIF ==========
+      doc.setFillColor(255, 243, 205);
+      doc.roundedRect(15, yPos, pageWidth - 30, 35, 3, 3, 'F');
+
+      doc.setFontSize(11);
+      doc.setTextColor(100, 50, 0);
+      doc.setFont('helvetica', 'bold');
+      doc.text('IMPORTANT', 20, yPos + 8);
+
+      doc.setFontSize(9);
+      doc.setFont('helvetica', 'normal');
+      const disclaimerText = doc.splitTextToSize(
+        'Ce devis est INDICATIF et basé sur les informations fournies. Un devis détaillé et personnalisé sera établi après un échange pour préciser vos besoins exacts.',
+        pageWidth - 40
+      );
+      doc.text(disclaimerText, 20, yPos + 16);
+
+      yPos += 45;
+
+      // ========== PROCHAINES ÉTAPES ==========
+      doc.setFontSize(14);
+      doc.setTextColor(220, 38, 38);
+      doc.setFont('helvetica', 'bold');
+      doc.text('PROCHAINES ÉTAPES', 15, yPos);
+
+      yPos += 10;
+
+      doc.setFontSize(10);
+      doc.setTextColor(0, 0, 0);
+      doc.setFont('helvetica', 'bold');
+      doc.text('1. CONSULTATION GRATUITE', 20, yPos);
+      doc.setFont('helvetica', 'normal');
+      doc.text('   Échange de 30 min pour affiner votre projet', 20, yPos + 6);
+
+      yPos += 14;
+      doc.setFont('helvetica', 'bold');
+      doc.text('2. DEVIS DÉTAILLÉ', 20, yPos);
+      doc.setFont('helvetica', 'normal');
+      doc.text('   Proposition commerciale personnalisée sous 24-48h', 20, yPos + 6);
+
+      yPos += 14;
+      doc.setFont('helvetica', 'bold');
+      doc.text('3. VALIDATION', 20, yPos);
+      doc.setFont('helvetica', 'normal');
+      doc.text('   Signature du devis et démarrage du projet', 20, yPos + 6);
+
+      // ========== FOOTER ==========
+      doc.setFillColor(0, 0, 0);
+      doc.rect(0, pageHeight - 25, pageWidth, 25, 'F');
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.text('PRENDRE RENDEZ-VOUS', pageWidth / 2, pageHeight - 16, { align: 'center' });
+
+      doc.setFontSize(9);
+      doc.setFont('helvetica', 'normal');
+      doc.text('www.siteonweb.fr/#contact', pageWidth / 2, pageHeight - 10, { align: 'center' });
+
+      // Télécharger le PDF
+      const fileName = `Devis-Indicatif-SiteOnWeb-${refNumber}.pdf`;
+      doc.save(fileName);
+
+      console.log('✅ PDF généré et téléchargé:', fileName);
+    } catch (error) {
+      console.error('❌ Erreur génération PDF:', error);
+    }
+
+    // ========================================
+    // 2️⃣ ENVOYER EMAIL À contact@siteonweb.fr UNIQUEMENT
+    // ========================================
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY?.trim();
 
     if (accessKey) {
       try {
+        // Traductions pour l'email
+        const siteTypeLabels = {
+          vitrine: lang === 'fr' ? 'Site Vitrine' : 'Showcase Website',
+          ecommerce: 'E-commerce',
+          app: lang === 'fr' ? 'Application Web' : 'Web Application',
+          landing: 'Landing Page'
+        };
+
+        const pageLabels = {
+          '1-5': '1-5 pages',
+          '5-10': '5-10 pages',
+          '10-20': '10-20 pages',
+          '20+': '20+ pages'
+        };
+
+        const featureLabels = {
+          none: lang === 'fr' ? 'Aucune' : 'None',
+          blog: 'Blog',
+          booking: lang === 'fr' ? 'Réservation' : 'Booking',
+          payment: lang === 'fr' ? 'Paiement en ligne' : 'Online payment',
+          members: lang === 'fr' ? 'Espace membre' : 'Member area',
+          multilingual: lang === 'fr' ? 'Multilingue' : 'Multilingual',
+          seo: 'SEO'
+        };
+
+        const designLabels = {
+          template: lang === 'fr' ? 'Template modifié' : 'Modified template',
+          semi: lang === 'fr' ? 'Semi-personnalisé' : 'Semi-custom',
+          custom: lang === 'fr' ? '100% sur mesure' : '100% custom'
+        };
+
+        const timelineLabels = {
+          urgent: lang === 'fr' ? 'Urgent (2-3 semaines)' : 'Urgent (2-3 weeks)',
+          normal: lang === 'fr' ? 'Normal (1-2 mois)' : 'Normal (1-2 months)',
+          flexible: lang === 'fr' ? 'Flexible (2-3 mois)' : 'Flexible (2-3 months)'
+        };
+
         const formData = new FormData();
         formData.append('access_key', accessKey);
-        formData.append('subject', '💰 Nouveau calcul de prix - Calculateur');
-        formData.append('email', 'contact@siteonweb.fr');
-        formData.append('visitor_email', email);
-        formData.append('message', `
-Nouvelle estimation de prix via le calculateur !
+        formData.append('subject', `💰 Devis Indicatif ${siteTypeLabels[answers.siteType]} - ${price.min}€-${price.max}€`);
+        formData.append('email', 'contact@siteonweb.fr'); // Uniquement l'agence
+        formData.append('from_name', 'SiteOnWeb - Calculateur de Prix');
 
-📧 Email: ${email}
-💰 Prix estimé: ${price.min}€ - ${price.max}€
+        // Email texte formaté
+        const textMessage = `
+═══════════════════════════════════════════════════════════
+🎯 DEVIS INDICATIF - SITEONWEB
+═══════════════════════════════════════════════════════════
 
-Détails du projet:
-- Type de site: ${answers.siteType}
-- Nombre de pages: ${answers.pageCount}
-- Fonctionnalités: ${answers.features.join(', ')}
-- Niveau de design: ${answers.designLevel}
-- Délai: ${answers.timeline}
+📋 Référence: CALC-${Date.now()}
+📅 Date: ${new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+📧 Client: ${email}
 
-Date: ${new Date().toLocaleString('fr-FR')}
-Langue: ${lang}
-        `);
+═══════════════════════════════════════════════════════════
+💰 FOURCHETTE DE PRIX ESTIMÉE
+═══════════════════════════════════════════════════════════
 
-        await fetch('https://api.web3forms.com/submit', {
+      ${price.min.toLocaleString('fr-FR')}€ - ${price.max.toLocaleString('fr-FR')}€
+                    TTC (TVA incluse)
+
+═══════════════════════════════════════════════════════════
+📦 DÉTAILS DU PROJET
+═══════════════════════════════════════════════════════════
+
+Type de site      : ${siteTypeLabels[answers.siteType] || 'À définir'}
+Nombre de pages   : ${pageLabels[answers.pageCount] || 'À définir'}
+Niveau de design  : ${designLabels[answers.designLevel] || 'À définir'}
+Délai souhaité    : ${timelineLabels[answers.timeline] || 'Flexible'}
+
+─────────────────────────────────────────────────────────────
+✨ FONCTIONNALITÉS DEMANDÉES
+─────────────────────────────────────────────────────────────
+
+${answers.features.map(f => `  ✓ ${featureLabels[f] || f}`).join('\n')}
+
+─────────────────────────────────────────────────────────────
+IMPORTANT - DEVIS INDICATIF
+─────────────────────────────────────────────────────────────
+
+Le client a téléchargé un PDF avec cette estimation.
+Ce devis est INDICATIF et basé sur les informations fournies.
+Un devis détaillé sera établi après échange.
+
+─────────────────────────────────────────────────────────────
+🚀 PROCHAINES ÉTAPES
+─────────────────────────────────────────────────────────────
+
+1. CONTACTER LE CLIENT sous 24h
+2. CONSULTATION GRATUITE (30 min)
+3. DEVIS DÉTAILLÉ personnalisé
+
+═══════════════════════════════════════════════════════════
+📞 CONTACT CLIENT
+═══════════════════════════════════════════════════════════
+
+📧 ${email}
+
+═══════════════════════════════════════════════════════════
+SITEONWEB - Calculateur de Prix Automatique
+═══════════════════════════════════════════════════════════
+`;
+
+        formData.append('message', textMessage);
+
+        console.log('🔄 Envoi de l\'email à contact@siteonweb.fr...');
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           body: formData
         });
 
-        console.log('✅ Estimation envoyée à Web3Forms');
+        const result = await response.json();
+        console.log('📧 Réponse Web3Forms:', result);
+
+        if (result.success) {
+          console.log('✅ Notification envoyée à contact@siteonweb.fr');
+        } else {
+          console.error('❌ Échec envoi Web3Forms:', result);
+        }
       } catch (error) {
         console.error('❌ Erreur envoi Web3Forms:', error);
       }

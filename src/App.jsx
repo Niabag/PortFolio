@@ -19,6 +19,7 @@ import TawkToChat from './components/TawkToChat.jsx';
 import LeadMagnetPopup from './components/LeadMagnetPopup.jsx';
 import ExitIntentPopup from './components/ExitIntentPopup.jsx';
 import SocialProof from './components/SocialProof.jsx';
+import ServiceOptions from './components/ServiceOptions.jsx';
 
 function MainContent() {
   const [selectedService, setSelectedService] = useState(null);
@@ -82,6 +83,7 @@ function MainContent() {
         <Competences />
         <Projects />
         <SocialProof />
+        <ServiceOptions />
         <FAQ />
         <Contact />
         <Location />
