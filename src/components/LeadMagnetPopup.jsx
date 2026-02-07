@@ -14,19 +14,17 @@ const LeadMagnetPopup = () => {
     const hasSeenPopup = localStorage.getItem('hasSeenLeadMagnet');
 
     if (!hasSeenPopup) {
-      // Afficher le popup après 20 secondes ou avant d'arriver à la grille tarifaire
+      // Afficher le popup après 30 secondes ou après scroll de 50%
       const timer = setTimeout(() => {
         if (!hasTriggered) {
           setIsVisible(true);
           setHasTriggered(true);
         }
-      }, 20000); // 20 secondes (réduit de 30s)
+      }, 30000); // 30 secondes
 
       const handleScroll = () => {
         const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-
-        // Déclencher à 40% de scroll (AVANT la grille tarifaire qui est vers 60-70%)
-        if (scrollPercent > 40 && !hasSeenPopup && !hasTriggered) {
+        if (scrollPercent > 50 && !hasSeenPopup && !hasTriggered) {
           setIsVisible(true);
           setHasTriggered(true);
           window.removeEventListener('scroll', handleScroll);
