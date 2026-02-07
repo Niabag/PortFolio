@@ -17,7 +17,7 @@ import Booking from './components/Booking.jsx';
 import SmartFloatingButton from './components/SmartFloatingButton.jsx';
 import TawkToChat from './components/TawkToChat.jsx';
 import LeadMagnetPopup from './components/LeadMagnetPopup.jsx';
-import ExitIntentPopup from './components/ExitIntentPopup.jsx';
+// import ExitIntentPopup from './components/ExitIntentPopup.jsx';
 import SocialProof from './components/SocialProof.jsx';
 import ServiceOptions from './components/ServiceOptions.jsx';
 
@@ -77,7 +77,7 @@ function MainContent() {
       <TawkToChat />  {/* Chat Tawk.to - géré par SmartFloatingButton */}
       <SmartFloatingButton />  {/* Nouveau : Bouton intelligent WhatsApp/Chat */}
       <LeadMagnetPopup />  {/* Popup Lead Magnet : Checklist SEO gratuite */}
-      <ExitIntentPopup />  {/* Popup Exit-Intent : Dernière chance de conversion */}
+      {/* <ExitIntentPopup /> */}  {/* Popup Exit-Intent désactivée */}
       <main className="scroll-container">
         <Hero />
         <Competences />
