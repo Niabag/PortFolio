@@ -250,39 +250,46 @@ export default function ServiceOptions() {
 
         {/* Tableau comparatif */}
         <div className="mb-12">
-          <h3 className="text-3xl font-bold text-center mb-8 text-white">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4 sm:mb-8 text-white">
             {t.compareTitle}
           </h3>
 
-          <div className="overflow-x-auto">
-            <table className="w-full bg-gray-900 border border-gray-700 rounded-lg">
-              <thead>
-                <tr className="bg-gray-800">
-                  <th className="p-4 text-left text-white font-bold border-b border-gray-700">
-                    {lang === 'fr' ? 'Critère' : 'Criteria'}
-                  </th>
-                  <th className="p-4 text-center text-white font-bold border-b border-gray-700">
-                    🏢 Agence
-                  </th>
-                  <th className="p-4 text-center text-primary-red font-bold border-b border-gray-700 bg-primary-red/10">
-                    👨‍💻 Freelance
-                  </th>
-                  <th className="p-4 text-center text-white font-bold border-b border-gray-700">
-                    🛠️ CMS
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {t.comparison.rows.map((row, index) => (
-                  <tr key={index} className="border-b border-gray-800 hover:bg-gray-800/50 transition">
-                    <td className="p-4 text-gray-300 font-semibold">{row.label}</td>
-                    <td className="p-4 text-center text-gray-400">{row.agency}</td>
-                    <td className="p-4 text-center text-white bg-primary-red/5">{row.freelance}</td>
-                    <td className="p-4 text-center text-gray-400">{row.cms}</td>
+          {/* Indication de scroll sur mobile */}
+          <p className="text-center text-gray-400 text-sm mb-3 sm:hidden">
+            👈 {lang === 'fr' ? 'Glissez pour voir plus' : 'Swipe to see more'} 👉
+          </p>
+
+          <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+            <div className="min-w-[640px]">
+              <table className="w-full bg-gray-900 border border-gray-700 rounded-lg">
+                <thead>
+                  <tr className="bg-gray-800">
+                    <th className="p-2 sm:p-4 text-left text-white font-bold border-b border-gray-700 text-xs sm:text-base">
+                      {lang === 'fr' ? 'Critère' : 'Criteria'}
+                    </th>
+                    <th className="p-2 sm:p-4 text-center text-white font-bold border-b border-gray-700 text-xs sm:text-base">
+                      🏢 <span className="hidden sm:inline">Agence</span>
+                    </th>
+                    <th className="p-2 sm:p-4 text-center text-primary-red font-bold border-b border-gray-700 bg-primary-red/10 text-xs sm:text-base">
+                      👨‍💻 <span className="hidden sm:inline">Freelance</span>
+                    </th>
+                    <th className="p-2 sm:p-4 text-center text-white font-bold border-b border-gray-700 text-xs sm:text-base">
+                      🛠️ <span className="hidden sm:inline">CMS</span>
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {t.comparison.rows.map((row, index) => (
+                    <tr key={index} className="border-b border-gray-800 hover:bg-gray-800/50 transition">
+                      <td className="p-2 sm:p-4 text-gray-300 font-semibold text-xs sm:text-base whitespace-nowrap">{row.label}</td>
+                      <td className="p-2 sm:p-4 text-center text-gray-400 text-xs sm:text-base">{row.agency}</td>
+                      <td className="p-2 sm:p-4 text-center text-white bg-primary-red/5 text-xs sm:text-base">{row.freelance}</td>
+                      <td className="p-2 sm:p-4 text-center text-gray-400 text-xs sm:text-base">{row.cms}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 

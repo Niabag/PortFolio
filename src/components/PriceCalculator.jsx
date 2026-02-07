@@ -480,11 +480,11 @@ const PriceCalculator = ({ onClose }) => {
       doc.setTextColor(220, 38, 38);
       doc.setFontSize(12);
       doc.setFont('helvetica', 'bold');
-      doc.text('FOURCHETTE DE PRIX ESTIMÉE', pageWidth / 2, 125, { align: 'center' });
+      doc.text(pdf.priceTitle, pageWidth / 2, 125, { align: 'center' });
 
       doc.setFontSize(22);
       doc.setTextColor(0, 0, 0);
-      doc.text(`${price.min.toLocaleString('fr-FR')}€ . ${price.max.toLocaleString('fr-FR')}€`, pageWidth / 2, 138, { align: 'center' });
+      doc.text(`${price.min.toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-US')}€ . ${price.max.toLocaleString(lang === 'fr' ? 'fr-FR' : 'en-US')}€`, pageWidth / 2, 138, { align: 'center' });
 
       // ========== DÉTAILS DU PROJET ==========
       let yPos = 155;
@@ -492,18 +492,18 @@ const PriceCalculator = ({ onClose }) => {
       doc.setFontSize(14);
       doc.setTextColor(220, 38, 38);
       doc.setFont('helvetica', 'bold');
-      doc.text('DÉTAILS DU PROJET', 15, yPos);
+      doc.text(pdf.detailsTitle, 15, yPos);
 
       yPos += 10;
 
       autoTable(doc, {
         startY: yPos,
-        head: [['Critère', 'Sélection']],
+        head: [[pdf.criterion, pdf.selection]],
         body: [
-          ['Type de site', siteTypeLabels[answers.siteType] || 'À définir'],
-          ['Nombre de pages', pageLabels[answers.pageCount] || 'À définir'],
-          ['Niveau de design', designLabels[answers.designLevel] || 'À définir'],
-          ['Délai souhaité', timelineLabels[answers.timeline] || 'Flexible']
+          [pdf.siteType, siteTypeLabels[answers.siteType] || pdf.toDefine],
+          [pdf.pageCount, pageLabels[answers.pageCount] || pdf.toDefine],
+          [pdf.designLevel, designLabels[answers.designLevel] || pdf.toDefine],
+          [pdf.timeline, timelineLabels[answers.timeline] || pdf.flexible]
         ],
         theme: 'striped',
         headStyles: { fillColor: [220, 38, 38], textColor: 255, fontStyle: 'bold' },
@@ -518,7 +518,7 @@ const PriceCalculator = ({ onClose }) => {
       doc.setFontSize(14);
       doc.setTextColor(220, 38, 38);
       doc.setFont('helvetica', 'bold');
-      doc.text('FONCTIONNALITÉS DEMANDÉES', 15, yPos);
+      doc.text(pdf.featuresTitle, 15, yPos);
 
       yPos += 8;
 
@@ -540,12 +540,12 @@ const PriceCalculator = ({ onClose }) => {
       doc.setFontSize(11);
       doc.setTextColor(100, 50, 0);
       doc.setFont('helvetica', 'bold');
-      doc.text('IMPORTANT', 20, yPos + 8);
+      doc.text(pdf.warningTitle, 20, yPos + 8);
 
       doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');
       const disclaimerText = doc.splitTextToSize(
-        'Ce devis est INDICATIF et basé sur les informations fournies. Un devis détaillé et personnalisé sera établi après un échange pour préciser vos besoins exacts.',
+        pdf.warningText,
         pageWidth - 40
       );
       doc.text(disclaimerText, 20, yPos + 16);
@@ -556,28 +556,28 @@ const PriceCalculator = ({ onClose }) => {
       doc.setFontSize(14);
       doc.setTextColor(220, 38, 38);
       doc.setFont('helvetica', 'bold');
-      doc.text('PROCHAINES ÉTAPES', 15, yPos);
+      doc.text(pdf.nextStepsTitle, 15, yPos);
 
       yPos += 10;
 
       doc.setFontSize(10);
       doc.setTextColor(0, 0, 0);
       doc.setFont('helvetica', 'bold');
-      doc.text('1. CONSULTATION GRATUITE', 20, yPos);
+      doc.text(pdf.step1Title, 20, yPos);
       doc.setFont('helvetica', 'normal');
-      doc.text('   Échange de 30 min pour affiner votre projet', 20, yPos + 6);
+      doc.text('   ' + pdf.step1Text, 20, yPos + 6);
 
       yPos += 14;
       doc.setFont('helvetica', 'bold');
-      doc.text('2. DEVIS DÉTAILLÉ', 20, yPos);
+      doc.text(pdf.step2Title, 20, yPos);
       doc.setFont('helvetica', 'normal');
-      doc.text('   Proposition commerciale personnalisée sous 24-48h', 20, yPos + 6);
+      doc.text('   ' + pdf.step2Text, 20, yPos + 6);
 
       yPos += 14;
       doc.setFont('helvetica', 'bold');
-      doc.text('3. VALIDATION', 20, yPos);
+      doc.text(pdf.step3Title, 20, yPos);
       doc.setFont('helvetica', 'normal');
-      doc.text('   Signature du devis et démarrage du projet', 20, yPos + 6);
+      doc.text('   ' + pdf.step3Text, 20, yPos + 6);
 
       // ========== FOOTER ==========
       doc.setFillColor(0, 0, 0);
@@ -586,14 +586,16 @@ const PriceCalculator = ({ onClose }) => {
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
-      doc.text('PRENDRE RENDEZ-VOUS', pageWidth / 2, pageHeight - 16, { align: 'center' });
+      doc.text(pdf.footerCta, pageWidth / 2, pageHeight - 16, { align: 'center' });
 
       doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');
       doc.text('www.siteonweb.fr/#contact', pageWidth / 2, pageHeight - 10, { align: 'center' });
 
       // Télécharger le PDF
-      const fileName = `Devis-Indicatif-SiteOnWeb-${refNumber}.pdf`;
+      const fileName = lang === 'fr'
+        ? `Devis-Indicatif-SiteOnWeb-${refNumber}.pdf`
+        : `Quote-SiteOnWeb-${refNumber}.pdf`;
       doc.save(fileName);
 
       console.log('✅ PDF généré et téléchargé:', fileName);

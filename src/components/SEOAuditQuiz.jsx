@@ -248,6 +248,56 @@ const SEOAuditQuiz = ({ onClose }) => {
     console.log('📦 jsPDF disponible?', typeof jsPDF !== 'undefined');
     console.log('📦 autoTable disponible?', typeof autoTable !== 'undefined');
 
+    // Traductions pour le PDF
+    const pdfTexts = {
+      fr: {
+        tagline: 'Création de sites web professionnels',
+        badge: 'AUDIT SEO',
+        title: 'RAPPORT D\'AUDIT SEO',
+        reference: 'Référence',
+        date: 'Date',
+        client: 'Client',
+        scoreTitle: 'VOTRE SCORE SEO',
+        excellent: 'SEO EXCELLENT',
+        medium: 'SEO MOYEN',
+        critical: 'SEO CRITIQUE',
+        resultsTitle: 'RÉSULTATS DU QUIZ',
+        criterion: 'Critère SEO',
+        status: 'Statut',
+        yes: 'OUI',
+        no: 'NON',
+        notSure: 'PAS SUR',
+        notAnswered: 'Non répondu',
+        recommendationsTitle: 'RECOMMANDATIONS PRIORITAIRES',
+        noRecommendations: 'Excellent ! Aucune recommandation prioritaire.',
+        footerCta: 'PRENDRE RENDEZ-VOUS POUR UN AUDIT COMPLET'
+      },
+      en: {
+        tagline: 'Professional website creation',
+        badge: 'SEO AUDIT',
+        title: 'SEO AUDIT REPORT',
+        reference: 'Reference',
+        date: 'Date',
+        client: 'Client',
+        scoreTitle: 'YOUR SEO SCORE',
+        excellent: 'EXCELLENT SEO',
+        medium: 'AVERAGE SEO',
+        critical: 'CRITICAL SEO',
+        resultsTitle: 'QUIZ RESULTS',
+        criterion: 'SEO Criterion',
+        status: 'Status',
+        yes: 'YES',
+        no: 'NO',
+        notSure: 'NOT SURE',
+        notAnswered: 'Not answered',
+        recommendationsTitle: 'PRIORITY RECOMMENDATIONS',
+        noRecommendations: 'Excellent! No priority recommendations.',
+        footerCta: 'BOOK AN APPOINTMENT FOR A COMPLETE AUDIT'
+      }
+    };
+
+    const pdf = pdfTexts[lang];
+
     try {
       console.log('🏗️ Création instance jsPDF...');
       const doc = new jsPDF();
@@ -285,7 +335,7 @@ const SEOAuditQuiz = ({ onClose }) => {
         doc.text('SiteOnWeb', 40, 18);
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
-        doc.text('Création de sites web professionnels', 40, 26);
+        doc.text(pdf.tagline, 40, 26);
       } else {
         doc.setTextColor(255, 255, 255);
         doc.setFontSize(24);
@@ -293,7 +343,7 @@ const SEOAuditQuiz = ({ onClose }) => {
         doc.text('SiteOnWeb', 15, 18);
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
-        doc.text('Création de sites web professionnels', 15, 26);
+        doc.text(pdf.tagline, 15, 26);
       }
 
       // Coordonnées en blanc (coin droit)
@@ -303,27 +353,28 @@ const SEOAuditQuiz = ({ onClose }) => {
 
       // BADGE "AUDIT SEO" bien visible
       doc.setFillColor(37, 99, 235); // Bleu
-      doc.roundedRect(15, 50, 70, 12, 3, 3, 'F');
+      const badgeWidth = lang === 'fr' ? 70 : 75;
+      doc.roundedRect(15, 50, badgeWidth, 12, 3, 3, 'F');
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(11);
       doc.setFont('helvetica', 'bold');
-      doc.text('AUDIT SEO', 18, 58);
+      doc.text(pdf.badge, 18, 58);
 
       // Titre principal
       doc.setTextColor(37, 99, 235);
       doc.setFontSize(20);
       doc.setFont('helvetica', 'bold');
-      doc.text('RAPPORT D\'AUDIT SEO', 15, 75);
+      doc.text(pdf.title, 15, 75);
 
       // Référence et date
       doc.setTextColor(100, 100, 100);
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
       const refNumber = `SEO-${Date.now()}`;
-      const dateStr = new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-      doc.text(`Référence: ${refNumber}`, 15, 85);
-      doc.text(`Date: ${dateStr}`, 15, 92);
-      doc.text(`Client: ${email}`, 15, 99);
+      const dateStr = new Date().toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+      doc.text(`${pdf.reference}: ${refNumber}`, 15, 85);
+      doc.text(`${pdf.date}: ${dateStr}`, 15, 92);
+      doc.text(`${pdf.client}: ${email}`, 15, 99);
 
       // Ligne de séparation
       doc.setDrawColor(37, 99, 235);
@@ -345,14 +396,14 @@ const SEOAuditQuiz = ({ onClose }) => {
       doc.setTextColor(...scoreColor);
       doc.setFontSize(14);
       doc.setFont('helvetica', 'bold');
-      doc.text('VOTRE SCORE SEO', pageWidth / 2, yPos + 10, { align: 'center' });
+      doc.text(pdf.scoreTitle, pageWidth / 2, yPos + 10, { align: 'center' });
 
       doc.setFontSize(32);
       doc.text(`${Math.round(score)}/100`, pageWidth / 2, yPos + 25, { align: 'center' });
 
       // Niveau
       doc.setFontSize(12);
-      let levelText = score >= 70 ? 'SEO EXCELLENT' : score >= 40 ? 'SEO MOYEN' : 'SEO CRITIQUE';
+      let levelText = score >= 70 ? pdf.excellent : score >= 40 ? pdf.medium : pdf.critical;
       doc.text(levelText, pageWidth / 2, yPos + 32, { align: 'center' });
 
       yPos += 45;
@@ -361,14 +412,14 @@ const SEOAuditQuiz = ({ onClose }) => {
       doc.setFontSize(14);
       doc.setTextColor(37, 99, 235);
       doc.setFont('helvetica', 'bold');
-      doc.text('RÉSULTATS DU QUIZ', 15, yPos);
+      doc.text(pdf.resultsTitle, 15, yPos);
 
       yPos += 10;
 
       // Tableau des réponses
       const tableData = questions.map((q, i) => {
-        const answer = answers[i] || 'Non répondu';
-        const status = answer === 'yes' ? 'OUI' : answer === 'no' ? 'NON' : 'PAS SUR';
+        const answer = answers[i] || pdf.notAnswered;
+        const status = answer === 'yes' ? pdf.yes : answer === 'no' ? pdf.no : pdf.notSure;
         return [
           `${i + 1}. ${q.question}`,
           status
@@ -377,7 +428,7 @@ const SEOAuditQuiz = ({ onClose }) => {
 
       autoTable(doc, {
         startY: yPos,
-        head: [['Critère SEO', 'Statut']],
+        head: [[pdf.criterion, pdf.status]],
         body: tableData,
         theme: 'striped',
         headStyles: { fillColor: [37, 99, 235], textColor: 255, fontStyle: 'bold' },
@@ -402,7 +453,7 @@ const SEOAuditQuiz = ({ onClose }) => {
       doc.setFontSize(14);
       doc.setTextColor(37, 99, 235);
       doc.setFont('helvetica', 'bold');
-      doc.text('RECOMMANDATIONS PRIORITAIRES', 15, yPos);
+      doc.text(pdf.recommendationsTitle, 15, yPos);
 
       yPos += 10;
 
@@ -428,7 +479,7 @@ const SEOAuditQuiz = ({ onClose }) => {
           yPos += descLines.length * 5 + 5;
         });
       } else {
-        doc.text('Excellent ! Aucune recommandation prioritaire.', 20, yPos);
+        doc.text(pdf.noRecommendations, 20, yPos);
         yPos += 10;
       }
 
@@ -439,14 +490,16 @@ const SEOAuditQuiz = ({ onClose }) => {
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
-      doc.text('PRENDRE RENDEZ-VOUS POUR UN AUDIT COMPLET', pageWidth / 2, pageHeight - 16, { align: 'center' });
+      doc.text(pdf.footerCta, pageWidth / 2, pageHeight - 16, { align: 'center' });
 
       doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');
       doc.text('www.siteonweb.fr/#contact', pageWidth / 2, pageHeight - 10, { align: 'center' });
 
       // Télécharger le PDF
-      const fileName = `Audit-SEO-SiteOnWeb-${refNumber}.pdf`;
+      const fileName = lang === 'fr'
+        ? `Audit-SEO-SiteOnWeb-${refNumber}.pdf`
+        : `SEO-Audit-SiteOnWeb-${refNumber}.pdf`;
       console.log('📥 Tentative de téléchargement du PDF:', fileName);
       doc.save(fileName);
       console.log('✅ PDF Audit SEO généré et téléchargé:', fileName);
