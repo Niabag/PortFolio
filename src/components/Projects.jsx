@@ -88,7 +88,8 @@ export default function Projects() {
         {/* CTA de conversion après la grille */}
         <div className="mt-8 sm:mt-12 text-center bg-gradient-to-r from-primary-red/20 to-transparent p-6 sm:p-8 rounded-xl border border-primary-red/30">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
-            {lang === 'fr' ? '🚀 Prêt à lancer votre projet ?' : '🚀 Ready to Launch Your Project?'}
+            <img src="/images/icons-competences/referencement.webp" alt="" className="inline-block w-8 h-8 sm:w-10 sm:h-10 align-middle mr-2" />
+            {lang === 'fr' ? 'Prêt à lancer votre projet ?' : 'Ready to Launch Your Project?'}
           </h3>
           <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base max-w-2xl mx-auto">
             {lang === 'fr'

@@ -73,7 +73,11 @@ export default function Services() {
 
                 <div className="relative z-10 p-6 sm:p-8">
                   <div className="skill-icon-wrapper mb-4">
-                    <span className="text-5xl sm:text-6xl">{category.icon}</span>
+                    {category.iconImage ? (
+                      <img src={category.iconImage} alt={category.title} className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
+                    ) : (
+                      <span className="text-5xl sm:text-6xl">{category.icon}</span>
+                    )}
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">

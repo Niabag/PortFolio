@@ -11,7 +11,8 @@ export default function SocialProof() {
         {
           number: '50+',
           label: 'Projets Livrés',
-          icon: '🚀'
+          icon: '/images/icons-competences/referencement.webp',
+          isImage: true
         },
         {
           number: '98%',
@@ -21,7 +22,8 @@ export default function SocialProof() {
         {
           number: '3x',
           label: 'ROI Moyen',
-          icon: '📈'
+          icon: '/images/icons-competences/court.webp',
+          isImage: true
         },
         {
           number: '24/7',
@@ -68,7 +70,8 @@ export default function SocialProof() {
         {
           number: '50+',
           label: 'Projects Delivered',
-          icon: '🚀'
+          icon: '/images/icons-competences/referencement.webp',
+          isImage: true
         },
         {
           number: '98%',
@@ -78,7 +81,8 @@ export default function SocialProof() {
         {
           number: '3x',
           label: 'Average ROI',
-          icon: '📈'
+          icon: '/images/icons-competences/court.webp',
+          isImage: true
         },
         {
           number: '24/7',
@@ -142,7 +146,13 @@ export default function SocialProof() {
               key={index}
               className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-primary-red/30 rounded-xl p-6 text-center hover:border-primary-red/60 transition-all duration-300 hover:scale-105"
             >
-              <div className="text-5xl mb-3">{stat.icon}</div>
+              <div className="text-5xl mb-3">
+                {stat.isImage ? (
+                  <img src={stat.icon} alt={stat.label} className="w-12 h-12 object-contain mx-auto" />
+                ) : (
+                  stat.icon
+                )}
+              </div>
               <div className="text-4xl md:text-5xl font-bold text-primary-red mb-2">
                 {stat.number}
               </div>
