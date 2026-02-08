@@ -15,7 +15,7 @@ export const translations = {
       subtitle: 'Agence web et marketing digital spécialisée dans la création de sites internet',
       description:
         'Création de sites web sur-mesure et stratégies marketing digital pour booster votre entreprise en ligne. Spécialistes de la création de sites internet professionnels et du marketing digital, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO, accompagnés de campagnes marketing performantes.',
-      viewProjects: 'Découvrir mes réalisations',
+      viewProjects: 'Découvrir nos réalisations',
       contactMe: 'Recevez votre devis en 24h'
     },
     skills: {
