@@ -25,7 +25,8 @@
       "Bash(npm install:*)",
       "Bash(git push:*)",
       "WebFetch(domain:maps.googleapis.com)",
-      "WebFetch(domain:www.siteonweb.fr)"
+      "WebFetch(domain:www.siteonweb.fr)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

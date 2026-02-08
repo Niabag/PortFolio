@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     if (data.status !== 'OK' || !data.result) {
-      return res.status(500).json({ error: 'Google API error', reviews: [] });
+      return res.status(500).json({ error: 'Google API error', details: data.status, message: data.error_message || null, reviews: [] });
     }
 
     const allReviews = data.result.reviews || [];
