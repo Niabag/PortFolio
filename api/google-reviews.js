@@ -28,7 +28,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&language=fr&key=${apiKey}`;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&language=fr&reviews_sort=newest&key=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
 
@@ -38,9 +38,10 @@ export default async function handler(req, res) {
 
     const allReviews = data.result.reviews || [];
 
-    // Filtrer uniquement les avis 4 et 5 étoiles
+    // Filtrer uniquement les avis 4 et 5 étoiles, garder les 3 plus récents
     const topReviews = allReviews
       .filter(review => review.rating >= 4)
+      .slice(0, 3)
       .map(review => ({
         name: review.author_name,
         rating: review.rating,
