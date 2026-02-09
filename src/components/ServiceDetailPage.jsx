@@ -27,10 +27,8 @@ function ServiceNavbar({ onBookingClick, lang, setLang }) {
             href="/" 
             className="flex items-center gap-2 sm:gap-3 text-white hover:text-primary-red transition-colors duration-300 min-w-0"
           >
-            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-xs sm:text-sm font-bold">&lt;/&gt;</span>
-            </div>
-            <span className="text-base sm:text-xl font-bold text-primary-red whitespace-nowrap">SiteOnWeb</span>
+            <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-24 h-24 sm:w-28 sm:h-28 object-contain flex-shrink-0" />
+            <span className="text-base sm:text-xl font-bold whitespace-nowrap"><span className="text-white">S</span><span className="relative inline-block text-white">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.3em] h-[0.3em] bg-primary-red rounded-full"></span></span><span className="text-white">te</span><span className="text-primary-red">On</span><span className="text-white">Web</span></span>
             <svg className="w-4 h-4 sm:w-5 sm:h-5 hidden sm:block flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>

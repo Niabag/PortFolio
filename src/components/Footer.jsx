@@ -10,9 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
-                <TypingText text={"</>"} className="text-white text-sm sm:text-lg" />
-              </div>
+              <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-24 h-24 sm:w-28 sm:h-28 object-contain" />
               <span className="text-xl sm:text-2xl font-bold text-white">S<span className="relative inline-block">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.3em] h-[0.3em] bg-primary-red rounded-full"></span></span>te<span className="text-primary-red">On</span>Web</span>
             </div>
             <p className="text-gray-400 text-sm sm:text-base">
@@ -82,7 +80,7 @@ export default function Footer() {
               {t('footer.privacy')}
             </a>
           </div>
-          <p>&copy; {new Date().getFullYear()} SiteOnWeb. {t('footer.rights')}</p>
+          <p>&copy; {new Date().getFullYear()} S<span className="relative inline-block">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.25em] h-[0.25em] bg-primary-red rounded-full"></span></span>te<span className="text-primary-red">On</span>Web. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

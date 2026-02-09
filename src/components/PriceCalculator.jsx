@@ -305,7 +305,7 @@ const PriceCalculator = ({ onClose }) => {
       // Charger le logo
       let logoData = null;
       try {
-        const logoResponse = await fetch('/logo.png');
+        const logoResponse = await fetch('/images/newlogo.png');
         const logoBlob = await logoResponse.blob();
         logoData = await new Promise((resolve) => {
           const reader = new FileReader();
@@ -450,12 +450,12 @@ const PriceCalculator = ({ onClose }) => {
       };
 
       if (logoData) {
-        doc.addImage(logoData, 'PNG', 15, 10, 20, 20);
-        drawStyledLogo(40, 18);
+        doc.addImage(logoData, 'PNG', 10, 2, 36, 36);
+        drawStyledLogo(48, 18);
         doc.setTextColor(255, 255, 255);
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
-        doc.text(pdf.tagline, 40, 26);
+        doc.text(pdf.tagline, 48, 26);
       } else {
         drawStyledLogo(15, 18);
         doc.setTextColor(255, 255, 255);

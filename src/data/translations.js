@@ -12,7 +12,7 @@ export const translations = {
     },
     hero: {
       title: 'Site On Web',
-      subtitle: 'Agence web et marketing digital spécialisée dans la création de sites internet',
+      subtitle: 'Votre univers en ligne tissé avec style',
       description:
         'Création de sites web sur-mesure et stratégies marketing digital pour booster votre entreprise en ligne. Spécialistes de la création de sites internet professionnels et du marketing digital, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO, accompagnés de campagnes marketing performantes.',
       viewProjects: 'Découvrir nos réalisations',
@@ -218,7 +218,7 @@ export const translations = {
     },
     footer: {
       description:
-        'Agence Web et Marketing Digital | Création de Sites Web Modernes & Stratégies Marketing | WordPress & React',
+        'Votre univers en ligne tissé avec style',
       servicesTitle: 'Services',
       serviceWordpress: 'Développement WordPress',
       serviceReact: 'Applications React',
@@ -393,7 +393,7 @@ export const translations = {
     },
     hero: {
       title: 'Site On Web',
-      subtitle: 'Web and digital marketing agency specialized in website creation',
+      subtitle: 'Your online universe woven with style',
       description:
         'We build tailor-made websites and digital marketing strategies to boost your business online. As specialists in creating professional websites and digital marketing, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites, accompanied by high-performance marketing campaigns.',
       viewProjects: 'Explore My Work',
@@ -599,7 +599,7 @@ export const translations = {
     },
     footer: {
       description:
-        'Web & Digital Marketing Agency | Modern Website Creation & Marketing Strategies | WordPress & React',
+        'Your online universe woven with style',
       servicesTitle: 'Services',
       serviceWordpress: 'WordPress Development',
       serviceReact: 'React Applications',

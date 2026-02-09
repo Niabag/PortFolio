@@ -74,10 +74,8 @@ export default function ServiceDetail({ service, onClose, onBooking }) {
             onClick={handleCloseClick}
             className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
-              <span className="text-white text-sm font-bold">&lt;/&gt;</span>
-            </div>
-            <span className="text-xl font-bold text-primary-red">SiteOnWeb</span>
+            <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-24 h-24 object-contain" />
+            <span className="text-xl font-bold"><span className="text-white">S</span><span className="relative inline-block text-white">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.3em] h-[0.3em] bg-primary-red rounded-full"></span></span><span className="text-white">te</span><span className="text-primary-red">On</span><span className="text-white">Web</span></span>
             <svg className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
