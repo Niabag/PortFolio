@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../LanguageContext';
 
 const LeadMagnetPopup = () => {
@@ -7,7 +7,7 @@ const LeadMagnetPopup = () => {
   const DEBUG_MODE = false;
 
   const [isVisible, setIsVisible] = useState(false);
-  const [hasTriggered, setHasTriggered] = useState(false);
+  const hasTriggeredRef = useRef(false);
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -21,17 +21,17 @@ const LeadMagnetPopup = () => {
     if (!hasSeenPopup) {
       // Afficher le popup après 30 secondes ou après scroll de 50%
       const timer = setTimeout(() => {
-        if (!hasTriggered) {
+        if (!hasTriggeredRef.current) {
+          hasTriggeredRef.current = true;
           setIsVisible(true);
-          setHasTriggered(true);
         }
       }, 30000); // 30 secondes
 
       const handleScroll = () => {
         const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 50 && !hasSeenPopup && !hasTriggered) {
+        if (scrollPercent > 50 && !hasTriggeredRef.current) {
+          hasTriggeredRef.current = true;
           setIsVisible(true);
-          setHasTriggered(true);
           window.removeEventListener('scroll', handleScroll);
         }
       };
@@ -47,6 +47,7 @@ const LeadMagnetPopup = () => {
 
   const handleClose = () => {
     setIsVisible(false);
+    hasTriggeredRef.current = true;
     // Marquer comme vu pour ne plus afficher pendant 7 jours
     const expiryDate = new Date();
     expiryDate.setDate(expiryDate.getDate() + 7);
