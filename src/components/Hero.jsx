@@ -15,7 +15,7 @@ export default function Hero() {
 
 
   return (
-    <section id="accueil" className="snap-section relative z-10">
+    <section id="accueil" className="snap-section relative z-10 pt-20 sm:pt-36">
       <div className="container mx-auto text-center">
         <div className="animate-slide-up">
 
