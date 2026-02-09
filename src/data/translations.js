@@ -12,7 +12,7 @@ export const translations = {
     },
     hero: {
       title: 'Site On Web',
-      subtitle: 'Nous tissons vos succès en ligne',
+      subtitle: 'Nous tissons vos succès sur la toile',
       description:
         'Création de sites web sur-mesure et stratégies marketing digital pour booster votre entreprise en ligne. Spécialistes de la création de sites internet professionnels et du marketing digital, nous réalisons des sites vitrines et e-commerce modernes, responsives et optimisés SEO, accompagnés de campagnes marketing performantes.',
       viewProjects: 'Découvrir nos réalisations',
@@ -218,7 +218,7 @@ export const translations = {
     },
     footer: {
       description:
-        'Nous tissons vos succès en ligne',
+        'Nous tissons vos succès sur la toile',
       servicesTitle: 'Services',
       serviceWordpress: 'Développement WordPress',
       serviceReact: 'Applications React',
@@ -393,7 +393,7 @@ export const translations = {
     },
     hero: {
       title: 'Site On Web',
-      subtitle: 'We weave your success online',
+      subtitle: 'We weave your success on the web',
       description:
         'We build tailor-made websites and digital marketing strategies to boost your business online. As specialists in creating professional websites and digital marketing, we craft modern, responsive, and SEO-optimized showcase and e-commerce sites, accompanied by high-performance marketing campaigns.',
       viewProjects: 'Explore My Work',
@@ -599,7 +599,7 @@ export const translations = {
     },
     footer: {
       description:
-        'We weave your success online',
+        'We weave your success on the web',
       servicesTitle: 'Services',
       serviceWordpress: 'WordPress Development',
       serviceReact: 'React Applications',
