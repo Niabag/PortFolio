@@ -198,10 +198,27 @@ export default function ServiceOptions() {
                 option.featured ? 'border-primary-red ring-2 ring-primary-red' : 'border-gray-700'
               } rounded-xl p-6 hover:scale-105 transition-all duration-300`}
             >
-              {/* Badge recommandé */}
+              {/* Badge recommandé avec araignée */}
               {option.featured && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-red px-4 py-1 rounded-full text-sm font-bold">
-                  {lang === 'fr' ? '⭐ Recommandé' : '⭐ Recommended'}
+                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                  {/* Tête de l'araignée au-dessus */}
+                  <img
+                    src="/images/newlogo.png"
+                    alt=""
+                    className="w-14 h-14 object-contain -mb-5 relative z-0"
+                    style={{ clipPath: 'inset(0 0 40% 0)' }}
+                  />
+                  {/* Badge texte par-dessus les pattes */}
+                  <div className="relative z-10 bg-primary-red px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
+                    {lang === 'fr' ? '⭐ Recommandé' : '⭐ Recommended'}
+                  </div>
+                  {/* Pattes de l'araignée derrière */}
+                  <img
+                    src="/images/newlogo.png"
+                    alt=""
+                    className="w-14 h-14 object-contain -mt-5 relative z-0"
+                    style={{ clipPath: 'inset(50% 0 0 0)' }}
+                  />
                 </div>
               )}
 
