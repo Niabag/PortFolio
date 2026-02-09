@@ -200,25 +200,17 @@ export default function ServiceOptions() {
             >
               {/* Badge recommandé avec araignée */}
               {option.featured && (
-                <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                  {/* Tête de l'araignée au-dessus */}
+                <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                  {/* Araignée au-dessus du badge */}
                   <img
                     src="/images/newlogo.png"
                     alt=""
-                    className="w-40 h-40 object-contain -mb-14 relative z-0"
-                    style={{ clipPath: 'inset(0 0 40% 0)' }}
+                    className="w-14 h-14 object-contain -mb-2 relative z-20"
                   />
-                  {/* Badge texte par-dessus les pattes */}
+                  {/* Badge texte */}
                   <div className="relative z-10 bg-primary-red px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">
                     {lang === 'fr' ? '⭐ Recommandé' : '⭐ Recommended'}
                   </div>
-                  {/* Pattes de l'araignée derrière */}
-                  <img
-                    src="/images/newlogo.png"
-                    alt=""
-                    className="w-40 h-40 object-contain -mt-14 relative z-0"
-                    style={{ clipPath: 'inset(50% 0 0 0)' }}
-                  />
                 </div>
               )}
 
