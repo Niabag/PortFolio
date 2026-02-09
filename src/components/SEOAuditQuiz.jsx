@@ -334,21 +334,44 @@ const SEOAuditQuiz = ({ onClose }) => {
       doc.setFillColor(0, 0, 0);
       doc.rect(0, 0, pageWidth, 40, 'F');
 
-      // Logo image + texte
-      if (logoData) {
-        doc.addImage(logoData, 'PNG', 15, 10, 20, 20);
-        doc.setTextColor(255, 255, 255);
+      // Logo image + texte stylisé "SıteOnWeb"
+      const drawStyledLogo = (startX, y) => {
         doc.setFontSize(24);
         doc.setFont('helvetica', 'bold');
-        doc.text('SiteOnWeb', 40, 18);
+        let x = startX;
+        // "S" en blanc
+        doc.setTextColor(255, 255, 255);
+        doc.text('S', x, y);
+        x += doc.getTextWidth('S');
+        // "i" en blanc (sans point) + point rouge
+        doc.text('i', x, y);
+        const iWidth = doc.getTextWidth('i');
+        doc.setFillColor(230, 57, 70);
+        doc.circle(x + iWidth / 2, y - 6.5, 1.4, 'F');
+        x += iWidth;
+        // "te" en blanc
+        doc.setTextColor(255, 255, 255);
+        doc.text('te', x, y);
+        x += doc.getTextWidth('te');
+        // "On" en rouge
+        doc.setTextColor(230, 57, 70);
+        doc.text('On', x, y);
+        x += doc.getTextWidth('On');
+        // "Web" en blanc
+        doc.setTextColor(255, 255, 255);
+        doc.text('Web', x, y);
+      };
+
+      if (logoData) {
+        doc.addImage(logoData, 'PNG', 15, 10, 20, 20);
+        drawStyledLogo(40, 18);
+        doc.setTextColor(255, 255, 255);
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
         doc.text(pdf.tagline, 40, 26);
       } else {
+        drawStyledLogo(15, 18);
         doc.setTextColor(255, 255, 255);
-        doc.setFontSize(24);
-        doc.setFont('helvetica', 'bold');
-        doc.text('SiteOnWeb', 15, 18);
         doc.setFontSize(10);
         doc.setFont('helvetica', 'normal');
         doc.text(pdf.tagline, 15, 26);
