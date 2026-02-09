@@ -3,6 +3,9 @@ import { useLanguage } from '../LanguageContext';
 
 const LeadMagnetPopup = () => {
   const { lang } = useLanguage();
+  // MODE DEBUG : true = popup visible immédiatement pour travailler le design
+  const DEBUG_MODE = false;
+
   const [isVisible, setIsVisible] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
   const [email, setEmail] = useState('');
@@ -10,6 +13,8 @@ const LeadMagnetPopup = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    if (DEBUG_MODE) return; // Skip triggers en mode debug
+
     // Vérifier si le visiteur a déjà vu le popup (mémoire 7 jours)
     const hasSeenPopup = localStorage.getItem('hasSeenLeadMagnet');
 
@@ -113,13 +118,13 @@ const LeadMagnetPopup = () => {
 
   const translations = {
     fr: {
-      title: '💰 Cadeau : Guide des Prix 2026',
+      title: 'Guide des Prix 2026',
       subtitle: 'Découvrez VRAIMENT combien coûte un site web (sans langue de bois)',
       benefits: [
-        '✅ Grille tarifaire complète par type de site',
-        '✅ Comparaison Agence vs Freelance vs Plateforme',
-        '✅ Les 7 pièges à éviter absolument',
-        '✅ ROI chiffré avec exemples réels'
+        'Grille tarifaire complète par type de site',
+        'Comparaison Agence vs Freelance vs Plateforme',
+        'Les 7 pièges à éviter absolument',
+        'ROI chiffré avec exemples réels'
       ],
       emailPlaceholder: 'Votre adresse email',
       ctaButton: 'Télécharger Gratuitement',
@@ -130,13 +135,13 @@ const LeadMagnetPopup = () => {
       closeButton: 'Non merci'
     },
     en: {
-      title: '💰 Free Gift: Price Guide 2026',
+      title: 'Free Gift: Price Guide 2026',
       subtitle: 'Discover how much a website REALLY costs (no BS)',
       benefits: [
-        '✅ Complete pricing grid by website type',
-        '✅ Agency vs Freelance vs Platform comparison',
-        '✅ 7 traps to avoid at all costs',
-        '✅ ROI with real case studies'
+        'Complete pricing grid by website type',
+        'Agency vs Freelance vs Platform comparison',
+        '7 traps to avoid at all costs',
+        'ROI with real case studies'
       ],
       emailPlaceholder: 'Your email address',
       ctaButton: 'Download For Free',
@@ -166,6 +171,11 @@ const LeadMagnetPopup = () => {
 
         {!isSubmitted ? (
           <>
+            {/* Logo */}
+            <div className="flex justify-center mb-4">
+              <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-60 h-60 object-contain" />
+            </div>
+
             {/* En-tête */}
             <div className="text-center mb-6">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
