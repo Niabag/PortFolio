@@ -74,10 +74,10 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md border-b border-primary-red/30 z-[1100]">
-      <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        <a href={basePrefix || '/'} className="flex items-center space-x-3">
-          <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-24 h-24 sm:w-28 sm:h-28 object-contain" />
-          <span className="text-3xl sm:text-4xl font-bold text-white">S<span className="relative inline-block">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.3em] h-[0.3em] bg-primary-red rounded-full"></span></span>te<span className="text-primary-red">On</span>Web</span>
+      <div className="container mx-auto px-4 sm:px-6 py-2 sm:py-4 flex justify-between items-center">
+        <a href={basePrefix || '/'} className="flex items-center space-x-2 sm:space-x-3">
+          <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-14 h-14 sm:w-28 sm:h-28 object-contain" />
+          <span className="text-2xl sm:text-4xl font-bold text-white">S<span className="relative inline-block">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.3em] h-[0.3em] bg-primary-red rounded-full"></span></span>te<span className="text-primary-red">On</span>Web</span>
         </a>
 
         <ul className="hidden md:flex space-x-8">
@@ -131,6 +131,13 @@ export default function Navbar() {
       <div
         className={`fixed top-0 right-0 h-screen w-screen bg-black transform transition-transform duration-300 md:hidden z-[2000] ${open ? 'translate-x-0' : 'translate-x-full'}`}
       >
+        <button
+          onClick={close}
+          className="absolute top-4 right-4 text-white text-3xl p-2 hover:text-primary-red transition-colors z-10"
+          aria-label="Fermer le menu"
+        >
+          ✕
+        </button>
         <div className="pt-20 px-6">
           <div className="mb-6">
             <select

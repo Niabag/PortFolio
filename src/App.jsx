@@ -78,7 +78,7 @@ function MainContent() {
       <SmartFloatingButton />  {/* Nouveau : Bouton intelligent WhatsApp/Chat */}
       <LeadMagnetPopup />  {/* Popup Lead Magnet : Checklist SEO gratuite */}
       {/* <ExitIntentPopup /> */}  {/* Popup Exit-Intent désactivée */}
-      <main className="scroll-container">
+      <main className="scroll-container pt-20 sm:pt-36">
         <Hero />
         <Competences />
         <Projects />
