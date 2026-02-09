@@ -79,7 +79,7 @@ export default function Navbar() {
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary-red to-red-500 rounded-lg flex items-center justify-center">
             <TypingText text={"</>"} className="text-white text-sm sm:text-lg" />
           </div>
-          <span className="text-xl sm:text-2xl font-bold text-white">SiteOnWeb</span>
+          <span className="text-xl sm:text-2xl font-bold text-white">S<span className="relative inline-block">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.3em] h-[0.3em] bg-primary-red rounded-full"></span></span>te<span className="text-primary-red">On</span>Web</span>
         </a>
 
         <ul className="hidden md:flex space-x-8">
