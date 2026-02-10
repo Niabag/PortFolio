@@ -20,7 +20,10 @@ export default function Hero() {
         <div className="animate-slide-up">
 
           <div className="flex justify-center mb-4 sm:mb-6">
-            <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain" />
+            <picture>
+              <source srcSet="/images/newlogo.webp" type="image/webp" />
+              <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 object-contain" fetchpriority="high" decoding="async" />
+            </picture>
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
             <span className="typing-text typing-text--animate typing-text--hero">

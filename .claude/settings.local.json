@@ -29,7 +29,9 @@
       "Bash(curl:*)",
       "Bash(timeout /t 30 /nobreak)",
       "WebFetch(domain:g.page)",
-      "Bash(start \"\" \"c:\\\\Users\\\\Utilisateur\\\\Documents\\\\GitHub\\\\PortFolio\\\\generate-slogan-png.html\")"
+      "Bash(start \"\" \"c:\\\\Users\\\\Utilisateur\\\\Documents\\\\GitHub\\\\PortFolio\\\\generate-slogan-png.html\")",
+      "Bash(del \"c:\\\\Users\\\\Utilisateur\\\\Documents\\\\GitHub\\\\PortFolio\\\\public\\\\favicon.svg\")",
+      "Bash(npx sharp-cli:*)"
     ],
     "deny": [],
     "ask": []

@@ -205,7 +205,7 @@ export default function ServiceOptions() {
                   <img
                     src="/images/newlogo.png"
                     alt=""
-                    className="w-14 h-14 object-contain -mb-2 relative z-20"
+                    className="w-14 h-14 object-contain -mb-2 relative z-20" loading="lazy"
                   />
                   {/* Badge texte */}
                   <div className="relative z-10 bg-primary-red px-4 py-1 rounded-full text-sm font-bold whitespace-nowrap">

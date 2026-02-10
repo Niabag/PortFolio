@@ -174,7 +174,7 @@ const LeadMagnetPopup = () => {
           <>
             {/* Logo */}
             <div className="flex justify-center mb-4">
-              <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-60 h-60 object-contain" />
+              <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-60 h-60 object-contain" loading="lazy" />
             </div>
 
             {/* En-tête */}

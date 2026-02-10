@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-24 h-24 sm:w-28 sm:h-28 object-contain" />
+              <img src="/images/newlogo.png" alt="SiteOnWeb" className="w-24 h-24 sm:w-28 sm:h-28 object-contain" loading="lazy" />
               <span className="text-xl sm:text-2xl font-bold text-white">S<span className="relative inline-block">ı<span className="absolute top-[0.02em] left-1/2 -translate-x-1/2 w-[0.3em] h-[0.3em] bg-primary-red rounded-full"></span></span>te<span className="text-primary-red">On</span>Web</span>
             </div>
             <p className="text-gray-400 text-sm sm:text-base">
