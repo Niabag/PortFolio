@@ -196,7 +196,7 @@ export default function ServiceOptions() {
               key={index}
               className={`relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border ${
                 option.featured ? 'border-primary-red ring-2 ring-primary-red' : 'border-gray-700'
-              } rounded-xl p-6 hover:scale-105 transition-all duration-300`}
+              } rounded-xl p-6 hover:scale-105 transition-transform duration-300`}
             >
               {/* Badge recommandé avec araignée */}
               {option.featured && (

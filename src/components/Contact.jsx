@@ -126,7 +126,7 @@ export default function Contact() {
                 name="name"
                 placeholder={t('contact.namePlaceholder')}
                 required
-                className="w-full p-5 sm:p-6 bg-card-bg border-2 border-gray-600 rounded-xl text-white text-base sm:text-lg focus:border-primary-red focus:outline-none focus:ring-2 focus:ring-primary-red/50 transition-all"
+                className="w-full p-5 sm:p-6 bg-card-bg border-2 border-gray-600 rounded-xl text-white text-base sm:text-lg focus:border-primary-red focus:outline-none focus:ring-2 focus:ring-primary-red/50 transition-colors"
               />
             </div>
             <div>
@@ -135,7 +135,7 @@ export default function Contact() {
                 name="email"
                 placeholder={t('contact.emailPlaceholder')}
                 required
-                className="w-full p-5 sm:p-6 bg-card-bg border-2 border-gray-600 rounded-xl text-white text-base sm:text-lg focus:border-primary-red focus:outline-none focus:ring-2 focus:ring-primary-red/50 transition-all"
+                className="w-full p-5 sm:p-6 bg-card-bg border-2 border-gray-600 rounded-xl text-white text-base sm:text-lg focus:border-primary-red focus:outline-none focus:ring-2 focus:ring-primary-red/50 transition-colors"
               />
             </div>
             <div>
@@ -149,7 +149,7 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary-red py-5 sm:py-6 rounded-xl font-bold text-base sm:text-lg hover:bg-red-700 transition-all hover:scale-[1.02] transform shadow-lg hover:shadow-xl"
+              className="w-full bg-primary-red py-5 sm:py-6 rounded-xl font-bold text-base sm:text-lg hover:bg-red-700 transition-transform duration-200 hover:scale-[1.02] transform shadow-lg hover:shadow-xl"
             >
               {t('contact.send')}
             </button>

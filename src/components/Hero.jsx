@@ -40,14 +40,12 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <button
               onClick={() => {
-                // Tracking GTM - Calculator opened
-                if (window.dataLayer) {
-                  window.dataLayer.push({
-                    event: 'calculator_opened',
-                    page_location: window.location.href
-                  });
-                }
                 setShowCalculator(true);
+                setTimeout(() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({ event: 'calculator_opened', page_location: window.location.href });
+                  }
+                }, 0);
               }}
               className="bg-gradient-to-r from-primary-red to-red-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-red-700 hover:to-red-800 transition transform hover:scale-105 shadow-lg"
             >
@@ -55,14 +53,12 @@ export default function Hero() {
             </button>
             <button
               onClick={() => {
-                // Tracking GTM - SEO Quiz started
-                if (window.dataLayer) {
-                  window.dataLayer.push({
-                    event: 'seo_quiz_opened',
-                    page_location: window.location.href
-                  });
-                }
                 setShowSEOQuiz(true);
+                setTimeout(() => {
+                  if (window.dataLayer) {
+                    window.dataLayer.push({ event: 'seo_quiz_opened', page_location: window.location.href });
+                  }
+                }, 0);
               }}
               className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition transform hover:scale-105 shadow-lg"
             >

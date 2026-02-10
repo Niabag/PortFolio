@@ -27,16 +27,22 @@ const LeadMagnetPopup = () => {
         }
       }, 30000); // 30 secondes
 
+      let scrollTicking = false;
       const handleScroll = () => {
-        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 50 && !hasTriggeredRef.current) {
-          hasTriggeredRef.current = true;
-          setIsVisible(true);
-          window.removeEventListener('scroll', handleScroll);
-        }
+        if (scrollTicking || hasTriggeredRef.current) return;
+        scrollTicking = true;
+        requestAnimationFrame(() => {
+          const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+          if (scrollPercent > 50 && !hasTriggeredRef.current) {
+            hasTriggeredRef.current = true;
+            setIsVisible(true);
+            window.removeEventListener('scroll', handleScroll);
+          }
+          scrollTicking = false;
+        });
       };
 
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll, { passive: true });
 
       return () => {
         clearTimeout(timer);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useLanguage } from '../LanguageContext.jsx';
 
 export default function Services() {
@@ -8,40 +8,31 @@ export default function Services() {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [expandedCard, setExpandedCard] = useState(null);
 
-  const createBubbles = (cardIndex) => {
-    const bubbles = [];
-    const bubbleCount = 20;
-
-    for (let i = 0; i < bubbleCount; i++) {
-      const delay = Math.random() * 0.7;
-      const size = Math.random() * 20 + 10;
-      const leftPos = Math.random() * 100;
-      const duration = 1.1;
-
-      bubbles.push(
-        <div
-          key={`bubble-${cardIndex}-${i}`}
-          className="skill-bubble"
-          style={{
-            left: `${leftPos}%`,
-            width: `${size}px`,
-            height: `${size}px`,
-            animationDelay: `${delay}s`,
-            animationDuration: `${duration}s`
-          }}
-        />
-      );
+  // Pré-calculer les bulles une seule fois
+  const allBubbles = useMemo(() => {
+    const result = {};
+    for (let cardIndex = 0; cardIndex < 10; cardIndex++) {
+      const bubbles = [];
+      for (let i = 0; i < 8; i++) {
+        bubbles.push({
+          key: `bubble-${cardIndex}-${i}`,
+          left: `${Math.random() * 100}%`,
+          width: `${Math.random() * 20 + 10}px`,
+          height: `${Math.random() * 20 + 10}px`,
+          animationDelay: `${Math.random() * 0.7}s`,
+          animationDuration: '1.1s'
+        });
+      }
+      result[cardIndex] = bubbles;
     }
-    return bubbles;
-  };
+    return result;
+  }, []);
 
   const handleCardHover = (index, isHovering) => {
     if (isHovering) {
       setHoveredCard(index);
     } else {
-      setTimeout(() => {
-        setHoveredCard(current => current === index ? null : current);
-      }, 10);
+      setHoveredCard(current => current === index ? null : current);
     }
   };
 
@@ -114,9 +105,11 @@ export default function Services() {
                 <div className="skill-card-border"></div>
               </div>
 
-              {hoveredCard === index && (
+              {hoveredCard === index && allBubbles[index] && (
                 <div className="skill-bubbles-container" key={`bubbles-${index}`}>
-                  {createBubbles(index)}
+                  {allBubbles[index].map(b => (
+                    <div key={b.key} className="skill-bubble" style={{ left: b.left, width: b.width, height: b.height, animationDelay: b.animationDelay, animationDuration: b.animationDuration }} />
+                  ))}
                 </div>
               )}
             </div>
